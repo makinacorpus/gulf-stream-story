@@ -1,0 +1,25 @@
+#map {
+    width: 100%;
+}
+
+html, body, .container-fluid, .row, .left-panel, #map {
+    height: 100%;
+}
+
+.container-fluid, {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.row, {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.left-panel {
+    padding-left: 0px;
+}
+
+.right-panel {
+    padding-right: 0px;
+}

@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gulf stream</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 left-panel">
+                <div id="map"></div>
+            </div>
+            <div class="col-md-4 right-panel">
+                <div class="btn-group btn-group-lg" role="group" aria-label="...">
+                    <button id="prev" type="button" class="btn btn-default"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></button>
+                    <button id="next" type="button" class="btn btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></button>
+                </div>
+                <div id="text"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="node_modules/leaflet/dist/leaflet.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/leaflet-textpath/leaflet.textpath.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/map.js"></script>
+</body>
+</html>
