@@ -1,212 +1,97 @@
-var map = L.map('map').setView([40, -40], 4);
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
+var map = L.map('map').setView([24,-80.72], 5);
+L.tileLayer('data/tiles/{z}/{x}/{y}.png',{
+  tms: true
+  }).addTo(map);
 
-var streams = {
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {
-        "stroke": "#555555",
-        "stroke-width": 2,
-        "stroke-opacity": 1,
-        "name": "Gulf Stream"
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            -91.318359375,
-            22.187404991398775
-          ],
-          [
-            -91.318359375,
-            25.720735134412106
-          ],
-          [
-            -90.17578124999999,
-            27.761329874505233
-          ],
-          [
-            -86.66015624999999,
-            28.304380682962783
-          ],
-          [
-            -84.814453125,
-            26.745610382199022
-          ],
-          [
-            -81.73828125,
-            24.5271348225978
-          ],
-          [
-            -79.189453125,
-            24.766784522874453
-          ],
-          [
-            -77.6953125,
-            27.293689224852407
-          ],
-          [
-            -74.70703125,
-            30.06909396443887
-          ],
-          [
-            -69.08203125,
-            33.211116472416855
-          ],
-          [
-            -61.52343749999999,
-            35.746512259918504
-          ],
-          [
-            -55.986328125,
-            37.16031654673677
-          ],
-          [
-            -48.515625,
-            38.47939467327645
-          ],
-          [
-            -42.626953125,
-            38.685509760012
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stroke": "#555555",
-        "name": "Courant A"
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            -38.056640625,
-            38.685509760012
-          ],
-          [
-            -27.773437499999996,
-            39.50404070558415
-          ],
-          [
-            -18.017578125,
-            37.579412513438385
-          ],
-          [
-            -16.69921875,
-            32.32427558887655
-          ],
-          [
-            -18.017578125,
-            23.966175871265044
-          ],
-          [
-            -20.830078125,
-            17.056784609942554
-          ],
-          [
-            -29.443359375,
-            12.640338306846802
-          ],
-          [
-            -53.525390625,
-            12.983147716796566
-          ],
-          [
-            -61.61132812500001,
-            16.88865978738161
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Courant B"
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            -54.052734375,
-            57.938183012205315
-          ],
-          [
-            -48.69140625,
-            53.48804553605622
-          ],
-          [
-            -45.26367187499999,
-            40.58058466412764
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Courant C"
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            -38.232421875,
-            40.111688665595956
-          ],
-          [
-            -28.740234375,
-            44.402391829093915
-          ],
-          [
-            -23.642578125,
-            49.32512199104001
-          ],
-          [
-            -18.544921875,
-            55.47885346331034
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Courant D"
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            -36.650390625,
-            39.16414104768742
-          ],
-          [
-            -25.48828125,
-            41.902277040963696
-          ],
-          [
-            -15.732421875,
-            46.437856895024225
-          ],
-          [
-            -10.72265625,
-            48.63290858589532
-          ]
-        ]
-      }
-    }
-  ]
+map.on('load', function() {
+    init();
+});
+
+//options de style
+var style_courant = {
+"color": "#ff7800" //couleur contour
 };
 
-var currents = L.geoJson(streams, {
-        onEachFeature: function (feature, layer) {
-            console.log(feature.properties.name);
-            layer.setText(feature.properties.name, {center: true, offset: -5});
-        }
-    }).addTo(map);
+// Ajouter la couche courant de floride
+var courant_floride = L.geoJson(null, { style: style_courant } );
 
-//currents.showExtremities('arrowM');
+    $.getJSON("data/geojson/courant_de_floride.geojson", function (data) {
+      courant_floride.addData(data);
+    });
+
+    courant_floride.addTo(map);
+
+
+// Ajouter la couche courant de Guyane
+var courant_guyane = L.geoJson(null);
+
+    $.getJSON("data/geojson/courant_de_guyane.geojson", function (data) {
+      courant_guyane.addData(data);
+    });
+
+    courant_guyane.addTo(map);
+
+
+// Ajouter la couche courant des Açores
+var courant_acores = L.geoJson(null);
+
+    $.getJSON("data/geojson/courant_des_acores.geojson", function (data) {
+      courant_acores.addData(data);
+    });
+
+    courant_acores.addTo(map);
+
+
+// Ajouter la couche courant des Canaries
+var courant_canaries = L.geoJson(null);
+
+    $.getJSON("data/geojson/courant_des_canaries.geojson", function (data) {
+      courant_canaries.addData(data);
+    });
+
+    courant_canaries.addTo(map);
+
+// Ajouter la couche courant Nord Atlantique
+var courant_nord_atlantique = L.geoJson(null);
+
+    $.getJSON("data/geojson/courant_nord_atlantique.geojson", function (data) {
+      courant_nord_atlantique.addData(data);
+    });
+
+    courant_nord_atlantique .addTo(map);
+
+// Ajouter la couche dérive Nord Atlantique 1
+var derive_nord_atlantique_1 = L.geoJson(null);
+
+    $.getJSON("data/geojson/derive_nord_atlantique_1.geojson", function (data) {
+      derive_nord_atlantique_1.addData(data);
+    });
+
+    derive_nord_atlantique_1.addTo(map);
+
+// Ajouter la couche dérive Nord Atlantique 2
+var derive_nord_atlantique_2 = L.geoJson(null);
+
+    $.getJSON("data/geojson/derive_nord_atlantique_2.geojson", function (data) {
+      derive_nord_atlantique_2.addData(data);
+    });
+
+    derive_nord_atlantique_2.addTo(map);
+
+// Ajouter la couche GulfStream
+var gulfstream = L.geoJson(null);
+
+    $.getJSON("data/geojson/gulfstream.geojson", function (data) {
+      gulfstream.addData(data);
+    });
+
+    gulfstream.addTo(map);
+
+// Ajouter la couche points d'intérêt
+var points_d_interet = L.geoJson(null);
+
+    $.getJSON("data/geojson/points_d_interet.geojson", function (data) {
+      points_d_interet.addData(data);
+    });
+
+    points_d_interet.addTo(map);

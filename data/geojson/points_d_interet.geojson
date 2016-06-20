@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "Nom": "Cap Hatteras" }, "geometry": { "type": "Point", "coordinates": [ -75.53360266307709, 35.234017827491151 ] } },
+{ "type": "Feature", "properties": { "id": 2, "Nom": "Grands Bancs de Terre Neuve" }, "geometry": { "type": "Point", "coordinates": [ -50.289807184910501, 43.189855275514894 ] } },
+{ "type": "Feature", "properties": { "id": 3, "Nom": "Détroit de Floride" }, "geometry": { "type": "Point", "coordinates": [ -80.643757288855895, 24.132682718345265 ] } }
+]
+}

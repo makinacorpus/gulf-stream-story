@@ -1,42 +1,71 @@
 var i = 0;
 
-var story = [
+var story = [  
     {
-        'zoom': 2,
-        'text': 'etape 1'
+        'view': [[24,-80.72], 5],
+        'text': 'détroit de Floride'
     },
     {
-        'zoom': 5,
-        'text': 'etape 2'
+        'view': [[10.13,-58.59],5],
+        'text': 'courant de Guyane + courant des antilles'
     },
     {
-        'zoom': 3,
-        'text': 'etape 3'
+        'view': [[34.99,-74.97],5],
+        'text': 'cap hatteras'
     },
     {
-        'zoom': 4,
-        'text': 'etape 4'
+        'view': [[43.19,-50.3],5],
+        'text': 'grands bancs de terre neuve'
+    },
+    {
+        'view': [[44.72,-37.38],5],
+        'text': 'courant nord atlantique'
+    },
+    {
+        'view': [[44.72,-37.38],5],
+        'text': 'courant des Açores'
+    },
+    {
+        'view': [[29.53,-45],4],
+        'text': 'courant nord equatorial'
+    },
+    {
+        'view': [[44.72,-37.38],4],
+        'text': 'courant de Guinée'
+    },
+    {
+        'view': [[56,-4.91],5],
+        'text': 'courant Greenland'
+    },
+    {
+        'view': [[57,-12],4],
+        'text': 'dérive nord atlantique'
     }
 ];
 
+function init() {
+    changeContent(0);
+}
+
 $('#next').on('click', function() {
     if (i < story.length - 1) {
-        i += 1;
+        i = i + 1;
         changeContent(i);
     }
 });
 
 $('#prev').on('click', function() {
     if (i > 0) {
-        i -= 1;
+        i = i - 1;
         changeContent(i);
     }
 });
 
 function changeContent(i) {
     var state = story[i];
-    if(state.zoom) {
-        map.setZoom(state.zoom);
+    console.log(state)
+    if(state.view) {
+        map.setView(state.view[0], state.view[1]);
     }
     if(state.text) {
         $('#text').html(state.text);
