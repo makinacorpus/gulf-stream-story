@@ -12,14 +12,27 @@ var style_courant = {
 "color": "#ff7800" //couleur contour
 };
 
-// Ajouter la couche courant de floride
-var courant_floride = L.geoJson(null, { style: style_courant } );
+// Ajouter la couche pente continentale
+var pente_continentale = L.geoJson(null);
 
-    $.getJSON("data/geojson/courant_de_floride.geojson", function (data) {
-      courant_floride.addData(data);
+    $.getJSON("data/geojson/pente_continentale.geojson", function (data) {
+      pente_continentale.addData(data);
     });
 
-    courant_floride.addTo(map);
+    pente_continentale.addTo(map);
+
+// Ajouter la couche courant de floride
+var courant_floride = L.geoJson(null, {
+    onEachFeature: function (feature, layer) {
+        layer.setText('  )  ', {repeat: true, attributes: {fill: 'red'}});
+    }
+});
+
+$.getJSON("data/geojson/courant_de_floride.geojson", function (data) {
+  courant_floride.addData(data);
+});
+
+//courant_floride.addTo(map);
 
 
 // Ajouter la couche courant de Guyane

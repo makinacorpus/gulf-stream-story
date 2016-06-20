@@ -18,23 +18,28 @@ var story = [
         'text': 'grands bancs de terre neuve'
     },
     {
+        'view': [[44.72,-37.38],3],
+        'text': 'anticyclone des Açores + dépression d Islande'
+    },
+    {
+        'view': [[31.92,-58.59],5],
+        'text': 'courant des Açores'
+    },
+    {
         'view': [[44.72,-37.38],5],
         'text': 'courant nord atlantique'
     },
     {
-        'view': [[44.72,-37.38],5],
-        'text': 'courant des Açores'
-    },
-    {
         'view': [[29.53,-45],4],
-        'text': 'courant nord equatorial'
+        'text': 'courant nord equatorial',
+        'addLayer': courant_floride
     },
     {
-        'view': [[44.72,-37.38],4],
+        'view': [[23.9,-21.3],5],
         'text': 'courant de Guinée'
     },
     {
-        'view': [[56,-4.91],5],
+        'view': [[56,-34.91],5],
         'text': 'courant Greenland'
     },
     {
@@ -69,5 +74,8 @@ function changeContent(i) {
     }
     if(state.text) {
         $('#text').html(state.text);
+    }
+    if(state.addLayer) {
+        map.addLayer(state.addLayer);
     }
 }

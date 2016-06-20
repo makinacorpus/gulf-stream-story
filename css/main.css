@@ -22,4 +22,5 @@ html, body, .container-fluid, .row, .left-panel, #map {
 
 .right-panel {
     padding-right: 0px;
+    opacity:0.5;
 }
