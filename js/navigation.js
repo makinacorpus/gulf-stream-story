@@ -3,7 +3,7 @@ var i = 0;
 var story = [  
     {
         'view': [[24,-80.72], 5],
-        'text': 'détroit de Floride'
+        'text': '#Détroit de Floride\n* Point 1\n* Point 2\n* Point 3'
     },
     {
         'view': [[10.13,-58.59],5],
@@ -44,6 +44,7 @@ var story = [
 ];
 
 function init() {
+  console.log('init nav')
     changeContent(0);
 }
 
@@ -68,6 +69,6 @@ function changeContent(i) {
         map.setView(state.view[0], state.view[1]);
     }
     if(state.text) {
-        $('#text').html(state.text);
+        $('#text').html(markdown.toHTML(state.text));
     }
 }

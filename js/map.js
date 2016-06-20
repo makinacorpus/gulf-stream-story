@@ -3,9 +3,7 @@ L.tileLayer('data/tiles/{z}/{x}/{y}.png',{
   tms: true
   }).addTo(map);
 
-map.on('load', function() {
     init();
-});
 
 //options de style
 var style_courant = {
