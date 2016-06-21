@@ -12,6 +12,7 @@
     "bootstrap": "^3.3.6",
     "jquery": "^2.2.4",
     "leaflet": "^0.7.7",
-    "leaflet-textpath": "git://github.com/makinacorpus/Leaflet.TextPath.git#gh-pages"
+    "leaflet-textpath": "git://github.com/makinacorpus/Leaflet.TextPath.git#gh-pages",
+    "markdown": "^0.5.0"
   }
 }

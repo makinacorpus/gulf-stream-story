@@ -3,28 +3,54 @@ L.tileLayer('data/tiles/{z}/{x}/{y}.png',{
   tms: true
   }).addTo(map);
 
-map.on('load', function() {
-    init();
-});
+// Ajouter des couches
+var detroit_de_floride = L.geoJson(null);
 
-//options de style
-var style_courant = {
-"color": "#ff7800" //couleur contour
-};
-
-// Ajouter la couche pente continentale
-var pente_continentale = L.geoJson(null);
-
-    $.getJSON("data/geojson/pente_continentale.geojson", function (data) {
-      pente_continentale.addData(data);
+    $.getJSON("data/geojson/detroit_de_floride.geojson", function (data) {
+      detroit_de_floride.addData(data);
     });
 
-    pente_continentale.addTo(map);
 
-// Ajouter la couche courant de floride
-var courant_floride = L.geoJson(null, {
+var courant_guyane = L.geoJson(null, {
+    style: {
+        weight: 15,
+        color: '#006FFF'
+    },
     onEachFeature: function (feature, layer) {
-        layer.setText('  )  ', {repeat: true, attributes: {fill: 'red'}});
+        layer.setText(' \u263d ', {
+            repeat: true, 
+            offset: 7,
+            attributes: {
+                'fill': '#BDDAFF',
+                'font-weight': 'bold',
+                'font-size': '19'
+            }
+        });
+    }
+});
+
+    $.getJSON("data/geojson/courant_de_guyane.geojson", function (data) {
+      courant_guyane.addData(data);
+    });
+
+
+var courant_floride = L.geoJson(null, {
+    style: {
+        weight: 15,
+        color: '#0000D5'
+    },
+//\u2652 \u263e \u2312 \u2322 \u23d6 \u25dc \u25dd
+    onEachFeature: function (feature, layer) {
+        layer.setText(' \u263d ', {
+            repeat: true, 
+            offset: 7,
+            attributes: {
+                //"style": "writing-mode: tb-rl; glyph-orientation-vertical: 180;",
+                'fill': '#C8CFEB',
+                'font-weight': 'bold',
+                'font-size': '19'
+            }
+        });
     }
 });
 
@@ -32,79 +58,192 @@ $.getJSON("data/geojson/courant_de_floride.geojson", function (data) {
   courant_floride.addData(data);
 });
 
-//courant_floride.addTo(map);
 
+var cap_hatteras = L.geoJson(null);
 
-// Ajouter la couche courant de Guyane
-var courant_guyane = L.geoJson(null);
-
-    $.getJSON("data/geojson/courant_de_guyane.geojson", function (data) {
-      courant_guyane.addData(data);
+    $.getJSON("data/geojson/cap_hatteras.geojson", function (data) {
+      cap_hatteras.addData(data);
     });
 
-    courant_guyane.addTo(map);
+
+ var gulfstream = L.geoJson(null, {
+    style: {
+        weight: 15,
+        color: '#0000D5'
+    },
+    onEachFeature: function (feature, layer) {
+        layer.setText(' \u263d ', {
+            repeat: true, 
+            offset: 7,
+            attributes: {
+                'fill': '#C8CFEB',
+                'font-weight': 'bold',
+                'font-size': '19'
+            }
+        });
+    }
+});
 
 
-// Ajouter la couche courant des Açores
-var courant_acores = L.geoJson(null);
+   
+var grands_bancs_de_terre_neuve = L.geoJson(null);
 
-    $.getJSON("data/geojson/courant_des_acores.geojson", function (data) {
-      courant_acores.addData(data);
+    $.getJSON("data/geojson/grands_bancs_de_terre_neuve.geojson", function (data) {
+      grands_bancs_de_terre_neuve.addData(data);
     });
 
-    courant_acores.addTo(map);
 
 
-// Ajouter la couche courant des Canaries
-var courant_canaries = L.geoJson(null);
-
-    $.getJSON("data/geojson/courant_des_canaries.geojson", function (data) {
-      courant_canaries.addData(data);
-    });
-
-    courant_canaries.addTo(map);
-
-// Ajouter la couche courant Nord Atlantique
-var courant_nord_atlantique = L.geoJson(null);
+var courant_nord_atlantique = L.geoJson(null, {
+    style: {
+        weight: 15,
+        color: '#006FFF'
+    },
+    onEachFeature: function (feature, layer) {
+        layer.setText(' \u263d ', {
+            repeat: true, 
+            offset: 7,
+            attributes: {
+                'fill': '#BDDAFF',
+                'font-weight': 'bold',
+                'font-size': '19'
+            }
+        });
+    }
+});
 
     $.getJSON("data/geojson/courant_nord_atlantique.geojson", function (data) {
       courant_nord_atlantique.addData(data);
     });
 
-    courant_nord_atlantique .addTo(map);
 
-// Ajouter la couche dérive Nord Atlantique 1
-var derive_nord_atlantique_1 = L.geoJson(null);
+
+
+var courant_acores = L.geoJson(null, {
+    style: {
+        weight: 15,
+        color: '#006FFF'
+    },
+    onEachFeature: function (feature, layer) {
+        layer.setText(' \u263d ', {
+            repeat: true, 
+            offset: 7,
+            attributes: {
+                'fill': '#BDDAFF',
+                'font-weight': 'bold',
+                'font-size': '19'
+            }
+        });
+    }
+});
+
+    $.getJSON("data/geojson/courant_des_acores.geojson", function (data) {
+      courant_acores.addData(data);
+    });
+
+
+
+var courant_canaries = L.geoJson(null, {
+    style: {
+        weight: 15,
+        color: '#006FFF'
+    },
+    onEachFeature: function (feature, layer) {
+        layer.setText(' \u263d ', {
+            repeat: true, 
+            offset: 7,
+            attributes: {
+                'fill': '#BDDAFF',
+                'font-weight': 'bold',
+                'font-size': '19'
+            }
+        });
+    }
+});
+
+    $.getJSON("data/geojson/courant_des_canaries.geojson", function (data) {
+      courant_canaries.addData(data);
+    });
+
+
+
+var groenland = L.geoJson(null, {
+    style: {
+        weight: 15,
+        color: '#006FFF'
+    },
+    onEachFeature: function (feature, layer) {
+        layer.setText(' \u263d ', {
+            repeat: true, 
+            offset: 7,
+            attributes: {
+                'fill': '#BDDAFF',
+                'font-weight': 'bold',
+                'font-size': '19'
+            }
+        });
+    }
+});
+
+    $.getJSON("data/geojson/groenland.geojson", function (data) {
+      groenland.addData(data);
+    });
+
+
+
+var derive_nord_atlantique_1 = L.geoJson(null, {
+    style: {
+        weight: 15,
+        color: '#006FFF'
+    },
+    onEachFeature: function (feature, layer) {
+        layer.setText(' \u263d ', {
+            repeat: true, 
+            offset: 7,
+            attributes: {
+                'fill': '#BDDAFF',
+                'font-weight': 'bold',
+                'font-size': '19'
+            }
+        });
+    }
+});
 
     $.getJSON("data/geojson/derive_nord_atlantique_1.geojson", function (data) {
       derive_nord_atlantique_1.addData(data);
     });
 
-    derive_nord_atlantique_1.addTo(map);
 
-// Ajouter la couche dérive Nord Atlantique 2
-var derive_nord_atlantique_2 = L.geoJson(null);
+
+var derive_nord_atlantique_2 = L.geoJson(null, {
+    style: {
+        weight: 15,
+        color: '#006FFF'
+    },
+    onEachFeature: function (feature, layer) {
+        layer.setText(' \u263d ', {
+            repeat: true, 
+            offset: 7,
+            attributes: {
+                'fill': '#BDDAFF',
+                'font-weight': 'bold',
+                'font-size': '19'
+            }
+        });
+    }
+});
 
     $.getJSON("data/geojson/derive_nord_atlantique_2.geojson", function (data) {
       derive_nord_atlantique_2.addData(data);
     });
 
-    derive_nord_atlantique_2.addTo(map);
 
-// Ajouter la couche GulfStream
-var gulfstream = L.geoJson(null);
 
     $.getJSON("data/geojson/gulfstream.geojson", function (data) {
       gulfstream.addData(data);
     });
 
-    gulfstream.addTo(map);
 
-// Ajouter la couche points d'intérêt
-var points_d_interet = L.geoJson(null);
 
-    $.getJSON("data/geojson/points_d_interet.geojson", function (data) {
-      points_d_interet.addData(data);
-    });
 
-    points_d_interet.addTo(map);
+
