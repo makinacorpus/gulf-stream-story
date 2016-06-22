@@ -9,7 +9,8 @@ var story = [
         'view': [[10.13,-58.59],4],
         'text': '#Naissance du Gulf Stream\n Le courant de Guyane, qui longe les côtes d’Amérique du Sud, se retrouve dans un cul-de-sac: l’Isthme du Panama. Il est naturellement emporté vers le nord et à l’est par la circulation anticyclonique des Açores (sens des aiguilles d’une montre). Il dirige donc notre goutte d’eau vers une seule porte de sortie : le détroit de Floride. C’est l’étroitesse de ce passage, situé entre Cuba et la Floride, qui génère un trop plein qui donne naissance au Gulf Stream.\n\n ![detroit_de_floride](data/images/detroit_de_floride.jpg)\n*Détroit de Floride*\n\n*Isthme du Panama',
         'addLayer': courant_guyane,
-        'addLayer2': detroit_de_floride
+        'addLayer2': detroit_de_floride,
+        'addLayer3': pente_continentale
     },
     {
         'view': [[34.99,-74.97],5],
@@ -22,7 +23,6 @@ var story = [
         'view': [[43.19,-62.3],5],
         'text': '#Le Gulf Stream océanique\nEn quittant le Cap Hatteras, notre goutte d’eau s’embarque vers le large en suivant le fleuve océanique. Elle se confronte maintenant à un univers beaucoup plus chaotique. La pente continentale n’est plus là pour canaliser son mouvement qui devient tourbillonnaire. Certains petits courants sortent du flux qui file maintenant plein est, en direction de l’Europe.',
         'addLayer': gulfstream,
-        'removeLayer': courant_guyane
     },
     {
         'view': [[43.19,-50.3],5],
@@ -39,26 +39,24 @@ var story = [
     {
         'view': [[31.92,-58.59],5],
         'text': '#Le courant des Açores\nLe courant des Açores est le premier candidat qui essaye d’emporter notre goutte d’eau et une partie de ses sœurs. Il se forme et est alimenté par l’anticyclone des Açores. Il rejoint soit le courant de Guyane soit le courant des Antilles. Dans tous les cas, c’est un retour à la case départ pour notre goutte d’eau qui repart pour un tour de Gulf Stream.',
-        'addLayer': courant_acores
+        'addLayer': courant_acores,
+        'removeLayer': pente_continentale
     },
     {
         'view': [[29.53,-45],4],
         'text': '#Le courant des Canaries\nAutre possibilité, notre goutte d’eau peut être entraînée par le courant des Canaries. A l’image du courant des Açores, l’anticyclone des Açores est le moteur du courant des Canaries et de son extension, le courant Nord Atlantique. Ce dernier finit sa course dans le courant de Guyane. C’est donc un autre retour à la case départ. Le courant de Guinée, seconde extension du courant des Canaries, sort de l’influence de l’anticyclone des Açores et emporte notre goutte d’eau le long des côtes Africaines vers l’équateur.',
         'addLayer': courant_canaries,
-        'removeLayer': courant_acores
     },
     {
         'view': [[56,-34.91],4],
         'text': '#Cap sur le Groenland\nNotre goutte d’eau ne tombe pas fatalement sous l’emprise de l’anticyclone des Açores. Elle peut aussi être attirée par sa sœur nordique, la dépression d’Islande, qui tourne dans le sens inverse des aiguilles d’une montre. Encore une fois, de nombreux choix s’offrent à notre goutte d’eau. Elle peut mettre le cap vers l’Islande et le Groenland. En suivant ce chemin et en passant par la mer du Labrador, elle pourrait de nouveau être confronté au Gulf Stream.',
         'addLayer': groenland,
-        'removeLayer': courant_canaries
     },
     {
         'view': [[57,-12],4],
         'text': '#La dérive Nord Atlantique\nAu delà de l’influence du vent, un nouveau mécanisme, la pompe thermohaline, attire notre goutte d’eau vers le Nord de l’Europe et essaye petit à petit de l’entraîner vers les abysses. Nous étudierons ce phénomène un peu plus tard. En suivant cette voie, notre goutte d’eau a de fortes chances de voguer vers la mer Baltique ou de longer les côtes Norvégiennes pour continuer sa course dans l’océan Arctique. ',
         'addLayer': derive_nord_atlantique_1,
         'addLayer2': derive_nord_atlantique_2,
-        'removeLayer': groenland
     }
 ];
     init();
@@ -96,6 +94,9 @@ function changeContent(i) {
     if(state.addLayer2) {
         map.addLayer(state.addLayer2);
     }    
+    if(state.addLayer3) {
+        map.addLayer(state.addLayer3);
+    }  
     if(state.removeLayer) {
         map.removeLayer(state.removeLayer);
     }

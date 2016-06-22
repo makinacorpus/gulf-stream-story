@@ -6,12 +6,12 @@ html, body, .container-fluid, .row, .left-panel, #map {
     height: 100%;
 }
 
-.container-fluid, {
+.container-fluid {
     padding-right: 0px;
     padding-left: 0px;
 }
 
-.row, {
+.row {
     margin-right: 0px;
     margin-left: 0px;
 }
@@ -25,6 +25,11 @@ html, body, .container-fluid, .row, .left-panel, #map {
     text-align: justify;
     text-align-last: left;
     font-size: 25px;
+}
+
+.scrollY {
+    max-height: 100%;
+    overflow-y: scroll;
 }
 
 #text > p > img {

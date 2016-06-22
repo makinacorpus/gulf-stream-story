@@ -33,6 +33,16 @@ var courant_guyane = L.geoJson(null, {
       courant_guyane.addData(data);
     });
 
+var pente_continentale = L.geoJson(null, {
+    style: {
+        weight: 1,
+        color: '#000000'
+    }
+});
+
+    $.getJSON("data/geojson/pente_continentale.geojson", function (data) {
+      pente_continentale.addData(data);
+    });
 
 var courant_floride = L.geoJson(null, {
     style: {
