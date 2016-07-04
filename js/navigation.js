@@ -3,7 +3,7 @@ var i = 0;
 var story = [ 
     {
         'view': [[24,-80.72], 5],
-        'text': '#Naissance du Gulf Stream\n Pour suivre le Gulf Stream, focalisons nous sur le trajet d’une goutte d’eau qui se trouve dans le Golfe du Mexique. Elle pourrait venir d’un cumulonimbus, de l’Atlantique, du lac Itasca, source du Mississipi, ou de bien d’autres horizons. Mais sa provenance n’a que peu d’importance. Si elle ne s’évapore pas, cette goutte va inévitablement se diriger vers le Gulf Stream.\n\n![tableau](data/images/gulf_stream_winslow_homer.jpg)\n*Gulf Stream par Winslow Homer (1899, peinture à l’huile)*'
+        'text': '#Naissance du Gulf Stream\n Pour suivre le Gulf Stream, focalisons nous sur le trajet d’une goutte d’eau qui se trouve dans le Golfe du Mexique. Elle pourrait venir d’un cumulonimbus, de l’Atlantique, du lac Itasca, source du Mississipi, ou de bien d’autres horizons. Mais sa provenance n’a que peu d’importance. Si elle ne s’évapore pas, elle se dirigera inévitablement vers le Gulf Stream.\n\n![tableau](data/images/gulf_stream_winslow_homer.jpg)\n*Gulf Stream par Winslow Homer (1899, peinture à l’huile)*'
     }, 
     {
         'view': [[10.13,-58.59],4],
@@ -54,14 +54,20 @@ var story = [
     },
     {
         'view': [[57,-12],4],
-        'text': '#La dérive Nord Atlantique\nAu delà de l’influence du vent, un nouveau mécanisme, la pompe thermohaline, attire notre goutte d’eau vers le Nord de l’Europe et essaye petit à petit de l’entraîner vers les abysses. Nous étudierons ce phénomène un peu plus tard. En suivant cette voie, notre goutte d’eau a de fortes chances de voguer vers la mer Baltique ou de longer les côtes Norvégiennes pour continuer sa course dans l’océan Arctique. ',
+        'text': '#La dérive Nord Atlantique\nAu delà de l’influence du vent qui créé les courants de surface, un nouveau mécanisme, la pompe thermohaline, attire notre goutte d’eau vers le Nord de l’Europe et essaye petit à petit de l’entraîner vers les abysses. Nous étudierons ce phénomène un peu plus tard. En suivant cette voie, notre goutte d’eau a de fortes chances de voguer vers la mer Baltique ou de longer les côtes Norvégiennes pour continuer sa course dans l’océan Arctique. ',
         'addLayer': derive_nord_atlantique_1,
         'addLayer2': derive_nord_atlantique_2,
+    },
+    {
+        'text': 'suppr leaflet',
+        'destroyLeafletMap': true
     }
 ];
-    init();
+
+init();
+
 function init() {
-  console.log('init nav')
+    console.log('init nav')
     changeContent(0);
 }
 
@@ -99,5 +105,8 @@ function changeContent(i) {
     }  
     if(state.removeLayer) {
         map.removeLayer(state.removeLayer);
+    }
+    if(state.destroyLeafletMap) {
+        map.remove();
     }
 }
