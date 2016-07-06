@@ -1,10 +1,11 @@
 var Lmap = undefined;
 function createLeafletMap() {
-    Lmap = L.map('map').setView([24,-80.72], 5);
-    L.tileLayer('data/tiles/{z}/{x}/{y}.png',{
+    Lmap = L.map('map').setView([24, -80.72], 5);
+    L.tileLayer('data/tiles/{z}/{x}/{y}.png', {
         tms: true
     }).addTo(Lmap);
 }
+
 // Ajouter des couches
 var detroit_de_floride = L.geoJson(null);
 
@@ -285,7 +286,6 @@ function createMapboxGlMap() {
             "source": "video"
         }]
     };
-
     Mbmap = new mapboxgl.Map({
         container: 'map',
         zoom: 2,
