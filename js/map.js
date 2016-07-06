@@ -1,14 +1,16 @@
-var map = L.map('map').setView([24,-80.72], 5);
-L.tileLayer('data/tiles/{z}/{x}/{y}.png',{
-  tms: true
-  }).addTo(map);
-
+var Lmap = undefined;
+function createLeafletMap() {
+    Lmap = L.map('map').setView([24,-80.72], 5);
+    L.tileLayer('data/tiles/{z}/{x}/{y}.png',{
+        tms: true
+    }).addTo(Lmap);
+}
 // Ajouter des couches
 var detroit_de_floride = L.geoJson(null);
 
-    $.getJSON("data/geojson/detroit_de_floride.geojson", function (data) {
-      detroit_de_floride.addData(data);
-    });
+$.getJSON("data/geojson/detroit_de_floride.geojson", function (data) {
+    detroit_de_floride.addData(data);
+});
 
 
 var courant_guyane = L.geoJson(null, {
@@ -29,9 +31,9 @@ var courant_guyane = L.geoJson(null, {
     }
 });
 
-    $.getJSON("data/geojson/courant_de_guyane.geojson", function (data) {
-      courant_guyane.addData(data);
-    });
+$.getJSON("data/geojson/courant_de_guyane.geojson", function (data) {
+    courant_guyane.addData(data);
+});
 
 var pente_continentale = L.geoJson(null, {
     style: {
@@ -40,9 +42,9 @@ var pente_continentale = L.geoJson(null, {
     }
 });
 
-    $.getJSON("data/geojson/pente_continentale.geojson", function (data) {
-      pente_continentale.addData(data);
-    });
+$.getJSON("data/geojson/pente_continentale.geojson", function (data) {
+    pente_continentale.addData(data);
+});
 
 var courant_floride = L.geoJson(null, {
     style: {
@@ -71,9 +73,9 @@ $.getJSON("data/geojson/courant_de_floride.geojson", function (data) {
 
 var cap_hatteras = L.geoJson(null);
 
-    $.getJSON("data/geojson/cap_hatteras.geojson", function (data) {
-      cap_hatteras.addData(data);
-    });
+$.getJSON("data/geojson/cap_hatteras.geojson", function (data) {
+    cap_hatteras.addData(data);
+});
 
 
  var gulfstream = L.geoJson(null, {
@@ -95,14 +97,11 @@ var cap_hatteras = L.geoJson(null);
 });
 
 
-   
 var grands_bancs_de_terre_neuve = L.geoJson(null);
 
-    $.getJSON("data/geojson/grands_bancs_de_terre_neuve.geojson", function (data) {
-      grands_bancs_de_terre_neuve.addData(data);
-    });
-
-
+$.getJSON("data/geojson/grands_bancs_de_terre_neuve.geojson", function (data) {
+    grands_bancs_de_terre_neuve.addData(data);
+});
 
 var courant_nord_atlantique = L.geoJson(null, {
     style: {
@@ -122,12 +121,9 @@ var courant_nord_atlantique = L.geoJson(null, {
     }
 });
 
-    $.getJSON("data/geojson/courant_nord_atlantique.geojson", function (data) {
-      courant_nord_atlantique.addData(data);
-    });
-
-
-
+$.getJSON("data/geojson/courant_nord_atlantique.geojson", function (data) {
+    courant_nord_atlantique.addData(data);
+});
 
 var courant_acores = L.geoJson(null, {
     style: {
@@ -147,11 +143,9 @@ var courant_acores = L.geoJson(null, {
     }
 });
 
-    $.getJSON("data/geojson/courant_des_acores.geojson", function (data) {
-      courant_acores.addData(data);
-    });
-
-
+$.getJSON("data/geojson/courant_des_acores.geojson", function (data) {
+    courant_acores.addData(data);
+});
 
 var courant_canaries = L.geoJson(null, {
     style: {
@@ -171,9 +165,9 @@ var courant_canaries = L.geoJson(null, {
     }
 });
 
-    $.getJSON("data/geojson/courant_des_canaries.geojson", function (data) {
-      courant_canaries.addData(data);
-    });
+$.getJSON("data/geojson/courant_des_canaries.geojson", function (data) {
+    courant_canaries.addData(data);
+});
 
 
 
@@ -195,9 +189,9 @@ var groenland = L.geoJson(null, {
     }
 });
 
-    $.getJSON("data/geojson/groenland.geojson", function (data) {
-      groenland.addData(data);
-    });
+$.getJSON("data/geojson/groenland.geojson", function (data) {
+    groenland.addData(data);
+});
 
 
 
@@ -219,9 +213,9 @@ var derive_nord_atlantique_1 = L.geoJson(null, {
     }
 });
 
-    $.getJSON("data/geojson/derive_nord_atlantique_1.geojson", function (data) {
-      derive_nord_atlantique_1.addData(data);
-    });
+$.getJSON("data/geojson/derive_nord_atlantique_1.geojson", function(data) {
+    derive_nord_atlantique_1.addData(data);
+});
 
 
 
@@ -230,7 +224,7 @@ var derive_nord_atlantique_2 = L.geoJson(null, {
         weight: 15,
         color: '#006FFF'
     },
-    onEachFeature: function (feature, layer) {
+    onEachFeature: function(feature, layer) {
         layer.setText(' \u263d ', {
             repeat: true, 
             offset: 7,
@@ -243,17 +237,61 @@ var derive_nord_atlantique_2 = L.geoJson(null, {
     }
 });
 
-    $.getJSON("data/geojson/derive_nord_atlantique_2.geojson", function (data) {
-      derive_nord_atlantique_2.addData(data);
+$.getJSON("data/geojson/derive_nord_atlantique_2.geojson", function(data) {
+    derive_nord_atlantique_2.addData(data);
+});
+
+
+
+$.getJSON("data/geojson/gulfstream.geojson", function(data) {
+    gulfstream.addData(data);
+});
+
+Mbmap = undefined;
+function createMapboxGlMap() {
+    mapboxgl.accessToken = 'pk.eyJ1IjoibWJyb3V0aW4iLCJhIjoiY2lxMmN3MDdjMDA0d2hybTIxOTYxa2c3MCJ9.T5MEIB6UqZLg3_DL4YqDCQ';
+    var videoStyle = {
+        "version": 8,
+        "sources": {
+            "satellite": {
+                "type": "raster",
+                "url": "mapbox://mapbox.satellite",
+                "tileSize": 256
+            },
+            "video": {
+                "type": "video",
+                "urls": ["../data/video/temperature.mp4"],
+                "coordinates": [
+                    [-100, 80],
+                    [20, 80],
+                    [20, 0],
+                    [-100, 0]
+                ]
+            }
+        },
+        "layers": [{
+            "id": "background",
+            "type": "background",
+            "paint": {
+                "background-color": "rgb(4,7,14)"
+            }
+        }, {
+            "id": "satellite",
+            "type": "raster",
+            "source": "satellite"
+        }, {
+            "id": "video",
+            "type": "raster",
+            "source": "video"
+        }]
+    };
+
+    Mbmap = new mapboxgl.Map({
+        container: 'map',
+        zoom: 2,
+        center: [-122.514426, 37.562984],
+        style: videoStyle,
     });
-
-
-
-    $.getJSON("data/geojson/gulfstream.geojson", function (data) {
-      gulfstream.addData(data);
-    });
-
-
-
+}
 
 
