@@ -1,4 +1,4 @@
-var i = 0;
+var index = 0;
 
 var story = [
     {
@@ -123,19 +123,19 @@ function init() {
 }
 
 $('#next').on('click', function() {
-    if (i < story.length - 1) {
-        i = i + 1;
-        changeContent(i);
+    if (index < story.length - 1) {
+        index = index + 1;
+        changeContent(index);
     }
 });
 
-$('#prev').on('click', function() {
-    if (i > 0) {
-        i = i - 1;
-        changeContent(i);
-        reverseContent(i + 1);
-    }
-});
+// $('#prev').on('click', function() {
+//     if (index > 0) {
+//         index = index - 1;
+//         reverseContent(index + 1);
+//         changeContent(index);
+//     }
+// });
 
 function changeContent(i) {
     var state = story[i];
@@ -173,20 +173,5 @@ function changeContent(i) {
     }
     if (state.addMapboxGlMap) {
         createMapboxGlMap();
-    }
-}
-
-function reverseContent(i) {
-    var state = story[i];
-    console.log(state);
-    if (state.addLayers) {
-        for (layer in state.addLayers) {
-            Lmap.removeLayer(state.addLayers[layer]);
-        }
-    }
-    if (state.removeLayers) {
-        for (layer in state.removeLayers) {
-            Lmap.addLayer(state.removeLayers[layer]);
-        }
     }
 }

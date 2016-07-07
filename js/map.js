@@ -1,10 +1,11 @@
 var Lmap = undefined;
 function createLeafletMap() {
-    Lmap = L.map('map').setView([24,-80.72], 5);
-    L.tileLayer('data/tiles/{z}/{x}/{y}.png',{
+    Lmap = L.map('map').setView([24, -80.72], 5);
+    L.tileLayer('data/tiles/{z}/{x}/{y}.png', {
         tms: true
     }).addTo(Lmap);
 }
+
 // Ajouter des couches Leaflet
 // var ssh = L.ImageOverlay("data/geotiff/ssh.tif",[[0, -100], [90, 20]]).addTo(Lmap);
 
@@ -283,6 +284,7 @@ function createMapboxGlMap() {
             "maxzoom": 5
         }]
     };
+
     var bounds = [[-100, 0], [20, 80]];
 
     Mbmap = new mapboxgl.Map({
