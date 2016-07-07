@@ -58,60 +58,63 @@ var story = [
     //     'addLayers': [derive_nord_atlantique_1, derive_nord_atlantique_2],
     // },
     {
-        'text': '#Gulf Stream et courants Nord Atlantiques\n*Le système climatique est une machine à convertir et à distribuer l’énergie que la Terre reçoit du soleil. L’énergie solaire est transportée par deux fluides : l’atmosphère et l’océan. Ces deux entités sont en contact permanent et ne cessent d’échanger de l’énergie. C’est le couple qu’ils forment qui gère le climat de notre planète.',
+        'text': '#Gulf Stream et courants Nord Atlantiques\n*Le système climatique est une machine à convertir et à distribuer l’énergie que la Terre reçoit du soleil. L’énergie solaire est transportée par deux fluides : l’atmosphère et l’océan. Ces deux entités sont en contact permanent et ne cessent d’échanger de l’énergie. C’est le couple qu’ils forment qui gère le climat de notre planète.*',
         'destroyLeafletMap': true,
         'addMapboxGlMap': true,
-        //'addLayers': [ssh]
     },
     {
-        'text': '#Gulf Stream et courants Nord Atlantiques\nCette animation représente la vitesse des courants de surface, de janvier à juillet 2016. Malgré de nombreux petits courants, souvent tourbillonnaires, il est possible de retrouver la plupart des courants évoqués durant le voyage de notre goutte d’eau. Vous pouvez si vous le souhaitez les afficher à l’aide des cases à cocher.'
-    },
-    {
-        // 'view_mb': [-70,20],
-        // 'zoom_mb': 5,
-        'text': '#\n\nLe GS se démarque clairement des courants Nord Atlantique. Sa vitesse reste inégalée.\n\nJusqu’au Cap Hatteras, canalisé par la pente continentale, il est très linéaire et se comporte comme un jet puissant.\n\n Lorsqu’il prend le large, se créent des méandres de plus en plus sinueux. De grands tourbillons se détachent de part et d’autre du fleuve.\n\n Après les Grands Bancs de Terre Neuve, le GS perd ses caractéristiques et prend de nombreuses direction. Ses extensions sont visuellement plus difficiles à suivre car sa puissance a été répartie dans de nombreux courants.',
+        'text': '#Gulf Stream et courants Nord Atlantiques\nCette carte représente la vitesse des courants de surface, de janvier à juillet 2016. Malgré de nombreux petits courants, souvent tourbillonnaires, il est possible de retrouver la plupart des courants évoqués durant le voyage de notre goutte d’eau. Vous pouvez si vous le souhaitez les afficher à l’aide des cases à cocher.'
     },
     {
         // 'view_mb': [-70,20],
         // 'zoom_mb': 5,
-        'text': '#\n\nNous venons d’observer ce qu’il se passe en surface mais qu’en est il en profondeur ? En utilisant l’ascenseur sur le côté gauche de la carte, vous pouvez étudier le comportement des courants à différentes profondeur. (encart sur les courants de profondeur?). \n\n Positionnez vous par exemple à 1684m. Vous remarquerez qu’un courant de fond, opposé au Gulf Stream longe la côte américaine. (on pourrait supposer qu’il s’agisse d’un courant de retour, affilié à la circulation thermohaline). \n\n Pour revenir au GS, vous vous rendrez vite compte qu’il n’est pas qu’un courant de surface. A 1000m, il a encore une grande influence. \n\n Il se distingue des autres courants de bords ouest par son débit record qui atteint les millions de mètres cube à la seconde. Pour comparaison, l Amazone n a qu un débit de 300000 mètre cube par seconde à son maximum. Le débit de tous les fleuves et rivières de la planète atteint 1 Sv (unité de mesure de débit). Le GS qui a un débit de 30 Sv au départ s’approche des 140 Sv en fin de course.',
+        'text': '#Gulf Stream et courants Nord Atlantiques\n\nLe GS se démarque clairement des courants Nord Atlantique. Sa vitesse reste inégalée. Jusqu’au Cap Hatteras, canalisé par la pente continentale, il est très linéaire et se comporte comme un jet puissant.\n\n Lorsqu’il prend le large, se créent des méandres de plus en plus sinueux. De grands tourbillons se détachent de part et d’autre du fleuve.\n\n Après les Grands Bancs de Terre Neuve, le GS perd ses caractéristiques et prend de nombreuses directions. Ses extensions sont visuellement plus difficiles à suivre car sa puissance a été répartie dans de nombreux courants.',
     },
     {
-        'text': '#\n\nPlusieurs facteurs viennent expliquer ce flux mondialement exceptionnel :\n\n - contrairement à ses homologues, le Gulf Stream bénéficie d’une double alimentation : le courant de Guyane et le courant des Antilles.\n\n - depuis 15 millions d’années l’Isthme de Panama est fermé, empêchant le courant de Guyane de se déverser dans le Pacifique. Le Golfe du Mexique représente un cul de sac pour le courant de Guyane qui n’a qu’une sortie possible, le détroit de Floride. Le courant des Antilles quand à lui se retrouve emporté dans le courant de Floride.\n\n - la circulation thermohaline crée un appel d eau qui n’a pas son équivalent ailleurs. Nous étudierons ce phénomène un peu plus tard.'
+        // 'view_mb': [-70,20],
+        // 'zoom_mb': 5,
+        'text': '#Gulf Stream et courants Nord Atlantiques\n\nNous venons d’observer ce qu’il se passe en surface mais qu’en est il en profondeur ? En utilisant l’ascenseur sur le côté gauche de la carte, vous pouvez étudier le comportement des courants à différentes profondeur. \n\n Positionnez vous par exemple à 1684m. Vous remarquerez qu’un courant de fond, opposé au Gulf Stream longe la côte américaine. (on pourrait supposer qu’il s’agisse d’un courant de retour, affilié à la circulation thermohaline). \n\n Pour revenir au Gulf Stream, vous vous rendrez vite compte qu’il n’est pas qu’un courant de surface. A 1000m, il a encore une grande influence. \n\n Il se distingue des autres courants de bords ouest par son débit record qui atteint les millions de mètres cube à la seconde. Pour comparaison, l’Amazone n’a qu’un débit de 300000 mètre cube par seconde à son maximum. Le débit de tous les fleuves et rivières de la planète atteint 1 Sv (unité de mesure de débit). Le GS qui a un débit de 30 Sv au départ s’approche des 140 Sv en fin de course.',
     },
     {
-        'text': '#\n\nL’apport en eau est tellement conséquent dans le Gulf Stream que le niveau de la mer est prêt de 50cm au dessus du niveau 0.'
+        'text': '#Gulf Stream et courants Nord Atlantiques\n\nPlusieurs facteurs viennent expliquer ce flux mondialement exceptionnel :\n\n - contrairement à ses homologues, le Gulf Stream bénéficie d’une double alimentation : le courant de Guyane et le courant des Antilles.\n\n - depuis 15 millions d’années l’Isthme de Panama est fermé, empêchant le courant de Guyane de se déverser dans le Pacifique. Le Golfe du Mexique représente un cul de sac pour le courant de Guyane qui n’a qu’une sortie possible, le détroit de Floride. Cet apport est renforcé par le courant des Antilles qui est emporté dans le courant de Floride.\n\n - la circulation thermohaline crée un appel d’eau qui n’a pas son équivalent ailleurs. Nous étudierons ce phénomène un peu plus tard.'
     },
     {
-        'text': '#L’influence du vent\n\nUn principe simple de thermodynamique nous enseigne qu’entre deux corps en contact, c’est le corps chaud qui cède son énergie au corps froid, jusqu’à l’équilibre. Le couple océan/atmosphère transporte et distribue l’énergie du soleil de la source chaude à la source froide. Par évaporation, les zones océaniques équatoriales (source chaude) alimentent l’atmosphère en chaleur, créant des vents qui se dirigent vers les régions polaires (source froide).'
+        'text': '#Gulf Stream et niveau de l’Océan\n\nL’apport en eau est tellement conséquent dans le Gulf Stream que le niveau de la mer est prêt de 50cm au dessus du niveau 0.'
     },
     {
-        'text': '#Température\n\nL’océan fournit une fraction de son énergie à l’atmosphère et distribue directement par les courants l’autre partie à l’échelle de la planète. On estime que les transferts de chaleur des régions équatoriales vers les pôles se font à égalité par l’atmosphère et l’océan.'
+        'text': '#L’influence du vent\n\n*Un principe simple de thermodynamique nous enseigne qu’entre deux corps en contact, c’est le corps chaud qui cède son énergie au corps froid, jusqu’à l’équilibre. Le couple océan/atmosphère transporte et distribue l’énergie du soleil de la source chaude à la source froide. Par évaporation, les zones océaniques équatoriales (source chaude) alimentent l’atmosphère en chaleur, créant des vents qui se dirigent vers les régions polaires (source froide).*'
     },
     {
-        'text': '#\n\nLe GS a une influence considérable sur le climat de régions situées à des milliers de kilomètres des Grands Bancs de Terre Neuve.\n\nIl emporte avec lui des eaux tropicales chaudes.\n\nSes extensions qui se dirigent vers le nord, emportent ces eaux vers des latitudes beaucoup plus hautes. Par exemple, la glace qui n’arrive pas à se former au nord de la Norvège bénéficie directement d’eaux chaudes apportées par la dérive Nord Atlantique, extension du GS.\n\nMais l’Europe, n’est pas l’unique bénéficiaire de cette source de chaleur. C’est tout l’Atlantique Nord qui bénéficie de cet apport.\n\nContrairement à ce qui a été longtemps mis en avant, le GS n’est pas la chaudière centrale de l’Europe. Il ne peut pas expliquer la différence moyenne de 15°C qu’il y a entre Montréal et Bordeaux qui sont sur la même latitude.',
+        'text': '#Température\n\n*L’océan fournit une fraction de son énergie à l’atmosphère et distribue directement par les courants l’autre partie à l’échelle de la planète. On estime que les transferts de chaleur des régions équatoriales vers les pôles se font à égalité par l’atmosphère et l’océan.*'
+    },
+    {
+        'text': '#Température\n\nLe Gulf Stream a une influence considérable sur le climat de régions situées à des milliers de kilomètres des Grands Bancs de Terre Neuve.\n\nIl emporte avec lui des eaux tropicales chaudes.\n\nSes extensions qui se dirigent vers le nord, emportent ces eaux vers des latitudes beaucoup plus hautes. Par exemple, la glace qui n’arrive pas à se former au nord de la Norvège bénéficie directement d’eaux chaudes apportées par la dérive Nord Atlantique, extension du Gulf Stream.\n\nMais l’Europe, n’est pas l’unique bénéficiaire de cette source de chaleur. C’est tout l’Atlantique Nord qui profite de cet apport.\n\nContrairement à ce qui a été longtemps mis en avant, le Gulf Stream n’est pas la chaudière centrale de l’Europe. Il ne peut pas expliquer la différence moyenne de 15°C qu’il y a entre Montréal et Bordeaux qui sont sur la même latitude.',
         'style_mb': video_temp
     },
     {
-        'text': '#\n\nContrairement à l’atmosphère qui utilise très rapidement l’énergie qu’on lui met à disposition, l’océan a une grande mémoire. L’été, le rayonnement solaire intense échauffe les couches de surface. Il y a création d’un thermocline qui stratifie les eaux océaniques. L’océan stocke alors l’énergie thermique issue du rayonnement solaire d’été dans ses couches profondes. Sur le graphique de gauche vous pouvez ...'
+        'text': '#Température\n\nContrairement à l’atmosphère qui utilise très rapidement l’énergie qu’on lui met à disposition, l’océan a une grande mémoire. L’été, le rayonnement solaire intense échauffe les couches de surface. Il y a création d’un thermocline qui stratifie les eaux océaniques. L’océan stocke alors l’énergie thermique issue du rayonnement solaire d’été dans ses couches profondes. Sur le graphique de gauche vous pouvez ...'
     },
     {
-        'text': '#\n\nContrairement à l’atmosphère qui utilise très rapidement l’énergie qu’on lui met à disposition, l’océan a une grande mémoire. L’été, le rayonnement solaire intense échauffe les couches de surface. Il y a création d’un thermocline qui stratifie les eaux océaniques. L’océan stocke alors l’énergie thermique issue du rayonnement solaire d’été dans ses couches profondes. Sur le graphique de gauche vous pouvez ...'
-    }, 
-    {
-        'text': '#\n\nEn hivers le rayonnement solaire est beaucoup plus faible et les vents d’ouest se renforcent. Il y a rupture du thermocline qui remet à disposition des couches de surface le stock d’été. L’océan transmet à l’atmosphère l’énergie stockée durant l’été. Les vents d’Ouest récupèrent et emportent cette énergie libérée en direction de l’Europe. L’ouest de ce continent sera le seul bénéficiaire de la mémoire calorifique estivale de l’océan Atlantique.\n\nCe phénomène semble aujourd’hui expliquer en grande partie la différence de climat entre les côtes est et ouest de l’Atlantique. Sur l’année on note une différence moyenne de 15°C.C’est ce qui explique un climat maritime (tempéré) en Europe de l’ouest et aux mêmes latitudes sur le sol américain un climat continental (froid). Le Saint Laurent gèle l’hivers, battu par les vents glacials qui suivent la dépression d’Islande.'
+        'text': '#Température\n\nEn hivers le rayonnement solaire est beaucoup plus faible et les vents d’ouest se renforcent. Il y a rupture du thermocline qui remet à disposition des couches de surface le stock d’été. L’océan transmet cette énergie à l’atmosphère. Les vents d’Ouest récupèrent et emportent cette énergie libérée en direction de l’Europe. L’ouest de ce continent sera le seul bénéficiaire de la mémoire calorifique estivale de l’océan Atlantique.\n\nCe phénomène semble aujourd’hui expliquer en grande partie la différence de climat entre les côtes est et ouest de l’Atlantique. Sur l’année on note une différence moyenne de 15°C.C’est ce qui explique un climat maritime (tempéré) en Europe de l’ouest et aux mêmes latitudes sur le sol américain un climat continental (froid). Le Saint Laurent gèle l’hivers, battu par les vents glacials qui suivent la dépression d’Islande.'
     },    
     {
-        'text': '#\n\nIl est encore aujourd’hui très difficile d’étudier l’influence exacte des différents facteurs qui jouent sur notre climat. Ils ont chacun leurs propre caractéristiques qui sont difficilement comparables. Il est aussi impossible de les isoler pour les étudier indépendamment. Les scientifiques créent des modèles toujours plus complexes pour simuler les phénomènes météorologiques et climatiques. Ils estiment aujourd’hui que sans le GS, notre climat se rafraîchirait de 4 ou 5°C.'
+        'text': '#Température\n\nIl est encore aujourd’hui très difficile d’étudier l’influence exacte des différents facteurs qui jouent sur notre climat. Ils ont chacun leurs propre caractéristiques qui sont difficilement comparables. Il est aussi impossible de les isoler pour les étudier indépendamment. Les scientifiques créent des modèles toujours plus complexes pour simuler les phénomènes météorologiques et climatiques. Ils estiment aujourd’hui que sans le GS, notre climat se rafraîchirait de 4 ou 5°C.'
     }, 
     {
         'text': '#Salinité\n\nComme pour la température de surface, le GS représente une frontière entre les eaux fortement salées qu’il emporte et les eaux de la mer du Labrador faiblement salées. Cette différence s’explique assez simplement. Au niveau de l’équateur et des tropiques, l’évaporation est très forte. Cette eau s’échappe dans l’atmosphère renforçant les vents se dirigeants vers le nord (dans la direction imposée par l’anticyclone des Açores). Le sel, qui ne peux pas s’évaporer s’accumule dans l’océan. C’est pourquoi les eaux tropicales sont très salées.\n\nLe GS emporte donc des eaux chaudes et salées en direction des hautes latitudes. Cet apport est particulièrement visible au niveau de la dérive Nord Atlantique qui emporte des eaux jusqu’au nord de la Norvège.'
     }, 
     {
-        'text': '#\n\nEn arrivant aux hautes latitudes, la température chute. Les eaux emportées par les extensions du GS deviennent froides et salées. Plus une eau est froide, plus elle est dense. Plus elle est salée, plus elle est dense. Les eaux issues du GS sont plus salées que les eaux qui les entourent. Ce taux de sel est renforcé l’hiver par la création de glace. Ces eaux finissent par devenir trop dense pour se maintenir à la surface et plongent jusqu’à des profondeurs supérieures au kilomètre. Elles s’écoulent lentement dans un courant de fond en direction de l’équateur. Au niveau des Tropiques, le courant se réchauffe et remonte à la surface jusqu’à leur prochain refroidissement. '
+        'text': '#Salinité\n\nEn arrivant aux hautes latitudes, la température chute. Les eaux emportées par les extensions du GS deviennent froides et salées. Plus une eau est froide, plus elle est dense. Plus elle est salée, plus elle est dense. Les eaux issues du GS sont plus salées que les eaux qui les entourent. Ce taux de sel est renforcé l’hiver par la création de glace. Ces eaux finissent par devenir trop dense pour se maintenir à la surface et plongent jusqu’à des profondeurs supérieures au kilomètre. Elles s’écoulent lentement dans un courant de fond en direction de l’équateur. Au niveau des Tropiques, le courant se réchauffe et remonte à la surface jusqu’à leur prochain refroidissement. '
+    },
+        {
+        'text': '#test\n impossibilité de charger leaflet + les couches',
+        'destroyMapboxGlMap': true,
+        'createLeafletMap': true
     },
     {
-        'text': '#\n\nSur cette carte vous pouvez suivre cette circulation à l’échelle planétaire.Elle est communément appelée le « tapis roulant ». On estime qu’il faudrait entre 1000 et 2000 ans pour qu’une goutte fasse un tour de ce circuit. Ce phénomène de plongée est particulièrement remarquable au large de la Norvège et au Nord Est des Grands Bancs de Terre Neuve. Le GS à travers les eaux salées qu’il dirige vers les hautes latitudes est un moteur essentiel de ce tapis roulant qui serait certainement bien différent sans lui.'
+        'view': [[0,30], 2],
+        'text': '#La circulation thermohaline\n\nSur cette carte vous pouvez suivre cette circulation à l’échelle planétaire.Elle est communément appelée le « tapis roulant ». On estime qu’il faudrait entre 1000 et 2000 ans pour qu’une goutte fasse un tour de ce circuit. Ce phénomène de plongée est particulièrement remarquable au large de la Norvège et au Nord Est des Grands Bancs de Terre Neuve. Le GS, à travers les eaux salées qu’il dirige vers les hautes latitudes, est un moteur essentiel de ce tapis roulant qui serait certainement bien différent sans lui.',
+        'addLayers': [thermohaline_cold, thermohaline_hot]
     },
 ];
 
@@ -173,5 +176,8 @@ function changeContent(i) {
     }
     if (state.addMapboxGlMap) {
         createMapboxGlMap();
+    }
+    if (state.destroyMapboxGlMap) {
+        Mbmap.remove();
     }
 }

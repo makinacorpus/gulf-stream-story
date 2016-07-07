@@ -37,6 +37,30 @@ $.getJSON("data/geojson/courant_de_guyane.geojson", function (data) {
     courant_guyane.addData(data);
 });
 
+var thermohaline_cold = L.geoJson(null, {
+    style: {
+        weight: 20,
+        opacity: 1,
+        color: '#006FFF'
+    }
+});
+
+$.getJSON("data/geojson/thermohaline_cold.geojson", function (data) {
+    thermohaline_cold.addData(data);
+});
+
+var thermohaline_hot = L.geoJson(null, {
+    style: {
+        weight: 20,
+        opacity: 1,
+        color: '#FF0000'
+    }
+});
+
+$.getJSON("data/geojson/thermohaline_hot.geojson", function (data) {
+    thermohaline_hot.addData(data);
+});
+
 var pente_continentale = L.geoJson(null, {
     style: {
         weight: 1,
