@@ -5,13 +5,14 @@ function createLeafletMap() {
         tms: true
     }).addTo(Lmap);
 }
-// Ajouter des couches
+// Ajouter des couches Leaflet
+// var ssh = L.ImageOverlay("data/geotiff/ssh.tif",[[0, -100], [90, 20]]).addTo(Lmap);
+
 var detroit_de_floride = L.geoJson(null);
 
 $.getJSON("data/geojson/detroit_de_floride.geojson", function (data) {
     detroit_de_floride.addData(data);
 });
-
 
 var courant_guyane = L.geoJson(null, {
     style: {
@@ -242,56 +243,134 @@ $.getJSON("data/geojson/derive_nord_atlantique_2.geojson", function(data) {
 });
 
 
-
 $.getJSON("data/geojson/gulfstream.geojson", function(data) {
     gulfstream.addData(data);
 });
 
+//Ajout de couches MapBox
 Mbmap = undefined;
 function createMapboxGlMap() {
-    mapboxgl.accessToken = 'pk.eyJ1IjoibWJyb3V0aW4iLCJhIjoiY2lxMmN3MDdjMDA0d2hybTIxOTYxa2c3MCJ9.T5MEIB6UqZLg3_DL4YqDCQ';
-    var videoStyle = {
+    mapboxgl.accessToken = 'pk.eyJ1IjoibWJyb3V0aW4iLCJhIjoiY2lxMmN3MDdjMDA0d2hybTIxOTYxa2c3MCJ9.T5MEIB6UqZLg3_DL4YqDCQ';   
+    var video_current = {
         "version": 8,
         "sources": {
-            "satellite": {
-                "type": "raster",
-                "url": "mapbox://mapbox.satellite",
-                "tileSize": 256
-            },
             "video": {
                 "type": "video",
-                "urls": ["../data/video/temperature.mp4"],
+                "urls": ["../data/video/current.mp4"],
                 "coordinates": [
                     [-100, 80],
                     [20, 80],
                     [20, 0],
                     [-100, 0]
                 ]
+            },
+            "tiles_mb": {
+                "type": "raster",
+                "tiles": ["data/tiles_mb/{z}/{x}/{y}.png"],
+                "scheme": "tms",
+                "tileSize": 256
             }
         },
         "layers": [{
-            "id": "background",
-            "type": "background",
-            "paint": {
-                "background-color": "rgb(4,7,14)"
-            }
-        }, {
-            "id": "satellite",
-            "type": "raster",
-            "source": "satellite"
-        }, {
             "id": "video",
             "type": "raster",
             "source": "video"
+        }, {
+            "id": "tiles_mb",
+            "type": "raster",
+            "source": "tiles_mb",
+            "minzoom": 1,
+            "maxzoom": 5
         }]
     };
+    var bounds = [[-100, 0], [20, 80]];
 
     Mbmap = new mapboxgl.Map({
         container: 'map',
         zoom: 2,
-        center: [-122.514426, 37.562984],
-        style: videoStyle,
+        maxZoom: 4,
+        maxBounds: bounds,
+        center: [-40, 40],
+        style: video_current
     });
 }
 
+
+var video_temp = {
+    "version": 8,
+    "sources": {
+        "video": {
+            "type": "video",
+            "urls": ["../data/video/temperature.mp4"],
+            "coordinates": [
+                [-100, 80],
+                [20, 80],
+                [20, 0],
+                [-100, 0]
+            ]
+        },
+        "tiles_mb": {
+            "type": "raster",
+            "tiles": ["data/tiles_mb/{z}/{x}/{y}.png"],
+            "scheme": "tms",
+            "tileSize": 256
+        }
+    },
+    "layers": [{
+        "id": "video",
+        "type": "raster",
+        "source": "video"
+    }, {
+        "id": "tiles_mb",
+        "type": "raster",
+        "source": "tiles_mb",
+        "minzoom": 1,
+        "maxzoom": 5
+    }]
+};
+
+var pente_continentale_mb = {
+    "version": 8,
+    "sources": {
+        "video": {
+            "type": "video",
+            "urls": ["../data/video/temperature.mp4"],
+            "coordinates": [
+                [-100, 80],
+                [20, 80],
+                [20, 0],
+                [-100, 0]
+            ]
+        },
+        "tiles_mb": {
+            "type": "raster",
+            "tiles": ["data/tiles_mb/{z}/{x}/{y}.png"],
+            "scheme": "tms",
+            "tileSize": 256
+        },
+        "pente_cont": {
+            "type": "vector",
+            "urls": ["data/geojson/pente_continentale.geojson"],
+            "source-layer": "pent_c"
+        }
+    },
+    "layers": [{
+        "id": "video",
+        "type": "raster",
+        "source": "video"
+    }, {
+        "id": "tiles_mb",
+        "type": "raster",
+        "source": "tiles_mb",
+        "minzoom": 1,
+        "maxzoom": 5
+    }, {
+        "id": "pente_cont",
+        "type": "line",
+        "source": "pente_cont",
+        "source-layer": "pent_c",
+        "minzoom": 1,
+        "maxzoom": 5
+    }]
+};
 
