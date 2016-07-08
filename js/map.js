@@ -383,6 +383,39 @@ var video_temp = {
     }]
 };
 
+var video_salinity = {
+    "version": 8,
+    "sources": {
+        "video": {
+            "type": "video",
+            "urls": ["../data/video/salinity.mp4"],
+            "coordinates": [
+                [-100, 80],
+                [20, 80],
+                [20, 0],
+                [-100, 0]
+            ]
+        },
+        "tiles_mb": {
+            "type": "raster",
+            "tiles": ["data/tiles_mb/{z}/{x}/{y}.png"],
+            "scheme": "tms",
+            "tileSize": 256
+        }
+    },
+    "layers": [{
+        "id": "video",
+        "type": "raster",
+        "source": "video"
+    }, {
+        "id": "tiles_mb",
+        "type": "raster",
+        "source": "tiles_mb",
+        "minzoom": 1,
+        "maxzoom": 5
+    }]
+};
+
 var pente_continentale_mb = {
     "version": 8,
     "sources": {
