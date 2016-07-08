@@ -4,6 +4,11 @@ var story = [
     {
         'createLeafletMap': true
     },
+    {
+        'view': [[10.13, -58.59], 4],
+        'text': 'courant_profondeur',
+        'addLayers': [courant_profondeur]
+    },
     // {
     //     'view': [[24, -80.72], 5],
     //     'text': '#Naissance du Gulf Stream\n Pour suivre le Gulf Stream, focalisons nous sur le trajet d’une goutte d’eau qui se trouve dans le Golfe du Mexique. Elle pourrait venir d’un cumulonimbus, de l’Atlantique, du lac Itasca, source du Mississipi, ou de bien d’autres horizons. Mais sa provenance n’a que peu d’importance. Si elle ne s’évapore pas, elle se dirigera inévitablement vers le Gulf Stream.\n\n![tableau](data/images/gulf_stream_winslow_homer.jpg)\n*Gulf Stream par Winslow Homer (1899, peinture à l’huile)*'
