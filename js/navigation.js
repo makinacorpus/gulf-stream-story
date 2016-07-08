@@ -1,9 +1,14 @@
 var index = 0;
 
 var story = [
-    // {
-    //     'createLeafletMap': true
-    // },
+    {
+        'createLeafletMap': true
+    },
+    {
+        'view': [[10.13, -58.59], 4],
+        'text': 'courant_profondeur',
+        'addLayers': [courant_profondeur]
+    },
     {
         'category': 'Introduction',
         'slug': 'introduction',
@@ -259,8 +264,8 @@ function changeContent(i) {
             Lmap.removeLayer(state.removeLayers[layer]);
         }
     }
-     if (state.createLeafletMap) {
-         createLeafletMap();
+    if (state.createLeafletMap) {
+        createLeafletMap();
     }
     if (state.destroyLeafletMap) {
         Lmap.remove();

@@ -9,6 +9,34 @@ function createLeafletMap() {
 // Ajouter des couches Leaflet
 // var ssh = L.ImageOverlay("data/geotiff/ssh.tif",[[0, -100], [90, 20]]).addTo(Lmap);
 
+var colorScale = chroma.scale('OrRd').domain([0,2]);
+
+var courant_profondeur = L.geoJson(null, {
+    pointToLayer: function (feature, latlng) {
+
+        var html = '<div style="transform: rotate(';
+        html += feature.properties.dir_541;
+        html += 'deg);'
+        html += 'font-size:'
+        html += (8 + feature.properties.n_541 * 20)
+        html += 'px; color:'
+        html += colorScale(feature.properties.n_541)
+        html += '" class="rot">';
+        html += '↑</div>'
+        return L.marker(latlng, {
+            icon: L.divIcon({
+                className: 'arrow',
+                html: html
+            })
+        });
+    }
+});
+
+
+$.getJSON("data/geojson/current_depth_light_n0.005.geojson", function (data) {
+    courant_profondeur.addData(data);
+});
+
 var detroit_de_floride = L.geoJson(null);
 
 $.getJSON("data/geojson/detroit_de_floride.geojson", function (data) {
