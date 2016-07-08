@@ -25,7 +25,8 @@ html, body, .container-fluid, .row, .left-panel, #map {
     padding-right: 20px;
     text-align: justify;
     text-align-last: left;
-    font-size: 25px;
+    font-size: 20px;
+    line-height: 1.3em;
 }
 
 .scrollY {
@@ -60,12 +61,12 @@ path.leaflet-clickable {
 /* Form Progress */
 .progress {
   margin: 0 auto;
-text-align: center;
-height: 45px;
-position: absolute;
-z-index: 3;
-width: 100%;
- background: transparent;
+  text-align: center;
+  height: 45px;
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  background: transparent;
 }
 .progress .circle,
 .progress .bar {
@@ -76,7 +77,7 @@ width: 100%;
 }
 .progress .circle-cat {
   border: 1px solid #d5d5da;
-    width: 40px; height: 40px;
+  width: 40px; height: 40px;
 }
 .progress .bar {
   position: relative;
