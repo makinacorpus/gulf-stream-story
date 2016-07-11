@@ -1,10 +1,18 @@
 var Lmap = undefined;
 function createLeafletMap() {
-    Lmap = L.map('map').setView([24, -80.72], 5);
+    Lmap = L.map('map', {
+        maxBounds: mybounds
+    }).setView([24, -80.72], 5);
     L.tileLayer('data/tiles/{z}/{x}/{y}.png', {
-        tms: true
+        tms: true,
+        maxZoom: 6,
+        minZoom: 3
     }).addTo(Lmap);
 }
+
+            var southWest = L.latLng(0, -100),
+                northEast = L.latLng(85, 20),
+                mybounds = L.latLngBounds(southWest, northEast);
 
 // Ajouter des couches Leaflet
 // var ssh = L.ImageOverlay("data/geotiff/ssh.tif",[[0, -100], [90, 20]]).addTo(Lmap);
@@ -43,9 +51,22 @@ $.getJSON("data/geojson/detroit_de_floride.geojson", function (data) {
     detroit_de_floride.addData(data);
 });
 
+var isthme_panama = L.geoJson(null, {
+    style: {
+        weight: 1,
+        opacity: 1,
+        color: '#ff1100'
+        }
+    });
+
+$.getJSON("data/geojson/isthme_panama.geojson", function (data) {
+    isthme_panama.addData(data);
+});
+
 var courant_guyane = L.geoJson(null, {
     style: {
         weight: 15,
+        opacity: 1,
         color: '#006FFF'
     },
     onEachFeature: function (feature, layer) {
@@ -103,6 +124,7 @@ $.getJSON("data/geojson/pente_continentale.geojson", function (data) {
 var courant_floride = L.geoJson(null, {
     style: {
         weight: 15,
+        opacity: 1,
         color: '#0000D5'
     },
 //\u2652 \u263e \u2312 \u2322 \u23d6 \u25dc \u25dd
@@ -135,6 +157,7 @@ $.getJSON("data/geojson/cap_hatteras.geojson", function (data) {
  var gulfstream = L.geoJson(null, {
     style: {
         weight: 15,
+        opacity: 1,
         color: '#0000D5'
     },
     onEachFeature: function (feature, layer) {
@@ -160,6 +183,7 @@ $.getJSON("data/geojson/grands_bancs_de_terre_neuve.geojson", function (data) {
 var courant_nord_atlantique = L.geoJson(null, {
     style: {
         weight: 15,
+        opacity: 1,
         color: '#006FFF'
     },
     onEachFeature: function (feature, layer) {
@@ -182,6 +206,7 @@ $.getJSON("data/geojson/courant_nord_atlantique.geojson", function (data) {
 var courant_acores = L.geoJson(null, {
     style: {
         weight: 15,
+        opacity: 1,
         color: '#006FFF'
     },
     onEachFeature: function (feature, layer) {
@@ -204,6 +229,7 @@ $.getJSON("data/geojson/courant_des_acores.geojson", function (data) {
 var courant_canaries = L.geoJson(null, {
     style: {
         weight: 15,
+        opacity: 1,
         color: '#006FFF'
     },
     onEachFeature: function (feature, layer) {
@@ -228,6 +254,7 @@ $.getJSON("data/geojson/courant_des_canaries.geojson", function (data) {
 var groenland = L.geoJson(null, {
     style: {
         weight: 15,
+        opacity: 1,
         color: '#006FFF'
     },
     onEachFeature: function (feature, layer) {
@@ -252,6 +279,7 @@ $.getJSON("data/geojson/groenland.geojson", function (data) {
 var derive_nord_atlantique_1 = L.geoJson(null, {
     style: {
         weight: 15,
+        opacity: 1,
         color: '#006FFF'
     },
     onEachFeature: function (feature, layer) {
@@ -276,6 +304,7 @@ $.getJSON("data/geojson/derive_nord_atlantique_1.geojson", function(data) {
 var derive_nord_atlantique_2 = L.geoJson(null, {
     style: {
         weight: 15,
+        opacity: 1,
         color: '#006FFF'
     },
     onEachFeature: function(feature, layer) {

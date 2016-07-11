@@ -16,7 +16,7 @@ var story = [
         'slug': 'introduction',
         'view': [[10.13, -58.59], 4],
         'text': '## Naissance du Gulf Stream\n Le courant de Guyane, qui longe les côtes d’Amérique du Sud, se retrouve dans un cul-de-sac: l’Isthme du Panama. Il est naturellement emporté vers le nord et à l’est par la circulation anticyclonique des Açores (sens des aiguilles d’une montre). Il dirige donc notre goutte d’eau vers la seule porte de sortie possible : le détroit de Floride. C’est l’étroitesse de ce passage situé entre Cuba et la Floride qui génère un trop plein qui donne naissance au Gulf Stream.\n\n ![detroit_de_floride](data/images/detroit_de_floride.jpg)\n*Détroit de Floride*\n\n*Isthme du Panama',
-        'addLayers': [courant_guyane, detroit_de_floride, pente_continentale]
+        'addLayers': [courant_guyane, detroit_de_floride, pente_continentale, isthme_panama]
     },
     {
         'category': 'Introduction',
@@ -124,11 +124,6 @@ var story = [
         'text': '##Gulf Stream et niveau de l’Océan\n\nL’apport en eau est tellement conséquent dans le Gulf Stream que le niveau de la mer est prêt de 50cm au dessus du niveau 0.'
     },
     {
-        'category': 'Les vents',
-        'slug': 'vents',
-        'text': '##L’influence du vent\n\n*Un principe simple de thermodynamique nous enseigne qu’entre deux corps en contact, c’est le corps chaud qui cède son énergie au corps froid jusqu’à l’équilibre. Le couple océan/atmosphère transporte et distribue l’énergie du soleil de la source chaude à la source froide. Par évaporation, les zones océaniques équatoriales (source chaude) alimentent l’atmosphère en chaleur, créant des vents qui se dirigent vers les régions polaires (source froide).*'
-    },
-    {
         'category': 'Les températures',
         'slug': 'temperatures',
         'text': '##Température\n\n*L’océan fournit une fraction de son énergie à l’atmosphère et distribue directement par les courants l’autre partie à l’échelle de la planète. On estime que les transferts de chaleur des régions équatoriales vers les pôles se font à égalité par l’atmosphère et l’océan.*'
@@ -148,11 +143,16 @@ var story = [
         'category': 'Les températures',
         'slug': 'temperatures',
         'text': '##Température\n\nEn hivers le rayonnement solaire est beaucoup plus faible et les vents d’ouest se renforcent. Il y a rupture du thermocline qui remet à disposition des couches de surface le stock d’été. L’océan transmet cette énergie à l’atmosphère. Les vents d’Ouest la récupèrent et l’emportent en direction de l’Europe. L’ouest de ce continent sera le seul bénéficiaire de la mémoire calorifique estivale de l’océan Atlantique.\n\nCe phénomène semble aujourd’hui expliquer en grande partie la différence de climat entre les côtes est et ouest de l’Atlantique. Sur l’année on note une différence moyenne de 15°C. C’est ce qui explique un climat maritime (tempéré) en Europe de l’ouest et aux mêmes latitudes sur le sol américain un climat continental (froid). Le Saint Laurent gèle l’hivers, battu par les vents glacials qui suivent la dépression d’Islande.'
-    },    
+    },  
     {
-        'category': 'Les températures',
-        'slug': 'temperatures',
-        'text': '##Température\n\nIl est encore aujourd’hui très difficile d’étudier l’influence exacte des différents facteurs qui jouent sur notre climat. Ils ont chacun leurs propre caractéristiques qui sont difficilement comparables. Il est aussi impossible de les isoler pour les étudier indépendamment. Les scientifiques créent des modèles toujours plus complexes pour simuler les phénomènes météorologiques et climatiques. Ils estiment aujourd’hui que sans le GS, notre climat se rafraîchirait de 4 ou 5°C.'
+        'category': 'Les vents',
+        'slug': 'vents',
+        'text': '##L’influence du vent\n\n*Un principe simple de thermodynamique nous enseigne qu’entre deux corps en contact, c’est le corps chaud qui cède son énergie au corps froid jusqu’à l’équilibre. Le couple océan/atmosphère transporte et distribue l’énergie du soleil de la source chaude à la source froide. Par évaporation, les zones océaniques équatoriales (source chaude) alimentent l’atmosphère en chaleur, créant des vents qui se dirigent vers les régions polaires (source froide).'
+    },  
+    {
+        'category': 'Les vents',
+        'slug': 'vents',
+        'text': '##Les vents\n\nL’équateur est la ligne imaginaire qui représente le plus grand diamètre de la Terre. L’air qui en provient et qui se dirige vers les pôles, se retrouve sur des diamètres de plus en plus petits.\n\nConséquence, sa vitesse de rotation augmente. Aux alentours des latitudes 30°, sa vitesse est tellement grande qu’au lieu de continuer vers le nord. Il se retrouve entraîné dans un couloir de vent orienté est-ouest : le courant jet.\n\nLes pilotes de ligne le connaissent bien. Ils s’en servent dans le sens New York-Paris et le contournent dans la direction inverse.\n\nCe courant jet emporte l’énergie solaire emmaganisée l’été par le soleil vers l’Europe.' 
     }, 
     {
         'category': 'La salinité',
@@ -178,6 +178,11 @@ var story = [
         'view': [[0,30], 2],
         'text': '##La circulation thermohaline\n\nSur cette carte vous pouvez suivre cette circulation à l’échelle planétaire. Elle est communément appelée le « tapis roulant ». On estime qu’il faudrait entre 1000 et 2000 ans pour qu’une goutte fasse un tour de ce circuit. Ce phénomène de plongée est particulièrement remarquable au large de la Norvège et au Nord Est des Grands Bancs de Terre Neuve. Le Gulf Stream, à travers les eaux salées qu’il dirige vers les hautes latitudes est un moteur essentiel de ce tapis roulant qui serait certainement bien différent sans lui.',
         'addLayers': [thermohaline_cold, thermohaline_hot]
+    },
+    {
+        'category': 'Conclusion',
+        'slug': 'conclusion',
+        'text': '##Conclusion\n\nIl est encore aujourd’hui très difficile d’étudier l’influence exacte des différents facteurs qui jouent sur notre climat. Ils ont chacun leurs propre caractéristiques qui sont difficilement comparables. Il est aussi impossible de les isoler pour les étudier indépendamment. Les scientifiques créent des modèles toujours plus complexes pour simuler les phénomènes météorologiques et climatiques. Ils estiment aujourd’hui que sans le GS, notre climat se rafraîchirait de 4 ou 5°C.'
     }
 ];
 
@@ -290,18 +295,48 @@ $("#depthSliderInput").slider({
     ticks_labels: ['0 m', '-109 m', '-266 m', '-541 m', '-1062 m', '-1684 m', '-3220 m'],
 });
 
-var chart = c3.generate({
-    bindto: '#graph',
-    data: {
-        xs: {
-            'janvier': 'x1',
-            'février': 'x2',
-        },
-        columns: [
-            ['x1', 10, 30, 45, 50, 70],
-            ['x2', 30, 50, 75, 100, 120],
-            ['janvier', 30, 200, 100, 400, 150],
-            ['février', 30, 200, 100, 400, 150]
-        ]
-    }
-});
+// var chart = c3.generate({
+//     bindto: '#graph',
+//     data: {
+//         xs: {
+//             'juin 2015': 'x1',
+//             'juillet 2015': 'x2',
+//             'aout 2015': 'x3',
+//             'septembre 2015': 'x4',
+//             'octobre 2015': 'x5',
+//             'novembre 2015': 'x6',
+//             'décembre 2015': 'x7',
+//             'janvier 2016': 'x8',
+//             'février 2016': 'x9',
+//             'mars 2016': 'x10',
+//             'avril 2016': 'x11',
+//             'mai 2016': 'x12',
+//         },
+//         columns: [
+//             ['x1', 18.15, 18.05, 17.85, 17.75, 17.45, 17.25, 17.15, 16.95, 16.85, 16.75, 16.65, 16.55, 16.45, 16.35, 16.05, 15.65, 15.25, 14.85, 14.55, 14.25, 14.05, 13.85, 13.75, 13.65, 13.55, 13.25, 12.95, 12.75, 12.35, 12.05, 11.65, 11.35],
+//             ['x2', 19.55, 19.55, 19.55, 19.55, 19.55, 19.45, 19.45, 19.35, 19.15, 18.95, 18.75, 18.45, 18.15, 17.85, 17.45, 16.95, 16.45, 15.95, 15.45, 15.05, 14.75, 14.35, 14.15, 13.85, 13.55, 13.25, 13.05, 12.75, 12.35, 11.95, 11.55, 11.15],
+//             ['x3', 22.65, 22.65, 22.65, 22.65, 22.65, 22.65, 22.65, 22.65, 22.65, 22.55, 22.35, 21.95, 21.35, 20.65, 19.85, 19.05, 18.25, 17.45, 16.75, 16.25, 15.75, 15.35, 14.95, 14.55, 14.25, 13.85, 13.45, 13.05, 12.65, 12.15, 11.75, 11.35],
+//             ['x4', 21.95, 21.95, 21.95, 21.85, 21.85, 21.85, 21.85, 21.85, 21.85, 21.85, 21.85, 21.85, 21.85, 21.85, 21.55, 20.95, 20.05, 18.85, 17.85, 16.85, 16.05, 15.45, 14.95, 14.45, 13.95, 13.55, 13.05, 12.65, 12.15, 11.85, 11.55, 11.15],
+//             ['x5', 20.95, 20.95, 20.85, 20.85, 20.85, 20.85, 20.85, 20.85, 20.85, 20.85, 20.75, 20.75, 20.75, 20.65, 20.65, 20.45, 20.15, 19.45, 18.55, 17.35, 15.75, 14.85, 14.15, 13.65, 13.35, 13.25, 13.05, 12.75, 12.45, 12.25, 11.85, 11.45],
+//             ['x6', 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 16.25, 15.05, 14.65, 14.25, 13.95, 13.55, 13.25, 12.95, 12.55, 12.15, 11.65, 11.25],
+//             ['x7', 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.05, 15.95, 15.05, 14.65, 14.25, 13.85, 13.55, 13.25, 12.95, 12.65, 12.05, 11.65],
+//             ['x8', 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.55, 14.65, 14.25, 13.95, 13.65, 13.35, 12.95, 12.45, 12.05, 11.65],
+//             ['x9', 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 14.95, 14.35, 13.85, 13.45, 13.25, 12.95, 12.45, 12.05, 11.75],
+//             ['x10', 14.65, 14.65, 14.55, 14.55, 14.55, 14.55, 14.55, 14.55, 14.55, 14.55, 14.55, 14.55, 14.55, 14.55, 14.45, 14.45, 14.45, 14.45, 14.45, 14.45, 14.45, 14.45, 14.45, 14.45, 14.45, 14.25, 13.95, 13.45, 12.95, 12.55, 12.05, 11.65],
+//             ['x11', 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.05, 15.05, 15.05, 14.95, 14.95, 14.45, 13.95, 13.55, 13.15, 12.75, 12.25, 11.85, 11.55],
+//             ['x12', 15.85, 15.65, 15.45, 15.45, 15.35, 15.35, 15.25, 15.25, 15.15, 15.15, 15.05, 14.95, 14.85, 14.75, 14.55, 14.45, 14.35, 14.25, 14.15, 13.95, 13.85, 13.75, 13.65, 13.45, 13.25, 12.85, 12.55, 12.15, 11.85, 11.65, 11.45, 11.15],
+//             ['juin 2015', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
+//             ['juillet 2015', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
+//             ['aout 2015', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
+//             ['septembre 2015', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
+//             ['octobre 2015', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
+//             ['novembre 2015', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
+//             ['décembre 2015', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
+//             ['janvier 2016', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
+//             ['février 2016', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
+//             ['mars 2016', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
+//             ['avril 2016', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
+//             ['mai 2016', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
+//         ]
+//     }
+// });
