@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^3.3.6",
+    "bootstrap-slider": "^7.1.0",
+    "c3": "^0.4.11",
     "chroma-js": "^1.1.1",
     "jquery": "^2.2.4",
     "leaflet": "^0.7.7",

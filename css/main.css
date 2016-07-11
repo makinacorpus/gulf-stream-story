@@ -38,6 +38,17 @@ html, body, .container-fluid, .row, .left-panel, #map {
     width: 100%;
 }
 
+#depthSlider {
+    position: absolute;
+    bottom: 0;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.slider.slider-vertical {
+    height: 500px;
+}
+
 path.leaflet-clickable {
     stroke-dasharray: 10000;
     stroke-dashoffset: 10000;

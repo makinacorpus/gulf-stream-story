@@ -2,6 +2,7 @@ var index = 0;
 
 var story = [
     {
+        'category': 'Introduction',
         'createLeafletMap': true
     },
     {
@@ -177,7 +178,7 @@ var story = [
         'view': [[0,30], 2],
         'text': '##La circulation thermohaline\n\nSur cette carte vous pouvez suivre cette circulation à l’échelle planétaire. Elle est communément appelée le « tapis roulant ». On estime qu’il faudrait entre 1000 et 2000 ans pour qu’une goutte fasse un tour de ce circuit. Ce phénomène de plongée est particulièrement remarquable au large de la Norvège et au Nord Est des Grands Bancs de Terre Neuve. Le Gulf Stream, à travers les eaux salées qu’il dirige vers les hautes latitudes est un moteur essentiel de ce tapis roulant qui serait certainement bien différent sans lui.',
         'addLayers': [thermohaline_cold, thermohaline_hot]
-    },
+    }
 ];
 
 init();
@@ -220,7 +221,7 @@ $('#next').on('click', function() {
 // });
 var lastCategory = null;
 
-for (var i = 0; i <= story.length; i++) {
+for (var i = 0; i < story.length; i++) {
     var className = 'circle'
     if (story[i].category !== lastCategory) {
         className += ' circle-cat ' + story[i].slug
@@ -281,3 +282,26 @@ function changeContent(i) {
         Mbmap.remove();
     }
 }
+
+$("#depthSliderInput").slider({
+    //reversed: true,
+    ticks: [0, 109, 266, 541, 1062, 1684, 3220],
+    ticks_positions: [0, 5, 10, 17, 35, 50, 100],
+    ticks_labels: ['0 m', '-109 m', '-266 m', '-541 m', '-1062 m', '-1684 m', '-3220 m'],
+});
+
+var chart = c3.generate({
+    bindto: '#graph',
+    data: {
+        xs: {
+            'janvier': 'x1',
+            'février': 'x2',
+        },
+        columns: [
+            ['x1', 10, 30, 45, 50, 70],
+            ['x2', 30, 50, 75, 100, 120],
+            ['janvier', 30, 200, 100, 400, 150],
+            ['février', 30, 200, 100, 400, 150]
+        ]
+    }
+});
