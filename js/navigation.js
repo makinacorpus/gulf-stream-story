@@ -14,7 +14,7 @@ var story = [
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[10.13, -58.59], 4],
-        'text': '## Naissance du Gulf Stream\n Le courant de Guyane, qui longe les côtes d’Amérique du Sud, se retrouve dans un cul-de-sac: l’Isthme du Panama. Il est naturellement emporté vers le nord et à l’est par la circulation anticyclonique des Açores (sens des aiguilles d’une montre). Il dirige donc notre goutte d’eau vers une seule porte de sortie : le détroit de Floride. C’est l’étroitesse de ce passage, situé entre Cuba et la Floride, qui génère un trop plein qui donne naissance au Gulf Stream.\n\n ![detroit_de_floride](data/images/detroit_de_floride.jpg)\n*Détroit de Floride*\n\n*Isthme du Panama',
+        'text': '## Naissance du Gulf Stream\n Le courant de Guyane, qui longe les côtes d’Amérique du Sud, se retrouve dans un cul-de-sac: l’Isthme du Panama. Il est naturellement emporté vers le nord et à l’est par la circulation anticyclonique des Açores (sens des aiguilles d’une montre). Il dirige donc notre goutte d’eau vers la seule porte de sortie possible : le détroit de Floride. C’est l’étroitesse de ce passage situé entre Cuba et la Floride qui génère un trop plein qui donne naissance au Gulf Stream.\n\n ![detroit_de_floride](data/images/detroit_de_floride.jpg)\n*Détroit de Floride*\n\n*Isthme du Panama',
         'addLayers': [courant_guyane, detroit_de_floride, pente_continentale]
     },
     {
@@ -52,7 +52,7 @@ var story = [
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[31.92, -58.59], 5],
-        'text': '##Le courant des Açores\nLe courant des Açores est le premier candidat qui essaye d’emporter notre goutte d’eau et une partie de ses sœurs. Il se forme et est alimenté par l’anticyclone des Açores. Il rejoint soit le courant de Guyane soit le courant des Antilles. Dans tous les cas, c’est un retour à la case départ pour notre goutte d’eau qui repart pour un tour de Gulf Stream.',
+        'text': '##Le courant des Açores\nLe courant des Açores est le premier candidat qui essaye d’emporter notre goutte d’eau et une partie de ses sœurs. Il est créé et alimenté par l’anticyclone des Açores et rejoint le courant des Antilles. C’est un retour à la case départ pour notre goutte d’eau qui repart pour un tour de Gulf Stream.',
         'addLayers': [courant_acores],
         'removeLayers': [pente_continentale]
     },
@@ -60,7 +60,7 @@ var story = [
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[29.53, -45], 4],
-        'text': '##Le courant des Canaries\nAutre possibilité, notre goutte d’eau peut être entraînée par le courant des Canaries. A l’image du courant des Açores, l’anticyclone des Açores est le moteur du courant des Canaries et de son extension, le courant Nord Atlantique. Ce dernier finit sa course dans le courant de Guyane. C’est donc un autre retour à la case départ. Le courant de Guinée, seconde extension du courant des Canaries, sort de l’influence de l’anticyclone des Açores et emporte notre goutte d’eau le long des côtes Africaines vers l’équateur.',
+        'text': '##Le courant des Canaries\nAutre possibilité, notre goutte d’eau peut être entraînée par le courant des Canaries. A l’image du courant des Açores, l’anticyclone des Açores est le moteur du courant des Canaries. Il finit sa course dans le courant de Guyane. C’est donc un autre retour à la case départ. Le courant de Guinée, seconde extension du courant des Canaries, sort de l’influence de l’anticyclone des Açores et emporte notre goutte d’eau le long des côtes Africaines vers l’équateur.',
         'addLayers': [courant_canaries],
     },
     {
@@ -107,7 +107,7 @@ var story = [
         'category': 'Les courants',
         'slug': 'courants',
         'view': [[10.13, -58.59], 4],
-        'text': '##Gulf Stream et courants Nord Atlantiques\n\nNous venons d’observer ce qu’il se passe en surface mais comment se comportent ils en profondeur ? En utilisant l’ascenseur ..., vous pouvez étudier le comportement des courants à différentes profondeur. \n\n Positionnez vous par exemple à 1684m. Vous remarquerez qu’un courant de fond, opposé au Gulf Stream longe la côte américaine. (on pourrait supposer qu’il s’agit d’un courant de retour, affilié à la circulation thermohaline). \n\n Pour revenir au Gulf Stream, vous vous rendrez vite compte qu’il n’est pas qu’un courant de surface. A 1000m, il a encore une grande influence. \n\n Il se distingue des autres courants de bords ouest par son débit record qui atteint les millions de mètres cube à la seconde. Pour comparaison, l’Amazone n’a qu’un débit de 300 000 mètre cube par seconde à son maximum. Le débit de tous les fleuves et rivières de la planète atteint 1 Sv (unité de mesure de débit). Le GS qui a un débit de 30 Sv au départ s’approche des 140 Sv en fin de course.',
+        'text': '##Gulf Stream et courants Nord Atlantiques\n\nNous venons d’observer ce qu’il se passe en surface mais comment les courants se comportent ils en profondeur ? En utilisant l’ascenseur ..., vous pouvez étudier leur comportement à différentes profondeur. \n\n Positionnez vous par exemple à 1684m. Vous remarquerez qu’un courant de fond, opposé au Gulf Stream longe la côte américaine. (on pourrait supposer qu’il s’agisse d’un courant de retour, affilié à la circulation thermohaline). \n\n Pour revenir au Gulf Stream, vous vous rendrez vite compte qu’il n’est pas qu’un courant de surface. A 1000m, il a encore une grande influence. \n\n Il se distingue des autres courants de bords ouest par son débit record qui atteint les millions de mètres cube à la seconde. Pour comparaison, l’Amazone n’a qu’un débit de 300 000 mètre cube par seconde à son maximum. Le débit de tous les fleuves et rivières de la planète atteint 1 Sv (unité de mesure de débit). Le GS qui a un débit de 30 Sv au départ s’approche des 140 Sv en fin de course.',
         'addLayers': [courant_profondeur]
     },
     {
@@ -135,7 +135,7 @@ var story = [
     {
         'category': 'Les températures',
         'slug': 'temperatures',
-        'text': '##Température\n\nLe Gulf Stream a une influence considérable sur le climat de régions situées à des milliers de kilomètres des Grands Bancs de Terre Neuve.\n\nIl emporte avec lui des eaux tropicales chaudes.\n\nSes extensions qui se dirigent vers le nord, emportent ces eaux vers des latitudes beaucoup plus hautes. Par exemple, la glace qui n’arrive pas à se former au nord de la Norvège bénéficie directement d’eaux chaudes apportées par la dérive Nord Atlantique, extension du Gulf Stream.\n\nMais l’Europe, n’est pas l’unique bénéficiaire de cette source de chaleur. C’est tout l’Atlantique Nord qui profite de cet apport.\n\nContrairement à ce qui a été longtemps mis en avant, le Gulf Stream n’est pas la chaudière centrale de l’Europe. Il ne peut pas expliquer la différence moyenne de 15°C qu’il y a entre Montréal et Bordeaux qui sont sur la même latitude.',
+        'text': '##Température\n\nLe Gulf Stream a une influence considérable sur le climat de régions situées à des milliers de kilomètres des Grands Bancs de Terre Neuve.\n\nIl emporte avec lui des eaux tropicales chaudes.\n\nSes extensions qui se dirigent vers le nord emportent ces eaux vers des latitudes beaucoup plus hautes. Par exemple, la glace qui n’arrive pas à se former au nord de la Norvège bénéficie directement d’eaux chaudes apportées par la dérive Nord Atlantique, extension du Gulf Stream.\n\nMais l’Europe, n’est pas l’unique bénéficiaire de cette source de chaleur. C’est tout l’Atlantique Nord qui profite de cet apport.\n\nContrairement à ce qui a été longtemps mis en avant, le Gulf Stream n’est pas la chaudière centrale de l’Europe. Il ne peut pas expliquer la différence moyenne de 15°C qu’il y a entre Montréal et Bordeaux qui sont sur la même latitude.',
         'style_mb': video_temp
     },
     {
@@ -146,7 +146,7 @@ var story = [
     {
         'category': 'Les températures',
         'slug': 'temperatures',
-        'text': '##Température\n\nEn hivers le rayonnement solaire est beaucoup plus faible et les vents d’ouest se renforcent. Il y a rupture du thermocline qui remet à disposition des couches de surface le stock d’été. L’océan transmet cette énergie à l’atmosphère. Les vents d’Ouest la récupèrent et l’emportent en direction de l’Europe. L’ouest de ce continent sera le seul bénéficiaire de la mémoire calorifique estivale de l’océan Atlantique.\n\nCe phénomène semble aujourd’hui expliquer en grande partie la différence de climat entre les côtes est et ouest de l’Atlantique. Sur l’année on note une différence moyenne de 15°C.C’est ce qui explique un climat maritime (tempéré) en Europe de l’ouest et aux mêmes latitudes sur le sol américain un climat continental (froid). Le Saint Laurent gèle l’hivers, battu par les vents glacials qui suivent la dépression d’Islande.'
+        'text': '##Température\n\nEn hivers le rayonnement solaire est beaucoup plus faible et les vents d’ouest se renforcent. Il y a rupture du thermocline qui remet à disposition des couches de surface le stock d’été. L’océan transmet cette énergie à l’atmosphère. Les vents d’Ouest la récupèrent et l’emportent en direction de l’Europe. L’ouest de ce continent sera le seul bénéficiaire de la mémoire calorifique estivale de l’océan Atlantique.\n\nCe phénomène semble aujourd’hui expliquer en grande partie la différence de climat entre les côtes est et ouest de l’Atlantique. Sur l’année on note une différence moyenne de 15°C. C’est ce qui explique un climat maritime (tempéré) en Europe de l’ouest et aux mêmes latitudes sur le sol américain un climat continental (froid). Le Saint Laurent gèle l’hivers, battu par les vents glacials qui suivent la dépression d’Islande.'
     },    
     {
         'category': 'Les températures',
