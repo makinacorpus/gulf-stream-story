@@ -6,6 +6,13 @@ var story = [
         'createLeafletMap': true
     },
     {
+        'category': 'Les courants',
+        'slug': 'courants',
+        'view': [[10.13, -58.59], 4],
+        'text': '##Gulf Stream et courants Nord Atlantiques\n\nNous venons d’observer ce qu’il se passe en surface mais comment se comportent ils en profondeur ? En utilisant l’ascenseur ..., vous pouvez étudier le comportement des courants à différentes profondeur. \n\n Positionnez vous par exemple à 1684m. Vous remarquerez qu’un courant de fond, opposé au Gulf Stream longe la côte américaine. (on pourrait supposer qu’il s’agit d’un courant de retour, affilié à la circulation thermohaline). \n\n Pour revenir au Gulf Stream, vous vous rendrez vite compte qu’il n’est pas qu’un courant de surface. A 1000m, il a encore une grande influence. \n\n Il se distingue des autres courants de bords ouest par son débit record qui atteint les millions de mètres cube à la seconde. Pour comparaison, l’Amazone n’a qu’un débit de 300 000 mètre cube par seconde à son maximum. Le débit de tous les fleuves et rivières de la planète atteint 1 Sv (unité de mesure de débit). Le GS qui a un débit de 30 Sv au départ s’approche des 140 Sv en fin de course.',
+        'addLayers': [depthLayer]
+    },
+    {
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[24, -80.72], 5],
@@ -104,13 +111,13 @@ var story = [
         'destroyMapboxGlMap': true,
         'createLeafletMap': true
     },
-    {
-        'category': 'Les courants',
-        'slug': 'courants',
-        'view': [[10.13, -58.59], 4],
-        'text': '##Gulf Stream et courants Nord Atlantiques\n\nNous venons d’observer ce qu’il se passe en surface mais comment se comportent ils en profondeur ? En utilisant l’ascenseur ..., vous pouvez étudier le comportement des courants à différentes profondeur. \n\n Positionnez vous par exemple à 1684m. Vous remarquerez qu’un courant de fond, opposé au Gulf Stream longe la côte américaine. (on pourrait supposer qu’il s’agit d’un courant de retour, affilié à la circulation thermohaline). \n\n Pour revenir au Gulf Stream, vous vous rendrez vite compte qu’il n’est pas qu’un courant de surface. A 1000m, il a encore une grande influence. \n\n Il se distingue des autres courants de bords ouest par son débit record qui atteint les millions de mètres cube à la seconde. Pour comparaison, l’Amazone n’a qu’un débit de 300 000 mètre cube par seconde à son maximum. Le débit de tous les fleuves et rivières de la planète atteint 1 Sv (unité de mesure de débit). Le GS qui a un débit de 30 Sv au départ s’approche des 140 Sv en fin de course.',
-        'addLayers': [courant_profondeur]
-    },
+    // {
+    //     'category': 'Les courants',
+    //     'slug': 'courants',
+    //     'view': [[10.13, -58.59], 4],
+    //     'text': '##Gulf Stream et courants Nord Atlantiques\n\nNous venons d’observer ce qu’il se passe en surface mais comment se comportent ils en profondeur ? En utilisant l’ascenseur ..., vous pouvez étudier le comportement des courants à différentes profondeur. \n\n Positionnez vous par exemple à 1684m. Vous remarquerez qu’un courant de fond, opposé au Gulf Stream longe la côte américaine. (on pourrait supposer qu’il s’agit d’un courant de retour, affilié à la circulation thermohaline). \n\n Pour revenir au Gulf Stream, vous vous rendrez vite compte qu’il n’est pas qu’un courant de surface. A 1000m, il a encore une grande influence. \n\n Il se distingue des autres courants de bords ouest par son débit record qui atteint les millions de mètres cube à la seconde. Pour comparaison, l’Amazone n’a qu’un débit de 300 000 mètre cube par seconde à son maximum. Le débit de tous les fleuves et rivières de la planète atteint 1 Sv (unité de mesure de débit). Le GS qui a un débit de 30 Sv au départ s’approche des 140 Sv en fin de course.',
+    //     'addLayers': [courant_profondeur]
+    // },
     {
         'category': 'Les courants',
         'slug': 'courants',
@@ -244,7 +251,6 @@ function changeContent(i) {
     history.pushState({id: i, slug: state.slug}, state.slug, '#' + i);
 
     if (state.view) {
-        console.log(state.view)
         Lmap.setView(state.view[0], state.view[1]);
     }
     if (state.view_mb) {
@@ -283,12 +289,21 @@ function changeContent(i) {
     }
 }
 
-$("#depthSliderInput").slider({
+var slider = $('#depthSliderInput').slider({
     //reversed: true,
-    ticks: [0, 109, 266, 541, 1062, 1684, 3220],
-    ticks_positions: [0, 5, 10, 17, 35, 50, 100],
+    value: 0,
+    ticks: [0, 1, 2, 3, 4, 5, 6],
+    //ticks_positions: [0, 10, 20, 30, 50, 70, 100],
+    //scale: 'logarithmic',
+    tooltip: 'hide',
     ticks_labels: ['0 m', '-109 m', '-266 m', '-541 m', '-1062 m', '-1684 m', '-3220 m'],
+    step: 1
 });
+
+
+
+
+
 
 var chart = c3.generate({
     bindto: '#graph',
