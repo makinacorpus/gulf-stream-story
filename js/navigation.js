@@ -9,13 +9,13 @@ var story = [
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[24, -80.72], 5],
-        'text': '## Naissance du Gulf Stream\n Pour suivre le Gulf Stream, focalisons nous sur le trajet d’une goutte d’eau qui se trouve dans le Golfe du Mexique. Elle pourrait venir d’un cumulonimbus, de l’Atlantique, du lac Itasca, source du Mississipi, ou de bien d’autres horizons. Mais sa provenance n’a que peu d’importance. Si elle ne s’évapore pas, elle se dirigera inévitablement vers le Gulf Stream.\n\n![tableau](data/images/gulf_stream_winslow_homer.jpg)\n*Gulf Stream par Winslow Homer (1899, peinture à l’huile)*'
+        'text': '## Naissance du Gulf Stream\n Pour suivre le Gulf Stream, focalisons nous sur le trajet d’une goutte d’eau qui se trouve dans le Golfe du Mexique. Elle pourrait venir d’un cumulonimbus, de l’Atlantique, du lac Itasca source du Mississipi, ou de bien d’autres horizons. Mais sa provenance n’a que peu d’importance. Si elle ne s’évapore pas, elle se dirigera inévitablement vers le Gulf Stream.\n\n![tableau](data/images/gulf_stream_winslow_homer.jpg)\n*Gulf Stream par Winslow Homer (1899, peinture à l’huile)*'
     },
     {
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[10.13, -58.59], 4],
-        'text': '## Naissance du Gulf Stream\n Le courant de Guyane, qui longe les côtes d’Amérique du Sud, se retrouve dans un cul-de-sac: l’Isthme du Panama. Il est naturellement emporté vers le nord et à l’est par la circulation anticyclonique des Açores (sens des aiguilles d’une montre). Il dirige donc notre goutte d’eau vers la seule porte de sortie possible : le détroit de Floride. C’est l’étroitesse de ce passage situé entre Cuba et la Floride qui génère un trop plein qui donne naissance au Gulf Stream.\n\n ![detroit_de_floride](data/images/detroit_de_floride.jpg)\n*Détroit de Floride*\n\n*Isthme du Panama',
+        'text': '## Naissance du Gulf Stream\n Le courant de Guyane, qui longe les côtes d’Amérique du Sud, se retrouve dans un cul-de-sac: l’Isthme du Panama. Il est naturellement emporté vers le nord et à l’est par la circulation anticyclonique des Açores (sens des aiguilles d’une montre). Il dirige donc notre goutte d’eau vers la seule porte de sortie possible : le détroit de Floride. L’étroitesse de ce passage situé entre Cuba et la Floride génère un trop plein. C’est cet excédent qui donne naissance au Gulf Stream.\n\n ![detroit_de_floride](data/images/detroit_de_floride.jpg)\n*Détroit de Floride*\n\n*Isthme du Panama',
         'addLayers': [courant_guyane, detroit_de_floride, pente_continentale, isthme_panama]
     },
     {
@@ -37,7 +37,7 @@ var story = [
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[43.19, -50.3], 5],
-        'text': '##Les Grands Bancs de Terre Neuve\nEn arrivant aux Grands Bancs de Terre Neuve, notre goutte d’eau observe la mort du Gulf Stream. C’est le chaos du large qui en a finalement eu raison. Le fleuve océanique a perdu ses caractéristiques qui le rendait si particulier. Scientifiquement parlant, sa course s’achève à la longitude 50°W, mais le mouvent des masses d’eau ne s’arrête pas pour autant.',
+        'text': '##Les Grands Bancs de Terre Neuve\nEn arrivant aux Grands Bancs de Terre Neuve, notre goutte d’eau observe la mort du Gulf Stream. C’est le chaos du large qui en a finalement eu raison. Le fleuve océanique a perdu ses caractéristiques qui le rendait si particulier. Scientifiquement parlant, sa course s’achève vers la longitude 40°N 50°W, mais le mouvent des masses d’eau ne s’arrête pas pour autant.',
         'addLayers': [grands_bancs_de_terre_neuve],
         'removeLayers': [cap_hatteras]
     },
@@ -53,7 +53,7 @@ var story = [
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[31.92, -58.59], 5],
-        'text': '##Le courant des Açores\nLe courant des Açores est le premier candidat qui essaye d’emporter notre goutte d’eau et une partie de ses sœurs. Il est créé et alimenté par l’anticyclone des Açores et rejoint le courant des Antilles. C’est un retour à la case départ pour notre goutte d’eau qui repart pour un tour de Gulf Stream.',
+        'text': '##Le courant des Açores\nLe courant des Açores est le premier candidat qui essaye d’emporter notre goutte d’eau et une partie de ses sœurs. Il est créé et alimenté par l’anticyclone des Açores et rejoint le courant des Antilles. En empruntant cette voie, c’est un retour à la case départ pour notre goutte d’eau qui repart pour un tour de Gulf Stream.',
         'addLayers': [courant_acores],
         'removeLayers': [pente_continentale]
     },
@@ -61,7 +61,7 @@ var story = [
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[29.53, -45], 4],
-        'text': '##Le courant des Canaries\nAutre possibilité, notre goutte d’eau peut être entraînée par le courant des Canaries. A l’image du courant des Açores, l’anticyclone des Açores est le moteur du courant des Canaries. Il finit sa course dans le courant de Guyane. C’est donc un autre retour à la case départ. Le courant de Guinée, seconde extension du courant des Canaries, sort de l’influence de l’anticyclone des Açores et emporte notre goutte d’eau le long des côtes Africaines vers l’équateur.',
+        'text': '##Le courant des Canaries\nAutre possibilité, notre goutte d’eau peut être entraînée par le courant des Canaries. A l’image du courant des Açores, l’anticyclone des Açores est le moteur du courant des Canaries. Il finit sa course dans le courant de Guyane. C’est donc un autre retour à la case départ. \n\nLe courant de Guinée, seconde extension du courant des Canaries, sort de l’influence de l’anticyclone des Açores et emporte notre goutte d’eau le long des côtes Africaines vers l’équateur.',
         'addLayers': [courant_canaries],
     },
     {
@@ -75,7 +75,7 @@ var story = [
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[57, -12], 4],
-        'text': '##La dérive Nord Atlantique\nAu delà de l’influence du vent qui créé les courants de surface, un nouveau mécanisme, la pompe thermohaline, attire notre goutte d’eau vers le Nord de l’Europe et essaye petit à petit de l’entraîner vers les abysses. Nous étudierons ce phénomène un peu plus tard. En suivant cette voie, notre goutte d’eau a de fortes chances de voguer vers la mer Baltique ou de longer les côtes Norvégiennes pour continuer sa course dans l’océan Arctique. ',
+        'text': '##La dérive Nord Atlantique\nAu delà de l’influence du vent qui créé les courants de surface, un nouveau mécanisme, la pompe thermohaline, attire notre goutte d’eau vers le Nord de l’Europe et essaye petit à petit de l’entraîner vers les abysses. Nous étudierons ce phénomène un peu plus tard. En suivant cette voie, notre goutte d’eau a de fortes chances de voguer vers la mer Baltique, ou de longer les côtes Norvégiennes pour continuer sa course dans l’océan Arctique. ',
         'addLayers': [derive_nord_atlantique_1, derive_nord_atlantique_2],
     },
     {
@@ -95,12 +95,12 @@ var story = [
         // 'zoom_mb': 5,
         'category': 'Les courants',
         'slug': 'courants',
-        'text': '##Gulf Stream et courants Nord Atlantiques\n\nLe GS se démarque clairement des courants Nord Atlantique. Sa vitesse reste inégalée. Jusqu’au Cap Hatteras, canalisé par la pente continentale, il est très linéaire et se comporte comme un jet puissant.\n\n Lorsqu’il prend le large, se créent des méandres de plus en plus sinueux. De grands tourbillons se détachent de part et d’autre du fleuve.\n\n Après les Grands Bancs de Terre Neuve, le GS perd ses caractéristiques et prend de nombreuses directions. Ses extensions sont visuellement plus difficiles à suivre car sa puissance a été répartie dans de nombreux courants.',
+        'text': '##Gulf Stream et courants Nord Atlantiques\n\nLe Gulf Stream se démarque clairement des courants Nord Atlantique. Sa vitesse et son débit restent inégalés. Jusqu’au Cap Hatteras, canalisé par la pente continentale, il est très linéaire et se comporte comme un jet puissant.\n\n Lorsqu’il prend le large, se créent des méandres de plus en plus sinueux. De grands tourbillons se détachent de part et d’autre du fleuve.\n\n Après les Grands Bancs de Terre Neuve, le Gulf Stream perd ses caractéristiques et prend de nombreuses directions. Ses extensions sont visuellement plus difficiles à suivre car sa puissance a été répartie dans de nombreux courants.',
     },
     {
         'category': 'Problème',
         'slug': 'salinite',
-        'text': '##test\n impossibilité de charger leaflet + les couches',
+        'text': '##test\n ne pas tenir compte de cette étape',
         'destroyMapboxGlMap': true,
         'createLeafletMap': true
     },
@@ -108,7 +108,7 @@ var story = [
         'category': 'Les courants',
         'slug': 'courants',
         'view': [[10.13, -58.59], 4],
-        'text': '##Gulf Stream et courants Nord Atlantiques\n\nNous venons d’observer ce qu’il se passe en surface mais comment les courants se comportent ils en profondeur ? En utilisant l’ascenseur ..., vous pouvez étudier leur comportement à différentes profondeur. \n\n Positionnez vous par exemple à 1684m. Vous remarquerez qu’un courant de fond, opposé au Gulf Stream longe la côte américaine. (on pourrait supposer qu’il s’agisse d’un courant de retour, affilié à la circulation thermohaline). \n\n Pour revenir au Gulf Stream, vous vous rendrez vite compte qu’il n’est pas qu’un courant de surface. A 1000m, il a encore une grande influence. \n\n Il se distingue des autres courants de bords ouest par son débit record qui atteint les millions de mètres cube à la seconde. Pour comparaison, l’Amazone n’a qu’un débit de 300 000 mètre cube par seconde à son maximum. Le débit de tous les fleuves et rivières de la planète atteint 1 Sv (unité de mesure de débit). Le GS qui a un débit de 30 Sv au départ s’approche des 140 Sv en fin de course.',
+        'text': '##Gulf Stream et courants Nord Atlantiques\n\nNous venons d’observer ce qu’il se passe en surface mais comment les courants se comportent ils en profondeurs ? En utilisant l’ascenseur à gauche de la carte, vous pouvez étudier leur comportement à différentes profondeurs. \n\n Positionnez vous par exemple à 1684m. Vous remarquerez qu’un courant de fond, opposé au Gulf Stream longe la côte américaine. La circulation des courants de profondeur est bien différente de celle de surface, influencée par l’action mécanique du vent. \n\n Pour revenir au Gulf Stream, vous vous rendrez vite compte qu’il n’est pas qu’un courant de surface. A 1000m, il a encore une grande influence. \n\n Il se distingue des autres courants de bords ouest par son débit record qui atteint les millions de mètres cube à la seconde. Pour comparaison, l’Amazone n’a qu’un débit de 300 000 mètres cube par seconde à son maximum. Le débit de tous les fleuves et rivières de la planète atteint 1 Sv (unité de mesure de débit). Le GS qui a un débit de 30 Sv au départ s’approche des 140 Sv en fin de course.',
         'addLayers': [courant_profondeur]
     },
     {
@@ -119,14 +119,22 @@ var story = [
         'addMapboxGlMap': true,
     },
     {
+        'category': 'Problème',
+        'slug': 'salinite',
+        'text': '##test\n ne pas tenir compte de cette étape',
+        'destroyMapboxGlMap': true,
+        'createLeafletMap': true
+    },
+    {
         'category': 'Les courants',
         'slug': 'courants',
-        'text': '##Gulf Stream et niveau de l’Océan\n\nL’apport en eau est tellement conséquent dans le Gulf Stream que le niveau de la mer est prêt de 50cm au dessus du niveau 0.'
+        'text': '##Gulf Stream et niveau de l’Océan\n\nL’apport en eau est tellement conséquent dans le Gulf Stream que le niveau de la mer est prêt de 50cm au dessus du niveau 0.',
+        'addLayers': [ssh]
     },
     {
         'category': 'Les températures',
         'slug': 'temperatures',
-        'text': '##Température\n\n*L’océan fournit une fraction de son énergie à l’atmosphère et distribue directement par les courants l’autre partie à l’échelle de la planète. On estime que les transferts de chaleur des régions équatoriales vers les pôles se font à égalité par l’atmosphère et l’océan.*'
+        'text': '##Température\n\n*Les courants et les vents sont le moteur de la machine qui convertit et distribue l’énergie que la Terre reçoit du soleil. L’océan fournit une fraction de son énergie à l’atmosphère et distribue directement par les courants l’autre partie à l’échelle de la planète. On estime que les transferts de chaleur des régions équatoriales vers les pôles se font à égalité par l’atmosphère et l’océan.*'
     },
     {
         'category': 'Les températures',
@@ -137,17 +145,17 @@ var story = [
     {
         'category': 'Les températures',
         'slug': 'temperatures',
-        'text': '##Température\n\nContrairement à l’atmosphère qui utilise très rapidement l’énergie qu’on lui met à disposition, l’océan a une grande mémoire. L’été, le rayonnement solaire intense échauffe les couches de surface. Il y a création d’un thermocline qui stratifie les eaux océaniques. L’océan stocke alors l’énergie thermique issue du rayonnement solaire d’été dans ses couches profondes. Sur le graphique de gauche vous pouvez ...'
+        'text': '##Température\n\nContrairement à l’atmosphère qui utilise très rapidement l’énergie qu’on lui met à disposition, l’océan a une grande mémoire. L’été, le rayonnement solaire intense échauffe les couches de surface. Il y a création d’un thermocline qui stratifie les eaux océaniques. L’océan stocke alors l’énergie thermique issue du rayonnement solaire d’été dans ses couches profondes.\n\nSur le graphique de gauche vous pouvez observer la thermocline saisonnière. Il s’agit de la zone de chute de température entre les couches de surface et les couches profondes. Si cette thermocline est importante, c’est à dire comprend une grande gamme de températures, les eaux de surface et les eaux profondes sont bien stratifiées et ne se mélangent pas.'
     },
     {
         'category': 'Les températures',
         'slug': 'temperatures',
-        'text': '##Température\n\nEn hivers le rayonnement solaire est beaucoup plus faible et les vents d’ouest se renforcent. Il y a rupture du thermocline qui remet à disposition des couches de surface le stock d’été. L’océan transmet cette énergie à l’atmosphère. Les vents d’Ouest la récupèrent et l’emportent en direction de l’Europe. L’ouest de ce continent sera le seul bénéficiaire de la mémoire calorifique estivale de l’océan Atlantique.\n\nCe phénomène semble aujourd’hui expliquer en grande partie la différence de climat entre les côtes est et ouest de l’Atlantique. Sur l’année on note une différence moyenne de 15°C. C’est ce qui explique un climat maritime (tempéré) en Europe de l’ouest et aux mêmes latitudes sur le sol américain un climat continental (froid). Le Saint Laurent gèle l’hivers, battu par les vents glacials qui suivent la dépression d’Islande.'
+        'text': '##Température\n\nEn hivers le rayonnement solaire est beaucoup plus faible et les vents d’ouest se renforcent. Il y a rupture du thermocline qui remet à disposition des couches de surface le stock d’été. L’océan transmet cette énergie à l’atmosphère. Les vents d’ouest la récupèrent et l’emportent en direction de l’Europe. L’ouest de ce continent sera le seul bénéficiaire de la mémoire calorifique estivale de l’océan Atlantique.\n\nCe phénomène semble aujourd’hui expliquer en grande partie la différence de climat entre les côtes est et ouest de l’Atlantique. Sur l’année on note une différence moyenne de 15°C. C’est ce qui explique un climat maritime (tempéré) en Europe de l’ouest et aux mêmes latitudes sur le sol américain un climat continental (froid).'
     },  
     {
         'category': 'Les vents',
         'slug': 'vents',
-        'text': '##L’influence du vent\n\n*Un principe simple de thermodynamique nous enseigne qu’entre deux corps en contact, c’est le corps chaud qui cède son énergie au corps froid jusqu’à l’équilibre. Le couple océan/atmosphère transporte et distribue l’énergie du soleil de la source chaude à la source froide. Par évaporation, les zones océaniques équatoriales (source chaude) alimentent l’atmosphère en chaleur, créant des vents qui se dirigent vers les régions polaires (source froide).'
+        'text': '##L’influence du vent\n\n*Un principe simple de thermodynamique nous enseigne qu’entre deux corps en contact, c’est le corps chaud qui cède son énergie au corps froid jusqu’à l’équilibre. Le couple océan/atmosphère transporte et distribue l’énergie du soleil de la source chaude à la source froide. Par évaporation, les zones océaniques équatoriales (source chaude) alimentent l’atmosphère en chaleur, créant des vents qui se dirigent vers les régions polaires (source froide).*'
     },  
     {
         'category': 'Les vents',
@@ -163,12 +171,12 @@ var story = [
     {
         'category': 'La salinité',
         'slug': 'salinite',
-        'text': '##Salinité\n\nEn arrivant aux hautes latitudes, la température chute. Les eaux emportées par les extensions du Gulf Stream deviennent froides et salées. Plus une eau est froide, plus elle est dense. Plus elle est salée, plus elle est dense. Les eaux issues du Gulf Stream sont plus salées que les eaux qui les entourent. Ce taux de sel est renforcé l’hiver par la création de glace. Elles finissent par devenir trop dense pour se maintenir à la surface et plongent jusqu’à des profondeurs supérieures au kilomètre. Elles s’écoulent lentement dans un courant de fond en direction de l’équateur. Au niveau des Tropiques, le courant se réchauffe et remonte à la surface jusqu’à leur prochain refroidissement. '
+        'text': '##Salinité\n\nEn arrivant aux hautes latitudes, la température chute. Les eaux emportées par les extensions du Gulf Stream deviennent froides et salées.\n\n Plus une eau est froide, plus elle est dense. Plus elle est salée, plus elle est dense. Les eaux issues du Gulf Stream sont plus salées que les eaux qui les entourent. Ce taux de sel est renforcé l’hiver par la création de glace. En se refroidissant durant leur voyage vers les hautes latitudes, elles finissent par devenir trop denses pour se maintenir à la surface et plongent jusqu’à des profondeurs supérieures au kilomètre. Elles s’écoulent lentement dans un courant de fond en direction de l’équateur. Le courant de retour que nous avions observé à 1684m peut être affilié à cette circulation. Au niveau des Tropiques, le courant se réchauffe et remonte à la surface jusqu’à leur prochain refroidissement. '
     },
         {
         'category': 'La salinité',
         'slug': 'salinite',
-        'text': '##test\n impossibilité de charger leaflet + les couches',
+        'text': '##test\n ne pas tenir compte de cette étape',
         'destroyMapboxGlMap': true,
         'createLeafletMap': true
     },
@@ -176,7 +184,7 @@ var story = [
         'category': 'La salinité',
         'slug': 'salinite',
         'view': [[0,30], 2],
-        'text': '##La circulation thermohaline\n\nSur cette carte vous pouvez suivre cette circulation à l’échelle planétaire. Elle est communément appelée le « tapis roulant ». On estime qu’il faudrait entre 1000 et 2000 ans pour qu’une goutte fasse un tour de ce circuit. Ce phénomène de plongée est particulièrement remarquable au large de la Norvège et au Nord Est des Grands Bancs de Terre Neuve. Le Gulf Stream, à travers les eaux salées qu’il dirige vers les hautes latitudes est un moteur essentiel de ce tapis roulant qui serait certainement bien différent sans lui.',
+        'text': '##La circulation thermohaline\n\nSur cette carte vous pouvez suivre cette circulation à l’échelle planétaire. Elle est communément appelée le « tapis roulant ».\n\n On estime qu’il faudrait entre 1000 et 2000 ans pour qu’une goutte fasse un tour de ce circuit. Ce phénomène de plongée est particulièrement remarquable au large de la Norvège et au Nord Est des Grands Bancs de Terre Neuve.\n\n Le Gulf Stream, à travers les eaux salées qu’il dirige vers les hautes latitudes est un moteur essentiel de ce tapis roulant. Cette circulation planétaire serait bien différent sans lui.',
         'addLayers': [thermohaline_cold, thermohaline_hot]
     },
     {

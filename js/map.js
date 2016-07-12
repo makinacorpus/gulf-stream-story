@@ -1,7 +1,7 @@
 var Lmap = undefined;
 function createLeafletMap() {
     Lmap = L.map('map', {
-        maxBounds: mybounds
+        // maxBounds: mybounds
     }).setView([24, -80.72], 5);
     L.tileLayer('data/tiles/{z}/{x}/{y}.png', {
         tms: true,
@@ -10,12 +10,12 @@ function createLeafletMap() {
     }).addTo(Lmap);
 }
 
-            var southWest = L.latLng(0, -100),
-                northEast = L.latLng(85, 20),
-                mybounds = L.latLngBounds(southWest, northEast);
+            // var southWest = L.latLng(0, -100),
+            //     northEast = L.latLng(85, 20),
+            //     mybounds = L.latLngBounds(southWest, northEast);
 
-// Ajouter des couches Leaflet
-// var ssh = L.ImageOverlay("data/geotiff/ssh.tif",[[0, -100], [90, 20]]).addTo(Lmap);
+//Ajouter des couches Leaflet
+var ssh = L.imageOverlay("data/images/ssh.png",[[0, -100], [90, 20]])//.addTo(Lmap);
 
 var colorScale = chroma.scale('OrRd').domain([0,2]);
 
