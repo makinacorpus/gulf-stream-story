@@ -409,7 +409,7 @@ function createMapboxGlMap() {
         "sources": {
             "video": {
                 "type": "video",
-                "urls": ["../data/video/current.mp4"],
+                "urls": ["https://seafile.makina-corpus.net/seafhttp/files/eca4dc48-678a-4b9c-87a9-617061c39745/current.mp4"],
                 "coordinates": [
                     [-100, 80],
                     [20, 80],
@@ -455,7 +455,7 @@ var video_temp = {
     "sources": {
         "video": {
             "type": "video",
-            "urls": ["../data/video/temperature.mp4"],
+            "urls": ["https://seafile.makina-corpus.net/seafhttp/files/dbffb0e9-49cf-4538-a627-bf773499ea9b/temperature.mp4"],
             "coordinates": [
                 [-100, 80],
                 [20, 80],
@@ -488,7 +488,7 @@ var video_salinity = {
     "sources": {
         "video": {
             "type": "video",
-            "urls": ["../data/video/salinity.mp4"],
+            "urls": ["https://seafile.makina-corpus.net/seafhttp/files/72b5a4ce-af2e-4af8-901e-aa127ef55de4/salinity.mp4"],
             "coordinates": [
                 [-100, 80],
                 [20, 80],
@@ -521,7 +521,7 @@ var video_wind = {
     "sources": {
         "video": {
             "type": "video",
-            "urls": ["../data/video/wind.mp4"],
+            "urls": ["https://seafile.makina-corpus.net/seafhttp/files/165fa48d-1032-45d9-9eda-7047c7620dd2/wind.mp4"],
             "coordinates": [
                 [-100, 80],
                 [20, 80],
