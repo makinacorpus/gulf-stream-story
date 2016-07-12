@@ -1,7 +1,7 @@
 var Lmap = undefined;
 function createLeafletMap() {
     Lmap = L.map('map', {
-        // maxBounds: mybounds
+         maxBounds: mybounds
     }).setView([24, -80.72], 5);
     L.tileLayer('data/tiles/{z}/{x}/{y}.png', {
         tms: true,
@@ -10,39 +10,110 @@ function createLeafletMap() {
     }).addTo(Lmap);
 }
 
-            // var southWest = L.latLng(0, -100),
-            //     northEast = L.latLng(85, 20),
-            //     mybounds = L.latLngBounds(southWest, northEast);
+var southWest = L.latLng(0, -100),
+    northEast = L.latLng(85, 20),
+    mybounds = L.latLngBounds(southWest, northEast);
 
 //Ajouter des couches Leaflet
 var ssh = L.imageOverlay("data/images/ssh.png",[[0, -100], [90, 20]])//.addTo(Lmap);
 
-var colorScale = chroma.scale('OrRd').domain([0,2]);
+var colorScale = chroma.scale('OrRd').domain([0, 0.3]);
+//var colorScale = chroma.scale('RdYlBu').domain([1,0]);
 
-var courant_profondeur = L.geoJson(null, {
-    pointToLayer: function (feature, latlng) {
+var depths = ['0', '109', '266', '541', '1062', '1684', '3220'];
+var depth = depths[0];
 
-        var html = '<div style="transform: rotate(';
-        html += feature.properties.dir_541;
-        html += 'deg);'
-        html += 'font-size:'
-        html += (8 + feature.properties.n_541 * 20)
-        html += 'px; color:'
-        html += colorScale(feature.properties.n_541)
-        html += '" class="rot">';
-        html += '↑</div>'
-        return L.marker(latlng, {
-            icon: L.divIcon({
-                className: 'arrow',
-                html: html
-            })
-        });
-    }
+var depthArrows = function(feature, latlng) {
+    var html = '<div style="transform: rotate(';
+    html += feature.properties.dir;
+    html += 'deg);';
+    html += 'font-size:';
+    html += (8 + feature.properties.n * 20);
+    html += 'px; color:';
+    html += colorScale(feature.properties.n);
+    html += '" class="rot">';
+    html += '↑</div>';
+    return L.marker(latlng, {
+        icon: L.divIcon({
+            className: 'arrow',
+            html: html
+        })
+    });
+};
+
+
+$('#depthSliderInput').on('slideStop', function(e) {
+    Lmap.removeLayer(depthLayer);
+    depthLayer = depthLayers[e.value];
+    Lmap.addLayer(depthLayer);
 });
 
+var courant_profondeur_0 = L.geoJson(null, {
+    pointToLayer: depthArrows
+});
 
-$.getJSON("data/geojson/current_depth_light_n0.005.geojson", function (data) {
-    courant_profondeur.addData(data);
+var courant_profondeur_109 = L.geoJson(null, {
+    pointToLayer: depthArrows
+});
+
+var courant_profondeur_266 = L.geoJson(null, {
+    pointToLayer: depthArrows
+});
+
+var courant_profondeur_541 = L.geoJson(null, {
+    pointToLayer: depthArrows
+});
+
+var courant_profondeur_1062 = L.geoJson(null, {
+    pointToLayer: depthArrows
+});
+
+var courant_profondeur_1684 = L.geoJson(null, {
+    pointToLayer: depthArrows
+});
+
+var courant_profondeur_3220 = L.geoJson(null, {
+    pointToLayer: depthArrows
+});
+
+var depthLayers = [
+    courant_profondeur_0,
+    courant_profondeur_109,
+    courant_profondeur_266,
+    courant_profondeur_541,
+    courant_profondeur_1062,
+    courant_profondeur_1684,
+    courant_profondeur_3220
+];
+
+var depthLayer = depthLayers[0];
+
+$.getJSON("data/geojson/current_0.geojson", function(data) {
+    courant_profondeur_0.addData(data);
+});
+
+$.getJSON("data/geojson/current_109.geojson", function(data) {
+    courant_profondeur_109.addData(data);
+});
+
+$.getJSON("data/geojson/current_266.geojson", function(data) {
+    courant_profondeur_266.addData(data);
+});
+
+$.getJSON("data/geojson/current_541.geojson", function(data) {
+    courant_profondeur_541.addData(data);
+});
+
+$.getJSON("data/geojson/current_1062.geojson", function(data) {
+    courant_profondeur_1062.addData(data);
+});
+
+$.getJSON("data/geojson/current_1684.geojson", function(data) {
+    courant_profondeur_1684.addData(data);
+});
+
+$.getJSON("data/geojson/current_3220.geojson", function(data) {
+    courant_profondeur_3220.addData(data);
 });
 
 var detroit_de_floride = L.geoJson(null);
