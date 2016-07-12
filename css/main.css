@@ -39,10 +39,10 @@ html, body, .container-fluid, .row, .left-panel, #map {
 }
 
 #depthSlider {
+    display: none;
     position: absolute;
-    bottom: 0;
+    bottom: 100px;
     margin-left: 15px;
-    margin-bottom: 15px;
 }
 
 .slider.slider-vertical {

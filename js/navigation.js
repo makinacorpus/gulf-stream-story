@@ -6,13 +6,6 @@ var story = [
         'createLeafletMap': true
     },
     {
-        'category': 'Les courants',
-        'slug': 'courants',
-        'view': [[10.13, -58.59], 4],
-        'text': '##Gulf Stream et courants Nord Atlantiques\n\nNous venons d’observer ce qu’il se passe en surface mais comment se comportent ils en profondeur ? En utilisant l’ascenseur ..., vous pouvez étudier le comportement des courants à différentes profondeur. \n\n Positionnez vous par exemple à 1684m. Vous remarquerez qu’un courant de fond, opposé au Gulf Stream longe la côte américaine. (on pourrait supposer qu’il s’agit d’un courant de retour, affilié à la circulation thermohaline). \n\n Pour revenir au Gulf Stream, vous vous rendrez vite compte qu’il n’est pas qu’un courant de surface. A 1000m, il a encore une grande influence. \n\n Il se distingue des autres courants de bords ouest par son débit record qui atteint les millions de mètres cube à la seconde. Pour comparaison, l’Amazone n’a qu’un débit de 300 000 mètre cube par seconde à son maximum. Le débit de tous les fleuves et rivières de la planète atteint 1 Sv (unité de mesure de débit). Le GS qui a un débit de 30 Sv au départ s’approche des 140 Sv en fin de course.',
-        'addLayers': [depthLayer]
-    },
-    {
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[24, -80.72], 5],
@@ -111,29 +104,21 @@ var story = [
         'destroyMapboxGlMap': true,
         'createLeafletMap': true
     },
-<<<<<<< HEAD
-    // {
-    //     'category': 'Les courants',
-    //     'slug': 'courants',
-    //     'view': [[10.13, -58.59], 4],
-    //     'text': '##Gulf Stream et courants Nord Atlantiques\n\nNous venons d’observer ce qu’il se passe en surface mais comment se comportent ils en profondeur ? En utilisant l’ascenseur ..., vous pouvez étudier le comportement des courants à différentes profondeur. \n\n Positionnez vous par exemple à 1684m. Vous remarquerez qu’un courant de fond, opposé au Gulf Stream longe la côte américaine. (on pourrait supposer qu’il s’agit d’un courant de retour, affilié à la circulation thermohaline). \n\n Pour revenir au Gulf Stream, vous vous rendrez vite compte qu’il n’est pas qu’un courant de surface. A 1000m, il a encore une grande influence. \n\n Il se distingue des autres courants de bords ouest par son débit record qui atteint les millions de mètres cube à la seconde. Pour comparaison, l’Amazone n’a qu’un débit de 300 000 mètre cube par seconde à son maximum. Le débit de tous les fleuves et rivières de la planète atteint 1 Sv (unité de mesure de débit). Le GS qui a un débit de 30 Sv au départ s’approche des 140 Sv en fin de course.',
-    //     'addLayers': [courant_profondeur]
-    // },
-=======
     {
         'category': 'Les courants',
         'slug': 'courants',
         'view': [[10.13, -58.59], 4],
         'text': '##Gulf Stream et courants Nord Atlantiques\n\nNous venons d’observer ce qu’il se passe en surface mais comment les courants se comportent ils en profondeur ? En utilisant l’ascenseur ..., vous pouvez étudier leur comportement à différentes profondeur. \n\n Positionnez vous par exemple à 1684m. Vous remarquerez qu’un courant de fond, opposé au Gulf Stream longe la côte américaine. (on pourrait supposer qu’il s’agisse d’un courant de retour, affilié à la circulation thermohaline). \n\n Pour revenir au Gulf Stream, vous vous rendrez vite compte qu’il n’est pas qu’un courant de surface. A 1000m, il a encore une grande influence. \n\n Il se distingue des autres courants de bords ouest par son débit record qui atteint les millions de mètres cube à la seconde. Pour comparaison, l’Amazone n’a qu’un débit de 300 000 mètre cube par seconde à son maximum. Le débit de tous les fleuves et rivières de la planète atteint 1 Sv (unité de mesure de débit). Le GS qui a un débit de 30 Sv au départ s’approche des 140 Sv en fin de course.',
-        'addLayers': [courant_profondeur]
+        'addLayers': [depthLayer],
+        'displayDepthSlider': true
     },
->>>>>>> 453bc97546c692142eafda364d7ab6940f80463d
     {
         'category': 'Les courants',
         'slug': 'courants',
         'text': '##Gulf Stream et courants Nord Atlantiques\n\nPlusieurs facteurs viennent expliquer ce flux mondialement exceptionnel :\n\n - contrairement à ses homologues, le Gulf Stream bénéficie d’une double alimentation : le courant de Guyane et le courant des Antilles.\n\n - depuis 15 millions d’années l’Isthme de Panama est fermé, empêchant le courant de Guyane de se déverser dans le Pacifique. Le Golfe du Mexique représente un cul de sac pour le courant de Guyane qui n’a qu’une sortie possible: le détroit de Floride. Cet apport est renforcé par le courant des Antilles qui est emporté dans le courant de Floride.\n\n - la circulation thermohaline crée un appel d’eau qui n’a pas son équivalent ailleurs. Nous étudierons ce phénomène un peu plus tard.',
         'destroyLeafletMap': true,
         'addMapboxGlMap': true,
+        'hideDepthSlider': true
     },
     {
         'category': 'Les courants',
@@ -302,41 +287,22 @@ function changeContent(i) {
     if (state.destroyMapboxGlMap) {
         Mbmap.remove();
     }
+    if (state.displayDepthSlider) {
+        $('#depthSlider').css('display', 'block');
+        var slider = $('#depthSliderInput').slider({
+            value: 0,
+            ticks: [0, 1, 2, 3, 4, 5, 6],
+            tooltip: 'hide',
+            ticks_labels: ['0 m', '-109 m', '-266 m', '-541 m', '-1062 m', '-1684 m', '-3220 m'],
+            step: 1
+        });
+    }
+    if (state.hideDepthSlider) {
+        $('#depthSlider').css('display', 'none');
+    }
 }
 
-var slider = $('#depthSliderInput').slider({
-    //reversed: true,
-    value: 0,
-    ticks: [0, 1, 2, 3, 4, 5, 6],
-    //ticks_positions: [0, 10, 20, 30, 50, 70, 100],
-    //scale: 'logarithmic',
-    tooltip: 'hide',
-    ticks_labels: ['0 m', '-109 m', '-266 m', '-541 m', '-1062 m', '-1684 m', '-3220 m'],
-    step: 1
-});
 
-<<<<<<< HEAD
-
-
-
-
-
-var chart = c3.generate({
-    bindto: '#graph',
-    data: {
-        xs: {
-            'janvier': 'x1',
-            'février': 'x2',
-        },
-        columns: [
-            ['x1', 10, 30, 45, 50, 70],
-            ['x2', 30, 50, 75, 100, 120],
-            ['janvier', 30, 200, 100, 400, 150],
-            ['février', 30, 200, 100, 400, 150]
-        ]
-    }
-});
-=======
 // var chart = c3.generate({
 //     bindto: '#graph',
 //     data: {
@@ -382,4 +348,3 @@ var chart = c3.generate({
 //         ]
 //     }
 // });
->>>>>>> 453bc97546c692142eafda364d7ab6940f80463d

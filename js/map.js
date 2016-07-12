@@ -17,7 +17,7 @@ var southWest = L.latLng(0, -100),
 // Ajouter des couches Leaflet
 // var ssh = L.ImageOverlay("data/geotiff/ssh.tif",[[0, -100], [90, 20]]).addTo(Lmap);
 
-var colorScale = chroma.scale('OrRd').domain([0, 1]);
+var colorScale = chroma.scale('OrRd').domain([0, 0.3]);
 //var colorScale = chroma.scale('RdYlBu').domain([1,0]);
 
 var depths = ['0', '109', '266', '541', '1062', '1684', '3220'];
@@ -28,7 +28,7 @@ var depthArrows = function(feature, latlng) {
     html += feature.properties.dir;
     html += 'deg);';
     html += 'font-size:';
-    html += (12 + feature.properties.n * 15);
+    html += (8 + feature.properties.n * 20);
     html += 'px; color:';
     html += colorScale(feature.properties.n);
     html += '" class="rot">';
@@ -92,19 +92,19 @@ $.getJSON("data/geojson/current_0.geojson", function(data) {
     courant_profondeur_0.addData(data);
 });
 
-$.getJSON("data/geojson/current_0.geojson", function(data) {
+$.getJSON("data/geojson/current_109.geojson", function(data) {
     courant_profondeur_109.addData(data);
 });
 
-$.getJSON("data/geojson/current_0.geojson", function(data) {
+$.getJSON("data/geojson/current_266.geojson", function(data) {
     courant_profondeur_266.addData(data);
 });
 
-$.getJSON("data/geojson/current_0.geojson", function(data) {
+$.getJSON("data/geojson/current_541.geojson", function(data) {
     courant_profondeur_541.addData(data);
 });
 
-$.getJSON("data/geojson/current_0.geojson", function(data) {
+$.getJSON("data/geojson/current_1062.geojson", function(data) {
     courant_profondeur_1062.addData(data);
 });
 
@@ -112,7 +112,7 @@ $.getJSON("data/geojson/current_1684.geojson", function(data) {
     courant_profondeur_1684.addData(data);
 });
 
-$.getJSON("data/geojson/current_1684.geojson", function(data) {
+$.getJSON("data/geojson/current_3220.geojson", function(data) {
     courant_profondeur_3220.addData(data);
 });
 
