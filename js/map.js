@@ -1,21 +1,21 @@
 var Lmap = undefined;
 function createLeafletMap() {
     Lmap = L.map('map', {
-         maxBounds: mybounds
+         //maxBounds: mybounds
     }).setView([24, -80.72], 5);
     L.tileLayer('data/tiles/{z}/{x}/{y}.png', {
         tms: true,
         maxZoom: 6,
-        minZoom: 3
+        minZoom: 2
     }).addTo(Lmap);
 }
 
-var southWest = L.latLng(0, -100),
-    northEast = L.latLng(85, 20),
-    mybounds = L.latLngBounds(southWest, northEast);
+// var southWest = L.latLng(0, -100),
+//     northEast = L.latLng(85, 20),
+//     mybounds = L.latLngBounds(southWest, northEast);
 
 //Ajouter des couches Leaflet
-var ssh = L.imageOverlay("data/images/ssh.png",[[0, -100], [85, 20]])//.addTo(Lmap);
+var ssh = L.imageOverlay("data/images/ssh.png",[[0, -100], [85, 20]])
 
 var colorScale = chroma.scale('OrRd').domain([0, 0.3]);
 //var colorScale = chroma.scale('RdYlBu').domain([1,0]);
@@ -159,7 +159,7 @@ $.getJSON("data/geojson/courant_de_guyane.geojson", function (data) {
 
 var thermohaline_cold = L.geoJson(null, {
     style: {
-        weight: 20,
+        weight: 18,
         opacity: 1,
         color: '#006FFF'
     }
@@ -171,7 +171,7 @@ $.getJSON("data/geojson/thermohaline_cold.geojson", function (data) {
 
 var thermohaline_hot = L.geoJson(null, {
     style: {
-        weight: 20,
+        weight: 18,
         opacity: 1,
         color: '#FF0000'
     }
