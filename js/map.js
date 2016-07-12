@@ -15,7 +15,7 @@ var southWest = L.latLng(0, -100),
     mybounds = L.latLngBounds(southWest, northEast);
 
 //Ajouter des couches Leaflet
-var ssh = L.imageOverlay("data/images/ssh.png",[[0, -100], [90, 20]])//.addTo(Lmap);
+var ssh = L.imageOverlay("data/images/ssh.png",[[0, -100], [85, 20]])//.addTo(Lmap);
 
 var colorScale = chroma.scale('OrRd').domain([0, 0.3]);
 //var colorScale = chroma.scale('RdYlBu').domain([1,0]);
@@ -489,6 +489,39 @@ var video_salinity = {
         "video": {
             "type": "video",
             "urls": ["../data/video/salinity.mp4"],
+            "coordinates": [
+                [-100, 80],
+                [20, 80],
+                [20, 0],
+                [-100, 0]
+            ]
+        },
+        "tiles_mb": {
+            "type": "raster",
+            "tiles": ["data/tiles_mb/{z}/{x}/{y}.png"],
+            "scheme": "tms",
+            "tileSize": 256
+        }
+    },
+    "layers": [{
+        "id": "video",
+        "type": "raster",
+        "source": "video"
+    }, {
+        "id": "tiles_mb",
+        "type": "raster",
+        "source": "tiles_mb",
+        "minzoom": 1,
+        "maxzoom": 5
+    }]
+};
+
+var video_wind = {
+    "version": 8,
+    "sources": {
+        "video": {
+            "type": "video",
+            "urls": ["../data/video/wind.mp4"],
             "coordinates": [
                 [-100, 80],
                 [20, 80],

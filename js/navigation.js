@@ -107,7 +107,7 @@ var story = [
     {
         'category': 'Les courants',
         'slug': 'courants',
-        'view': [[10.13, -58.59], 4],
+        'view': [[30, -70], 5],
         'text': '##Gulf Stream et courants Nord Atlantiques\n\nNous venons d’observer ce qu’il se passe en surface mais comment les courants se comportent ils en profondeurs ? En utilisant l’ascenseur à gauche de la carte, vous pouvez étudier leur comportement à différentes profondeurs. \n\n Positionnez vous par exemple à 1684m. Vous remarquerez qu’un courant de fond, opposé au Gulf Stream longe la côte américaine. La circulation des courants de profondeur est bien différente de celle de surface, influencée par l’action mécanique du vent. \n\n Pour revenir au Gulf Stream, vous vous rendrez vite compte qu’il n’est pas qu’un courant de surface. A 1000m, il a encore une grande influence. \n\n Il se distingue des autres courants de bords ouest par son débit record qui atteint les millions de mètres cube à la seconde. Pour comparaison, l’Amazone n’a qu’un débit de 300 000 mètres cube par seconde à son maximum. Le débit de tous les fleuves et rivières de la planète atteint 1 Sv (unité de mesure de débit). Le GS qui a un débit de 30 Sv au départ s’approche des 140 Sv en fin de course.',
         'addLayers': [depthLayer],
         'displayDepthSlider': true
@@ -128,6 +128,7 @@ var story = [
         'createLeafletMap': true
     },
     {
+        'view': [[24, -80.72], 5],
         'category': 'Les courants',
         'slug': 'courants',
         'text': '##Gulf Stream et niveau de l’Océan\n\nL’apport en eau est tellement conséquent dans le Gulf Stream que le niveau de la mer est prêt de 50cm au dessus du niveau 0.',
@@ -136,7 +137,9 @@ var story = [
     {
         'category': 'Les températures',
         'slug': 'temperatures',
-        'text': '##Température\n\n*Les courants et les vents sont le moteur de la machine qui convertit et distribue l’énergie que la Terre reçoit du soleil. L’océan fournit une fraction de son énergie à l’atmosphère et distribue directement par les courants l’autre partie à l’échelle de la planète. On estime que les transferts de chaleur des régions équatoriales vers les pôles se font à égalité par l’atmosphère et l’océan.*'
+        'text': '##Température\n\n*Les courants et les vents sont le moteur de la machine qui convertit et distribue l’énergie que la Terre reçoit du soleil. L’océan fournit une fraction de son énergie à l’atmosphère et distribue directement par les courants l’autre partie à l’échelle de la planète. On estime que les transferts de chaleur des régions équatoriales vers les pôles se font à égalité par l’atmosphère et l’océan.*',
+        'destroyLeafletMap': true,
+        'addMapboxGlMap': true,
     },
     {
         'category': 'Les températures',
@@ -157,7 +160,8 @@ var story = [
     {
         'category': 'Les vents',
         'slug': 'vents',
-        'text': '##L’influence du vent\n\n*Un principe simple de thermodynamique nous enseigne qu’entre deux corps en contact, c’est le corps chaud qui cède son énergie au corps froid jusqu’à l’équilibre. Le couple océan/atmosphère transporte et distribue l’énergie du soleil de la source chaude à la source froide. Par évaporation, les zones océaniques équatoriales (source chaude) alimentent l’atmosphère en chaleur, créant des vents qui se dirigent vers les régions polaires (source froide).*'
+        'text': '##L’influence du vent\n\n*Un principe simple de thermodynamique nous enseigne qu’entre deux corps en contact, c’est le corps chaud qui cède son énergie au corps froid jusqu’à l’équilibre. Le couple océan/atmosphère transporte et distribue l’énergie du soleil de la source chaude à la source froide. Par évaporation, les zones océaniques équatoriales (source chaude) alimentent l’atmosphère en chaleur, créant des vents qui se dirigent vers les régions polaires (source froide).*',
+        'style_mb': video_wind
     },  
     {
         'category': 'Les vents',
