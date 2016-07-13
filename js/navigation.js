@@ -16,7 +16,7 @@ var story = [
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[24, -80.72], 5],
-        'setMaxBounds': [[0, -100],[85, 20]],
+        // 'setMaxBounds': [[0, -100],[85, 20]],
         'text': '## Naissance du Gulf Stream\n Pour suivre le Gulf Stream, focalisons nous sur le trajet d’une goutte d’eau qui se trouve dans le Golfe du Mexique. Elle pourrait venir d’un cumulonimbus, de l’Atlantique, du lac Itasca source du Mississipi, ou de bien d’autres horizons. Mais sa provenance n’a que peu d’importance. Si elle ne s’évapore pas, elle se dirigera inévitablement vers le Gulf Stream.',
         'addLayers': [neTiles],
         'removeLayers': [wh] 
@@ -140,14 +140,15 @@ var story = [
         'text': '##Gulf Stream et courants Nord Atlantiques\n\nPlusieurs facteurs viennent expliquer ce flux mondialement exceptionnel :\n\n - contrairement à ses homologues, le Gulf Stream bénéficie d’une double alimentation : le courant de Guyane et le courant des Antilles.\n\n - depuis 15 millions d’années l’Isthme de Panama est fermé, empêchant le courant de Guyane de se déverser dans le Pacifique. Le Golfe du Mexique représente un cul de sac pour le courant de Guyane qui n’a qu’une sortie possible: le détroit de Floride. Cet apport est renforcé par le courant des Antilles qui est emporté dans le courant de Floride.\n\n - la circulation thermohaline crée un appel d’eau qui n’a pas son équivalent ailleurs. Nous étudierons ce phénomène un peu plus tard.',
         'destroyLeafletMap': true,
         'addMapboxGlMap': true,
-        'hideDepthSlider': true
+        'hideDepthSlider': true,
+        'removeLayers': [neTiles]
     },
     {
         'category': 'Problème',
         'slug': 'salinite',
         'text': '##test\n ne pas tenir compte de cette étape',
         'destroyMapboxGlMap': true,
-        'createLeafletMap': true
+        'createLeafletMap': [neTiles]
     },
     {
         'view': [[40, -40], 4],
@@ -162,6 +163,7 @@ var story = [
         'text': '##Température\n\n*Les courants et les vents sont le moteur de la machine qui convertit et distribue l’énergie que la Terre reçoit du soleil. L’océan fournit une fraction de son énergie à l’atmosphère et distribue directement par les courants l’autre partie à l’échelle de la planète. On estime que les transferts de chaleur des régions équatoriales vers les pôles se font à égalité par l’atmosphère et l’océan.*',
         'destroyLeafletMap': true,
         'addMapboxGlMap': true,
+        'removeLayers': [neTiles]
     },
     {
         'category': 'Les températures',
@@ -203,19 +205,19 @@ var story = [
         'slug': 'salinite',
         'text': '##Salinité\n\nEn arrivant aux hautes latitudes, la température chute. Les eaux emportées par les extensions du Gulf Stream deviennent froides et salées.\n\n Plus une eau est froide, plus elle est dense. Plus elle est salée, plus elle est dense. Les eaux issues du Gulf Stream sont plus salées que les eaux qui les entourent. Ce taux de sel est renforcé l’hiver par la création de glace. En se refroidissant durant leur voyage vers les hautes latitudes, elles finissent par devenir trop denses pour se maintenir à la surface et plongent jusqu’à des profondeurs supérieures au kilomètre. Elles s’écoulent lentement dans un courant de fond en direction de l’équateur. Le courant de retour que nous avions observé à 1684m peut être affilié à cette circulation. Au niveau des Tropiques, le courant se réchauffe et remonte à la surface jusqu’à leur prochain refroidissement. '
     },
-        {
+    {
         'category': 'La salinité',
         'slug': 'salinite',
         'text': '##test\n ne pas tenir compte de cette étape',
         'destroyMapboxGlMap': true,
-        'createLeafletMap': true,
+        'createLeafletMap': [neTiles]
     },
     {
         'category': 'La salinité',
         'slug': 'salinite',
         'view': [[0,30], 2],
         'text': '##La circulation thermohaline\n\nSur cette carte vous pouvez suivre cette circulation à l’échelle planétaire. Elle est communément appelée le « tapis roulant ».\n\n On estime qu’il faudrait entre 1000 et 2000 ans pour qu’une goutte fasse un tour de ce circuit. Ce phénomène de plongée est particulièrement remarquable au large de la Norvège et au Nord Est des Grands Bancs de Terre Neuve.\n\n Le Gulf Stream, à travers les eaux salées qu’il dirige vers les hautes latitudes est un moteur essentiel de ce tapis roulant. Cette circulation planétaire serait bien différent sans lui.',
-        'addLayers': [neTiles, thermohaline_cold, thermohaline_hot]
+        'addLayers': [thermohaline_cold, thermohaline_hot]
     },
     {
         'category': 'Conclusion',
@@ -468,7 +470,8 @@ function createGraphThermocline() {
         },
         series: [{
         name: 'Tokyo',
-        data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+        data: [[0, 15], [10, -50], [20, -56.5], [30, -46.5], [40, -22.1],
+                [50, -2.5], [60, -27.7], [70, -55.7], [80, -76.5]]
     }, {
         name: 'New York',
         data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
