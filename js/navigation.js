@@ -3,28 +3,37 @@ var index = 0;
 var story = [
     {
         'category': 'Introduction',
-        'createLeafletMap': true
+        'createLeafletMap': [wh]
+    },
+    {   
+
+        'view': [[-60, 0], 3],
+        'category': 'Introduction',
+        'slug': 'introduction',
+        'text': '####*«Le Gulf Stream est une rivière au milieu de l’océan, dont le niveau ne change ni dans les plus fortes sécheresses ni dans les plus fortes pluies. Il est limité par des eaux froides, tandis que son courant est chaud. Il prend sa source dans le golfe du Mexique et se jette dans l’océan Arctique. Il n’existe pas sur la Terre un cours d’eau plus majestueux : sa vitesse est plus rapide que celle du Mississippi ou des Amazones, et son débit 1000 fois plus conséquent.» Maury «The Physical Geography of the Sea» 1855.*\n\nDepuis sa découverte, durant le deuxième voyage de Christophe Colomb en 1493, le Gulf Stream a de nombreuses fois fait parlé de lui. Benjamin Franklin l’a transformé en voie rapide pour le retour en Europe. Une légende l’a longtemps elevé au statut de chaudière de l’Europe, miraculeux responsable de la différence entre le climat continental glacial de la côte est américaine et le climat océanique tempéré d’Europe de l’ouest. Récemment, devenu star hollywodienne, il a fait son apparition dans plusieurs films catastrophe. Porté par cette vague alarmiste, la presse a maladroitement prévu son arrêt et le refroidissement drastique de l’Europe.\n\nMais qu’en est-il réellement? A travers un ensemble de cartes, nous vous proposons de partir à la découverte de ce véritable fleuve océanique.'
     },
     {
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[24, -80.72], 5],
-        'text': '## Naissance du Gulf Stream\n Pour suivre le Gulf Stream, focalisons nous sur le trajet d’une goutte d’eau qui se trouve dans le Golfe du Mexique. Elle pourrait venir d’un cumulonimbus, de l’Atlantique, du lac Itasca source du Mississipi, ou de bien d’autres horizons. Mais sa provenance n’a que peu d’importance. Si elle ne s’évapore pas, elle se dirigera inévitablement vers le Gulf Stream.\n\n![tableau](data/images/gulf_stream_winslow_homer.jpg)\n*Gulf Stream par Winslow Homer (1899, peinture à l’huile)*'
+        'text': '## Naissance du Gulf Stream\n Pour suivre le Gulf Stream, focalisons nous sur le trajet d’une goutte d’eau qui se trouve dans le Golfe du Mexique. Elle pourrait venir d’un cumulonimbus, de l’Atlantique, du lac Itasca source du Mississipi, ou de bien d’autres horizons. Mais sa provenance n’a que peu d’importance. Si elle ne s’évapore pas, elle se dirigera inévitablement vers le Gulf Stream.',
+        'addLayers': [neTiles],
+        'removeLayers': [wh] 
     },
     {
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[10.13, -58.59], 4],
         'text': '## Naissance du Gulf Stream\n Le courant de Guyane, qui longe les côtes d’Amérique du Sud, se retrouve dans un cul-de-sac: l’Isthme du Panama. Il est naturellement emporté vers le nord et à l’est par la circulation anticyclonique des Açores (sens des aiguilles d’une montre). Il dirige donc notre goutte d’eau vers la seule porte de sortie possible : le détroit de Floride. L’étroitesse de ce passage situé entre Cuba et la Floride génère un trop plein. C’est cet excédent qui donne naissance au Gulf Stream.\n\n ![detroit_de_floride](data/images/detroit_de_floride.jpg)\n*Détroit de Floride*\n\n*Isthme du Panama',
-        'addLayers': [courant_guyane, detroit_de_floride, pente_continentale, isthme_panama]
+        'addLayers': [courant_guyane, detroit_de_floride, isthme_panama]
     },
     {
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[34.99, -74.97], 5],
-        'text': '## Le Gulf Stream continental\n Ca y est, notre goutte d’eau qui a eu du mal à se frayer un passage entre ses sœurs est entraînée à pleine vitesse dans le Gulf Stream. Elle vogue maintenant à la vitesse record de 2 m/s dans cette partie du Gulf Stream appelée courant de Floride. Ce véritable fleuve côtier reste collé au continent, canalisé par la pente continentale jusqu’au Cap Hatteras.\n\n ![detroit_de_floride](data/images/cap_hatteras.jpg)\n*Le Cap Hatteras*',
-        'addLayers': [courant_floride, cap_hatteras],
-        'removeLayers': [detroit_de_floride]
+        'text': '## Le Gulf Stream continental\n Ca y est, notre goutte d’eau qui a eu du mal à se frayer un passage entre ses sœurs est entraînée à pleine vitesse dans le Gulf Stream. Elle vogue maintenant à la vitesse record de 2 m/s dans cette partie appelée courant de Floride. Ce véritable fleuve côtier reste collé au continent, canalisé par la pente continentale jusqu’au Cap Hatteras.\n\n ![detroit_de_floride](data/images/cap_hatteras.jpg)\n*Le Cap Hatteras*',
+        'addLayers': [courant_floride, cap_hatteras, pente_continentale],
+        'removeLayers': [detroit_de_floride, isthme_panama]
     },
     {
         'category': 'Introduction',
@@ -32,6 +41,7 @@ var story = [
         'view': [[43.19, -62.3], 5],
         'text': '##Le Gulf Stream océanique\nEn quittant le Cap Hatteras, notre goutte d’eau s’embarque vers le large en suivant le fleuve océanique. Elle se confronte maintenant à un univers beaucoup plus chaotique. La pente continentale n’est plus là pour canaliser son mouvement qui devient tourbillonnaire. Certains petits courants sortent du flux qui file maintenant plein est, en direction de l’Europe.',
         'addLayers': [gulfstream],
+        'removeLayers': [pente_continentale]
     },
     {
         'category': 'Introduction',
@@ -45,7 +55,7 @@ var story = [
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[44.72, -37.38], 5],
-        'text': '##Le courant Nord Atlantique\nA bout de souffle, le Gulf Stream passe le relais au courant Nord Atlantique qui entraîne à son tour notre goutte d’eau. Plus libre, elle n’est plus canalisée par le fleuve océanique et va rapidement se retrouver confronter à des chemins multiples.',
+        'text': '##Le courant Nord Atlantique\nA bout de souffle, le Gulf Stream passe le relais au courant Nord Atlantique qui entraîne à son tour notre goutte d’eau. Plus libre, elle n’est plus canalisée par le fleuve océanique et va rapidement se retrouver confrontée à des chemins multiples.',
         'addLayers': [courant_nord_atlantique],
         'removeLayers': [grands_bancs_de_terre_neuve]
     },
@@ -68,7 +78,7 @@ var story = [
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[56, -34.91], 4],
-        'text': '##Cap sur le Groenland\nNotre goutte d’eau ne tombe pas fatalement sous l’emprise de l’anticyclone des Açores. Elle peut aussi être attirée par sa sœur nordique, la dépression d’Islande, qui tourne dans le sens inverse des aiguilles d’une montre. Encore une fois, de nombreux choix s’offrent à notre goutte d’eau. Elle peut mettre le cap vers l’Islande et le Groenland. En suivant ce chemin et en passant par la mer du Labrador, elle pourrait de nouveau être confronté au Gulf Stream.',
+        'text': '##Cap sur le Groenland\nNotre goutte d’eau ne tombe pas fatalement sous l’emprise de l’anticyclone des Açores. Elle peut aussi être attirée par sa sœur nordique, la dépression d’Islande, qui tourne dans le sens inverse des aiguilles d’une montre. Encore une fois, de nombreux choix s’offrent à elle. Elle peut mettre le cap vers l’Islande et le Groenland. En suivant ce chemin et en passant par la mer du Labrador, elle pourrait de nouveau être confronté au Gulf Stream.',
         'addLayers': [groenland],
     },
     {
@@ -83,16 +93,17 @@ var story = [
         'slug': 'courants',
         'text': '##Gulf Stream et courants Nord Atlantiques\n*Le système climatique est une machine à convertir et à distribuer l’énergie que la Terre reçoit du soleil. L’énergie solaire est transportée par deux fluides : l’atmosphère et l’océan. Ces deux entités sont en contact permanent et ne cessent d’échanger de l’énergie. C’est le couple qu’ils forment qui gère le climat de notre planète.*',
         'destroyLeafletMap': true,
+        'removeLayers': [neTiles],
         'addMapboxGlMap': true,
     },
     {
+        // 'view_mb': [-70,35],
+        // 'zoom_mb': 3,
         'category': 'Les courants',
         'slug': 'courants',
         'text': '##Gulf Stream et courants Nord Atlantiques\nCette carte représente la vitesse des courants de surface, de janvier à juillet 2016. Malgré de nombreux petits courants, souvent tourbillonnaires, il est possible de retrouver la plupart des courants évoqués durant le voyage de notre goutte d’eau. Vous pouvez si vous le souhaitez les afficher à l’aide des cases à cocher.'
     },
     {
-        // 'view_mb': [-70,20],
-        // 'zoom_mb': 5,
         'category': 'Les courants',
         'slug': 'courants',
         'text': '##Gulf Stream et courants Nord Atlantiques\n\nLe Gulf Stream se démarque clairement des courants Nord Atlantique. Sa vitesse et son débit restent inégalés. Jusqu’au Cap Hatteras, canalisé par la pente continentale, il est très linéaire et se comporte comme un jet puissant.\n\n Lorsqu’il prend le large, se créent des méandres de plus en plus sinueux. De grands tourbillons se détachent de part et d’autre du fleuve.\n\n Après les Grands Bancs de Terre Neuve, le Gulf Stream perd ses caractéristiques et prend de nombreuses directions. Ses extensions sont visuellement plus difficiles à suivre car sa puissance a été répartie dans de nombreux courants.',
@@ -128,7 +139,7 @@ var story = [
         'createLeafletMap': true
     },
     {
-        'view': [[24, -80.72], 4],
+        'view': [[40, -40], 4],
         'category': 'Les courants',
         'slug': 'courants',
         'text': '##Gulf Stream et niveau de l’Océan\n\nL’apport en eau est tellement conséquent dans le Gulf Stream que le niveau de la mer est prêt de 50cm au dessus du niveau 0.',
@@ -186,19 +197,22 @@ var story = [
         'slug': 'salinite',
         'text': '##test\n ne pas tenir compte de cette étape',
         'destroyMapboxGlMap': true,
-        'createLeafletMap': true
+        'createLeafletMap': true,
     },
     {
         'category': 'La salinité',
         'slug': 'salinite',
-        'view': [[0,30], 0],
+        'view': [[0,30], 2],
         'text': '##La circulation thermohaline\n\nSur cette carte vous pouvez suivre cette circulation à l’échelle planétaire. Elle est communément appelée le « tapis roulant ».\n\n On estime qu’il faudrait entre 1000 et 2000 ans pour qu’une goutte fasse un tour de ce circuit. Ce phénomène de plongée est particulièrement remarquable au large de la Norvège et au Nord Est des Grands Bancs de Terre Neuve.\n\n Le Gulf Stream, à travers les eaux salées qu’il dirige vers les hautes latitudes est un moteur essentiel de ce tapis roulant. Cette circulation planétaire serait bien différent sans lui.',
-        'addLayers': [thermohaline_cold, thermohaline_hot]
+        'addLayers': [neTiles, thermohaline_cold, thermohaline_hot]
     },
     {
         'category': 'Conclusion',
         'slug': 'conclusion',
-        'text': '##Conclusion\n\nIl est encore aujourd’hui très difficile d’étudier l’influence exacte des différents facteurs qui jouent sur notre climat. Ils ont chacun leurs propre caractéristiques qui sont difficilement comparables. Il est aussi impossible de les isoler pour les étudier indépendamment. Les scientifiques créent des modèles toujours plus complexes pour simuler les phénomènes météorologiques et climatiques. Ils estiment aujourd’hui que sans le GS, notre climat se rafraîchirait de 4 ou 5°C.'
+        'view': [[-65, 25], 3],
+        'text': '##Conclusion\n\nLes scientifiques estiment aujourd’hui que sans le GS, notre climat se rafraîchirait de 4 ou 5°C. Mais cette information reste très hypothétique. Il est encore aujourd’hui très difficile d’étudier l’influence exacte des différents facteurs qui jouent sur notre climat. Ils dépendent de la géométrie de la Terre, de sa rotation, de l’attraction de la Lune et du Soleil et de bien d’autres facteurs. Ils ont chacun leurs propres caractéristiques qui sont difficilement comparables. De plus, il est impossible de les isoler pour les étudier indépendamment. Les scientifiques créent des modèles simplifiant la réalité pour simuler les phénomènes météorologiques et climatiques. Mais la simplification de phénomènes aussi complexes font de la climatologie un domaine passionnant ou de nombreuses découvertes sont encore à faire.',
+        'addLayers': [BFranklin],
+        'removeLayers': [neTiles, thermohaline_cold, thermohaline_hot]
     }
 ];
 
@@ -215,8 +229,6 @@ init();
 
 function init() {
     console.log('init nav');
-
-    createLeafletMap();
 
     function locationHashChanged(hash) {
         console.log(hash)
@@ -253,6 +265,7 @@ for (var i = 0; i < story.length; i++) {
     lastCategory = story[i].category;
 }
 
+changeContent(0);
 
 function changeContent(i) {
     var state = story[i];
@@ -290,7 +303,7 @@ function changeContent(i) {
         }
     }
     if (state.createLeafletMap) {
-        createLeafletMap();
+        createLeafletMap(state.createLeafletMap);
     }
     if (state.destroyLeafletMap) {
         Lmap.remove();

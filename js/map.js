@@ -1,13 +1,30 @@
 var Lmap = undefined;
-function createLeafletMap() {
+
+var neTiles = L.tileLayer('data/tiles/{z}/{x}/{y}.png', {
+    tms: true,
+    maxZoom: 6,
+    minZoom: 2
+});
+var wh = L.tileLayer('data/gs2/{z}/{x}/{y}.png', {
+    tms: true,
+    maxZoom: 4,
+    minZoom: 3
+});
+var BFranklin = L.tileLayer('data/BFranklin/{z}/{x}/{y}.png', {
+    tms: true,
+    maxZoom: 5,
+    minZoom: 3
+});
+
+function createLeafletMap(optional_layers) {
     Lmap = L.map('map', {
-         //maxBounds: mybounds
+         // maxBounds: mybounds
     }).setView([24, -80.72], 5);
-    L.tileLayer('data/tiles/{z}/{x}/{y}.png', {
-        tms: true,
-        maxZoom: 6,
-        minZoom: 2
-    }).addTo(Lmap);
+    if(optional_layers) {
+        for (layer in optional_layers) {
+            Lmap.addLayer(optional_layers[layer]);
+        }
+    }
 }
 
 // var southWest = L.latLng(0, -100),
@@ -16,6 +33,8 @@ function createLeafletMap() {
 
 //Ajouter des couches Leaflet
 var ssh = L.imageOverlay("data/images/ssh.png",[[0, -100], [85, 20]])
+
+// var marker = L.marker([37.7772, -40]).bindLabel("test")
 
 var colorScale = chroma.scale('OrRd').domain([0, 0.3]);
 //var colorScale = chroma.scale('RdYlBu').domain([1,0]);
@@ -119,19 +138,19 @@ $.getJSON("data/geojson/current_3220.geojson", function(data) {
 var detroit_de_floride = L.geoJson(null);
 
 $.getJSON("data/geojson/detroit_de_floride.geojson", function (data) {
-    detroit_de_floride.addData(data);
+    detroit_de_floride.addData(data).bindLabel("Détroit de Floride");
 });
 
 var isthme_panama = L.geoJson(null, {
     style: {
         weight: 1,
         opacity: 1,
-        color: '#ff1100'
+        color: '#00341d'
         }
     });
 
 $.getJSON("data/geojson/isthme_panama.geojson", function (data) {
-    isthme_panama.addData(data);
+    isthme_panama.addData(data).bindLabel("Isthme du Panama");
 });
 
 var courant_guyane = L.geoJson(null, {
@@ -154,7 +173,7 @@ var courant_guyane = L.geoJson(null, {
 });
 
 $.getJSON("data/geojson/courant_de_guyane.geojson", function (data) {
-    courant_guyane.addData(data);
+    courant_guyane.addData(data).bindLabel("Courant de Guyane");
 });
 
 var thermohaline_cold = L.geoJson(null, {
@@ -166,7 +185,7 @@ var thermohaline_cold = L.geoJson(null, {
 });
 
 $.getJSON("data/geojson/thermohaline_cold.geojson", function (data) {
-    thermohaline_cold.addData(data);
+    thermohaline_cold.addData(data).bindLabel("courant froid de profondeur");
 });
 
 var thermohaline_hot = L.geoJson(null, {
@@ -178,18 +197,18 @@ var thermohaline_hot = L.geoJson(null, {
 });
 
 $.getJSON("data/geojson/thermohaline_hot.geojson", function (data) {
-    thermohaline_hot.addData(data);
+    thermohaline_hot.addData(data).bindLabel("courant chaud de surface");
 });
 
 var pente_continentale = L.geoJson(null, {
     style: {
-        weight: 1,
-        color: '#000000'
+        weight: 5,
+        color: '#006268'
     }
 });
 
 $.getJSON("data/geojson/pente_continentale.geojson", function (data) {
-    pente_continentale.addData(data);
+    pente_continentale.addData(data).bindLabel("pente continentale");
 });
 
 var courant_floride = L.geoJson(null, {
@@ -214,14 +233,14 @@ var courant_floride = L.geoJson(null, {
 });
 
 $.getJSON("data/geojson/courant_de_floride.geojson", function (data) {
-  courant_floride.addData(data);
+  courant_floride.addData(data).bindLabel("Gulf Stream: Courant de Floride");
 });
 
 
 var cap_hatteras = L.geoJson(null);
 
 $.getJSON("data/geojson/cap_hatteras.geojson", function (data) {
-    cap_hatteras.addData(data);
+    cap_hatteras.addData(data).bindLabel("<img alt='detroit_de_floride' src='data/images/cap_hatteras.jpg'>Cap Hatteras");
 });
 
 
@@ -244,11 +263,14 @@ $.getJSON("data/geojson/cap_hatteras.geojson", function (data) {
     }
 });
 
+$.getJSON("data/geojson/gulfstream.geojson", function(data) {
+    gulfstream.addData(data).bindLabel("Gulf Stream");
+});
 
 var grands_bancs_de_terre_neuve = L.geoJson(null);
 
 $.getJSON("data/geojson/grands_bancs_de_terre_neuve.geojson", function (data) {
-    grands_bancs_de_terre_neuve.addData(data);
+    grands_bancs_de_terre_neuve.addData(data).bindLabel("Grands Bancs de Terre Neuve");
 });
 
 var courant_nord_atlantique = L.geoJson(null, {
@@ -271,7 +293,7 @@ var courant_nord_atlantique = L.geoJson(null, {
 });
 
 $.getJSON("data/geojson/courant_nord_atlantique.geojson", function (data) {
-    courant_nord_atlantique.addData(data);
+    courant_nord_atlantique.addData(data).bindLabel("Courant Nord Atlantique");
 });
 
 var courant_acores = L.geoJson(null, {
@@ -294,7 +316,7 @@ var courant_acores = L.geoJson(null, {
 });
 
 $.getJSON("data/geojson/courant_des_acores.geojson", function (data) {
-    courant_acores.addData(data);
+    courant_acores.addData(data).bindLabel("Courant des Açores");
 });
 
 var courant_canaries = L.geoJson(null, {
@@ -317,7 +339,7 @@ var courant_canaries = L.geoJson(null, {
 });
 
 $.getJSON("data/geojson/courant_des_canaries.geojson", function (data) {
-    courant_canaries.addData(data);
+    courant_canaries.addData(data).bindLabel("Courant des Canaries");
 });
 
 
@@ -367,7 +389,7 @@ var derive_nord_atlantique_1 = L.geoJson(null, {
 });
 
 $.getJSON("data/geojson/derive_nord_atlantique_1.geojson", function(data) {
-    derive_nord_atlantique_1.addData(data);
+    derive_nord_atlantique_1.addData(data).bindLabel("Dérive Nord Atlantique");
 });
 
 
@@ -392,13 +414,9 @@ var derive_nord_atlantique_2 = L.geoJson(null, {
 });
 
 $.getJSON("data/geojson/derive_nord_atlantique_2.geojson", function(data) {
-    derive_nord_atlantique_2.addData(data);
+    derive_nord_atlantique_2.addData(data).bindLabel("Dérive Nord Atlantique");
 });
 
-
-$.getJSON("data/geojson/gulfstream.geojson", function(data) {
-    gulfstream.addData(data);
-});
 
 //Ajout de couches MapBox
 Mbmap = undefined;
@@ -423,6 +441,13 @@ function createMapboxGlMap() {
                 "scheme": "tms",
                 "tileSize": 256
             }
+            // ,
+            // "tiles_gs2": {
+            //     "type": "raster",
+            //     "tiles": ["data/gs2/{z}/{x}/{y}.png"],
+            //     "scheme": "tms",
+            //     "tileSize": 256
+            // }
         },
         "layers": [{
             "id": "video",
@@ -434,6 +459,12 @@ function createMapboxGlMap() {
             "source": "tiles_mb",
             "minzoom": 1,
             "maxzoom": 5
+        // }, {
+        //     "id": "tiles_gs2",
+        //     "type": "raster",
+        //     "source": "tiles_gs2",
+        //     "minzoom": 3,
+        //     "maxzoom": 4
         }]
     };
 
@@ -441,10 +472,10 @@ function createMapboxGlMap() {
 
     Mbmap = new mapboxgl.Map({
         container: 'map',
-        zoom: 2,
+        zoom: 3,
         maxZoom: 4,
         maxBounds: bounds,
-        center: [-40, 40],
+        center: [-70,37],
         style: video_current
     });
 }
