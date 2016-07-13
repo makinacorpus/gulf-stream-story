@@ -427,7 +427,7 @@ function createMapboxGlMap() {
         "sources": {
             "video": {
                 "type": "video",
-                "urls": ["https://seafile.makina-corpus.net/seafhttp/files/18c176f1-b733-4589-91b3-85a08e98adaa/current.mp4"],
+                "urls": ["data/video/current.mp4"],
                 "coordinates": [
                     [-100, 80],
                     [20, 80],
