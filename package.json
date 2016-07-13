@@ -13,6 +13,7 @@
     "bootstrap-slider": "^7.1.0",
     "c3": "^0.4.11",
     "chroma-js": "^1.1.1",
+    "highcharts": "^4.2.5",
     "jquery": "^2.2.4",
     "leaflet": "^0.7.7",
     "leaflet-textpath": "git://github.com/makinacorpus/Leaflet.TextPath.git#gh-pages",

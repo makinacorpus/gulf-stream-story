@@ -7,6 +7,7 @@ var neTiles = L.tileLayer('data/tiles/{z}/{x}/{y}.png', {
 });
 var wh = L.tileLayer('data/gs2/{z}/{x}/{y}.png', {
     tms: true,
+    attribution: 'xxx',
     maxZoom: 4,
     minZoom: 3
 });
