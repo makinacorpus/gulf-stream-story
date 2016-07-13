@@ -428,7 +428,7 @@ function createMapboxGlMap() {
         "sources": {
             "video": {
                 "type": "video",
-                "urls": ["https://seafile.makina-corpus.net/seafhttp/files/18c176f1-b733-4589-91b3-85a08e98adaa/current.mp4"],
+                "urls": ["https://makinacorpus.github.io/gulf-stream-story/data/video/current.mp4"],
                 "coordinates": [
                     [-100, 80],
                     [20, 80],
@@ -487,7 +487,7 @@ var video_temp = {
     "sources": {
         "video": {
             "type": "video",
-            "urls": ["https://seafile.makina-corpus.net/seafhttp/files/a7b3c09a-46a1-4647-8852-4a02cabed9e4/temperature.mp4"],
+            "urls": ["https://makinacorpus.github.io/gulf-stream-story/data/video/temperature.mp4"],
             "coordinates": [
                 [-100, 80],
                 [20, 80],
@@ -520,7 +520,7 @@ var video_salinity = {
     "sources": {
         "video": {
             "type": "video",
-            "urls": ["https://seafile.makina-corpus.net/seafhttp/files/9ce1069d-3294-4e5c-ad95-2d0930316912/salinity.mp4"],
+            "urls": ["https://makinacorpus.github.io/gulf-stream-story/data/video/salinity.mp4"],
             "coordinates": [
                 [-100, 80],
                 [20, 80],
@@ -553,7 +553,7 @@ var video_wind = {
     "sources": {
         "video": {
             "type": "video",
-            "urls": ["https://seafile.makina-corpus.net/seafhttp/files/cacf2c5f-7bc4-47e3-a08d-37d39c1df0d1/wind.mp4"],
+            "urls": ["https://makinacorpus.github.io/gulf-stream-story/data/video/wind.mp4"],
             "coordinates": [
                 [-100, 80],
                 [20, 80],
