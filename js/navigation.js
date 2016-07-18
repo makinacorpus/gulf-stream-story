@@ -5,7 +5,9 @@ var story = [
         'category': 'Introduction',
         'slug': 'introduction',
         'text': '####*«Le Gulf Stream est une rivière au milieu de l’océan, dont le niveau ne change ni dans les plus fortes sécheresses ni dans les plus fortes pluies. Il est limité par des eaux froides, tandis que son courant est chaud. Il prend sa source dans le golfe du Mexique et se jette dans l’océan Arctique. Il n’existe pas sur la Terre un cours d’eau plus majestueux : sa vitesse est plus rapide que celle du Mississippi ou des Amazones, et son débit 1000 fois plus conséquent.» Maury «The Physical Geography of the Sea» 1855.*\n\nDepuis sa découverte, durant le deuxième voyage de Christophe Colomb en 1493, le Gulf Stream a de nombreuses fois fait parlé de lui. Benjamin Franklin l’a transformé en voie rapide pour le retour en Europe. Une légende l’a longtemps elevé au statut de chaudière de l’Europe, miraculeux responsable de la différence entre le climat continental glacial de la côte est américaine et le climat océanique tempéré d’Europe de l’ouest. Récemment, devenu star hollywodienne, il a fait son apparition dans plusieurs films catastrophe. Porté par cette vague alarmiste, la presse a maladroitement prévu son arrêt et le refroidissement drastique de l’Europe.\n\nMais qu’en est-il réellement? A travers un ensemble de cartes, nous vous proposons de partir à la découverte de ce véritable fleuve océanique.',
+        // 'destroyMapboxGlMap': true,
         'createLeafletMap': {
+            // 'destroyMapbox': true,
             'layers': [wh],
             'view': [[-60, 0], 3],
             'setMaxBounds': [[-100, -180],[35, 180]]
@@ -14,8 +16,8 @@ var story = [
     {
         'category': 'Introduction',
         'slug': 'introduction',
+        'setMaxBounds': [[0, -120],[85, 20]],
         'view': [[24, -80.72], 5],
-        'setMaxBounds': [[-50, -150],[135, 70]],
         'text': '## Naissance du Gulf Stream\n Pour suivre le Gulf Stream, focalisons nous sur le trajet d’une goutte d’eau qui se trouve dans le Golfe du Mexique. Elle pourrait venir d’un cumulonimbus, de l’Atlantique, du lac Itasca source du Mississipi, ou de bien d’autres horizons. Mais sa provenance n’a que peu d’importance. Si elle ne s’évapore pas, elle se dirigera inévitablement vers le Gulf Stream.',
         'addLayers': [neTiles],
         'removeLayers': [wh] 
@@ -151,13 +153,13 @@ var story = [
         'text': '##Température\n\n*Les courants et les vents sont le moteur de la machine qui convertit et distribue l’énergie que la Terre reçoit du soleil. L’océan fournit une fraction de son énergie à l’atmosphère et distribue directement par les courants l’autre partie à l’échelle de la planète. On estime que les transferts de chaleur des régions équatoriales vers les pôles se font à égalité par l’atmosphère et l’océan.*',
         'destroyLeafletMap': true,
         'addMapboxGlMap': true,
-        'removeLayers': [neTiles]
+        'removeLayers': [neTiles],
+        'style_mb': video_temp
     },
     {
         'category': 'Les températures',
         'slug': 'temperatures',
-        'text': '##Température\n\nLe Gulf Stream a une influence considérable sur le climat de régions situées à des milliers de kilomètres des Grands Bancs de Terre Neuve.\n\nIl emporte avec lui des eaux tropicales chaudes.\n\nSes extensions qui se dirigent vers le nord emportent ces eaux vers des latitudes beaucoup plus hautes. Par exemple, la glace qui n’arrive pas à se former au nord de la Norvège bénéficie directement d’eaux chaudes apportées par la dérive Nord Atlantique, extension du Gulf Stream.\n\nMais l’Europe, n’est pas l’unique bénéficiaire de cette source de chaleur. C’est tout l’Atlantique Nord qui profite de cet apport.\n\nContrairement à ce qui a été longtemps mis en avant, le Gulf Stream n’est pas la chaudière centrale de l’Europe. Il ne peut pas expliquer la différence moyenne de 15°C qu’il y a entre Montréal et Bordeaux qui sont sur la même latitude.',
-        'style_mb': video_temp
+        'text': '##Température\n\nLe Gulf Stream a une influence considérable sur le climat de régions situées à des milliers de kilomètres des Grands Bancs de Terre Neuve.\n\nIl emporte avec lui des eaux tropicales chaudes.\n\nSes extensions qui se dirigent vers le nord emportent ces eaux vers des latitudes beaucoup plus hautes. Par exemple, la glace qui n’arrive pas à se former au nord de la Norvège bénéficie directement d’eaux chaudes apportées par la dérive Nord Atlantique, extension du Gulf Stream.\n\nMais l’Europe, n’est pas l’unique bénéficiaire de cette source de chaleur. C’est tout l’Atlantique Nord qui profite de cet apport.\n\nContrairement à ce qui a été longtemps mis en avant, le Gulf Stream n’est pas la chaudière centrale de l’Europe. Il ne peut pas expliquer la différence moyenne de 15°C qu’il y a entre Montréal et Bordeaux qui sont sur la même latitude.'
     },
     {
         'category': 'Les températures',
@@ -290,9 +292,6 @@ function changeContent(i) {
     if (state.view_mb) {
         Mbmap.setCenter(state.view_mb);
     }
-    if (state.style_mb) {
-        Mbmap.setStyle(state.style_mb);
-    }
     if (state.zoom_mb) {
         Mbmap.setZoom(state.zoom_mb);
     }
@@ -321,6 +320,9 @@ function changeContent(i) {
     if (state.destroyMapboxGlMap) {
         Mbmap.remove();
     }
+    if (state.style_mb) {
+        Mbmap.setStyle(state.style_mb);
+    }    
     if (state.displayDepthSlider) {
         $('#depthSlider').css('display', 'block');
         var slider = $('#depthSliderInput').slider({
@@ -363,7 +365,7 @@ function createGraphThermocline() {
             text: 'Température de l’eau en fonction de la profondeur'
         },
         subtitle: {
-            text: 'D’août 2015 à mars 2016 à 40°N 20°W'
+            text: 'Août 2015 - Mars 2016 à 40°N 20°W (données Marine Copernicus)'
         },
         xAxis: {
             min: -200,
@@ -399,7 +401,7 @@ function createGraphThermocline() {
         },
         tooltip: {
             headerFormat: '<b>{series.name}</b><br/>',
-            pointFormat: '{point.x} km: {point.y}°C'
+            pointFormat: '{point.x} m: {point.y}°C'
         },
         plotOptions: {
             spline: {
