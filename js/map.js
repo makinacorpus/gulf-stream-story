@@ -18,14 +18,21 @@ var BFranklin = L.tileLayer('data/tiles/BFranklin/{z}/{x}/{y}.png', {
     minZoom: 3
 });
 
-function createLeafletMap(optional_layers) {
-    Lmap = L.map('map', {
-         // maxBounds: mybounds
-    }).setView([24, -80.72], 5);
-    if(optional_layers) {
-        for (layer in optional_layers) {
-            Lmap.addLayer(optional_layers[layer]);
+function createLeafletMap(options) {
+    var layers = options.layers,
+        view = options.view,
+        maxBounds = options.maxBounds;
+    Lmap = L.map('map');
+    if (layers) {
+        for (layer in layers) {
+            Lmap.addLayer(layers[layer]);
         }
+    }
+    if (view) {
+        Lmap.setView(view[0], view[1]);
+    }
+    if (maxBounds) {
+        Lmap.setMaxBounds(maxBounds);
     }
 }
 

@@ -4,15 +4,12 @@ var story = [
     {
         'category': 'Introduction',
         'slug': 'introduction',
-        'createLeafletMap': [wh]
-    },
-    {   
-
-        'view': [[-60, 0], 3],
-        'setMaxBounds': [[-100, -180],[35, 180]],
-        'category': 'Introduction',
-        'slug': 'introduction',
-        'text': '####*«Le Gulf Stream est une rivière au milieu de l’océan, dont le niveau ne change ni dans les plus fortes sécheresses ni dans les plus fortes pluies. Il est limité par des eaux froides, tandis que son courant est chaud. Il prend sa source dans le golfe du Mexique et se jette dans l’océan Arctique. Il n’existe pas sur la Terre un cours d’eau plus majestueux : sa vitesse est plus rapide que celle du Mississippi ou des Amazones, et son débit 1000 fois plus conséquent.» Maury «The Physical Geography of the Sea» 1855.*\n\nDepuis sa découverte, durant le deuxième voyage de Christophe Colomb en 1493, le Gulf Stream a de nombreuses fois fait parlé de lui. Benjamin Franklin l’a transformé en voie rapide pour le retour en Europe. Une légende l’a longtemps elevé au statut de chaudière de l’Europe, miraculeux responsable de la différence entre le climat continental glacial de la côte est américaine et le climat océanique tempéré d’Europe de l’ouest. Récemment, devenu star hollywodienne, il a fait son apparition dans plusieurs films catastrophe. Porté par cette vague alarmiste, la presse a maladroitement prévu son arrêt et le refroidissement drastique de l’Europe.\n\nMais qu’en est-il réellement? A travers un ensemble de cartes, nous vous proposons de partir à la découverte de ce véritable fleuve océanique.'
+        'text': '####*«Le Gulf Stream est une rivière au milieu de l’océan, dont le niveau ne change ni dans les plus fortes sécheresses ni dans les plus fortes pluies. Il est limité par des eaux froides, tandis que son courant est chaud. Il prend sa source dans le golfe du Mexique et se jette dans l’océan Arctique. Il n’existe pas sur la Terre un cours d’eau plus majestueux : sa vitesse est plus rapide que celle du Mississippi ou des Amazones, et son débit 1000 fois plus conséquent.» Maury «The Physical Geography of the Sea» 1855.*\n\nDepuis sa découverte, durant le deuxième voyage de Christophe Colomb en 1493, le Gulf Stream a de nombreuses fois fait parlé de lui. Benjamin Franklin l’a transformé en voie rapide pour le retour en Europe. Une légende l’a longtemps elevé au statut de chaudière de l’Europe, miraculeux responsable de la différence entre le climat continental glacial de la côte est américaine et le climat océanique tempéré d’Europe de l’ouest. Récemment, devenu star hollywodienne, il a fait son apparition dans plusieurs films catastrophe. Porté par cette vague alarmiste, la presse a maladroitement prévu son arrêt et le refroidissement drastique de l’Europe.\n\nMais qu’en est-il réellement? A travers un ensemble de cartes, nous vous proposons de partir à la découverte de ce véritable fleuve océanique.',
+        'createLeafletMap': {
+            'layers': [wh],
+            'view': [[-60, 0], 3],
+            'setMaxBounds': [[-100, -180],[35, 180]]
+        }
     },
     {
         'category': 'Introduction',
@@ -87,7 +84,6 @@ var story = [
     {
         'category': 'Introduction',
         'slug': 'introduction',
-        'setMaxBounds': [[-100, -180],[73, 180]],
         'view': [[57, -12], 4],
         'text': '##La dérive Nord Atlantique\nAu delà de l’influence du vent qui créé les courants de surface, un nouveau mécanisme, la pompe thermohaline, attire notre goutte d’eau vers le Nord de l’Europe et essaye petit à petit de l’entraîner vers les abysses. Nous étudierons ce phénomène un peu plus tard. En suivant cette voie, notre goutte d’eau a de fortes chances de voguer vers la mer Baltique, ou de longer les côtes Norvégiennes pour continuer sa course dans l’océan Arctique. ',
         'addLayers': [derive_nord_atlantique_1, derive_nord_atlantique_2],
@@ -95,10 +91,11 @@ var story = [
     {
         'category': 'Les courants',
         'slug': 'courants',
+        'setMaxBounds': [[-100, -180],[73, 180]],
         'view': [[-65, 25], 3],
         'text': '##Gulf Stream et courants Nord Atlantiques\n*Le système climatique est une machine à convertir et à distribuer l’énergie que la Terre reçoit du soleil. L’énergie solaire est transportée par deux fluides : l’atmosphère et l’océan. Ces deux entités sont en contact permanent et ne cessent d’échanger de l’énergie. C’est le couple qu’ils forment qui gère le climat de notre planète.*',
         'addLayers': [BFranklin],
-        'removeLayers': [neTiles, derive_nord_atlantique_1, derive_nord_atlantique_2, groenland, courant_canaries, courant_acores, courant_nord_atlantique, gulfstream, courant_guyane, courant_floride]
+        'removeLayers': [derive_nord_atlantique_1, derive_nord_atlantique_2, groenland, courant_canaries, courant_acores, courant_nord_atlantique, gulfstream, courant_guyane, courant_floride]
         
     },
     {
@@ -108,7 +105,6 @@ var story = [
         'slug': 'courants',
         'text': '##Gulf Stream et courants Nord Atlantiques\nCette carte représente la vitesse des courants de surface, de janvier à juillet 2016. Malgré de nombreux petits courants, souvent tourbillonnaires, il est possible de retrouver la plupart des courants évoqués durant le voyage de notre goutte d’eau. Vous pouvez si vous le souhaitez les afficher à l’aide des cases à cocher.',
         'destroyLeafletMap': true,
-        'removeLayers': [neTiles],
         'addMapboxGlMap': true
     },
     {
@@ -119,7 +115,11 @@ var story = [
     {
         'category': 'Les courants',
         'slug': 'courants',
-        'createLeafletMap': [neTiles, depthLayer],
+        'createLeafletMap': {
+            'layers': [neTiles, depthLayer],
+            'view': [[24, -80.72], 5],
+            'setMaxBounds': [[-50, -150],[135, 70]]
+        },
         'displayDepthSlider': true,
         'destroyMapboxGlMap': true,
         // 'view': [[30, -70], 5],
@@ -135,19 +135,15 @@ var story = [
         'removeLayers': [neTiles]
     },
     {
-        'category': 'Les courants',
-        'slug': 'courants',
-        'text': '##test\n ne pas tenir compte de cette étape',
         'destroyMapboxGlMap': true,
-        'createLeafletMap': [neTiles]
-    },
-    {
-        'view': [[40, -40], 4],
-        'setMaxBounds': [[0, -100],[85, 20]],
+        'createLeafletMap': {
+            'layers': [neTiles, ssh],
+            'view': [[40, -40], 4],
+            'setMaxBounds': [[0, -100],[85, 20]]
+        },
         'category': 'Les courants',
         'slug': 'courants',
-        'text': '##Gulf Stream et niveau de l’Océan\n\nL’apport en eau est tellement conséquent dans le Gulf Stream que le niveau de la mer est prêt de 50cm au dessus du niveau 0.',
-        'addLayers': [ssh]
+        'text': '##Gulf Stream et niveau de l’Océan\n\nL’apport en eau est tellement conséquent dans le Gulf Stream que le niveau de la mer est prêt de 50cm au dessus du niveau 0.'
     },
     {
         'category': 'Les températures',
@@ -198,18 +194,14 @@ var story = [
         'text': '##Salinité\n\nEn arrivant aux hautes latitudes, la température chute. Les eaux emportées par les extensions du Gulf Stream deviennent froides et salées.\n\n Plus une eau est froide, plus elle est dense. Plus elle est salée, plus elle est dense. Les eaux issues du Gulf Stream sont plus salées que les eaux qui les entourent. Ce taux de sel est renforcé l’hiver par la création de glace. En se refroidissant durant leur voyage vers les hautes latitudes, elles finissent par devenir trop denses pour se maintenir à la surface et plongent jusqu’à des profondeurs supérieures au kilomètre. Elles s’écoulent lentement dans un courant de fond en direction de l’équateur. Le courant de retour que nous avions observé à 1684m peut être affilié à cette circulation. Au niveau des Tropiques, le courant se réchauffe et remonte à la surface jusqu’à leur prochain refroidissement. '
     },
     {
-        'category': 'La salinité',
-        'slug': 'salinite',
-        'text': '##test\n ne pas tenir compte de cette étape',
         'destroyMapboxGlMap': true,
-        'createLeafletMap': [neTiles]
-    },
-    {
+        'createLeafletMap': {
+            'layers': [neTiles, thermohaline_cold, thermohaline_hot],
+            'view': [[0, 30], 2],
+        },
         'category': 'La salinité',
         'slug': 'salinite',
-        'view': [[0,30], 2],
         'text': '##La circulation thermohaline\n\nSur cette carte vous pouvez suivre cette circulation à l’échelle planétaire. Elle est communément appelée le « tapis roulant ».\n\n On estime qu’il faudrait entre 1000 et 2000 ans pour qu’une goutte fasse un tour de ce circuit. Ce phénomène de plongée est particulièrement remarquable au large de la Norvège et au Nord Est des Grands Bancs de Terre Neuve.\n\n Le Gulf Stream, à travers les eaux salées qu’il dirige vers les hautes latitudes est un moteur essentiel de ce tapis roulant. Cette circulation planétaire serait bien différent sans lui.',
-        'addLayers': [thermohaline_cold, thermohaline_hot]
     },
     {
         'category': 'Conclusion',
@@ -269,6 +261,7 @@ changeContent(0);
 
 $('.circle-cat').on('click', function(e) {
     var indexPage = e.target.innerText;
+    index = parseInt(indexPage);
     changeContent(indexPage);
 });
 
@@ -288,11 +281,11 @@ function changeContent(i) {
 
     history.pushState({id: i, slug: state.slug}, state.slug, '#' + i);
 
-    if (state.view) {
-        Lmap.setView(state.view[0], state.view[1]);
-    }
     if (state.setMaxBounds) {
         Lmap.setMaxBounds(state.setMaxBounds);
+    }
+    if (state.view) {
+        Lmap.setView(state.view[0], state.view[1]);
     }
     if (state.view_mb) {
         Mbmap.setCenter(state.view_mb);
