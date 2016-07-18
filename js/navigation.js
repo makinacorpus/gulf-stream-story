@@ -3,11 +3,13 @@ var index = 0;
 var story = [
     {
         'category': 'Introduction',
+        'slug': 'introduction',
         'createLeafletMap': [wh]
     },
     {   
 
         'view': [[-60, 0], 3],
+        'setMaxBounds': [[-100, -180],[35, 180]],
         'category': 'Introduction',
         'slug': 'introduction',
         'text': '####*«Le Gulf Stream est une rivière au milieu de l’océan, dont le niveau ne change ni dans les plus fortes sécheresses ni dans les plus fortes pluies. Il est limité par des eaux froides, tandis que son courant est chaud. Il prend sa source dans le golfe du Mexique et se jette dans l’océan Arctique. Il n’existe pas sur la Terre un cours d’eau plus majestueux : sa vitesse est plus rapide que celle du Mississippi ou des Amazones, et son débit 1000 fois plus conséquent.» Maury «The Physical Geography of the Sea» 1855.*\n\nDepuis sa découverte, durant le deuxième voyage de Christophe Colomb en 1493, le Gulf Stream a de nombreuses fois fait parlé de lui. Benjamin Franklin l’a transformé en voie rapide pour le retour en Europe. Une légende l’a longtemps elevé au statut de chaudière de l’Europe, miraculeux responsable de la différence entre le climat continental glacial de la côte est américaine et le climat océanique tempéré d’Europe de l’ouest. Récemment, devenu star hollywodienne, il a fait son apparition dans plusieurs films catastrophe. Porté par cette vague alarmiste, la presse a maladroitement prévu son arrêt et le refroidissement drastique de l’Europe.\n\nMais qu’en est-il réellement? A travers un ensemble de cartes, nous vous proposons de partir à la découverte de ce véritable fleuve océanique.'
@@ -16,7 +18,7 @@ var story = [
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[24, -80.72], 5],
-        // 'setMaxBounds': [[0, -100],[85, 20]],
+        'setMaxBounds': [[-50, -150],[135, 70]],
         'text': '## Naissance du Gulf Stream\n Pour suivre le Gulf Stream, focalisons nous sur le trajet d’une goutte d’eau qui se trouve dans le Golfe du Mexique. Elle pourrait venir d’un cumulonimbus, de l’Atlantique, du lac Itasca source du Mississipi, ou de bien d’autres horizons. Mais sa provenance n’a que peu d’importance. Si elle ne s’évapore pas, elle se dirigera inévitablement vers le Gulf Stream.',
         'addLayers': [neTiles],
         'removeLayers': [wh] 
@@ -25,14 +27,14 @@ var story = [
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[10.13, -58.59], 4],
-        'text': '## Naissance du Gulf Stream\n Le courant de Guyane, qui longe les côtes d’Amérique du Sud, se retrouve dans un cul-de-sac: l’Isthme du Panama. Il est naturellement emporté vers le nord et à l’est par la circulation anticyclonique des Açores (sens des aiguilles d’une montre). Il dirige donc notre goutte d’eau vers la seule porte de sortie possible : le détroit de Floride. L’étroitesse de ce passage situé entre Cuba et la Floride génère un trop plein. C’est cet excédent qui donne naissance au Gulf Stream.\n\n ![detroit_de_floride](data/images/detroit_de_floride.jpg)\n*Détroit de Floride*\n\n*Isthme du Panama',
+        'text': '## Naissance du Gulf Stream\n Le courant de Guyane, qui longe les côtes d’Amérique du Sud, se retrouve dans un cul-de-sac: l’Isthme du Panama. Il est naturellement emporté vers le nord et à l’est par la circulation anticyclonique des Açores (sens des aiguilles d’une montre). Il dirige donc notre goutte d’eau vers la seule porte de sortie possible : le détroit de Floride. L’étroitesse de ce passage situé entre Cuba et la Floride génère un trop plein. C’est cet excédent qui donne naissance au Gulf Stream.',
         'addLayers': [courant_guyane, detroit_de_floride, isthme_panama]
     },
     {
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[34.99, -74.97], 5],
-        'text': '## Le Gulf Stream continental\n Ca y est, notre goutte d’eau qui a eu du mal à se frayer un passage entre ses sœurs est entraînée à pleine vitesse dans le Gulf Stream. Elle vogue maintenant à la vitesse record de 2 m/s dans cette partie appelée courant de Floride. Ce véritable fleuve côtier reste collé au continent, canalisé par la pente continentale jusqu’au Cap Hatteras.\n\n ![detroit_de_floride](data/images/cap_hatteras.jpg)\n*Le Cap Hatteras*',
+        'text': '## Le Gulf Stream continental\n Ca y est, notre goutte d’eau qui a eu du mal à se frayer un passage entre ses sœurs est entraînée à pleine vitesse dans le Gulf Stream. Elle vogue maintenant à la vitesse record de 2 m/s dans cette partie appelée courant de Floride. Ce véritable fleuve côtier reste collé au continent, canalisé par la pente continentale jusqu’au Cap Hatteras',
         'addLayers': [courant_floride, cap_hatteras, pente_continentale],
         'removeLayers': [detroit_de_floride, isthme_panama]
     },
@@ -85,6 +87,7 @@ var story = [
     {
         'category': 'Introduction',
         'slug': 'introduction',
+        'setMaxBounds': [[-100, -180],[73, 180]],
         'view': [[57, -12], 4],
         'text': '##La dérive Nord Atlantique\nAu delà de l’influence du vent qui créé les courants de surface, un nouveau mécanisme, la pompe thermohaline, attire notre goutte d’eau vers le Nord de l’Europe et essaye petit à petit de l’entraîner vers les abysses. Nous étudierons ce phénomène un peu plus tard. En suivant cette voie, notre goutte d’eau a de fortes chances de voguer vers la mer Baltique, ou de longer les côtes Norvégiennes pour continuer sa course dans l’océan Arctique. ',
         'addLayers': [derive_nord_atlantique_1, derive_nord_atlantique_2],
@@ -92,30 +95,27 @@ var story = [
     {
         'category': 'Les courants',
         'slug': 'courants',
+        'view': [[-65, 25], 3],
         'text': '##Gulf Stream et courants Nord Atlantiques\n*Le système climatique est une machine à convertir et à distribuer l’énergie que la Terre reçoit du soleil. L’énergie solaire est transportée par deux fluides : l’atmosphère et l’océan. Ces deux entités sont en contact permanent et ne cessent d’échanger de l’énergie. C’est le couple qu’ils forment qui gère le climat de notre planète.*',
-        'destroyLeafletMap': true,
-        'removeLayers': [neTiles],
-        'addMapboxGlMap': true,
+        'addLayers': [BFranklin],
+        'removeLayers': [neTiles, derive_nord_atlantique_1, derive_nord_atlantique_2, groenland, courant_canaries, courant_acores, courant_nord_atlantique, gulfstream, courant_guyane, courant_floride]
+        
     },
     {
         // 'view_mb': [-70,35],
         // 'zoom_mb': 3,
         'category': 'Les courants',
         'slug': 'courants',
-        'text': '##Gulf Stream et courants Nord Atlantiques\nCette carte représente la vitesse des courants de surface, de janvier à juillet 2016. Malgré de nombreux petits courants, souvent tourbillonnaires, il est possible de retrouver la plupart des courants évoqués durant le voyage de notre goutte d’eau. Vous pouvez si vous le souhaitez les afficher à l’aide des cases à cocher.'
+        'text': '##Gulf Stream et courants Nord Atlantiques\nCette carte représente la vitesse des courants de surface, de janvier à juillet 2016. Malgré de nombreux petits courants, souvent tourbillonnaires, il est possible de retrouver la plupart des courants évoqués durant le voyage de notre goutte d’eau. Vous pouvez si vous le souhaitez les afficher à l’aide des cases à cocher.',
+        'destroyLeafletMap': true,
+        'removeLayers': [neTiles],
+        'addMapboxGlMap': true
     },
     {
         'category': 'Les courants',
         'slug': 'courants',
         'text': '##Gulf Stream et courants Nord Atlantiques\n\nLe Gulf Stream se démarque clairement des courants Nord Atlantique. Sa vitesse et son débit restent inégalés. Jusqu’au Cap Hatteras, canalisé par la pente continentale, il est très linéaire et se comporte comme un jet puissant.\n\n Lorsqu’il prend le large, se créent des méandres de plus en plus sinueux. De grands tourbillons se détachent de part et d’autre du fleuve.\n\n Après les Grands Bancs de Terre Neuve, le Gulf Stream perd ses caractéristiques et prend de nombreuses directions. Ses extensions sont visuellement plus difficiles à suivre car sa puissance a été répartie dans de nombreux courants.',
     },
-    // {
-    //     'category': 'Problème',
-    //     'slug': 'salinite',
-    //     'text': '##test\n ne pas tenir compte de cette étape',
-    //     'destroyMapboxGlMap': true,
-    //     'createLeafletMap': [neTiles]
-    // },
     {
         'category': 'Les courants',
         'slug': 'courants',
@@ -124,16 +124,7 @@ var story = [
         'destroyMapboxGlMap': true,
         // 'view': [[30, -70], 5],
         'text': '##Gulf Stream et courants Nord Atlantiques\n\nNous venons d’observer ce qu’il se passe en surface mais comment les courants se comportent ils en profondeurs ? En utilisant l’ascenseur à gauche de la carte, vous pouvez étudier leur comportement à différentes profondeurs. \n\n Positionnez vous par exemple à 1684m. Vous remarquerez qu’un courant de fond, opposé au Gulf Stream longe la côte américaine. La circulation des courants de profondeur est bien différente de celle de surface, influencée par l’action mécanique du vent. \n\n Pour revenir au Gulf Stream, vous vous rendrez vite compte qu’il n’est pas qu’un courant de surface. A 1000m, il a encore une grande influence. \n\n Il se distingue des autres courants de bords ouest par son débit record qui atteint les millions de mètres cube à la seconde. Pour comparaison, l’Amazone n’a qu’un débit de 300 000 mètres cube par seconde à son maximum. Le débit de tous les fleuves et rivières de la planète atteint 1 Sv (unité de mesure de débit). Le GS qui a un débit de 30 Sv au départ s’approche des 140 Sv en fin de course.'
-        // 'addLayers': [depthLayer],
     },
-    // {
-    //     'category': 'Les courants',
-    //     'slug': 'courants',
-    //     'view': [[30, -70], 5],
-    //     'text': '##Gulf Stream et courants Nord Atlantiques\n\nNous venons d’observer ce qu’il se passe en surface mais comment les courants se comportent ils en profondeurs ? En utilisant l’ascenseur à gauche de la carte, vous pouvez étudier leur comportement à différentes profondeurs. \n\n Positionnez vous par exemple à 1684m. Vous remarquerez qu’un courant de fond, opposé au Gulf Stream longe la côte américaine. La circulation des courants de profondeur est bien différente de celle de surface, influencée par l’action mécanique du vent. \n\n Pour revenir au Gulf Stream, vous vous rendrez vite compte qu’il n’est pas qu’un courant de surface. A 1000m, il a encore une grande influence. \n\n Il se distingue des autres courants de bords ouest par son débit record qui atteint les millions de mètres cube à la seconde. Pour comparaison, l’Amazone n’a qu’un débit de 300 000 mètres cube par seconde à son maximum. Le débit de tous les fleuves et rivières de la planète atteint 1 Sv (unité de mesure de débit). Le GS qui a un débit de 30 Sv au départ s’approche des 140 Sv en fin de course.',
-    //     'addLayers': [depthLayer],
-    //     'displayDepthSlider': true
-    // },
     {
         'category': 'Les courants',
         'slug': 'courants',
@@ -144,14 +135,15 @@ var story = [
         'removeLayers': [neTiles]
     },
     {
-        'category': 'Problème',
-        'slug': 'salinite',
+        'category': 'Les courants',
+        'slug': 'courants',
         'text': '##test\n ne pas tenir compte de cette étape',
         'destroyMapboxGlMap': true,
         'createLeafletMap': [neTiles]
     },
     {
         'view': [[40, -40], 4],
+        'setMaxBounds': [[0, -100],[85, 20]],
         'category': 'Les courants',
         'slug': 'courants',
         'text': '##Gulf Stream et niveau de l’Océan\n\nL’apport en eau est tellement conséquent dans le Gulf Stream que le niveau de la mer est prêt de 50cm au dessus du niveau 0.',
@@ -223,6 +215,7 @@ var story = [
         'category': 'Conclusion',
         'slug': 'conclusion',
         'view': [[-65, 25], 3],
+        'setMaxBounds': [[-100, -180],[73, 180]],
         'text': '##Conclusion\n\nLes scientifiques estiment aujourd’hui que sans le GS, notre climat se rafraîchirait de 4 ou 5°C. Mais cette information reste très hypothétique. Il est encore aujourd’hui très difficile d’étudier l’influence exacte des différents facteurs qui jouent sur notre climat. Ils dépendent de la géométrie de la Terre, de sa rotation, de l’attraction de la Lune et du Soleil et de bien d’autres facteurs. Ils ont chacun leurs propres caractéristiques qui sont difficilement comparables. De plus, il est impossible de les isoler pour les étudier indépendamment. Les scientifiques créent des modèles simplifiant la réalité pour simuler les phénomènes météorologiques et climatiques. Mais la simplification de phénomènes aussi complexes font de la climatologie un domaine passionnant ou de nombreuses découvertes sont encore à faire.',
         'addLayers': [BFranklin],
         'removeLayers': [neTiles, thermohaline_cold, thermohaline_hot]
@@ -242,13 +235,6 @@ init();
 
 function init() {
     console.log('init nav');
-
-    function locationHashChanged(hash) {
-        console.log(hash)
-    }
-
-    window.onhashchange = locationHashChanged;
-
 }
 
 $('#next').on('click', function() {
@@ -257,6 +243,7 @@ $('#next').on('click', function() {
         changeContent(index);
     }
 });
+
 
 // $('#prev').on('click', function() {
 //     if (index > 0) {
@@ -272,7 +259,7 @@ for (var i = 0; i < story.length; i++) {
     if (story[i].category !== lastCategory) {
         className += ' circle-cat ' + story[i].slug
     }
-    var progressItem = '<a href="#' + i + '" id="progress-item-' + i + '" class="' + className + '"><span class="label">' + i + '</span><span class="title">Address</span></a>'
+    var progressItem = '<a href="#' + i + '" id="progress-item-' + i + '" class="' + className + '"><span class="label">' + i + '</span><span class="title"></span></a>'
     $('.progress').append(progressItem);
 
     lastCategory = story[i].category;
@@ -280,12 +267,23 @@ for (var i = 0; i < story.length; i++) {
 
 changeContent(0);
 
+$('.circle-cat').on('click', function(e) {
+    var indexPage = e.target.innerText;
+    changeContent(indexPage);
+});
+
 function changeContent(i) {
     var state = story[i];
+    console.log(i);
     console.log(state);
 
     $('.progress .circle').removeClass('active');
+    $('.progress .circle').removeClass('passed');
     $('.progress .circle#progress-item-' + i).addClass('active');
+
+    for (var j = 0; j < i; j++) {
+        $('.progress .circle#progress-item-' + j).addClass('passed');
+    }
 
 
     history.pushState({id: i, slug: state.slug}, state.slug, '#' + i);
@@ -361,95 +359,44 @@ function changeContent(i) {
 
 var chartThermocline;
 
-// function createGraphThermocline() {
-//     chartThermocline = c3.generate({
-//         bindto: '#graph',
-//         size: {
-//             height: 800
-//         },
-//         data: {
-//             xs: {
-//                 'juin 2015': 'x1',
-//                 'juillet 2015': 'x2',
-//                 'aout 2015': 'x3',
-//                 'septembre 2015': 'x4',
-//                 'octobre 2015': 'x5',
-//                 'novembre 2015': 'x6',
-//                 'décembre 2015': 'x7',
-//                 'janvier 2016': 'x8',
-//                 'février 2016': 'x9',
-//                 'mars 2016': 'x10',
-//                 'avril 2016': 'x11',
-//                 'mai 2016': 'x12',
-//             },
-
-//             columns: [
-//                 ['x1', 18.15, 18.05, 17.85, 17.75, 17.45, 17.25, 17.15, 16.95, 16.85, 16.75, 16.65, 16.55, 16.45, 16.35, 16.05, 15.65, 15.25, 14.85, 14.55, 14.25, 14.05, 13.85, 13.75, 13.65, 13.55, 13.25, 12.95, 12.75, 12.35, 12.05, 11.65, 11.35],
-//                 ['x2', 19.55, 19.55, 19.55, 19.55, 19.55, 19.45, 19.45, 19.35, 19.15, 18.95, 18.75, 18.45, 18.15, 17.85, 17.45, 16.95, 16.45, 15.95, 15.45, 15.05, 14.75, 14.35, 14.15, 13.85, 13.55, 13.25, 13.05, 12.75, 12.35, 11.95, 11.55, 11.15],
-//                 ['x3', 22.65, 22.65, 22.65, 22.65, 22.65, 22.65, 22.65, 22.65, 22.65, 22.55, 22.35, 21.95, 21.35, 20.65, 19.85, 19.05, 18.25, 17.45, 16.75, 16.25, 15.75, 15.35, 14.95, 14.55, 14.25, 13.85, 13.45, 13.05, 12.65, 12.15, 11.75, 11.35],
-//                 ['x4', 21.95, 21.95, 21.95, 21.85, 21.85, 21.85, 21.85, 21.85, 21.85, 21.85, 21.85, 21.85, 21.85, 21.85, 21.55, 20.95, 20.05, 18.85, 17.85, 16.85, 16.05, 15.45, 14.95, 14.45, 13.95, 13.55, 13.05, 12.65, 12.15, 11.85, 11.55, 11.15],
-//                 ['x5', 20.95, 20.95, 20.85, 20.85, 20.85, 20.85, 20.85, 20.85, 20.85, 20.85, 20.75, 20.75, 20.75, 20.65, 20.65, 20.45, 20.15, 19.45, 18.55, 17.35, 15.75, 14.85, 14.15, 13.65, 13.35, 13.25, 13.05, 12.75, 12.45, 12.25, 11.85, 11.45],
-//                 ['x6', 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 17.55, 16.25, 15.05, 14.65, 14.25, 13.95, 13.55, 13.25, 12.95, 12.55, 12.15, 11.65, 11.25],
-//                 ['x7', 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.35, 17.05, 15.95, 15.05, 14.65, 14.25, 13.85, 13.55, 13.25, 12.95, 12.65, 12.05, 11.65],
-//                 ['x8', 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.95, 15.55, 14.65, 14.25, 13.95, 13.65, 13.35, 12.95, 12.45, 12.05, 11.65],
-//                 ['x9', 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 15.35, 14.95, 14.35, 13.85, 13.45, 13.25, 12.95, 12.45, 12.05, 11.75],
-//                 ['x10', 14.65, 14.65, 14.55, 14.55, 14.55, 14.55, 14.55, 14.55, 14.55, 14.55, 14.55, 14.55, 14.55, 14.55, 14.45, 14.45, 14.45, 14.45, 14.45, 14.45, 14.45, 14.45, 14.45, 14.45, 14.45, 14.25, 13.95, 13.45, 12.95, 12.55, 12.05, 11.65],
-//                 ['x11', 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.15, 15.05, 15.05, 15.05, 14.95, 14.95, 14.45, 13.95, 13.55, 13.15, 12.75, 12.25, 11.85, 11.55],
-//                 ['x12', 15.85, 15.65, 15.45, 15.45, 15.35, 15.35, 15.25, 15.25, 15.15, 15.15, 15.05, 14.95, 14.85, 14.75, 14.55, 14.45, 14.35, 14.25, 14.15, 13.95, 13.85, 13.75, 13.65, 13.45, 13.25, 12.85, 12.55, 12.15, 11.85, 11.65, 11.45, 11.15],
-//                 ['juin 2015', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
-//                 ['juillet 2015', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
-//                 ['aout 2015', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
-//                 ['septembre 2015', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
-//                 ['octobre 2015', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
-//                 ['novembre 2015', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
-//                 ['décembre 2015', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
-//                 ['janvier 2016', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
-//                 ['février 2016', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
-//                 ['mars 2016', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
-//                 ['avril 2016', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
-//                 ['mai 2016', -0.494, -1.541, -2.646, -3.819, -5.078, -6.441, -7.930, -9.573, -11.405, -13.467, -15.810, -18.496, -21.599, -25.211, -29.445, -34.434, -40.344, -47.374, -55.764, -65.807, -77.854, -92.326, -109.729, -130.666, -155.851, -186.126, -222.475, -266.040, -318.127, -380.213, -453.938, -541.089 ],
-//             ]
-//         }
-//     });
-// }
-
-// function removeGraphThermocline() {
-//     chartThermocline.destroy();
-// }
-
 function createGraphThermocline() {
     chartThermocline = $('#container').highcharts({
         chart: {
-            type: 'spline',
+            type: 'line',
+            height: 500,
             inverted: true
         },
         title: {
-            text: 'Atmosphere Temperature by Altitude'
+            text: 'Température de l’eau en fonction de la profondeur'
         },
         subtitle: {
-            text: 'According to the Standard Atmosphere Model'
+            text: 'D’août 2015 à mars 2016 à 40°N 20°W'
         },
         xAxis: {
+            min: -200,
+            max: 0,
             reversed: false,
             title: {
                 enabled: true,
-                text: 'Altitude'
+                text: 'Profondeur'
             },
             labels: {
                 formatter: function () {
-                    return this.value + 'km';
+                    return this.value + 'm';
                 }
             },
             maxPadding: 0.05,
             showLastLabel: true
         },
         yAxis: {
+            min: 13,
+            max: 25,
             title: {
-                text: 'Temperature'
+                text: 'Température'
             },
             labels: {
                 formatter: function () {
-                    return this.value + '°';
+                    return this.value + '°C';
                 }
             },
             lineWidth: 2
@@ -468,23 +415,33 @@ function createGraphThermocline() {
                 }
             }
         },
-        series: [{
-        name: 'Tokyo',
-        data: [[0, 15], [10, -50], [20, -56.5], [30, -46.5], [40, -22.1],
-                [50, -2.5], [60, -27.7], [70, -55.7], [80, -76.5]]
-    }, {
-        name: 'New York',
-        data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
-    }, {
-        name: 'Berlin',
-        data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
-    }, {
-        name: 'London',
-        data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
-    }]
+        series: [
+        {
+        name: 'Août 2015',
+        data:[[-0.494  , 24.65], [-1.541  , 24.65], [-2.646  , 24.65], [-3.819  , 24.65], [-5.078  , 24.65], [-6.441  , 24.65], [-7.930  , 24.65], [-9.573  , 24.65], [-11.405 , 24.65], [-13.467 , 24.55], [-15.810 , 24.35], [-18.496 , 23.95], [-21.599 , 23.35], [-25.211 , 22.65], [-29.445 , 21.85], [-34.434 , 21.05], [-40.344 , 20.25], [-47.374 , 19.45], [-55.764 , 18.75], [-65.807 , 18.25], [-77.854 , 17.75], [-92.326 , 17.35], [-109.729, 16.95], [-130.666, 16.55], [-155.851, 16.25], [-186.126, 15.85], [-222.475, 15.45], [-266.040, 15.05], [-318.127, 14.65], [-380.213, 14.15], [-453.938, 13.75], [-541.089, 13.35]]
+        },
+        {
+        name: 'Octobre 2015',
+        data: [[-0.494  , 22.95], [-1.541  , 22.95], [-2.646  , 22.85], [-3.819  , 22.85], [-5.078  , 22.85], [-6.441  , 22.85], [-7.930  , 22.85], [-9.573  , 22.85], [-11.405 , 22.85], [-13.467 , 22.85], [-15.810 , 22.75], [-18.496 , 22.75], [-21.599 , 22.75], [-25.211 , 22.65], [-29.445 , 22.65], [-34.434 , 22.45], [-40.344 , 22.15], [-47.374 , 21.45], [-55.764 , 20.55], [-65.807 , 19.35], [-77.854 , 17.75], [-92.326 , 16.85], [-109.729, 16.15], [-130.666, 15.65], [-155.851, 15.35], [-186.126, 15.25], [-222.475, 15.05], [-266.040, 14.75], [-318.127, 14.45], [-380.213, 14.25], [-453.938, 13.85], [-541.089, 13.45]] 
+        },
+        {
+        name: 'Décembre 2015',
+        data: [[-0.494  , 19.35], [-1.541  , 19.35], [-2.646  , 19.35], [-3.819  , 19.35], [-5.078  , 19.35], [-6.441  , 19.35], [-7.930  , 19.35], [-9.573  , 19.35], [-11.405 , 19.35], [-13.467 , 19.35], [-15.810 , 19.35], [-18.496 , 19.35], [-21.599 , 19.35], [-25.211 , 19.35], [-29.445 , 19.35], [-34.434 , 19.35], [-40.344 , 19.35], [-47.374 , 19.35], [-55.764 , 19.35], [-65.807 , 19.35], [-77.854 , 19.05], [-92.326 , 17.95], [-109.729, 17.05], [-130.666, 16.65], [-155.851, 16.25], [-186.126, 15.85], [-222.475, 15.55], [-266.040, 15.25], [-318.127, 14.95], [-380.213, 14.65], [-453.938, 14.05], [-541.089, 13.65]]
+        },
+        {
+        name: 'Mars 2016',
+        data: [[-0.494  , 16.65], [-1.541  , 16.65], [-2.646  , 16.55], [-3.819  , 16.55], [-5.078  , 16.55], [-6.441  , 16.55], [-7.930  , 16.55], [-9.573  , 16.55], [-11.405 , 16.55], [-13.467 , 16.55], [-15.810 , 16.55], [-18.496 , 16.55], [-21.599 , 16.55], [-25.211 , 16.55], [-29.445 , 16.45], [-34.434 , 16.45], [-40.344 , 16.45], [-47.374 , 16.45], [-55.764 , 16.45], [-65.807 , 16.45], [-77.854 , 16.45], [-92.326 , 16.45], [-109.729, 16.45], [-130.666, 16.45], [-155.851, 16.45], [-186.126, 16.25], [-222.475, 15.95], [-266.040, 15.45], [-318.127, 14.95], [-380.213, 14.55], [-453.938, 14.05], [-541.089, 13.65]]
+
+        }]   
     });
 };
 
 function removeGraphThermocline() {
     $('#container').highcharts().destroy();
 };
+
+
+
+
+
+

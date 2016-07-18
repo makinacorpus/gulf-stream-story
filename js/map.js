@@ -1,18 +1,19 @@
 var Lmap = undefined;
 
-var neTiles = L.tileLayer('data/tiles/{z}/{x}/{y}.png', {
+var neTiles = L.tileLayer('data/tiles/natural_earth/{z}/{x}/{y}.png', {
     tms: true,
-    maxZoom: 6,
+    maxZoom: 5,
     minZoom: 2
 });
-var wh = L.tileLayer('data/gs2/{z}/{x}/{y}.png', {
+var wh = L.tileLayer('data/tiles/gs2/{z}/{x}/{y}.png', {
     tms: true,
-    attribution: 'xxx',
+    attribution: 'Wikimedia',
     maxZoom: 4,
     minZoom: 3
 });
-var BFranklin = L.tileLayer('data/BFranklin/{z}/{x}/{y}.png', {
+var BFranklin = L.tileLayer('data/tiles/BFranklin/{z}/{x}/{y}.png', {
     tms: true,
+    attribution: 'Wikimedia',
     maxZoom: 5,
     minZoom: 3
 });
@@ -139,7 +140,7 @@ $.getJSON("data/geojson/current_3220.geojson", function(data) {
 var detroit_de_floride = L.geoJson(null);
 
 $.getJSON("data/geojson/detroit_de_floride.geojson", function (data) {
-    detroit_de_floride.addData(data).bindLabel("Détroit de Floride");
+    detroit_de_floride.addData(data).bindLabel("<img alt='detroit_de_floride' src='data/images/detroit_de_floride.jpg'></br>Détroit de Floride");
 });
 
 var isthme_panama = L.geoJson(null, {
@@ -241,7 +242,7 @@ $.getJSON("data/geojson/courant_de_floride.geojson", function (data) {
 var cap_hatteras = L.geoJson(null);
 
 $.getJSON("data/geojson/cap_hatteras.geojson", function (data) {
-    cap_hatteras.addData(data).bindLabel("<img alt='detroit_de_floride' src='data/images/cap_hatteras.jpg'>Cap Hatteras");
+    cap_hatteras.addData(data).bindLabel("<img alt='cap_hatteras' src='data/images/cap_hatteras.jpg'></br>Cap Hatteras");
 });
 
 
@@ -438,7 +439,7 @@ function createMapboxGlMap() {
             },
             "tiles_mb": {
                 "type": "raster",
-                "tiles": ["data/tiles_mb/{z}/{x}/{y}.png"],
+                "tiles": ["data/tiles/tiles_mb/{z}/{x}/{y}.png"],
                 "scheme": "tms",
                 "tileSize": 256
             }
@@ -497,7 +498,7 @@ var video_temp = {
         },
         "tiles_mb": {
             "type": "raster",
-            "tiles": ["data/tiles_mb/{z}/{x}/{y}.png"],
+            "tiles": ["data/tiles/tiles_mb/{z}/{x}/{y}.png"],
             "scheme": "tms",
             "tileSize": 256
         }
@@ -530,7 +531,7 @@ var video_salinity = {
         },
         "tiles_mb": {
             "type": "raster",
-            "tiles": ["data/tiles_mb/{z}/{x}/{y}.png"],
+            "tiles": ["data/tiles/tiles_mb/{z}/{x}/{y}.png"],
             "scheme": "tms",
             "tileSize": 256
         }
@@ -563,7 +564,7 @@ var video_wind = {
         },
         "tiles_mb": {
             "type": "raster",
-            "tiles": ["data/tiles_mb/{z}/{x}/{y}.png"],
+            "tiles": ["data/tiles/tiles_mb/{z}/{x}/{y}.png"],
             "scheme": "tms",
             "tileSize": 256
         }
@@ -596,7 +597,7 @@ var pente_continentale_mb = {
         },
         "tiles_mb": {
             "type": "raster",
-            "tiles": ["data/tiles_mb/{z}/{x}/{y}.png"],
+            "tiles": ["data/tiles/tiles_mb/{z}/{x}/{y}.png"],
             "scheme": "tms",
             "tileSize": 256
         },

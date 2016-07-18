@@ -1,9 +1,23 @@
 #map {
     width: 100%;
+    margin-top: -70px;
+}
+
+body {
+  background: #2D728F;
 }
 
 html, body, .container-fluid, .row, .left-panel, #map {
     height: 100%;
+    font-family: 'Asap', sans-serif;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+h1, h2, h3, h4, p {
+  color: #fff;
 }
 
 .container-fluid {
@@ -21,8 +35,7 @@ html, body, .container-fluid, .row, .left-panel, #map {
 }
 
 .right-panel {
-    padding-top: 60px;
-    padding-right: 20px;
+    padding: 40px 30px;
     text-align: justify;
     text-align-last: left;
     font-size: 20px;
@@ -61,33 +74,33 @@ path.leaflet-clickable {
     }
 }
 
-*, *:after, *:before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Open Sans";
-}
-
 
 /* Form Progress */
 .progress {
-  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
   text-align: center;
-  height: 45px;
-  position: absolute;
+  height: 70px;
+  margin-bottom: 0;
   z-index: 3;
   width: 100%;
   background: transparent;
+  /*background: rgba(29,53,87,0.5)*/
 }
 .progress .circle,
 .progress .bar {
-  display: inline-block;
-  background: #fff;
-  width: 30px; height: 30px;
-  border-radius: 40px;
+    text-indent: 90px;
+    overflow: hidden;
+    background: #2D728F;
+    width: 10px;
+    height: 10px;
+    border-radius: 40px;
+    margin: 4px;
+    align-self: center;
 }
 .progress .circle-cat {
-  border: 1px solid #d5d5da;
+  border: 3px solid #2D728F;
   width: 40px; height: 40px;
 }
 .progress .bar {
@@ -141,4 +154,116 @@ path.leaflet-clickable {
 }
 .progress .circle.active .title {
   color: #0c95be;
+}
+
+.circle-cat {
+  text-indent: 90px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.circle:not(.circle-cat):hover {
+  cursor: default;
+}
+
+.circle.active {
+  background-color: #fff;
+}
+
+.circle.passed {
+  background-color: #fff;
+}
+
+.circle-cat::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: '';
+  background-repeat: no-repeat;
+  display: block;
+  width: 26px;
+  height: 26px;
+  margin-left: -13px;
+  margin-top: -13px;
+}
+
+.circle-cat.courants::after {
+  background-image: url('../images/courant-active.svg');
+}
+
+.circle-cat.salinite::after {
+  background-image: url('../images/salinite-active.svg');
+}
+
+.circle-cat.temperatures::after {
+  background-image: url('../images/temperatures-active.svg');
+}
+
+.circle-cat.vents::after {
+  background-image: url('../images/vents-active.svg');
+}
+
+.circle-cat.active.courants::after,
+.circle-cat.passed.courants::after {
+  background-image: url('../images/courant.svg');
+}
+
+.circle-cat.active.salinite::after,
+.circle-cat.passed.salinite::after {
+  background-image: url('../images/salinite.svg');
+}
+
+.circle-cat.active.temperatures::after,
+.circle-cat.passed.temperatures::after {
+  background-image: url('../images/temperatures.svg');
+}
+
+.circle-cat.active.vents::after,
+.circle-cat.passed.vents::after {
+  background-image: url('../images/vents.svg');
+}
+
+.circle-cat.introduction::after {
+  background-image: url('../images/intro-active.svg');
+}
+
+.circle-cat.active.introduction::after,
+.circle-cat.passed.introduction::after {
+  background-image: url('../images/intro.svg');
+}
+
+.circle-cat.conclusion::after {
+  background-image: url('../images/end-active.svg');
+}
+
+.circle-cat.active.conclusion::after,
+.circle-cat.passed.conclusion::after {
+  background-image: url('../images/end.svg');
+}
+
+.next-button {
+  margin: 0;
+  padding: 0;
+  background: #2D728F;
+  border-radius: 50px;
+  border: none;
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  margin-top: -25px;
+  border: 4px solid transparent;
+}
+
+.next-button:hover {
+  background: #62CFE0;
+}
+
+.next-button::after {
+  content: '';
+  width: 50px;
+  height: 50px;
+  display: block;
+  background-image: url('../images/intro-active.svg');
 }

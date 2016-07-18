@@ -5,6 +5,7 @@
   <title>Gulf stream</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="node_modules/leaflet.label/dist/leaflet.label.css" />
     <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
@@ -15,20 +16,17 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="progress">
-        </div>
         <div class="row">
             <div class="col-md-9 left-panel">
+                <div class="progress">
+                </div>
                 <div id="map"></div>
                 <div id="depthSlider">
                     <input id="depthSliderInput" type="text" data-slider-orientation="vertical"/>
                 </div>
+                <button id="next" type="button" class="next-button"></button>
             </div>
             <div class="col-md-3 right-panel scrollY">
-                <div class="btn-group btn-group-lg" role="group" aria-label="...">
-<!--                     <button id="prev" type="button" class="btn btn-default"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></button> -->
-                    <button id="next" type="button" class="btn btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></button>
-                </div>
                 <div id="graph"></div>
                 <div id="text"></div>
                 <div id="container" style="width:100%; height:400px;"></div>
