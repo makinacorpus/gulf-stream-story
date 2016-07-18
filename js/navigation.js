@@ -151,7 +151,8 @@ var story = [
         'text': '##Température\n\n*Les courants et les vents sont le moteur de la machine qui convertit et distribue l’énergie que la Terre reçoit du soleil. L’océan fournit une fraction de son énergie à l’atmosphère et distribue directement par les courants l’autre partie à l’échelle de la planète. On estime que les transferts de chaleur des régions équatoriales vers les pôles se font à égalité par l’atmosphère et l’océan.*',
         'destroyLeafletMap': true,
         'addMapboxGlMap': true,
-        'removeLayers': [neTiles]
+        'removeLayers': [neTiles],
+        'showLegend': '#temperature-legend'
     },
     {
         'category': 'Les températures',
@@ -171,6 +172,7 @@ var story = [
         'text': '##Température\n\nEn hivers le rayonnement solaire est beaucoup plus faible et les vents d’ouest se renforcent. Il y a rupture du thermocline qui remet à disposition des couches de surface le stock d’été. L’océan transmet cette énergie à l’atmosphère. Les vents d’ouest la récupèrent et l’emportent en direction de l’Europe. L’ouest de ce continent sera le seul bénéficiaire de la mémoire calorifique estivale de l’océan Atlantique.\n\nCe phénomène semble aujourd’hui expliquer en grande partie la différence de climat entre les côtes est et ouest de l’Atlantique. Sur l’année on note une différence moyenne de 15°C. C’est ce qui explique un climat maritime (tempéré) en Europe de l’ouest et aux mêmes latitudes sur le sol américain un climat continental (froid).'
     },  
     {
+        'hideLegend': '#temperature-legend',
         'category': 'Les vents',
         'slug': 'vents',
         'text': '##L’influence du vent\n\n*Un principe simple de thermodynamique nous enseigne qu’entre deux corps en contact, c’est le corps chaud qui cède son énergie au corps froid jusqu’à l’équilibre. Le couple océan/atmosphère transporte et distribue l’énergie du soleil de la source chaude à la source froide. Par évaporation, les zones océaniques équatoriales (source chaude) alimentent l’atmosphère en chaleur, créant des vents qui se dirigent vers les régions polaires (source froide).*',
@@ -347,6 +349,12 @@ function changeContent(i) {
         $('.right-panel').removeClass('col-md-6');
         $('.right-panel').addClass('col-md-3');
         removeGraphThermocline();
+    }
+    if (state.showLegend) {
+        $(state.showLegend).css('display', 'block');
+    }
+    if (state.hideLegend) {
+        $(state.hideLegend).css('display', 'none');
     }
 }
 
