@@ -4,7 +4,8 @@ var story = [
     {
         'category': 'Introduction',
         'slug': 'introduction',
-        'text': '####*«Le Gulf Stream est une rivière au milieu de l’océan, dont le niveau ne change ni dans les plus fortes sécheresses ni dans les plus fortes pluies. Il est limité par des eaux froides, tandis que son courant est chaud. Il prend sa source dans le golfe du Mexique et se jette dans l’océan Arctique. Il n’existe pas sur la Terre un cours d’eau plus majestueux : sa vitesse est plus rapide que celle du Mississippi ou des Amazones, et son débit 1000 fois plus conséquent.» Maury «The Physical Geography of the Sea» 1855.*\n\nDepuis sa découverte, durant le deuxième voyage de Christophe Colomb en 1493, le Gulf Stream a de nombreuses fois fait parlé de lui. Benjamin Franklin l’a transformé en voie rapide pour le retour en Europe. Une légende l’a longtemps elevé au statut de chaudière de l’Europe, miraculeux responsable de la différence entre le climat continental glacial de la côte est américaine et le climat océanique tempéré d’Europe de l’ouest. Récemment, devenu star hollywodienne, il a fait son apparition dans plusieurs films catastrophe. Porté par cette vague alarmiste, la presse a maladroitement prévu son arrêt et le refroidissement drastique de l’Europe.\n\nMais qu’en est-il réellement? A travers un ensemble de cartes, nous vous proposons de partir à la découverte de ce véritable fleuve océanique.',
+        'text': '#**Le Gulf Stream**\n\nDepuis sa découverte, durant le deuxième voyage de Christophe Colomb en 1493, le Gulf Stream a de nombreuses fois fait parlé de lui. Benjamin Franklin l’a transformé en voie rapide pour le retour en Europe. Une légende l’a longtemps elevé au statut de chaudière de l’Europe, miraculeux responsable de la différence entre le climat continental glacial de la côte est américaine et le climat océanique tempéré d’Europe de l’ouest. Récemment, devenu star hollywodienne, il a fait son apparition dans plusieurs films catastrophe. Porté par cette vague alarmiste, la presse a maladroitement prévu son arrêt et le refroidissement drastique de l’Europe.\n\nMais qu’en est-il réellement? A travers un ensemble de cartes, nous vous proposons de partir à la découverte de ce véritable fleuve océanique.',
+        // ####*«Le Gulf Stream est une rivière au milieu de l’océan, dont le niveau ne change ni dans les plus fortes sécheresses ni dans les plus fortes pluies. Il est limité par des eaux froides, tandis que son courant est chaud. Il prend sa source dans le golfe du Mexique et se jette dans l’océan Arctique. Il n’existe pas sur la Terre un cours d’eau plus majestueux : sa vitesse est plus rapide que celle du Mississippi ou des Amazones, et son débit 1000 fois plus conséquent.» Maury «The Physical Geography of the Sea» 1855.*
         // 'destroyMapboxGlMap': true,
         'createLeafletMap': {
             // 'destroyMapbox': true,
@@ -16,7 +17,7 @@ var story = [
     {
         'category': 'Introduction',
         'slug': 'introduction',
-        'setMaxBounds': [[0, -120],[85, 20]],
+        'setMaxBounds': [[0, -100],[85, 20]],
         'view': [[24, -80.72], 5],
         'text': '## Naissance du Gulf Stream\n Pour suivre le Gulf Stream, focalisons nous sur le trajet d’une goutte d’eau qui se trouve dans le Golfe du Mexique. Elle pourrait venir d’un cumulonimbus, de l’Atlantique, du lac Itasca source du Mississipi, ou de bien d’autres horizons. Mais sa provenance n’a que peu d’importance. Si elle ne s’évapore pas, elle se dirigera inévitablement vers le Gulf Stream.',
         'addLayers': [neTiles],
@@ -107,7 +108,8 @@ var story = [
         'slug': 'courants',
         'text': '##Gulf Stream et courants Nord Atlantiques\nCette carte représente la vitesse des courants de surface, de janvier à juillet 2016. Malgré de nombreux petits courants, souvent tourbillonnaires, il est possible de retrouver la plupart des courants évoqués durant le voyage de notre goutte d’eau. Vous pouvez si vous le souhaitez les afficher à l’aide des cases à cocher.',
         'destroyLeafletMap': true,
-        'addMapboxGlMap': true
+        'addMapboxGlMap': true,
+        'showLegend': '#current-legend'
     },
     {
         'category': 'Les courants',
@@ -125,7 +127,8 @@ var story = [
         'displayDepthSlider': true,
         'destroyMapboxGlMap': true,
         // 'view': [[30, -70], 5],
-        'text': '##Gulf Stream et courants Nord Atlantiques\n\nNous venons d’observer ce qu’il se passe en surface mais comment les courants se comportent ils en profondeurs ? En utilisant l’ascenseur à gauche de la carte, vous pouvez étudier leur comportement à différentes profondeurs. \n\n Positionnez vous par exemple à 1684m. Vous remarquerez qu’un courant de fond, opposé au Gulf Stream longe la côte américaine. La circulation des courants de profondeur est bien différente de celle de surface, influencée par l’action mécanique du vent. \n\n Pour revenir au Gulf Stream, vous vous rendrez vite compte qu’il n’est pas qu’un courant de surface. A 1000m, il a encore une grande influence. \n\n Il se distingue des autres courants de bords ouest par son débit record qui atteint les millions de mètres cube à la seconde. Pour comparaison, l’Amazone n’a qu’un débit de 300 000 mètres cube par seconde à son maximum. Le débit de tous les fleuves et rivières de la planète atteint 1 Sv (unité de mesure de débit). Le GS qui a un débit de 30 Sv au départ s’approche des 140 Sv en fin de course.'
+        'text': '##Gulf Stream et courants Nord Atlantiques\n\nNous venons d’observer ce qu’il se passe en surface mais comment les courants se comportent ils en profondeurs ? En utilisant l’ascenseur à gauche de la carte, vous pouvez étudier leur comportement à différentes profondeurs. \n\n Positionnez vous par exemple à 1684m. Vous remarquerez qu’un courant de fond, opposé au Gulf Stream longe la côte américaine. La circulation des courants de profondeur est bien différente de celle de surface, influencée par l’action mécanique du vent. \n\n Pour revenir au Gulf Stream, vous vous rendrez vite compte qu’il n’est pas qu’un courant de surface. A 1000m, il a encore une grande influence. \n\n Il se distingue des autres courants de bords ouest par son débit record qui atteint les millions de mètres cube à la seconde. Pour comparaison, l’Amazone n’a qu’un débit de 300 000 mètres cube par seconde à son maximum. Le débit de tous les fleuves et rivières de la planète atteint 1 Sv (unité de mesure de débit). Le GS qui a un débit de 30 Sv au départ s’approche des 140 Sv en fin de course.',
+        'hideLegend': '#current-legend'
     },
     {
         'category': 'Les courants',
@@ -134,7 +137,8 @@ var story = [
         'destroyLeafletMap': true,
         'addMapboxGlMap': true,
         'hideDepthSlider': true,
-        'removeLayers': [neTiles]
+        'removeLayers': [neTiles],
+        'showLegend': '#current-legend'
     },
     {
         'destroyMapboxGlMap': true,
@@ -145,7 +149,8 @@ var story = [
         },
         'category': 'Les courants',
         'slug': 'courants',
-        'text': '##Gulf Stream et niveau de l’Océan\n\nL’apport en eau est tellement conséquent dans le Gulf Stream que le niveau de la mer est prêt de 50cm au dessus du niveau 0.'
+        'text': '##Gulf Stream et niveau de l’Océan\n\nL’apport en eau est tellement conséquent dans le Gulf Stream que le niveau de la mer est prêt de 50cm au dessus du niveau 0.',
+        'hideLegend': '#current-legend'
     },
     {
         'category': 'Les températures',
@@ -154,7 +159,9 @@ var story = [
         'destroyLeafletMap': true,
         'addMapboxGlMap': true,
         'removeLayers': [neTiles],
-        'style_mb': video_temp
+        'style_mb': video_temp,
+        'showLegend': '#temperature-legend'
+        
     },
     {
         'category': 'Les températures',
@@ -173,6 +180,7 @@ var story = [
         'text': '##Température\n\nEn hivers le rayonnement solaire est beaucoup plus faible et les vents d’ouest se renforcent. Il y a rupture du thermocline qui remet à disposition des couches de surface le stock d’été. L’océan transmet cette énergie à l’atmosphère. Les vents d’ouest la récupèrent et l’emportent en direction de l’Europe. L’ouest de ce continent sera le seul bénéficiaire de la mémoire calorifique estivale de l’océan Atlantique.\n\nCe phénomène semble aujourd’hui expliquer en grande partie la différence de climat entre les côtes est et ouest de l’Atlantique. Sur l’année on note une différence moyenne de 15°C. C’est ce qui explique un climat maritime (tempéré) en Europe de l’ouest et aux mêmes latitudes sur le sol américain un climat continental (froid).'
     },  
     {
+        'hideLegend': '#temperature-legend',
         'category': 'Les vents',
         'slug': 'vents',
         'text': '##L’influence du vent\n\n*Un principe simple de thermodynamique nous enseigne qu’entre deux corps en contact, c’est le corps chaud qui cède son énergie au corps froid jusqu’à l’équilibre. Le couple océan/atmosphère transporte et distribue l’énergie du soleil de la source chaude à la source froide. Par évaporation, les zones océaniques équatoriales (source chaude) alimentent l’atmosphère en chaleur, créant des vents qui se dirigent vers les régions polaires (source froide).*',
@@ -188,12 +196,14 @@ var story = [
         'category': 'La salinité',
         'slug': 'salinite',
         'text': '##Salinité\n\nComme pour la température de surface, le Gulf Stream représente une frontière entre les eaux fortement salées qu’il emporte et les eaux de la mer du Labrador faiblement salées. Cette différence s’explique assez simplement. Au niveau de l’équateur et des tropiques, l’évaporation est très forte. Cette eau s’échappe dans l’atmosphère, renforçant les vents se dirigeants vers le nord (dans la direction imposée par l’anticyclone des Açores). Le sel, qui ne peux pas s’évaporer s’accumule dans l’océan. C’est pourquoi les eaux tropicales sont très salées.\n\nLe Gulf Stream emporte donc des eaux chaudes et salées en direction des hautes latitudes. Cet apport est particulièrement visible au niveau de la dérive Nord Atlantique qui a une influence jusqu’au nord de la Norvège.',
-        'style_mb': video_salinity
+        'style_mb': video_salinity,
+        'showLegend': '#salinity-legend'
     }, 
     {
         'category': 'La salinité',
         'slug': 'salinite',
-        'text': '##Salinité\n\nEn arrivant aux hautes latitudes, la température chute. Les eaux emportées par les extensions du Gulf Stream deviennent froides et salées.\n\n Plus une eau est froide, plus elle est dense. Plus elle est salée, plus elle est dense. Les eaux issues du Gulf Stream sont plus salées que les eaux qui les entourent. Ce taux de sel est renforcé l’hiver par la création de glace. En se refroidissant durant leur voyage vers les hautes latitudes, elles finissent par devenir trop denses pour se maintenir à la surface et plongent jusqu’à des profondeurs supérieures au kilomètre. Elles s’écoulent lentement dans un courant de fond en direction de l’équateur. Le courant de retour que nous avions observé à 1684m peut être affilié à cette circulation. Au niveau des Tropiques, le courant se réchauffe et remonte à la surface jusqu’à leur prochain refroidissement. '
+        'text': '##Salinité\n\nEn arrivant aux hautes latitudes, la température chute. Les eaux emportées par les extensions du Gulf Stream deviennent froides et salées.\n\n Plus une eau est froide, plus elle est dense. Plus elle est salée, plus elle est dense. Les eaux issues du Gulf Stream sont plus salées que les eaux qui les entourent. Ce taux de sel est renforcé l’hiver par la création de glace. En se refroidissant durant leur voyage vers les hautes latitudes, elles finissent par devenir trop denses pour se maintenir à la surface et plongent jusqu’à des profondeurs supérieures au kilomètre. Elles s’écoulent lentement dans un courant de fond en direction de l’équateur. Le courant de retour que nous avions observé à 1684m peut être affilié à cette circulation. Au niveau des Tropiques, le courant se réchauffe et remonte à la surface jusqu’à leur prochain refroidissement.',
+        'hideLegend': '#salinity-legend'
     },
     {
         'destroyMapboxGlMap': true,
@@ -210,7 +220,7 @@ var story = [
         'slug': 'conclusion',
         'view': [[-65, 25], 3],
         'setMaxBounds': [[-100, -180],[73, 180]],
-        'text': '##Conclusion\n\nLes scientifiques estiment aujourd’hui que sans le GS, notre climat se rafraîchirait de 4 ou 5°C. Mais cette information reste très hypothétique. Il est encore aujourd’hui très difficile d’étudier l’influence exacte des différents facteurs qui jouent sur notre climat. Ils dépendent de la géométrie de la Terre, de sa rotation, de l’attraction de la Lune et du Soleil et de bien d’autres facteurs. Ils ont chacun leurs propres caractéristiques qui sont difficilement comparables. De plus, il est impossible de les isoler pour les étudier indépendamment. Les scientifiques créent des modèles simplifiant la réalité pour simuler les phénomènes météorologiques et climatiques. Mais la simplification de phénomènes aussi complexes font de la climatologie un domaine passionnant ou de nombreuses découvertes sont encore à faire.',
+    //     'text': '##Conclusion\n\nLes scientifiques estiment aujourd’hui que sans le GS, notre climat se rafraîchirait de 4 ou 5°C. Mais cette information reste très hypothétique. Il est encore aujourd’hui très difficile d’étudier l’influence exacte des différents facteurs qui jouent sur notre climat. Ils dépendent de la géométrie de la Terre, de sa rotation, de l’attraction de la Lune et du Soleil et de bien d’autres facteurs. Ils ont chacun leurs propres caractéristiques qui sont difficilement comparables. De plus, il est impossible de les isoler pour les étudier indépendamment. Les scientifiques créent des modèles simplifiant la réalité pour simuler les phénomènes météorologiques et climatiques. Mais la simplification de phénomènes aussi complexes font de la climatologie un domaine passionnant ou de nombreuses découvertes sont encore à faire.',
         'addLayers': [BFranklin],
         'removeLayers': [neTiles, thermohaline_cold, thermohaline_hot]
     }
@@ -349,6 +359,12 @@ function changeContent(i) {
         $('.right-panel').removeClass('col-md-6');
         $('.right-panel').addClass('col-md-3');
         removeGraphThermocline();
+    }
+    if (state.showLegend) {
+        $(state.showLegend).css('display', 'block');
+    }
+    if (state.hideLegend) {
+        $(state.hideLegend).css('display', 'none');
     }
 }
 

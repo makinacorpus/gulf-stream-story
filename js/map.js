@@ -2,18 +2,19 @@ var Lmap = undefined;
 
 var neTiles = L.tileLayer('data/tiles/natural_earth/{z}/{x}/{y}.png', {
     tms: true,
+    attribution: '<a href="http://www.naturalearthdata.com/">Natural Earth Data</a>',
     maxZoom: 5,
     minZoom: 2
 });
 var wh = L.tileLayer('data/tiles/gs2/{z}/{x}/{y}.png', {
     tms: true,
-    attribution: 'Wikimedia',
+    attribution: '<a href="https://commons.wikimedia.org/wiki/Accueil">Wikimedia</a>',
     maxZoom: 4,
     minZoom: 3
 });
 var BFranklin = L.tileLayer('data/tiles/BFranklin/{z}/{x}/{y}.png', {
     tms: true,
-    attribution: 'Wikimedia',
+    attribution: '<a href="https://commons.wikimedia.org/wiki/Accueil">Wikimedia</a>',
     maxZoom: 5,
     minZoom: 3
 });
@@ -30,6 +31,9 @@ function createLeafletMap(options) {
     if (layers) {
         for (layer in layers) {
             Lmap.addLayer(layers[layer]);
+            if (layer === layers.length - 1) {
+                layers[layer].bringToFront();
+            }
         }
     }
     if (view) {
@@ -191,10 +195,22 @@ $.getJSON("data/geojson/courant_de_guyane.geojson", function (data) {
 
 var thermohaline_cold = L.geoJson(null, {
     style: {
-        weight: 18,
+        weight: 15,
         opacity: 1,
         color: '#006FFF'
+    },
+    onEachFeature: function (feature, layer) {
+        layer.setText('   \u25b6   ', {
+            repeat: true, 
+            offset: 3,
+            attributes: {
+                'fill': '#A9E2F3',
+                'font-weight': 'bold',
+                'font-size': '12'
+            }
+        });
     }
+
 });
 
 $.getJSON("data/geojson/thermohaline_cold.geojson", function (data) {
@@ -203,13 +219,24 @@ $.getJSON("data/geojson/thermohaline_cold.geojson", function (data) {
 
 var thermohaline_hot = L.geoJson(null, {
     style: {
-        weight: 18,
+        weight: 15,
         opacity: 1,
         color: '#FF0000'
+    },
+    onEachFeature: function (feature, layer) {
+        layer.setText('   \u25b6   ', {
+            repeat: true, 
+            offset: 3,
+            attributes: {
+                'fill': '#F5A9A9',
+                'font-weight': 'bold',
+                'font-size': '12'
+            }
+        });
     }
 });
 
-$.getJSON("data/geojson/thermohaline_hot.geojson", function (data) {
+$.getJSON("data/geojson/test.geojson", function (data) {
     thermohaline_hot.addData(data).bindLabel("courant chaud de surface");
 });
 
