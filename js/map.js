@@ -23,11 +23,8 @@ function createLeafletMap(options) {
     var layers = options.layers,
         view = options.view,
         maxBounds = options.maxBounds;
-        // destroyMapbox = options.destroyMapbox;
     Lmap = L.map('map');
-    // if (destroyMapbox) {
-    //     Mbmap.remove(destroyMapbox);
-    // }
+
     if (layers) {
         for (layer in layers) {
             Lmap.addLayer(layers[layer]);
