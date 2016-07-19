@@ -2,19 +2,19 @@ var Lmap = undefined;
 
 var neTiles = L.tileLayer('data/tiles/natural_earth/{z}/{x}/{y}.png', {
     tms: true,
-    attribution: '<a href="http://www.naturalearthdata.com/">Natural Earth Data</a>',
+    attribution: '<a target="_blank" href="http://www.naturalearthdata.com/">Natural Earth Data</a>',
     maxZoom: 5,
     minZoom: 2
 });
 var wh = L.tileLayer('data/tiles/gs2/{z}/{x}/{y}.png', {
     tms: true,
-    attribution: '<a href="https://commons.wikimedia.org/wiki/Accueil">Wikimedia</a>',
+    attribution: '<a target="_blank" href="https://commons.wikimedia.org/wiki/File:Winslow_Homer_-_The_Gulf_Stream_-_Metropolitan_Museum_of_Art.jpg">Wikimedia</a>',
     maxZoom: 4,
     minZoom: 3
 });
 var BFranklin = L.tileLayer('data/tiles/BFranklin/{z}/{x}/{y}.png', {
     tms: true,
-    attribution: '<a href="https://commons.wikimedia.org/wiki/Accueil">Wikimedia</a>',
+    attribution: '<a target="_blank" href="https://commons.wikimedia.org/wiki/File:Franklingulfstream.jpg">Wikimedia</a>',
     maxZoom: 5,
     minZoom: 3
 });

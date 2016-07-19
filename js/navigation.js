@@ -98,7 +98,7 @@ var story = [
         'view': [[-65, 25], 3],
         'text': '##Gulf Stream et courants Nord Atlantiques\n*Le système climatique est une machine à convertir et à distribuer l’énergie que la Terre reçoit du soleil. L’énergie solaire est transportée par deux fluides : l’atmosphère et l’océan. Ces deux entités sont en contact permanent et ne cessent d’échanger de l’énergie. C’est le couple qu’ils forment qui gère le climat de notre planète.*',
         'addLayers': [BFranklin],
-        'removeLayers': [derive_nord_atlantique_1, derive_nord_atlantique_2, groenland, courant_canaries, courant_acores, courant_nord_atlantique, gulfstream, courant_guyane, courant_floride]
+        'removeLayers': [derive_nord_atlantique_1, derive_nord_atlantique_2, groenland, courant_canaries, courant_acores, courant_nord_atlantique, gulfstream, courant_guyane, courant_floride, neTiles]
         
     },
     {
@@ -120,9 +120,9 @@ var story = [
         'category': 'Les courants',
         'slug': 'courants',
         'createLeafletMap': {
+            // ne marche pas 'setMaxBounds': [[0, -100],[85, 20]],
             'layers': [neTiles, depthLayer],
             'view': [[24, -80.72], 5],
-            'setMaxBounds': [[-50, -150],[135, 70]]
         },
         'displayDepthSlider': true,
         'destroyMapboxGlMap': true,
@@ -150,7 +150,8 @@ var story = [
         'category': 'Les courants',
         'slug': 'courants',
         'text': '##Gulf Stream et niveau de l’Océan\n\nL’apport en eau est tellement conséquent dans le Gulf Stream que le niveau de la mer est prêt de 50cm au dessus du niveau 0.',
-        'hideLegend': '#current-legend'
+        'hideLegend': '#current-legend',
+        'showLegend': '#ssh-legend'
     },
     {
         'category': 'Les températures',
@@ -160,7 +161,8 @@ var story = [
         'addMapboxGlMap': true,
         'removeLayers': [neTiles],
         'style_mb': video_temp,
-        'showLegend': '#temperature-legend'
+        'showLegend': '#temperature-legend',
+        'hideLegend': '#ssh-legend'
         
     },
     {
@@ -180,12 +182,13 @@ var story = [
         'text': '##Température\n\nEn hivers le rayonnement solaire est beaucoup plus faible et les vents d’ouest se renforcent. Il y a rupture du thermocline qui remet à disposition des couches de surface le stock d’été. L’océan transmet cette énergie à l’atmosphère. Les vents d’ouest la récupèrent et l’emportent en direction de l’Europe. L’ouest de ce continent sera le seul bénéficiaire de la mémoire calorifique estivale de l’océan Atlantique.\n\nCe phénomène semble aujourd’hui expliquer en grande partie la différence de climat entre les côtes est et ouest de l’Atlantique. Sur l’année on note une différence moyenne de 15°C. C’est ce qui explique un climat maritime (tempéré) en Europe de l’ouest et aux mêmes latitudes sur le sol américain un climat continental (froid).'
     },  
     {
-        'hideLegend': '#temperature-legend',
         'category': 'Les vents',
         'slug': 'vents',
         'text': '##L’influence du vent\n\n*Un principe simple de thermodynamique nous enseigne qu’entre deux corps en contact, c’est le corps chaud qui cède son énergie au corps froid jusqu’à l’équilibre. Le couple océan/atmosphère transporte et distribue l’énergie du soleil de la source chaude à la source froide. Par évaporation, les zones océaniques équatoriales (source chaude) alimentent l’atmosphère en chaleur, créant des vents qui se dirigent vers les régions polaires (source froide).*',
         'style_mb': video_wind,
         'hideThermocline': true,
+        'showLegend': '#wind-legend',
+        'hideLegend': '#temperature-legend'
     },  
     {
         'category': 'Les vents',
@@ -197,7 +200,8 @@ var story = [
         'slug': 'salinite',
         'text': '##Salinité\n\nComme pour la température de surface, le Gulf Stream représente une frontière entre les eaux fortement salées qu’il emporte et les eaux de la mer du Labrador faiblement salées. Cette différence s’explique assez simplement. Au niveau de l’équateur et des tropiques, l’évaporation est très forte. Cette eau s’échappe dans l’atmosphère, renforçant les vents se dirigeants vers le nord (dans la direction imposée par l’anticyclone des Açores). Le sel, qui ne peux pas s’évaporer s’accumule dans l’océan. C’est pourquoi les eaux tropicales sont très salées.\n\nLe Gulf Stream emporte donc des eaux chaudes et salées en direction des hautes latitudes. Cet apport est particulièrement visible au niveau de la dérive Nord Atlantique qui a une influence jusqu’au nord de la Norvège.',
         'style_mb': video_salinity,
-        'showLegend': '#salinity-legend'
+        'showLegend': '#salinity-legend',
+        'hideLegend': '#wind-legend',
     }, 
     {
         'category': 'La salinité',
@@ -213,7 +217,7 @@ var story = [
         },
         'category': 'La salinité',
         'slug': 'salinite',
-        'text': '##La circulation thermohaline\n\nSur cette carte vous pouvez suivre cette circulation à l’échelle planétaire. Elle est communément appelée le « tapis roulant ».\n\n On estime qu’il faudrait entre 1000 et 2000 ans pour qu’une goutte fasse un tour de ce circuit. Ce phénomène de plongée est particulièrement remarquable au large de la Norvège et au Nord Est des Grands Bancs de Terre Neuve.\n\n Le Gulf Stream, à travers les eaux salées qu’il dirige vers les hautes latitudes est un moteur essentiel de ce tapis roulant. Cette circulation planétaire serait bien différent sans lui.',
+        'text': '##La circulation thermohaline\n\nSur cette carte vous pouvez suivre cette circulation à l’échelle planétaire. Elle est communément appelée le « tapis roulant ».\n\n On estime qu’il faudrait entre 1000 et 2000 ans pour qu’une goutte fasse un tour de ce circuit. Ce phénomène de plongée est particulièrement remarquable au large de la Norvège et au Nord Est des Grands Bancs de Terre Neuve.\n\n Le Gulf Stream, à travers les eaux salées qu’il dirige vers les hautes latitudes est un moteur essentiel de ce tapis roulant. Cette circulation planétaire serait bien différent sans lui.'
     },
     {
         'category': 'Conclusion',

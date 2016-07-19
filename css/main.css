@@ -62,6 +62,10 @@ h1, h2, h3, p {
     height: 500px;
 }
 
+.slider-tick-label {
+  font-size: 15px;
+}
+
 path.leaflet-clickable {
     stroke-dasharray: 10000;
     stroke-dashoffset: 10000;
@@ -302,5 +306,13 @@ path.leaflet-clickable {
 }
 
 #salinity-legend {
+    display: none;
+}
+
+#ssh-legend {
+    display: none;
+}
+
+#wind-legend {
     display: none;
 }
