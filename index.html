@@ -26,7 +26,7 @@
                 </div>
                 <button id="next" type="button" class="next-button"></button>
 
-                <div id='temperature-legend' class='legend'>
+                <div id='temperature-legend' class='legend map-widgets'>
                     <h4>Température</h4>
                     <div><span style='background-color: #a50026'></span>29°C</div>
                     <div><span style='background-color: #de402e'></span>25°C</div>
@@ -38,7 +38,7 @@
                     <div><span style='background-color: #323896'></span>-2°C</div>
                 </div>
 
-                <div id='current-legend' class='legend'>
+                <div id='current-legend' class='legend map-widgets'>
                     <h4>Vitesse des courants</h4>
                     <div><span style='background-color: #e9f2fa'></span>0.8 à 2 m/s</div>
                     <div><span style='background-color: #b4d3e9'></span>0.6 m/s</div>
@@ -47,7 +47,7 @@
                     <div><span style='background-color: #08306b'></span>0 m/s</div>
                 </div>
 
-                <div id='salinity-legend' class='legend'>
+                <div id='salinity-legend' class='legend map-widgets'>
                     <h4>Salinité</h4>
                     <div><span style='background-color: #ffffd9'></span>38 g/l</div>
                     <div><span style='background-color: #b2e1b6'></span>37 g/l</div>
@@ -56,26 +56,11 @@
                     <div><span style='background-color: #081d58'></span>34 g/l</div>
                 </div>
 
-                <div id='ssh-legend' class='legend'>
-                    <h4>Niveau de la mer</h4>
-                    <div><span style='background-color: #ff6b60'></span>40 à 50 cm</div>
-                    <div><span style='background-color: #f7d4b4'></span>30 cm</div>
-                    <div><span style='background-color: #efead3'></span>10 cm</div>
-                    <div><span style='background-color: #ffffff'></span>0</div>
-                    <div><span style='background-color: #72b2d7'></span>-25 cm</div>
-                    <div><span style='background-color: #2878b8'></span>-65 cm</div>
-                    <div><span style='background-color: #08306b'></span>-1 m</div>
-                </div>
-
-                <div id='wind-legend' class='legend'>
-                    <h4>Contrainte de cisaillement </br>exercée par le vent sur l'océan</h4>
-                    <div><span style='background-color: #f7fbff'></span>1.1 Pa</div>
-                    <div><span style='background-color: #e4eff9'></span>1 Pa</div>
-                    <div><span style='background-color: #bed8ec'></span>0.8 Pa</div>
-                    <div><span style='background-color: #7cb7da'></span>0.6 Pa</div>
-                    <div><span style='background-color: #3e8ec4'></span>0.4 Pa</div>
-                    <div><span style='background-color: #125ea6'></span>0.2 Pa</div>
-                    <div><span style='background-color: #08306b'></span>0 Pa</div>
+                <div class="map-widgets timeline hidden" data-active="false">
+                  <h4>Échelle de temps</h4>
+                  <div class="timeline-progress"></div>
+                  <ul class="timeline-values"></ul>
+                  <ul class="timeline-context"></ul>
                 </div>
 
             </div>

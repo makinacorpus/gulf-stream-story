@@ -175,7 +175,7 @@ var courant_guyane = L.geoJson(null, {
     },
     onEachFeature: function (feature, layer) {
         layer.setText(' \u263d ', {
-            repeat: true, 
+            repeat: true,
             offset: 7,
             attributes: {
                 'fill': '#BDDAFF',
@@ -198,7 +198,7 @@ var thermohaline_cold = L.geoJson(null, {
     },
     onEachFeature: function (feature, layer) {
         layer.setText('   \u25b6   ', {
-            repeat: true, 
+            repeat: true,
             offset: 3,
             attributes: {
                 'fill': '#A9E2F3',
@@ -222,7 +222,7 @@ var thermohaline_hot = L.geoJson(null, {
     },
     onEachFeature: function (feature, layer) {
         layer.setText('   \u25b6   ', {
-            repeat: true, 
+            repeat: true,
             offset: 3,
             attributes: {
                 'fill': '#F5A9A9',
@@ -257,7 +257,7 @@ var courant_floride = L.geoJson(null, {
 //\u2652 \u263e \u2312 \u2322 \u23d6 \u25dc \u25dd
     onEachFeature: function (feature, layer) {
         layer.setText(' \u263d ', {
-            repeat: true, 
+            repeat: true,
             offset: 7,
             attributes: {
                 //"style": "writing-mode: tb-rl; glyph-orientation-vertical: 180;",
@@ -289,7 +289,7 @@ $.getJSON("data/geojson/cap_hatteras.geojson", function (data) {
     },
     onEachFeature: function (feature, layer) {
         layer.setText(' \u263d ', {
-            repeat: true, 
+            repeat: true,
             offset: 7,
             attributes: {
                 'fill': '#C8CFEB',
@@ -318,7 +318,7 @@ var courant_nord_atlantique = L.geoJson(null, {
     },
     onEachFeature: function (feature, layer) {
         layer.setText(' \u263d ', {
-            repeat: true, 
+            repeat: true,
             offset: 7,
             attributes: {
                 'fill': '#BDDAFF',
@@ -341,7 +341,7 @@ var courant_acores = L.geoJson(null, {
     },
     onEachFeature: function (feature, layer) {
         layer.setText(' \u263d ', {
-            repeat: true, 
+            repeat: true,
             offset: 7,
             attributes: {
                 'fill': '#BDDAFF',
@@ -364,7 +364,7 @@ var courant_canaries = L.geoJson(null, {
     },
     onEachFeature: function (feature, layer) {
         layer.setText(' \u263d ', {
-            repeat: true, 
+            repeat: true,
             offset: 7,
             attributes: {
                 'fill': '#BDDAFF',
@@ -389,7 +389,7 @@ var groenland = L.geoJson(null, {
     },
     onEachFeature: function (feature, layer) {
         layer.setText(' \u263d ', {
-            repeat: true, 
+            repeat: true,
             offset: 7,
             attributes: {
                 'fill': '#BDDAFF',
@@ -414,7 +414,7 @@ var derive_nord_atlantique_1 = L.geoJson(null, {
     },
     onEachFeature: function (feature, layer) {
         layer.setText(' \u263d ', {
-            repeat: true, 
+            repeat: true,
             offset: 7,
             attributes: {
                 'fill': '#BDDAFF',
@@ -439,7 +439,7 @@ var derive_nord_atlantique_2 = L.geoJson(null, {
     },
     onEachFeature: function(feature, layer) {
         layer.setText(' \u263d ', {
-            repeat: true, 
+            repeat: true,
             offset: 7,
             attributes: {
                 'fill': '#BDDAFF',
@@ -454,11 +454,11 @@ $.getJSON("data/geojson/derive_nord_atlantique_2.geojson", function(data) {
     derive_nord_atlantique_2.addData(data).bindLabel("Dérive Nord Atlantique");
 });
 
-
 //Ajout de couches MapBox
-Mbmap = undefined;
+var Mbmap = undefined;
+var timelineEvent = null;
 function createMapboxGlMap() {
-    mapboxgl.accessToken = 'pk.eyJ1IjoibWJyb3V0aW4iLCJhIjoiY2lxMmN3MDdjMDA0d2hybTIxOTYxa2c3MCJ9.T5MEIB6UqZLg3_DL4YqDCQ';   
+    mapboxgl.accessToken = 'pk.eyJ1IjoibWJyb3V0aW4iLCJhIjoiY2lxMmN3MDdjMDA0d2hybTIxOTYxa2c3MCJ9.T5MEIB6UqZLg3_DL4YqDCQ';
     var video_current = {
         "version": 8,
         "sources": {
@@ -514,6 +514,22 @@ function createMapboxGlMap() {
         maxBounds: bounds,
         center: [-70,37],
         style: video_current
+    });
+
+    Mbmap.on('load', function () {
+        var video = Mbmap.getSource('video').getVideo();
+        var timeline = document.querySelector('.timeline');
+
+        if (timeline.dataset.active) {
+            video.addEventListener('timeupdate', function (ev) {
+                var target = ev.target;
+                var percent = target.currentTime / target.duration * 100;
+                var progressBar = $('.timeline-progress');
+                progressBar.css({
+                    'width': percent + '%'
+                });
+            });
+        }
     });
 }
 
@@ -661,4 +677,3 @@ var pente_continentale_mb = {
         "maxzoom": 5
     }]
 };
-

@@ -21,7 +21,7 @@ var story = [
         'view': [[24, -80.72], 5],
         'text': '## Naissance du Gulf Stream\n Pour suivre le Gulf Stream, focalisons nous sur le trajet d’une goutte d’eau qui se trouve dans le Golfe du Mexique. Elle pourrait venir d’un cumulonimbus, de l’Atlantique, du lac Itasca source du Mississipi, ou de bien d’autres horizons. Mais sa provenance n’a que peu d’importance. Si elle ne s’évapore pas, elle se dirigera inévitablement vers le Gulf Stream.',
         'addLayers': [neTiles],
-        'removeLayers': [wh] 
+        'removeLayers': [wh]
     },
     {
         'category': 'Introduction',
@@ -158,7 +158,16 @@ var story = [
         'addMapboxGlMap': true,
         'removeLayers': [neTiles],
         'style_mb': video_temp,
-        'showLegend': '#temperature-legend'
+        'showLegend': '#temperature-legend',
+        'timeline': {
+            values: [
+              'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
+            ],
+            context: [
+              '2015', '2016'
+            ]
+        }
+
     },
     {
         'category': 'Les températures',
@@ -176,28 +185,29 @@ var story = [
     {
         'category': 'Les températures',
         'slug': 'temperatures',
+<<<<<<< d48a441768d4a4537851ba87441503cffa2187e2
         'text': '##Température\n\nEn hivers le rayonnement solaire est beaucoup plus faible et les vents d’ouest se renforcent. Il y a rupture du thermocline qui remet à disposition des couches de surface le stock d’été. L’océan transmet cette énergie à l’atmosphère. Les vents d’ouest la récupèrent et l’emportent en direction de l’Europe. L’ouest de ce continent sera le seul bénéficiaire de la mémoire calorifique estivale de l’océan Atlantique.\n\nCe phénomène semble aujourd’hui expliquer en grande partie la différence de climat entre les côtes est et ouest de l’Atlantique. Sur l’année on note une différence moyenne de 15°C. C’est ce qui explique un climat maritime (tempéré) en Europe de l’ouest et aux mêmes latitudes sur le sol américain un climat continental (froid).',
         'showLegend': '#temperature-legend'
-    },  
+    },
     {
         'category': 'Les vents',
         'slug': 'vents',
         'text': '##L’influence du vent\n\n*Un principe simple de thermodynamique nous enseigne qu’entre deux corps en contact, c’est le corps chaud qui cède son énergie au corps froid jusqu’à l’équilibre. Le couple océan/atmosphère transporte et distribue l’énergie du soleil de la source chaude à la source froide. Par évaporation, les zones océaniques équatoriales (source chaude) alimentent l’atmosphère en chaleur, créant des vents qui se dirigent vers les régions polaires (source froide).*',
         'showLegend': '#wind-legend',
         'style_mb': video_wind
-    },  
+    },
     {
         'category': 'Les vents',
         'slug': 'vents',
-        'text': '##Les vents\n\nL’équateur est la ligne imaginaire qui représente le plus grand diamètre de la Terre. L’air qui en provient et qui se dirige vers les pôles, se retrouve sur des diamètres de plus en plus petits.\n\nConséquence, sa vitesse de rotation augmente. Aux alentours des latitudes 30°, sa vitesse est tellement grande qu’au lieu de continuer vers le nord. Il se retrouve entraîné dans un couloir de vent orienté est-ouest : le courant jet.\n\nLes pilotes de ligne le connaissent bien. Ils s’en servent dans le sens New York-Paris et le contournent dans la direction inverse.\n\nCe courant jet emporte l’énergie solaire emmaganisée l’été par le soleil vers l’Europe.' 
-    }, 
+        'text': '##Les vents\n\nL’équateur est la ligne imaginaire qui représente le plus grand diamètre de la Terre. L’air qui en provient et qui se dirige vers les pôles, se retrouve sur des diamètres de plus en plus petits.\n\nConséquence, sa vitesse de rotation augmente. Aux alentours des latitudes 30°, sa vitesse est tellement grande qu’au lieu de continuer vers le nord. Il se retrouve entraîné dans un couloir de vent orienté est-ouest : le courant jet.\n\nLes pilotes de ligne le connaissent bien. Ils s’en servent dans le sens New York-Paris et le contournent dans la direction inverse.\n\nCe courant jet emporte l’énergie solaire emmaganisée l’été par le soleil vers l’Europe.'
+    },
     {
         'category': 'La salinité',
         'slug': 'salinite',
         'text': '##Salinité\n\nComme pour la température de surface, le Gulf Stream représente une frontière entre les eaux fortement salées qu’il emporte et les eaux de la mer du Labrador faiblement salées. Cette différence s’explique assez simplement. Au niveau de l’équateur et des tropiques, l’évaporation est très forte. Cette eau s’échappe dans l’atmosphère, renforçant les vents se dirigeants vers le nord (dans la direction imposée par l’anticyclone des Açores). Le sel, qui ne peux pas s’évaporer s’accumule dans l’océan. C’est pourquoi les eaux tropicales sont très salées.\n\nLe Gulf Stream emporte donc des eaux chaudes et salées en direction des hautes latitudes. Cet apport est particulièrement visible au niveau de la dérive Nord Atlantique qui a une influence jusqu’au nord de la Norvège.',
         'style_mb': video_salinity,
         'showLegend': '#salinity-legend',
-    }, 
+    },
     {
         'category': 'La salinité',
         'slug': 'salinite',
@@ -317,7 +327,7 @@ function changeContent(i) {
     }
     if (state.style_mb) {
         Mbmap.setStyle(state.style_mb);
-    }    
+    }
     if (state.displayDepthSlider) {
         $('#depthSlider').css('display', 'block');
         var slider = $('#depthSliderInput').slider({
@@ -348,6 +358,26 @@ function changeContent(i) {
         $(state.showLegend).css('display', 'block');
     } else {
         $('.legend').css('display', 'none');
+    }
+    if (state.timeline) {
+        var timeline = state.timeline;
+        var valuesLength = timeline.values.length;
+        var contextLength = timeline.context.length;
+        for (var i = 0; i < valuesLength; i++) {
+          var valueElement = document.createElement('li');
+          valueElement.innerHTML = timeline.values[i];
+          document.querySelector('.timeline-values').appendChild(valueElement);
+        }
+        for (var j = 0; j < contextLength; j++) {
+          var contextElement = document.createElement('li');
+          contextElement.innerHTML = timeline.context[j];
+          document.querySelector('.timeline-values').appendChild(contextElement);
+        }
+        document.querySelector('.timeline').dataset.active = true;
+        document.querySelector('.timeline').classList.remove('hidden');
+    } else {
+      document.querySelector('.timeline').dataset.active = false;
+        document.querySelector('.timeline').classList.add('hidden');
     }
 }
 
@@ -416,7 +446,7 @@ function createGraphThermocline() {
         },
         {
         name: 'Octobre 2015',
-        data: [[-0.494  , 22.95], [-1.541  , 22.95], [-2.646  , 22.85], [-3.819  , 22.85], [-5.078  , 22.85], [-6.441  , 22.85], [-7.930  , 22.85], [-9.573  , 22.85], [-11.405 , 22.85], [-13.467 , 22.85], [-15.810 , 22.75], [-18.496 , 22.75], [-21.599 , 22.75], [-25.211 , 22.65], [-29.445 , 22.65], [-34.434 , 22.45], [-40.344 , 22.15], [-47.374 , 21.45], [-55.764 , 20.55], [-65.807 , 19.35], [-77.854 , 17.75], [-92.326 , 16.85], [-109.729, 16.15], [-130.666, 15.65], [-155.851, 15.35], [-186.126, 15.25], [-222.475, 15.05], [-266.040, 14.75], [-318.127, 14.45], [-380.213, 14.25], [-453.938, 13.85], [-541.089, 13.45]] 
+        data: [[-0.494  , 22.95], [-1.541  , 22.95], [-2.646  , 22.85], [-3.819  , 22.85], [-5.078  , 22.85], [-6.441  , 22.85], [-7.930  , 22.85], [-9.573  , 22.85], [-11.405 , 22.85], [-13.467 , 22.85], [-15.810 , 22.75], [-18.496 , 22.75], [-21.599 , 22.75], [-25.211 , 22.65], [-29.445 , 22.65], [-34.434 , 22.45], [-40.344 , 22.15], [-47.374 , 21.45], [-55.764 , 20.55], [-65.807 , 19.35], [-77.854 , 17.75], [-92.326 , 16.85], [-109.729, 16.15], [-130.666, 15.65], [-155.851, 15.35], [-186.126, 15.25], [-222.475, 15.05], [-266.040, 14.75], [-318.127, 14.45], [-380.213, 14.25], [-453.938, 13.85], [-541.089, 13.45]]
         },
         {
         name: 'Décembre 2015',
@@ -426,7 +456,7 @@ function createGraphThermocline() {
         name: 'Mars 2016',
         data: [[-0.494  , 16.65], [-1.541  , 16.65], [-2.646  , 16.55], [-3.819  , 16.55], [-5.078  , 16.55], [-6.441  , 16.55], [-7.930  , 16.55], [-9.573  , 16.55], [-11.405 , 16.55], [-13.467 , 16.55], [-15.810 , 16.55], [-18.496 , 16.55], [-21.599 , 16.55], [-25.211 , 16.55], [-29.445 , 16.45], [-34.434 , 16.45], [-40.344 , 16.45], [-47.374 , 16.45], [-55.764 , 16.45], [-65.807 , 16.45], [-77.854 , 16.45], [-92.326 , 16.45], [-109.729, 16.45], [-130.666, 16.45], [-155.851, 16.45], [-186.126, 16.25], [-222.475, 15.95], [-266.040, 15.45], [-318.127, 14.95], [-380.213, 14.55], [-453.938, 14.05], [-541.089, 13.65]]
 
-        }]   
+        }]
     });
 };
 
@@ -435,9 +465,3 @@ function removeGraphThermocline() {
         $('#container').highcharts().destroy();
     }
 };
-
-
-
-
-
-

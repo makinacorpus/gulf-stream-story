@@ -272,20 +272,24 @@ path.leaflet-clickable {
   background-image: url('../images/intro-active.svg');
 }
 
-.legend {
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 3px;
-    bottom: 30px;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.10);
-    font: 14px/22px 'Asap', sans-serif;
-    padding: 15px;
-    position: absolute;
-    right: 20px;
-    z-index: 1;
+.map-widgets {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.10);
+  font: 14px/22px 'Asap', sans-serif;
+  position: absolute;
+  z-index: 1;
 }
 
-.legend h4 {
+.map-widgets h4 {
     margin: 0 0 10px;
+}
+
+.legend {
+    bottom: 30px;
+    padding: 15px;
+    position: absolute;
+    right: 35px;
 }
 
 .legend div span {
@@ -315,4 +319,60 @@ path.leaflet-clickable {
 
 #wind-legend {
     display: none;
+}
+
+.timeline {
+  bottom: 30px;
+  left: 20px;
+  width: 400px;
+  padding: 15px;
+}
+
+.timeline-progress {
+  width: 0;
+  height: 3px;
+  border-radius: 4px;
+  background: #2D728F;
+  transition: width 0.3s linear;
+  margin-bottom: 1rem;
+}
+
+.timeline-values {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.timeline-values li {
+  flex: 1 1 auto;
+  margin: auto;
+  /*text-align: center;*/
+  position: relative;
+  font-size: 13px;
+}
+
+.timeline-values li::before {
+  content: "";
+  position: absolute;
+  top: calc(-1rem - 2px);
+  left: 2px;
+  transform: translate(-50%, -50%);
+  height: 7px;
+  width: 7px;
+  background: transparent;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.timeline-context {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+.timeline-context li {
+  flex: 1 1 auto;
+  margin: auto;
+  text-align: center;
 }
