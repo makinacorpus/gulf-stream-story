@@ -483,7 +483,7 @@ function createMapboxGlMap() {
                     [20, 80],
                     [20, 0],
                     [-100, 0]
-                ]
+                ],
             },
             "tiles_mb": {
                 "type": "raster",
@@ -513,7 +513,11 @@ function createMapboxGlMap() {
         maxZoom: 4,
         maxBounds: bounds,
         center: [-70,37],
-        style: video_current
+        style: video_current,
+        attributionControl: {
+            position: 'bottom-right'
+        }
+
     });
 
     Mbmap.on('load', function () {
@@ -530,6 +534,11 @@ function createMapboxGlMap() {
                 });
             });
         }
+    });
+
+
+    Mbmap.on('style.load', function () {
+        Mbmap.style.sources.video.attribution = 'Source';
     });
 }
 
