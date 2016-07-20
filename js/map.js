@@ -44,17 +44,12 @@ function createMapboxGlMap() {
         maxZoom: 4,
         maxBounds: bounds,
         center: [-70,37],
-        style: baseStyle
+        style: baseStyle,
+        attributionControl: {
+            position: 'bottom-right'
+        }
     });
 
-    // Mbmap.on('load', function () {
-    //     var video = Mbmap.getSource('video').getVideo();
-    //     var timeline = document.querySelector('.timeline');
-    //
-    //     if (timeline.dataset.active) {
-    //         video.addEventListener('timeupdate', animateTimeline);
-    //     }
-    // });
 }
 
 function animateTimeline(ev) {
