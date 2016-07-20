@@ -20,25 +20,7 @@ var BFranklin = L.tileLayer('data/tiles/BFranklin/{z}/{x}/{y}.png', {
 });
 
 function createLeafletMap(options) {
-    var layers = options.layers,
-        view = options.view,
-        maxBounds = options.maxBounds;
-    Lmap = L.map('map');
-
-    if (layers) {
-        for (layer in layers) {
-            Lmap.addLayer(layers[layer]);
-            if (layer === layers.length - 1) {
-                layers[layer].bringToFront();
-            }
-        }
-    }
-    if (view) {
-        Lmap.setView(view[0], view[1]);
-    }
-    if (maxBounds) {
-        Lmap.setMaxBounds(maxBounds);
-    }
+    Lmap = L.map('map', options);
 }
 
 // var southWest = L.latLng(0, -100),
