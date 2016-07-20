@@ -377,7 +377,7 @@ function changeContent(i) {
         for (var j = 0; j < contextLength; j++) {
           var contextElement = document.createElement('li');
           contextElement.innerHTML = timeline.context[j];
-          document.querySelector('.timeline-values').appendChild(contextElement);
+          document.querySelector('.timeline-context').appendChild(contextElement);
         }
         document.querySelector('.timeline').dataset.active = true;
         document.querySelector('.timeline').classList.remove('hidden');
