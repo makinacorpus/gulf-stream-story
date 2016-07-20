@@ -1,5 +1,5 @@
 var index = 0;
-
+var chartThermocline;
 var story = [
     {
         'category': 'Introduction',
@@ -243,37 +243,41 @@ var story = [
 init();
 
 function init() {
+    var lastCategory = null;
+
+    // Init nav
     console.log('init nav');
+    for (var i = 0; i < story.length; i++) {
+        var className = 'circle';
+        if (story[i].category !== lastCategory) {
+            className += ' circle-cat ' + story[i].slug;
+        }
+        var progressItem = '<a href="#' + i + '" id="progress-item-' + i + '" class="' + className + '"><span class="label">' + i + '</span><span class="title"></span></a>';
+        $('.progress').append(progressItem);
+
+        lastCategory = story[i].category;
+    }
+
+    // Bind events
+    $('#next').on('click', goToNextState);
+    $('.circle-cat').on('click', goToState);
+
+    // Load first content
+    changeContent(0);
 }
 
-$('#next').on('click', function() {
-    if (index < story.length - 1) {
-        index = index + 1;
-        changeContent(index);
-    }
-});
-
-
-var lastCategory = null;
-
-for (var i = 0; i < story.length; i++) {
-    var className = 'circle'
-    if (story[i].category !== lastCategory) {
-        className += ' circle-cat ' + story[i].slug
-    }
-    var progressItem = '<a href="#' + i + '" id="progress-item-' + i + '" class="' + className + '"><span class="label">' + i + '</span><span class="title"></span></a>'
-    $('.progress').append(progressItem);
-
-    lastCategory = story[i].category;
+function goToNextState() {
+  if (index < story.length - 1) {
+      index = index + 1;
+      changeContent(index);
+  }
 }
 
-changeContent(0);
-
-$('.circle-cat').on('click', function(e) {
+function goToState(e) {
     var indexPage = e.target.innerText;
     index = parseInt(indexPage);
     changeContent(indexPage);
-});
+}
 
 function changeContent(i) {
 
@@ -386,8 +390,6 @@ function changeContent(i) {
         document.querySelector('.timeline').classList.add('hidden');
     }
 }
-
-var chartThermocline;
 
 function createGraphThermocline() {
     chartThermocline = $('#container').highcharts({
