@@ -5,6 +5,7 @@
 
 body {
   background: #2D728F;
+  color: white;
 }
 
 html, body, .container-fluid, .row, .left-panel, #map {
@@ -14,10 +15,6 @@ html, body, .container-fluid, .row, .left-panel, #map {
 
 h2 {
   font-weight: bold;
-}
-
-h1, h2, h3, p {
-  color: #fff;
 }
 
 .container-fluid {
@@ -42,10 +39,6 @@ h1, h2, h3, p {
     line-height: 1.3em;
 }
 
-.ul {
-    color: white;
-}
-
 .scrollY {
     max-height: 100%;
     overflow-y: scroll;
@@ -60,6 +53,7 @@ h1, h2, h3, p {
     position: absolute;
     bottom: 100px;
     margin-left: 15px;
+    color: black;
 }
 
 .slider.slider-vertical {
@@ -283,6 +277,7 @@ path.leaflet-clickable {
   font: 14px/22px 'Asap', sans-serif;
   position: absolute;
   z-index: 1;
+  color: black;
 }
 
 .map-widgets h4 {
