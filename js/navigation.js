@@ -240,8 +240,6 @@ var story = [
     }
 ];
 
-init();
-
 function init() {
     var lastCategory = null;
 
@@ -279,6 +277,93 @@ function goToState(e) {
     changeContent(indexPage);
 }
 
+
+function updateLeafletMap(newMap) {
+    if (currentMap && currentMap.type === 'mapbox' && Mbmap) {
+        Mbmap.remove();
+        Mbmap = null;
+        currentMap = {};
+    }
+    var newZoom = newMap.zoom || currentMap.zoom || 3;
+    var newCenter = newMap.center || currentMap.center || [-60, 0];
+    var newBounds = newMap.maxBounds || currentMap.maxBounds || null;
+    var newLayers = newMap.layers;
+
+    if (!Lmap) {
+        var options = newMap.options || {
+            center: [-60, 0],
+            zoom: 3
+        };
+        createLeafletMap(options);
+    }
+
+    if (newBounds) {
+        Lmap.setMaxBounds(newBounds);
+    }
+    Lmap.setView(newCenter, newZoom);
+
+    if (newLayers) {
+        var layersToRemove = [];
+        var layersToAdd = [];
+        var oldLayers = currentMap ? currentMap.layers : null;
+
+        if (oldLayers && oldLayers.length > 0) {
+            layersToAdd = newLayers.filter(function(add) {
+                return oldLayers.indexOf(add) < 0;
+            });
+            layersToRemove = oldLayers.filter(function(rem) {
+                return newLayers.indexOf(rem) < 0;
+            });
+        } else {
+            layersToAdd = newLayers;
+        }
+
+        for (var j = 0; j < layersToRemove.length; j++) {
+            Lmap.removeLayer(layersToRemove[j]);
+        }
+
+        for (var i = 0; i < layersToAdd.length; i++) {
+            Lmap.addLayer(layersToAdd[i]);
+        }
+
+    }
+}
+
+function updateMapboxMap(newMap) {
+    if (currentMap && currentMap.type === 'leaflet' && Lmap) {
+        if (currentMap.layers) {
+            for (var i = 0; i < currentMap.layers.length; i++) {
+                Lmap.removeLayer(currentMap.layers[i]);
+            }
+        }
+        Lmap.remove();
+        Lmap = null;
+        currentMap = {};
+    }
+    if (!Mbmap) {
+        var options = newMap.options || {};
+        createMapboxGlMap(options);
+    }
+    for (var method in newMap) {
+        if (Mbmap && newMap.hasOwnProperty(method) && typeof Mbmap[method] === 'function') {
+            Mbmap[method](newMap[method]);
+        }
+    }
+}
+
+function updateMap(newMap) {
+    if (newMap.type === 'leaflet') {
+        updateLeafletMap(newMap);
+    }
+
+    if (newMap.type === 'mapbox') {
+        updateMapboxMap(newMap);
+    }
+    currentMap = newMap;
+}
+
+
+
 function changeContent(i) {
 
     var state = story[i];
@@ -291,52 +376,13 @@ function changeContent(i) {
         $('.progress .circle#progress-item-' + j).addClass('passed');
     }
 
-
     history.pushState({id: i, slug: state.slug}, state.slug, '#' + i);
 
-    if (state.setMaxBounds) {
-        Lmap.setMaxBounds(state.setMaxBounds);
-    }
-    if (state.view) {
-        Lmap.setView(state.view[0], state.view[1]);
-    }
-    if (state.view_mb) {
-        Mbmap.setCenter(state.view_mb);
-    }
-    if (state.zoom_mb) {
-        Mbmap.setZoom(state.zoom_mb);
+    if (state.map) {
+        updateMap(state.map);
     }
     if (state.text) {
         $('#text').html(markdown.toHTML(state.text));
-    }
-    if (state.addLayers) {
-        for (layer in state.addLayers) {
-            Lmap.addLayer(state.addLayers[layer]);
-        }
-    }
-    if (state.removeLayers) {
-        for (layer in state.removeLayers) {
-            Lmap.removeLayer(state.removeLayers[layer]);
-        }
-    }
-    if (state.createLeafletMap) {
-        createLeafletMap(state.createLeafletMap);
-    }
-    if (state.destroyLeafletMap) {
-        if (Lmap) {
-            Lmap.remove();
-        }
-    }
-    if (state.addMapboxGlMap) {
-        createMapboxGlMap();
-    }
-    if (state.destroyMapboxGlMap) {
-        if (Mbmap) {
-            Mbmap.remove();
-        }
-    }
-    if (state.style_mb) {
-        Mbmap.setStyle(state.style_mb);
     }
     if (state.displayDepthSlider) {
         $('#depthSlider').css('display', 'block');
@@ -363,9 +409,9 @@ function changeContent(i) {
         $('.right-panel').addClass('col-md-3');
         removeGraphThermocline();
     }
-    if (state.showLegend) {
+    if (state.legend) {
         $('.legend').css('display', 'none');
-        $(state.showLegend).css('display', 'block');
+        $(state.legend).css('display', 'block');
     } else {
         $('.legend').css('display', 'none');
     }
@@ -473,3 +519,5 @@ function removeGraphThermocline() {
         $('#container').highcharts().destroy();
     }
 };
+
+init();
