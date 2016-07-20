@@ -209,7 +209,8 @@ var story = [
         slug: 'courants',
         text: '##Gulf Stream et courants Nord Atlantiques\nCette carte représente la vitesse des courants de surface, de janvier à juillet 2016. Malgré de nombreux petits courants, souvent tourbillonnaires, il est possible de retrouver la plupart des courants évoqués durant le voyage de notre goutte d’eau. Vous pouvez si vous le souhaitez les afficher à l’aide des cases à cocher.',
         map: {
-            type:'mapbox'
+            type: 'mapbox',
+            sources: ['video_current']
         },
         legend: '#current-legend'
     },
@@ -218,7 +219,8 @@ var story = [
         slug: 'courants',
         text: '##Gulf Stream et courants Nord Atlantiques\n\nLe Gulf Stream se démarque clairement des courants Nord Atlantique. Sa vitesse et son débit restent inégalés. Jusqu’au Cap Hatteras, canalisé par la pente continentale, il est très linéaire et se comporte comme un jet puissant.\n\n Lorsqu’il prend le large, se créent des méandres de plus en plus sinueux. De grands tourbillons se détachent de part et d’autre du fleuve.\n\n Après les Grands Bancs de Terre Neuve, le Gulf Stream perd ses caractéristiques et prend de nombreuses directions. Ses extensions sont visuellement plus difficiles à suivre car sa puissance a été répartie dans de nombreux courants.',
         map: {
-            type:'mapbox'
+            type:'mapbox',
+            sources: ['video_current']
         },
         legend: '#current-legend'
     },
@@ -239,7 +241,8 @@ var story = [
         slug: 'courants',
         text: '##Gulf Stream et courants Nord Atlantiques\n\nPlusieurs facteurs viennent expliquer ce flux mondialement exceptionnel :\n\n - contrairement à ses homologues, le Gulf Stream bénéficie d’une double alimentation : le courant de Guyane et le courant des Antilles.\n\n - depuis 15 millions d’années l’Isthme de Panama est fermé, empêchant le courant de Guyane de se déverser dans le Pacifique. Le Golfe du Mexique représente un cul de sac pour le courant de Guyane qui n’a qu’une sortie possible: le détroit de Floride. Cet apport est renforcé par le courant des Antilles qui est emporté dans le courant de Floride.\n\n - la circulation thermohaline crée un appel d’eau qui n’a pas son équivalent ailleurs. Nous étudierons ce phénomène un peu plus tard.',
         map: {
-            type: 'mapbox'
+            type: 'mapbox',
+            sources: ['video_current']
         },
         legend: '#current-legend'
     },
@@ -262,7 +265,7 @@ var story = [
         text: '##Température\n\n*Les courants et les vents sont le moteur de la machine qui convertit et distribue l’énergie que la Terre reçoit du soleil. L’océan fournit une fraction de son énergie à l’atmosphère et distribue directement par les courants l’autre partie à l’échelle de la planète. On estime que les transferts de chaleur des régions équatoriales vers les pôles se font à égalité par l’atmosphère et l’océan.*',
         map: {
             type: 'mapbox',
-            setStyle: video_temp
+            sources: ['video_temp']
         },
         legend: '#temperature-legend',
         timeline: {
@@ -280,7 +283,8 @@ var story = [
         slug: 'temperatures',
         text: '##Température\n\nLe Gulf Stream a une influence considérable sur le climat de régions situées à des milliers de kilomètres des Grands Bancs de Terre Neuve.\n\nIl emporte avec lui des eaux tropicales chaudes.\n\nSes extensions qui se dirigent vers le nord emportent ces eaux vers des latitudes beaucoup plus hautes. Par exemple, la glace qui n’arrive pas à se former au nord de la Norvège bénéficie directement d’eaux chaudes apportées par la dérive Nord Atlantique, extension du Gulf Stream.\n\nMais l’Europe, n’est pas l’unique bénéficiaire de cette source de chaleur. C’est tout l’Atlantique Nord qui profite de cet apport.\n\nContrairement à ce qui a été longtemps mis en avant, le Gulf Stream n’est pas la chaudière centrale de l’Europe. Il ne peut pas expliquer la différence moyenne de 15°C qu’il y a entre Montréal et Bordeaux qui sont sur la même latitude.',
         map: {
-            type: 'mapbox'
+            type: 'mapbox',
+            sources: ['video_temp']
         },
         legend: '#temperature-legend'
     },
@@ -289,7 +293,8 @@ var story = [
         slug: 'temperatures',
         text: '##Température\n\nContrairement à l’atmosphère qui utilise très rapidement l’énergie qu’on lui met à disposition, l’océan a une grande mémoire. L’été, le rayonnement solaire intense échauffe les couches de surface. Il y a création d’un thermocline qui stratifie les eaux océaniques. L’océan stocke alors l’énergie thermique issue du rayonnement solaire d’été dans ses couches profondes.\n\nSur le graphique ci_dessous vous pouvez observer la thermocline saisonnière. Il s’agit de la zone de chute de température entre les couches de surface et les couches profondes. Si cette thermocline est importante, c’est à dire comprend une grande gamme de températures, les eaux de surface et les eaux profondes sont bien stratifiées et ne se mélangent pas.',
         map: {
-            type: 'mapbox'
+            type: 'mapbox',
+            sources: ['video_temp']
         },
         displayThermocline: true,
         legend: '#temperature-legend'
@@ -299,7 +304,8 @@ var story = [
         slug: 'temperatures',
         text: '##Température\n\nEn hivers le rayonnement solaire est beaucoup plus faible et les vents d’ouest se renforcent. Il y a rupture du thermocline qui remet à disposition des couches de surface le stock d’été. L’océan transmet cette énergie à l’atmosphère. Les vents d’ouest la récupèrent et l’emportent en direction de l’Europe. L’ouest de ce continent sera le seul bénéficiaire de la mémoire calorifique estivale de l’océan Atlantique.\n\nCe phénomène semble aujourd’hui expliquer en grande partie la différence de climat entre les côtes est et ouest de l’Atlantique. Sur l’année on note une différence moyenne de 15°C. C’est ce qui explique un climat maritime (tempéré) en Europe de l’ouest et aux mêmes latitudes sur le sol américain un climat continental (froid).',
         map: {
-            type: 'mapbox'
+            type: 'mapbox',
+            sources: ['video_temp']
         },
         legend: '#temperature-legend'
     },
@@ -309,7 +315,7 @@ var story = [
         text: '##L’influence du vent\n\nUn principe simple de thermodynamique nous enseigne qu’entre deux corps en contact, c’est le corps chaud qui cède son énergie au corps froid jusqu’à l’équilibre. Le couple océan/atmosphère transporte et distribue l’énergie du soleil de la source chaude à la source froide. Par évaporation, les zones océaniques équatoriales (source chaude) alimentent l’atmosphère en chaleur, créant des vents qui se dirigent vers les régions polaires (source froide).',
         map: {
             type: 'mapbox',
-            setStyle: video_wind
+            sources: ['video_wind']
         },
         legend: '#wind-legend'
     },
@@ -318,7 +324,8 @@ var story = [
         slug: 'vents',
         text: '##Les vents\n\nL’équateur est la ligne imaginaire qui représente le plus grand diamètre de la Terre. L’air qui en provient et qui se dirige vers les pôles, se retrouve sur des diamètres de plus en plus petits.\n\nConséquence, sa vitesse de rotation augmente. Aux alentours des latitudes 30°, sa vitesse est tellement grande qu’au lieu de continuer vers le nord. Il se retrouve entraîné dans un couloir de vent orienté est-ouest : le courant jet.\n\nLes pilotes de ligne le connaissent bien. Ils s’en servent dans le sens New York-Paris et le contournent dans la direction inverse.\n\nCe courant jet emporte l’énergie solaire emmaganisée l’été par le soleil vers l’Europe.',
         map: {
-            type: 'mapbox'
+            type: 'mapbox',
+            sources: ['video_wind']
         }
     },
     {
@@ -327,7 +334,7 @@ var story = [
         text: '##Salinité\n\nComme pour la température de surface, le Gulf Stream représente une frontière entre les eaux fortement salées qu’il emporte et les eaux de la mer du Labrador faiblement salées. Cette différence s’explique assez simplement. Au niveau de l’équateur et des tropiques, l’évaporation est très forte. Cette eau s’échappe dans l’atmosphère, renforçant les vents se dirigeants vers le nord (dans la direction imposée par l’anticyclone des Açores). Le sel, qui ne peux pas s’évaporer s’accumule dans l’océan. C’est pourquoi les eaux tropicales sont très salées.\n\nLe Gulf Stream emporte donc des eaux chaudes et salées en direction des hautes latitudes. Cet apport est particulièrement visible au niveau de la dérive Nord Atlantique qui a une influence jusqu’au nord de la Norvège.',
         map: {
             type: 'mapbox',
-            setStyle: video_salinity
+            sources: ['video_salinity']
         },
         legend: '#salinity-legend',
     },
@@ -336,7 +343,8 @@ var story = [
         slug: 'salinite',
         text: '##Salinité\n\nEn arrivant aux hautes latitudes, la température chute. Les eaux emportées par les extensions du Gulf Stream deviennent froides et salées.\n\n Plus une eau est froide, plus elle est dense. Plus elle est salée, plus elle est dense. Les eaux issues du Gulf Stream sont plus salées que les eaux qui les entourent. Ce taux de sel est renforcé l’hiver par la création de glace. En se refroidissant durant leur voyage vers les hautes latitudes, elles finissent par devenir trop denses pour se maintenir à la surface et plongent jusqu’à des profondeurs supérieures au kilomètre. Elles s’écoulent lentement dans un courant de fond en direction de l’équateur. Le courant de retour que nous avions observé à 1684m peut être affilié à cette circulation. Au niveau des Tropiques, le courant se réchauffe et remonte à la surface jusqu’à leur prochain refroidissement.',
         map: {
-            type: 'mapbox'
+            type: 'mapbox',
+            sources: ['video_salinity']
         }
     },
     {
@@ -367,6 +375,12 @@ var story = [
         }
     }
 ];
+
+function sameArrays(a1, a2) {
+    return (a1.length == a2.length) && a1.every(function(element, index) {
+        return element === a2[index];
+    });
+}
 
 function init() {
     var lastCategory = null;
@@ -458,6 +472,8 @@ function updateLeafletMap(newMap) {
 }
 
 function updateMapboxMap(newMap) {
+    var newSources = newMap.sources;
+
     if (currentMap && currentMap.type === 'leaflet' && Lmap) {
         if (currentMap.layers) {
             for (var i = 0; i < currentMap.layers.length; i++) {
@@ -468,10 +484,27 @@ function updateMapboxMap(newMap) {
         Lmap = null;
         currentMap = {};
     }
+
     if (!Mbmap) {
-        var options = newMap.options || {};
-        createMapboxGlMap(options);
+        createMapboxGlMap();
     }
+
+    if (newSources) {
+        if (!currentMap || !currentMap.sources || !sameArrays(newSources, currentMap.sources)) {
+            var newStyle = $.extend(true, {}, baseStyle);
+            for (var i = 0; i < newSources.length; i++) {
+                newStyle.sources[newSources[i]] = mapboxLayers[newSources[i]];
+                newStyle.layers.unshift({
+                    "id": newSources[i] + '_layer',
+                    "type": 'raster',
+                    "source": newSources[i]
+                });
+            }
+            Mbmap.setStyle(newStyle);
+        }
+
+    }
+
     for (var method in newMap) {
         if (Mbmap && newMap.hasOwnProperty(method) && typeof Mbmap[method] === 'function') {
             Mbmap[method](newMap[method]);

@@ -6,15 +6,37 @@ var depths = ['0', '109', '266', '541', '1062', '1684', '3220'];
 var depth = depths[0];
 var depthLayers = [];
 var depthLayer = null;
+var baseStyle = {
+    version: 8,
+    attributionControl: true,
+    sources: {
+        tiles_mb: {
+            type: 'raster',
+            tiles: ['data/tiles/tiles_mb/{z}/{x}/{y}.png'],
+            scheme: 'tms',
+            tileSize: 256
+        }
+    },
+    layers: [
+        {
+            id: 'tiles_mb',
+            type: 'raster',
+            source: 'tiles_mb',
+            minzoom: 1,
+            maxzoom: 5
+        }
+    ]
+};
 
 function createLeafletMap(options) {
     Lmap = L.map('map', options);
 }
 
 function createMapboxGlMap() {
+    var bounds = [[-100, 0], [20, 80]];
+
     mapboxgl.accessToken = 'pk.eyJ1IjoibWJyb3V0aW4iLCJhIjoiY2lxMmN3MDdjMDA0d2hybTIxOTYxa2c3MCJ9.T5MEIB6UqZLg3_DL4YqDCQ';
 
-    var bounds = [[-100, 0], [20, 80]];
 
     Mbmap = new mapboxgl.Map({
         container: 'map',
@@ -22,17 +44,17 @@ function createMapboxGlMap() {
         maxZoom: 4,
         maxBounds: bounds,
         center: [-70,37],
-        style: video_current
+        style: baseStyle
     });
 
-    Mbmap.on('load', function () {
-        var video = Mbmap.getSource('video').getVideo();
-        var timeline = document.querySelector('.timeline');
-
-        if (timeline.dataset.active) {
-            video.addEventListener('timeupdate', animateTimeline);
-        }
-    });
+    // Mbmap.on('load', function () {
+    //     var video = Mbmap.getSource('video').getVideo();
+    //     var timeline = document.querySelector('.timeline');
+    //
+    //     if (timeline.dataset.active) {
+    //         video.addEventListener('timeupdate', animateTimeline);
+    //     }
+    // });
 }
 
 function animateTimeline(ev) {
