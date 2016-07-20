@@ -149,11 +149,16 @@ $.getJSON("data/geojson/current_3220.geojson", function(data) {
     courant_profondeur_3220.addData(data);
 });
 
-var detroit_de_floride = L.geoJson(null);
+var point_interet = L.icon({
+    iconUrl: 'data/images/compass.svg',
+    iconSize: [40,40]
+    });
 
-$.getJSON("data/geojson/detroit_de_floride.geojson", function (data) {
-    detroit_de_floride.addData(data).bindLabel("<img alt='detroit_de_floride' src='data/images/detroit_de_floride.jpg'></br>Détroit de Floride");
-});
+var detroit_de_floride = L.marker([24.13,-80.64], {icon: point_interet}).bindLabel("<img alt='detroit_de_floride' src='data/images/detroit_de_floride.jpg'></br>Détroit de Floride");
+
+var cap_hatteras = L.marker([35,-75.33], {icon: point_interet}).bindLabel("<img alt='cap_hatteras' src='data/images/cap_hatteras.jpg'></br>Cap Hatteras");
+
+var grands_bancs_de_terre_neuve = L.marker([43.19,-50.29], {icon: point_interet}).bindLabel("Grands Bancs de Terre Neuve");
 
 var isthme_panama = L.geoJson(null, {
     style: {
@@ -168,11 +173,11 @@ $.getJSON("data/geojson/isthme_panama.geojson", function (data) {
 });
 
 var golfe_mexique = L.geoJson(null, {
-    // style: {
-    //     weight: 1,
-    //     opacity: 1,
-    //     color: '#00341d'
-    //     }
+    style: {
+        weight: 1,
+        opacity: 1,
+        color: '#00341d'
+        }
     });
 
 $.getJSON("data/geojson/golfe_mexique.geojson", function (data) {
@@ -287,11 +292,11 @@ $.getJSON("data/geojson/courant_de_floride.geojson", function (data) {
 });
 
 
-var cap_hatteras = L.geoJson(null);
+// var cap_hatteras = L.geoJson(null);
 
-$.getJSON("data/geojson/cap_hatteras.geojson", function (data) {
-    cap_hatteras.addData(data).bindLabel("<img alt='cap_hatteras' src='data/images/cap_hatteras.jpg'></br>Cap Hatteras");
-});
+// $.getJSON("data/geojson/cap_hatteras.geojson", function (data) {
+//     cap_hatteras.addData(data).bindLabel("<img alt='cap_hatteras' src='data/images/cap_hatteras.jpg'></br>Cap Hatteras");
+// });
 
 
  var gulfstream = L.geoJson(null, {
@@ -315,12 +320,6 @@ $.getJSON("data/geojson/cap_hatteras.geojson", function (data) {
 
 $.getJSON("data/geojson/gulfstream.geojson", function(data) {
     gulfstream.addData(data).bindLabel("Gulf Stream");
-});
-
-var grands_bancs_de_terre_neuve = L.geoJson(null);
-
-$.getJSON("data/geojson/grands_bancs_de_terre_neuve.geojson", function (data) {
-    grands_bancs_de_terre_neuve.addData(data).bindLabel("Grands Bancs de Terre Neuve");
 });
 
 var courant_nord_atlantique = L.geoJson(null, {

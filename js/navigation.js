@@ -27,7 +27,8 @@ var story = [
         'slug': 'introduction',
         'view': [[10.13, -58.59], 4],
         'text': '## Naissance du Gulf Stream\n Le courant de Guyane, qui longe les côtes d’Amérique du Sud, se retrouve dans un cul-de-sac: l’Isthme du Panama. Il est naturellement emporté vers le nord et à l’est par la circulation anticyclonique des Açores (sens des aiguilles d’une montre). Il dirige donc notre goutte d’eau vers la seule porte de sortie possible : le détroit de Floride. L’étroitesse de ce passage situé entre Cuba et la Floride génère un trop plein. C’est cet excédent qui donne naissance au Gulf Stream.',
-        'addLayers': [courant_guyane, detroit_de_floride, isthme_panama]
+        'addLayers': [courant_guyane, detroit_de_floride, isthme_panama],
+        'removeLayers': [golfe_mexique]
     },
     {
         'category': 'Introduction',
