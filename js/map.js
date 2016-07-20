@@ -167,6 +167,19 @@ $.getJSON("data/geojson/isthme_panama.geojson", function (data) {
     isthme_panama.addData(data).bindLabel("Isthme du Panama");
 });
 
+var golfe_mexique = L.geoJson(null, {
+    // style: {
+    //     weight: 1,
+    //     opacity: 1,
+    //     color: '#00341d'
+    //     }
+    });
+
+$.getJSON("data/geojson/golfe_mexique.geojson", function (data) {
+    golfe_mexique.addData(data).bindLabel("Golfe du Mexique");
+});
+
+
 var courant_guyane = L.geoJson(null, {
     style: {
         weight: 15,
@@ -460,8 +473,8 @@ var timelineEvent = null;
 function createMapboxGlMap() {
     mapboxgl.accessToken = 'pk.eyJ1IjoibWJyb3V0aW4iLCJhIjoiY2lxMmN3MDdjMDA0d2hybTIxOTYxa2c3MCJ9.T5MEIB6UqZLg3_DL4YqDCQ';
     var video_current = {
-        "version": 8,
         "attributionControl": true,
+        "version": 8,
         "sources": {
             "video": {
                 "type": "video",
@@ -479,13 +492,6 @@ function createMapboxGlMap() {
                 "scheme": "tms",
                 "tileSize": 256
             }
-            // ,
-            // "tiles_gs2": {
-            //     "type": "raster",
-            //     "tiles": ["data/gs2/{z}/{x}/{y}.png"],
-            //     "scheme": "tms",
-            //     "tileSize": 256
-            // }
         },
         "layers": [{
             "id": "video",
@@ -497,12 +503,6 @@ function createMapboxGlMap() {
             "source": "tiles_mb",
             "minzoom": 1,
             "maxzoom": 5
-        // }, {
-        //     "id": "tiles_gs2",
-        //     "type": "raster",
-        //     "source": "tiles_gs2",
-        //     "minzoom": 3,
-        //     "maxzoom": 4
         }]
     };
 
