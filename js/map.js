@@ -461,6 +461,7 @@ function createMapboxGlMap() {
     mapboxgl.accessToken = 'pk.eyJ1IjoibWJyb3V0aW4iLCJhIjoiY2lxMmN3MDdjMDA0d2hybTIxOTYxa2c3MCJ9.T5MEIB6UqZLg3_DL4YqDCQ';
     var video_current = {
         "version": 8,
+        "attributionControl": true,
         "sources": {
             "video": {
                 "type": "video",

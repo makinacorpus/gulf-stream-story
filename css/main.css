@@ -42,6 +42,10 @@ h1, h2, h3, p {
     line-height: 1.3em;
 }
 
+.ul {
+    color: white;
+}
+
 .scrollY {
     max-height: 100%;
     overflow-y: scroll;

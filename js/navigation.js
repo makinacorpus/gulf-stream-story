@@ -10,8 +10,8 @@ var story = [
         'createLeafletMap': {
             // 'destroyMapbox': true,
             'layers': [wh],
-            'view': [[-60, 0], 3],
-            'setMaxBounds': [[-100, -180],[35, 180]]
+            'setMaxBounds': [[-100, -180],[35, 180]],
+            'view': [[-60, 0], 3]
         }
     },
     {
@@ -144,11 +144,15 @@ var story = [
         'createLeafletMap': {
             'layers': [neTiles, ssh],
             'view': [[40, -40], 4],
-            'setMaxBounds': [[0, -100],[85, 20]]
+            'setMaxBounds': [[0, -100],[85, 20]],
+            'hideLegend': '#current-legend',
+            'showLegend': '#ssh-legend'
         },
         'category': 'Les courants',
         'slug': 'courants',
-        'text': '##Gulf Stream et niveau de l’Océan\n\nL’apport en eau est tellement conséquent dans le Gulf Stream que le niveau de la mer est prêt de 50cm au dessus du niveau 0.'
+        'text': '##Gulf Stream et niveau de l’Océan\n\nL’apport en eau est tellement conséquent dans le Gulf Stream que le niveau de la mer est prêt de 50cm au dessus du niveau 0.',
+        'hideLegend': '#ssh-legend',
+        'showLegend': '#current-legend'
     },
     {
         'category': 'Les températures',
@@ -158,6 +162,7 @@ var story = [
         'addMapboxGlMap': true,
         'removeLayers': [neTiles],
         'style_mb': video_temp,
+        'hideLegend': '#current-legend',
         'showLegend': '#temperature-legend',
         'timeline': {
             values: [
@@ -185,7 +190,6 @@ var story = [
     {
         'category': 'Les températures',
         'slug': 'temperatures',
-<<<<<<< d48a441768d4a4537851ba87441503cffa2187e2
         'text': '##Température\n\nEn hivers le rayonnement solaire est beaucoup plus faible et les vents d’ouest se renforcent. Il y a rupture du thermocline qui remet à disposition des couches de surface le stock d’été. L’océan transmet cette énergie à l’atmosphère. Les vents d’ouest la récupèrent et l’emportent en direction de l’Europe. L’ouest de ce continent sera le seul bénéficiaire de la mémoire calorifique estivale de l’océan Atlantique.\n\nCe phénomène semble aujourd’hui expliquer en grande partie la différence de climat entre les côtes est et ouest de l’Atlantique. Sur l’année on note une différence moyenne de 15°C. C’est ce qui explique un climat maritime (tempéré) en Europe de l’ouest et aux mêmes latitudes sur le sol américain un climat continental (froid).',
         'showLegend': '#temperature-legend'
     },
@@ -207,6 +211,7 @@ var story = [
         'text': '##Salinité\n\nComme pour la température de surface, le Gulf Stream représente une frontière entre les eaux fortement salées qu’il emporte et les eaux de la mer du Labrador faiblement salées. Cette différence s’explique assez simplement. Au niveau de l’équateur et des tropiques, l’évaporation est très forte. Cette eau s’échappe dans l’atmosphère, renforçant les vents se dirigeants vers le nord (dans la direction imposée par l’anticyclone des Açores). Le sel, qui ne peux pas s’évaporer s’accumule dans l’océan. C’est pourquoi les eaux tropicales sont très salées.\n\nLe Gulf Stream emporte donc des eaux chaudes et salées en direction des hautes latitudes. Cet apport est particulièrement visible au niveau de la dérive Nord Atlantique qui a une influence jusqu’au nord de la Norvège.',
         'style_mb': video_salinity,
         'showLegend': '#salinity-legend',
+        'hideLegend': '#wind-legend'
     },
     {
         'category': 'La salinité',
@@ -218,6 +223,7 @@ var story = [
         'createLeafletMap': {
             'layers': [neTiles, thermohaline_cold, thermohaline_hot],
             'view': [[0, 30], 2],
+            'hideLegend': '#salinity-legend'
         },
         'category': 'La salinité',
         'slug': 'salinite',
