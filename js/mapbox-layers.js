@@ -1,6 +1,6 @@
 var video_current = {
-    "version": 8,
     "attributionControl": true,
+    "version": 8,
     "sources": {
         "video": {
             "type": "video",

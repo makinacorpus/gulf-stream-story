@@ -325,3 +325,15 @@ var derive_nord_atlantique_2 = L.geoJson(null, {
 $.getJSON("data/geojson/derive_nord_atlantique_2.geojson", function(data) {
     derive_nord_atlantique_2.addData(data).bindLabel("Dérive Nord Atlantique");
 });
+
+var golfe_mexique = L.geoJson(null, {
+    // style: {
+    //     weight: 1,
+    //     opacity: 1,
+    //     color: '#00341d'
+    //     }
+    });
+
+$.getJSON("data/geojson/golfe_mexique.geojson", function (data) {
+    golfe_mexique.addData(data).bindLabel("Golfe du Mexique");
+});
