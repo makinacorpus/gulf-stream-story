@@ -26,7 +26,9 @@ var point_interet = L.icon({
 
 var ssh = L.imageOverlay("data/images/ssh.png",[[0, -100], [85, 20]]);
 
-var detroit_de_floride = L.marker([24.13,-80.64], {icon: point_interet}).bindLabel("<img alt='detroit_de_floride' src='data/images/detroit_de_floride.jpg'></br>Détroit de Floride");
+var detroit_de_floride = L.marker([24.13,-80.64], {icon: point_interet}).bindLabel("<img alt='detroit_de_floride' src='data/images/detroit_de_floride.jpg'></br>Détroit de Floride", {
+    className: 'map-label'
+});
 
 var isthme_panama = L.geoJson(null, {
     style: {
@@ -37,7 +39,9 @@ var isthme_panama = L.geoJson(null, {
     });
 
 $.getJSON("data/geojson/isthme_panama.geojson", function (data) {
-    isthme_panama.addData(data).bindLabel("Isthme du Panama");
+    isthme_panama.addData(data).bindLabel("Isthme du Panama", {
+        className: 'map-label'
+    });
 });
 
 var courant_guyane = L.geoJson(null, {
@@ -60,7 +64,9 @@ var courant_guyane = L.geoJson(null, {
 });
 
 $.getJSON("data/geojson/courant_de_guyane.geojson", function (data) {
-    courant_guyane.addData(data).bindLabel("Courant de Guyane");
+    courant_guyane.addData(data).bindLabel("Courant de Guyane", {
+        className: 'map-label'
+    });
 });
 
 var thermohaline_cold = L.geoJson(null, {
@@ -84,7 +90,9 @@ var thermohaline_cold = L.geoJson(null, {
 });
 
 $.getJSON("data/geojson/thermohaline_cold.geojson", function (data) {
-    thermohaline_cold.addData(data).bindLabel("courant froid de profondeur");
+    thermohaline_cold.addData(data).bindLabel("courant froid de profondeur", {
+        className: 'map-label'
+    });
 });
 
 var thermohaline_hot = L.geoJson(null, {
@@ -107,7 +115,9 @@ var thermohaline_hot = L.geoJson(null, {
 });
 
 $.getJSON("data/geojson/test.geojson", function (data) {
-    thermohaline_hot.addData(data).bindLabel("courant chaud de surface");
+    thermohaline_hot.addData(data).bindLabel("courant chaud de surface", {
+        className: 'map-label'
+    });
 });
 
 var pente_continentale = L.geoJson(null, {
@@ -118,7 +128,9 @@ var pente_continentale = L.geoJson(null, {
 });
 
 $.getJSON("data/geojson/pente_continentale.geojson", function (data) {
-    pente_continentale.addData(data).bindLabel("pente continentale");
+    pente_continentale.addData(data).bindLabel("pente continentale", {
+        className: 'map-label'
+    });
 });
 
 var courant_floride = L.geoJson(null, {
@@ -143,10 +155,14 @@ var courant_floride = L.geoJson(null, {
 });
 
 $.getJSON("data/geojson/courant_de_floride.geojson", function (data) {
-  courant_floride.addData(data).bindLabel("Gulf Stream: Courant de Floride");
+  courant_floride.addData(data).bindLabel("Gulf Stream: Courant de Floride", {
+        className: 'map-label'
+    });
 });
 
-var cap_hatteras = L.marker([35,-75.33], {icon: point_interet}).bindLabel("<img alt='cap_hatteras' src='data/images/cap_hatteras.jpg'></br>Cap Hatteras");
+var cap_hatteras = L.marker([35,-75.33], {icon: point_interet}).bindLabel("<img alt='cap_hatteras' src='data/images/cap_hatteras.jpg'></br>Cap Hatteras", {
+    className: 'map-label'
+});
 
  var gulfstream = L.geoJson(null, {
     style: {
@@ -168,10 +184,14 @@ var cap_hatteras = L.marker([35,-75.33], {icon: point_interet}).bindLabel("<img 
 });
 
 $.getJSON("data/geojson/gulfstream.geojson", function(data) {
-    gulfstream.addData(data).bindLabel("Gulf Stream");
+    gulfstream.addData(data).bindLabel("Gulf Stream", {
+        className: 'map-label'
+    });
 });
 
-var grands_bancs_de_terre_neuve = L.marker([43.19,-50.29], {icon: point_interet}).bindLabel("Grands Bancs de Terre Neuve");
+var grands_bancs_de_terre_neuve = L.marker([43.19,-50.29], {icon: point_interet}).bindLabel("Grands Bancs de Terre Neuve", {
+    className: 'map-label'
+});
 
 var courant_nord_atlantique = L.geoJson(null, {
     style: {
@@ -193,7 +213,9 @@ var courant_nord_atlantique = L.geoJson(null, {
 });
 
 $.getJSON("data/geojson/courant_nord_atlantique.geojson", function (data) {
-    courant_nord_atlantique.addData(data).bindLabel("Courant Nord Atlantique");
+    courant_nord_atlantique.addData(data).bindLabel("Courant Nord Atlantique", {
+        className: 'map-label'
+    });
 });
 
 var courant_acores = L.geoJson(null, {
@@ -216,7 +238,9 @@ var courant_acores = L.geoJson(null, {
 });
 
 $.getJSON("data/geojson/courant_des_acores.geojson", function (data) {
-    courant_acores.addData(data).bindLabel("Courant des Açores");
+    courant_acores.addData(data).bindLabel("Courant des Açores", {
+        className: 'map-label'
+    });
 });
 
 var courant_canaries = L.geoJson(null, {
@@ -239,7 +263,9 @@ var courant_canaries = L.geoJson(null, {
 });
 
 $.getJSON("data/geojson/courant_des_canaries.geojson", function (data) {
-    courant_canaries.addData(data).bindLabel("Courant des Canaries");
+    courant_canaries.addData(data).bindLabel("Courant des Canaries", {
+        className: 'map-label'
+    });
 });
 
 
@@ -289,7 +315,9 @@ var derive_nord_atlantique_1 = L.geoJson(null, {
 });
 
 $.getJSON("data/geojson/derive_nord_atlantique_1.geojson", function(data) {
-    derive_nord_atlantique_1.addData(data).bindLabel("Dérive Nord Atlantique");
+    derive_nord_atlantique_1.addData(data).bindLabel("Dérive Nord Atlantique", {
+        className: 'map-label'
+    });
 });
 
 
@@ -314,7 +342,9 @@ var derive_nord_atlantique_2 = L.geoJson(null, {
 });
 
 $.getJSON("data/geojson/derive_nord_atlantique_2.geojson", function(data) {
-    derive_nord_atlantique_2.addData(data).bindLabel("Dérive Nord Atlantique");
+    derive_nord_atlantique_2.addData(data).bindLabel("Dérive Nord Atlantique", {
+        className: 'map-label'
+    });
 });
 
 var golfe_mexique = L.geoJson(null, {
@@ -326,5 +356,7 @@ var golfe_mexique = L.geoJson(null, {
     });
 
 $.getJSON("data/geojson/golfe_mexique.geojson", function (data) {
-    golfe_mexique.addData(data).bindLabel("Golfe du Mexique");
+    golfe_mexique.addData(data).bindLabel("Golfe du Mexique", {
+        className: 'map-label'
+    });
 });

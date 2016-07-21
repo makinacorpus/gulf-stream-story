@@ -270,6 +270,14 @@ path.leaflet-clickable {
   background-image: url('../images/intro-active.svg');
 }
 
+.map-label {
+  background: #2D728F;
+  background-clip: padding-box;
+  border-color: #2D728F;
+  color: #ffffff;
+  font: 14px/20px "Asap", sans-serif;
+}
+
 .map-widgets {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 3px;
