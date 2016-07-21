@@ -26,7 +26,7 @@ var story = [
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[10.13, -58.59], 4],
-        'text': '## Naissance du Gulf Stream\n Le courant de Guyane, qui longe les côtes d’Amérique du Sud, se retrouve dans un cul-de-sac: l’Isthme du Panama. Il est naturellement emporté vers le nord et à l’est par la circulation anticyclonique des Açores (sens des aiguilles d’une montre). Il dirige donc notre goutte d’eau vers la seule porte de sortie possible : le détroit de Floride. L’étroitesse de ce passage situé entre Cuba et la Floride génère un trop plein. C’est cet excédent qui donne naissance au Gulf Stream.',
+        'text': '## Naissance du Gulf Stream\n Le courant de Guyane, qui longe les côtes d’Amérique du Sud, se retrouve dans un cul-de-sac: l’Isthme du Panama. Il est naturellement emporté vers le nord et à l’est par la circulation anticyclonique des Açores (sens des aiguilles d’une montre). Il dirige donc notre goutte d’eau vers la seule porte de sortie possible : le détroit de Floride. L’étroitesse de ce passage situé entre Cuba et la Floride génère un trop plein d’eau. C’est cet excédent qui donne naissance au Gulf Stream.',
         'addLayers': [courant_guyane, detroit_de_floride, isthme_panama],
         'removeLayers': [golfe_mexique]
     },
@@ -34,7 +34,7 @@ var story = [
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[34.99, -74.97], 5],
-        'text': '## Le Gulf Stream continental\n Ca y est, notre goutte d’eau qui a eu du mal à se frayer un passage entre ses sœurs est entraînée à pleine vitesse dans le Gulf Stream. Elle vogue maintenant à la vitesse record de 2 m/s dans cette partie appelée courant de Floride. Ce véritable fleuve côtier reste collé au continent, canalisé par la pente continentale jusqu’au Cap Hatteras',
+        'text': '## Le Gulf Stream continental\n Ca y est, notre goutte d’eau qui a eu du mal à se frayer un passage entre ses sœurs est entraînée à pleine vitesse dans le Gulf Stream. Elle vogue maintenant à la vitesse record de 2 m/s dans cette partie appelée courant de Floride. Ce véritable fleuve côtier reste collé au continent, canalisé par la pente continentale jusqu’au Cap Hatteras.',
         'addLayers': [courant_floride, cap_hatteras, pente_continentale],
         'removeLayers': [detroit_de_floride, isthme_panama]
     },
@@ -50,7 +50,7 @@ var story = [
         'category': 'Introduction',
         'slug': 'introduction',
         'view': [[43.19, -50.3], 5],
-        'text': '##Les Grands Bancs de Terre Neuve\nEn arrivant aux Grands Bancs de Terre Neuve, notre goutte d’eau observe la mort du Gulf Stream. C’est le chaos du large qui en a finalement eu raison. Le fleuve océanique a perdu ses caractéristiques qui le rendait si particulier. Scientifiquement parlant, sa course s’achève vers la longitude 40°N 50°W, mais le mouvent des masses d’eau ne s’arrête pas pour autant.',
+        'text': '##Les Grands Bancs de Terre Neuve\nEn arrivant aux Grands Bancs de Terre Neuve, notre goutte d’eau observe la mort du Gulf Stream. C’est le chaos du large qui en a finalement eu raison. Le fleuve océanique a perdu ses caractéristiques qui le rendait si particulier. Scientifiquement parlant, sa course s’achève vers 40°N 50°W, mais le mouvent des masses d’eau ne s’arrête pas pour autant.',
         'addLayers': [grands_bancs_de_terre_neuve],
         'removeLayers': [cap_hatteras]
     },
@@ -491,72 +491,70 @@ function createGraphThermocline() {
             name: 'Surface - Août 2015',
             type: 'area',
             data: [[0, 13],[0, 25], [-200, 25], [-200, 13]],
+            color: '#B1C4D6',
             visible: false
         },
         {
             name: 'Thermocline - Août 2015',
             type: 'area',
             data: [[-11.405, 13],[-11.405, 25], [-200, 25], [-200, 13]],
+            color: '#567797',
             visible: false
         },
         {
             name: 'Fond - Août 2015',
             type: 'area',
-            data: [[-65.807, 13],[-65.807, 25], [-200, 25], [-200, 13]],
+            data: [[-130.666, 13],[-130.666, 25], [-200, 25], [-200, 13]],
+            color: '#33577A',
             visible: false
         },
         {
             name: 'Surface - Octobre 2015',
             type: 'area',
-            data: [[-10, 13],[-10, 25], [-200, 25], [-200, 13]],
+            data: [[0, 13],[0, 25], [-200, 25], [-200, 13]],
+            color: '#B1C4D6',
             visible: false
         },
         {
             name: 'Thermocline - Octobre 2015',
             type: 'area',
-            data: [[-21.405, 13],[-21.405, 25], [-200, 25], [-200, 13]],
+            data: [[-29.445, 13],[-29.445, 25], [-200, 25], [-200, 13]],
+            color: '#567797',
             visible: false
         },
         {
             name: 'Fond - Octobre 2015',
             type: 'area',
-            data: [[-75.807, 13],[-75.807, 25], [-200, 25], [-200, 13]],
+            data: [[-109.729, 13],[-109.729, 25], [-200, 25], [-200, 13]],
+            color: '#33577A',
             visible: false
         },
         {
             name: 'Surface - Décembre 2015',
             type: 'area',
-            data: [[-20, 13],[-20, 25], [-200, 25], [-200, 13]],
+            data: [[0, 13],[0, 25], [-200, 25], [-200, 13]],
+            color: '#B1C4D6',
             visible: false
         },
         {
             name: 'Thermocline - Décembre 2015',
             type: 'area',
-            data: [[-31.405, 13],[-31.405, 25], [-200, 25], [-200, 13]],
+            data: [[-65.807, 13],[-65.807, 25], [-200, 25], [-200, 13]],
+            color: '#567797',
             visible: false
         },
         {
             name: 'Fond - Décembre 2015',
             type: 'area',
-            data: [[-85.807, 13],[-85.807, 25], [-200, 25], [-200, 13]],
+            data: [[-109.729, 13],[-109.729, 25], [-200, 25], [-200, 13]],
+            color: '#33577A',
             visible: false
         },
         {
             name: 'Surface - Mars 2016',
             type: 'area',
-            data: [[-30, 13],[-30, 25], [-200, 25], [-200, 13]],
-            visible: false
-        },
-        {
-            name: 'Thermocline - Mars 2016',
-            type: 'area',
-            data: [[-41.405, 13],[-41.405, 25], [-200, 25], [-200, 13]],
-            visible: false
-        },
-        {
-            name: 'Fond - Mars 2016',
-            type: 'area',
-            data: [[-95.807, 13],[-95.807, 25], [-200, 25], [-200, 13]],
+            data: [[0, 13],[0, 25], [-200, 25], [-200, 13]],
+            color: '#B1C4D6',
             visible: false
         },
         {
@@ -572,11 +570,13 @@ function createGraphThermocline() {
         {
             name: 'Décembre 2015',
             type: 'line',
+            color: '#FF9F00',
             data: [[-0.494  , 19.35], [-1.541  , 19.35], [-2.646  , 19.35], [-3.819  , 19.35], [-5.078  , 19.35], [-6.441  , 19.35], [-7.930  , 19.35], [-9.573  , 19.35], [-11.405 , 19.35], [-13.467 , 19.35], [-15.810 , 19.35], [-18.496 , 19.35], [-21.599 , 19.35], [-25.211 , 19.35], [-29.445 , 19.35], [-34.434 , 19.35], [-40.344 , 19.35], [-47.374 , 19.35], [-55.764 , 19.35], [-65.807 , 19.35], [-77.854 , 19.05], [-92.326 , 17.95], [-109.729, 17.05], [-130.666, 16.65], [-155.851, 16.25], [-186.126, 15.85], [-222.475, 15.55], [-266.040, 15.25], [-318.127, 14.95], [-380.213, 14.65], [-453.938, 14.05], [-541.089, 13.65]]
         },
         {
             name: 'Mars 2016',
             type: 'line',
+            color: '#A2B209',
             data: [[-0.494  , 16.65], [-1.541  , 16.65], [-2.646  , 16.55], [-3.819  , 16.55], [-5.078  , 16.55], [-6.441  , 16.55], [-7.930  , 16.55], [-9.573  , 16.55], [-11.405 , 16.55], [-13.467 , 16.55], [-15.810 , 16.55], [-18.496 , 16.55], [-21.599 , 16.55], [-25.211 , 16.55], [-29.445 , 16.45], [-34.434 , 16.45], [-40.344 , 16.45], [-47.374 , 16.45], [-55.764 , 16.45], [-65.807 , 16.45], [-77.854 , 16.45], [-92.326 , 16.45], [-109.729, 16.45], [-130.666, 16.45], [-155.851, 16.45], [-186.126, 16.25], [-222.475, 15.95], [-266.040, 15.45], [-318.127, 14.95], [-380.213, 14.55], [-453.938, 14.05], [-541.089, 13.65]]
         }]
     });
