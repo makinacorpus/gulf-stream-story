@@ -167,6 +167,10 @@ var cap_hatteras = L.marker([35,-75.33], {icon: point_interet}).bindLabel("<img 
     }
 });
 
+$.getJSON("data/geojson/gulfstream.geojson", function(data) {
+    gulfstream.addData(data).bindLabel("Gulf Stream");
+});
+
 var grands_bancs_de_terre_neuve = L.marker([43.19,-50.29], {icon: point_interet}).bindLabel("Grands Bancs de Terre Neuve");
 
 var courant_nord_atlantique = L.geoJson(null, {
