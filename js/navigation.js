@@ -253,6 +253,7 @@ var story = [
         },
         legend: '#temperature-legend',
         timeline: {
+            source: 'video_temp',
             values: [
               'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
             ],
@@ -291,6 +292,7 @@ var story = [
         displayThermocline: true,
         legend: '#temperature-legend',
         timeline: {
+            source: 'video_temp',
             values: [
               'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
             ],
@@ -310,6 +312,7 @@ var story = [
         displayThermocline: true,
         legend: '#temperature-legend',
         timeline: {
+            source: 'video_temp',
             values: [
               'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
             ],
@@ -328,6 +331,7 @@ var story = [
         },
         legend: '#temperature-legend',
         timeline: {
+            source: 'video_temp',
             values: [
               'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
             ],
@@ -669,7 +673,7 @@ function updateTimeline(timeline, map) {
     document.querySelector('.timeline').classList.remove('hidden');
 
     if (timeline && map.sources.indexOf(timeline.source) > -1) {
-        var timeSource = timeline.source
+        var timeSource = timeline.source;
         Mbmap.once('load', function (ev) {
             var video = Mbmap.getSource(timeSource).getVideo();
             var timeline = document.querySelector('.timeline');
