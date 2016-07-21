@@ -66,11 +66,11 @@ function depthArrows(feature, latlng) {
     html += feature.properties.dir;
     html += 'deg);';
     html += 'font-size:';
-    html += (8 + feature.properties.n * 20);
+    html += (11 + feature.properties.n * 20);
     html += 'px; color:';
     html += colorScale(feature.properties.n);
     html += '" class="rot">';
-    html += '↑</div>';
+    html += '⬆</div>'; //↑⇑
     return L.marker(latlng, {
         icon: L.divIcon({
             className: 'arrow',
