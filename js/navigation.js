@@ -271,6 +271,7 @@ var story = [
         },
         legend: '#temperature-legend',
         timeline: {
+            source: 'video_temp',
             values: [
               'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
             ],
@@ -607,14 +608,6 @@ function updateMapboxMap(newMap) {
                 // Mbmap.once('style.load', function () {
                 //     Mbmap.style.sources[newSources[i]].attribution = 'Source';
                 // });
-                // Mbmap.once('load', function () {
-                //     var video = Mbmap.getSource(newSources[i]).getVideo();
-                //     var timeline = document.querySelector('.timeline');
-                //
-                //     if (timeline.dataset.active) {
-                //         video.addEventListener('timeupdate', animateTimeline);
-                //     }
-                // });
             }
             Mbmap.setStyle(newStyle);
         }
@@ -639,7 +632,42 @@ function updateMap(newMap) {
     currentMap = newMap;
 }
 
+function updateTimeline(timeline, map) {
+    var valuesLength = timeline.values.length;
+    var contextLength = timeline.context.length;
 
+    document.querySelector('.timeline-values').innerHTML = '';
+    for (var i = 0; i < valuesLength; i++) {
+      var valueElement = document.createElement('li');
+      valueElement.innerHTML = timeline.values[i];
+      document.querySelector('.timeline-values').appendChild(valueElement);
+    }
+
+    document.querySelector('.timeline-context').innerHTML = '';
+    for (var j = 0; j < contextLength; j++) {
+      var contextElement = document.createElement('li');
+      contextElement.innerHTML = timeline.context[j];
+      document.querySelector('.timeline-context').appendChild(contextElement);
+    }
+
+    document.querySelector('.timeline').dataset.active = true;
+    document.querySelector('.timeline').classList.remove('hidden');
+
+    if (timeline && map.sources.indexOf(timeline.source) > -1) {
+        var timeSource = timeline.source
+        Mbmap.once('load', function (ev) {
+            var video = Mbmap.getSource(timeSource).getVideo();
+            var timeline = document.querySelector('.timeline');
+
+            video.addEventListener('timeupdate', animateTimeline);
+        });
+    }
+}
+
+function hideTimeline() {
+    document.querySelector('.timeline').dataset.active = false;
+    document.querySelector('.timeline').classList.add('hidden');
+}
 
 function changeContent(i) {
 
@@ -693,24 +721,9 @@ function changeContent(i) {
         $('.legend').css('display', 'none');
     }
     if (state.timeline) {
-        var timeline = state.timeline;
-        var valuesLength = timeline.values.length;
-        var contextLength = timeline.context.length;
-        for (var i = 0; i < valuesLength; i++) {
-          var valueElement = document.createElement('li');
-          valueElement.innerHTML = timeline.values[i];
-          document.querySelector('.timeline-values').appendChild(valueElement);
-        }
-        for (var j = 0; j < contextLength; j++) {
-          var contextElement = document.createElement('li');
-          contextElement.innerHTML = timeline.context[j];
-          document.querySelector('.timeline-context').appendChild(contextElement);
-        }
-        document.querySelector('.timeline').dataset.active = true;
-        document.querySelector('.timeline').classList.remove('hidden');
+        updateTimeline(state.timeline, state.map);
     } else {
-      document.querySelector('.timeline').dataset.active = false;
-        document.querySelector('.timeline').classList.add('hidden');
+        hideTimeline();
     }
 }
 

@@ -28,7 +28,8 @@ var Summer_Squall = L.tileLayer('data/tiles/wh_summer_squall/{z}/{x}/{y}.png', {
 
 var point_interet = L.icon({
     iconUrl: 'data/images/compass.svg',
-    iconSize: [40,40]
+    iconSize: [40,40],
+    iconAnchor:   [20, 40]
 });
 
 var ssh = L.imageOverlay("data/images/ssh.png",[[0, -100], [85, 20]]);
