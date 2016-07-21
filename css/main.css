@@ -54,6 +54,8 @@ h2 {
     bottom: 100px;
     margin-left: 15px;
     color: black;
+    padding: 15px;
+    width: 100px;
 }
 
 .slider.slider-vertical {
