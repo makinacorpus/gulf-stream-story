@@ -37,11 +37,9 @@ h2 {
     text-align-last: left;
     font-size: 20px;
     line-height: 1.3em;
-}
-
-.scrollY {
-    max-height: 100%;
-    overflow-y: scroll;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 #text > p > img {
