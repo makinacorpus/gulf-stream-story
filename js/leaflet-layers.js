@@ -19,6 +19,11 @@ var BFranklin = L.tileLayer('data/tiles/BFranklin/{z}/{x}/{y}.png', {
     minZoom: 3
 });
 
+var point_interet = L.icon({
+    iconUrl: 'data/images/compass.svg',
+    iconSize: [40,40]
+});
+
 var ssh = L.imageOverlay("data/images/ssh.png",[[0, -100], [85, 20]]);
 
 var detroit_de_floride = L.marker([24.13,-80.64], {icon: point_interet}).bindLabel("<img alt='detroit_de_floride' src='data/images/detroit_de_floride.jpg'></br>Détroit de Floride");
@@ -161,11 +166,6 @@ var cap_hatteras = L.marker([35,-75.33], {icon: point_interet}).bindLabel("<img 
         });
     }
 });
-
-var point_interet = L.icon({
-    iconUrl: 'data/images/compass.svg',
-    iconSize: [40,40]
-    });
 
 var grands_bancs_de_terre_neuve = L.marker([43.19,-50.29], {icon: point_interet}).bindLabel("Grands Bancs de Terre Neuve");
 
