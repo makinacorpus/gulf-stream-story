@@ -247,6 +247,15 @@ path.leaflet-clickable {
   background-image: url('../images/end.svg');
 }
 
+.circle-cat.credits::after {
+  background-image: url('../images/credits-active.svg');
+}
+
+.circle-cat.active.credits::after,
+.circle-cat.passed.credits::after {
+  background-image: url('../images/credits.svg');
+}
+
 .next-button {
   margin: 0;
   padding: 0;
