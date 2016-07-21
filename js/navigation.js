@@ -359,6 +359,76 @@ var story = [
     }
 ];
 
+var plotBands = {
+    surface: {
+        from: null,
+        to: null,
+        color: 'rgba(177,196,214,0.6)',
+        label: {
+            text: 'Eaux de surface',
+            style: {
+                color: '#606060'
+            }
+        },
+        id: 'plot-band-surface'
+    },
+    thermocline: {
+        from: null,
+        to: null,
+        color: 'rgba(86, 119, 151, 0.6)',
+        label: {
+            text: 'Thermocline',
+            style: {
+                color: '#606060'
+            }
+        },
+        id: 'plot-band-thermocline'
+    },
+    depth: {
+        from: null,
+        to: null,
+        color: 'rgba(51, 87, 122, 0.6)',
+        label: {
+            text: 'Eaux profondes',
+            style: {
+                color: '#606060'
+            }
+        },
+        id: 'plot-band-depth'
+    }
+};
+
+var plotBandsMonths = {
+    'Août 2015': {
+        surface_from: 0,
+        surface_to: -11.405,
+        thermocline_from: -11.405,
+        thermocline_to: -130.666,
+        depth_from: -130.666,
+        depth_to: -200
+    },
+    'Octobre 2015': {
+        surface_from: 0,
+        surface_to: -29.445,
+        thermocline_from: -29.445,
+        thermocline_to: -109.729,
+        depth_from: -109.729,
+        depth_to: -200
+    },
+    'Décembre 2015': {
+        surface_from: 0,
+        surface_to: -65.807,
+        thermocline_from: -65.807,
+        thermocline_to: -109.729,
+        depth_from: -109.729,
+        depth_to: -200
+    },
+    'Mars 2016': {
+        surface_from: 0,
+        surface_to: -200
+    }
+}
+
 function sameArrays(a1, a2) {
     return (a1.length == a2.length) && a1.every(function(element, index) {
         return element === a2[index];
@@ -655,15 +725,13 @@ function createGraphThermocline() {
                             if (type === 'line') {
                                 var chart = $('#container').highcharts();
                                 var seriesLength = chart.series.length;
-                                for (var i = chart.series.length - 1; i >= 0; i--) {
-                                    var seaLayers = [
-                                        'Surface - ' + name,
-                                        'Thermocline - ' + name,
-                                        'Fond - ' + name,
-                                    ];
-                                    if ($.inArray(chart.series[i].name, seaLayers) !== -1) {
-                                        chart.series[i].setVisible(true, false);
-                                    }
+                                var plotBandsValues = plotBandsMonths[name];
+
+                                for (var band in plotBands) {
+                                    var plotBand = plotBands[band];
+                                    plotBand.from = plotBandsValues[band + '_from']
+                                    plotBand.to = plotBandsValues[band + '_to']
+                                    chart.xAxis[0].addPlotBand(plotBand);
                                 }
                             }
                         },
@@ -673,15 +741,8 @@ function createGraphThermocline() {
                             if (type === 'line') {
                                 var chart = $('#container').highcharts();
                                 var seriesLength = chart.series.length;
-                                for (var i = chart.series.length - 1; i >= 0; i--) {
-                                    var seaLayers = [
-                                        'Surface - ' + name,
-                                        'Thermocline - ' + name,
-                                        'Fond - ' + name,
-                                    ]
-                                    if ($.inArray(chart.series[i].name, seaLayers) !== -1) {
-                                        chart.series[i].setVisible(false, false);
-                                    }
+                                for (var band in plotBands) {
+                                    chart.xAxis[0].removePlotBand('plot-band-' + band);
                                 }
                             }
                         },
