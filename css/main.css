@@ -292,13 +292,6 @@ path.leaflet-clickable {
     margin: 0 0 10px;
 }
 
-#arrow-legend {
-    bottom: 30px;
-    padding: 15px;
-    position: absolute;
-    right: 35px;
-}
-
 .legend {
     bottom: 30px;
     padding: 15px;
@@ -306,7 +299,7 @@ path.leaflet-clickable {
     right: 35px;
 }
 
-.legend div span {
+.choropleth-legend div span {
     border-radius: 50%;
     border: 1px solid black;
     display: inline-block;

@@ -6,7 +6,6 @@ var story = [
         category: 'Introduction',
         slug: 'introduction',
         text: '#**Le Gulf Stream**\n\nDepuis sa découverte, durant le deuxième voyage de Christophe Colomb en 1493, le Gulf Stream a de nombreuses fois fait parlé de lui. Benjamin Franklin l’a transformé en voie rapide pour le retour en Europe. Une légende l’a longtemps elevé au statut de chaudière de l’Europe, miraculeux responsable de la différence entre le climat océanique tempéré d’Europe de l’ouest et le climat continental glacial de la côte est américaine. Récemment, devenu star hollywodienne, il a fait son apparition dans plusieurs films catastrophe. Porté par cette vague alarmiste, la presse a maladroitement prévu son arrêt et le refroidissement drastique de l’Europe.\n\nMais qu’en est-il réellement? A travers un ensemble de cartes intéractives, nous vous proposons de partir à la découverte de ce véritable fleuve océanique.',
-        // ####*«Le Gulf Stream est une rivière au milieu de l’océan, dont le niveau ne change ni dans les plus fortes sécheresses ni dans les plus fortes pluies. Il est limité par des eaux froides, tandis que son courant est chaud. Il prend sa source dans le golfe du Mexique et se jette dans l’océan Arctique. Il n’existe pas sur la Terre un cours d’eau plus majestueux : sa vitesse est plus rapide que celle du Mississippi ou des Amazones, et son débit 1000 fois plus conséquent.» Maury «The Physical Geography of the Sea» 1855.*
         map: {
             type: 'leaflet',
             center: [-60, 0],
@@ -21,9 +20,9 @@ var story = [
         text: '## Naissance du Gulf Stream\n Pour suivre le Gulf Stream, focalisons nous sur le trajet d’une goutte d’eau qui se trouve dans le Golfe du Mexique. Elle pourrait venir d’un cumulonimbus, de l’Atlantique, du lac Itasca source du Mississipi, ou de bien d’autres horizons. Mais sa provenance n’a que peu d’importance. Si elle ne s’évapore pas, elle se dirigera inévitablement vers le Gulf Stream.',
         map: {
           type: 'leaflet',
-          maxBounds: [[0, -100],[85, 20]],
           center: [24, -80.72],
-          zoom: 5,
+          maxBounds: [[0, -100],[85, 20]],
+          zoom: 4,
           layers: [neTiles, golfe_mexique]
         }
     },
@@ -353,7 +352,8 @@ var story = [
         map: {
             type: 'mapbox',
             sources: ['video_wind']
-        }
+        },
+        legend: '#wind-legend'
     },
     {
         category: 'Les vents',
@@ -362,7 +362,8 @@ var story = [
         map: {
             type: 'mapbox',
             sources: ['video_wind']
-        }
+        },
+        legend: '#wind-legend'
     },
     {
         category: 'La salinité',
@@ -381,7 +382,8 @@ var story = [
         map: {
             type: 'mapbox',
             sources: ['video_salinity']
-        }
+        },
+        legend: '#salinity-legend'
     },
     {
         category: 'La salinité',
@@ -404,10 +406,10 @@ var story = [
         text: '##Conclusion\n\nMême si le Gulf Stream n’est plus considéré comme la chaudière de l’Europe. Même si les voiliers ne l’empruntent plus pour envoyer le courrier du nouveau monde vers le vieux continent. Même si nous ne devons pas craindre son arrêt brutal et le refroidissement drastique de l’Europe, il n’en reste pas moins un courant remarquable.\n\nLes scientifiques estiment aujourd’hui que sans lui, l’Europe de l’Ouest se rafraîchirait de 4 ou 5°C. Il est un des moteurs de la plupart des grands courants d’Atlantique Nord. Il a une influence en surface mais aussi en profondeur en jouant un rôle déterminant sur la circulation thermohaline. Sa vitesse et son débit en font le fleuve océanique le plus puissant au monde. La climatologie étant un domaine extrêmement complexe, les scientifiques ne sont pas prêt de percer tout ses mystères.\n\nEn conclusion, ce courant majestueux n’a pas fini de faire parler de lui.',
         map: {
             type: 'leaflet',
-            maxBounds: [[-100, -180],[70, 180]],
             center: [30, 60],
-            zoom: 0,
-            layers: [Summer_Squall]
+            zoom: 3,
+            layers: [Summer_Squall],
+            maxBounds: [[-100, -180],[70, 180]] 
         }
     }
 ];
