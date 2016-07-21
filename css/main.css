@@ -301,7 +301,7 @@ path.leaflet-clickable {
     right: 35px;
 }
 
-.legend div span {
+.choropleth-legend div span {
     border-radius: 50%;
     border: 1px solid black;
     display: inline-block;
@@ -327,6 +327,10 @@ path.leaflet-clickable {
 }
 
 #wind-legend {
+    display: none;
+}
+
+#arrow-legend {
     display: none;
 }
 

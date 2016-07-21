@@ -6,7 +6,6 @@ var story = [
         category: 'Introduction',
         slug: 'introduction',
         text: '#**Le Gulf Stream**\n\nDepuis sa découverte, durant le deuxième voyage de Christophe Colomb en 1493, le Gulf Stream a de nombreuses fois fait parlé de lui. Benjamin Franklin l’a transformé en voie rapide pour le retour en Europe. Une légende l’a longtemps elevé au statut de chaudière de l’Europe, miraculeux responsable de la différence entre le climat océanique tempéré d’Europe de l’ouest et le climat continental glacial de la côte est américaine. Récemment, devenu star hollywodienne, il a fait son apparition dans plusieurs films catastrophe. Porté par cette vague alarmiste, la presse a maladroitement prévu son arrêt et le refroidissement drastique de l’Europe.\n\nMais qu’en est-il réellement? A travers un ensemble de cartes intéractives, nous vous proposons de partir à la découverte de ce véritable fleuve océanique.',
-        // ####*«Le Gulf Stream est une rivière au milieu de l’océan, dont le niveau ne change ni dans les plus fortes sécheresses ni dans les plus fortes pluies. Il est limité par des eaux froides, tandis que son courant est chaud. Il prend sa source dans le golfe du Mexique et se jette dans l’océan Arctique. Il n’existe pas sur la Terre un cours d’eau plus majestueux : sa vitesse est plus rapide que celle du Mississippi ou des Amazones, et son débit 1000 fois plus conséquent.» Maury «The Physical Geography of the Sea» 1855.*
         map: {
             type: 'leaflet',
             center: [-60, 0],
@@ -21,9 +20,9 @@ var story = [
         text: '## Naissance du Gulf Stream\n Pour suivre le Gulf Stream, focalisons nous sur le trajet d’une goutte d’eau qui se trouve dans le Golfe du Mexique. Elle pourrait venir d’un cumulonimbus, de l’Atlantique, du lac Itasca source du Mississipi, ou de bien d’autres horizons. Mais sa provenance n’a que peu d’importance. Si elle ne s’évapore pas, elle se dirigera inévitablement vers le Gulf Stream.',
         map: {
           type: 'leaflet',
-          maxBounds: [[0, -100],[85, 20]],
           center: [24, -80.72],
-          zoom: 5,
+          maxBounds: [[0, -100],[85, 20]],
+          zoom: 4,
           layers: [neTiles, golfe_mexique]
         }
     },
@@ -176,7 +175,7 @@ var story = [
     {
         category: 'Les courants',
         slug: 'courants',
-        text: '##Gulf Stream et courants Nord Atlantiques\n*Le système climatique est une machine à convertir et à distribuer l’énergie que la Terre reçoit du soleil. L’énergie solaire est transportée par deux fluides : l’atmosphère et l’océan. Ces deux entités sont en contact permanent et ne cessent d’échanger de l’énergie. C’est le couple qu’ils forment qui gère le climat de notre planète.*',
+        text: '##Gulf Stream et courants Nord Atlantiques\nLe système climatique est une machine à convertir et à distribuer l’énergie que la Terre reçoit du soleil. L’énergie solaire est transportée par deux fluides : l’atmosphère et l’océan. Ces deux entités sont en contact permanent et ne cessent d’échanger de l’énergie. C’est le couple qu’ils forment qui gère le climat de notre planète.',
         map: {
           type:'leaflet',
           maxBounds: [[-100, -180],[73, 180]],
@@ -190,7 +189,7 @@ var story = [
     {
         category: 'Les courants',
         slug: 'courants',
-        text: '##Gulf Stream et courants Nord Atlantiques\nCette carte représente la vitesse des courants de surface. Malgré de nombreux petits courants, souvent tourbillonnaires, il est possible de retrouver la plupart des courants évoqués durant le voyage de notre goutte d’eau.\n\n',
+        text: '##Gulf Stream et courants Nord Atlantiques\nCette carte représente la vitesse des courants de surface. Malgré de nombreux petits courants, souvent tourbillonnaires, il est possible de retrouver la plupart des courants évoqués durant le voyage de notre goutte d’eau.',
         map: {
             type: 'mapbox',
             sources: ['video_current']
@@ -217,7 +216,8 @@ var story = [
             zoom: 5,
             layers: [neTiles, depthLayer]
         },
-        displayDepthSlider: true
+        displayDepthSlider: true,
+        legend: '#arrow-legend'
     },
     {
         category: 'Les courants',
@@ -240,12 +240,30 @@ var story = [
             maxBounds: [[0, -100],[85, 20]],
             layers: [neTiles, ssh]
         },
-        legend: '#current-legend'
+        legend: '#ssh-legend'
     },
     {
         category: 'Les températures',
         slug: 'temperatures',
-        text: '##Température\n\n*Les courants et les vents sont le moteur de la machine qui convertit et distribue l’énergie que la Terre reçoit du soleil. L’océan fournit une fraction de son énergie à l’atmosphère et distribue directement par les courants l’autre partie à l’échelle de la planète. On estime que les transferts de chaleur des régions équatoriales vers les pôles se font à égalité par l’atmosphère et l’océan.*',
+        text: '##Température\n\nLes courants et les vents sont le moteur de la machine qui convertit et distribue l’énergie que la Terre reçoit du soleil.\n\nL’océan fournit une partie de son énergie à l’atmosphère créant des vents. Ces derniers génèrent les courants de surface qui distribuent l’autre partie à l’échelle de la planète. On estime que les transferts de chaleur des régions équatoriales vers les pôles se font à parts égales entre l’atmosphère et l’océan.',
+        map: {
+            type: 'mapbox',
+            sources: ['video_temp']
+        },
+        legend: '#temperature-legend',
+        timeline: {
+            values: [
+              'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
+            ],
+            context: [
+              '2015', '2016'
+            ]
+        }
+    },
+    {
+        category: 'Les températures',
+        slug: 'temperatures',
+        text: '##Température\n\nLe Gulf Stream a une influence considérable sur le climat de régions situées à des milliers de kilomètres des Grands Bancs de Terre Neuve. Il emporte avec lui des eaux tropicales chaudes.\n\nSes extensions qui se dirigent vers le nord emportent ces eaux vers des latitudes beaucoup plus hautes. Par exemple, la glace qui n’arrive pas à se former au nord de la Norvège bénéficie directement d’eaux chaudes apportées par la dérive Nord Atlantique, extension du Gulf Stream. Pour vous rendre compte de cette influence, comparez les eaux côtières norvégiennes et les eaux côtières du Groenland. Vous remarquerez une grande différence de température.\n\nMais l’Europe, n’est pas l’unique bénéficiaire de cette source de chaleur. C’est tout l’Atlantique Nord qui profite de cet apport. Contrairement à ce qui a été longtemps mis en avant, le Gulf Stream n’est pas la chaudière centrale de l’Europe. Un autre phénomène joue un rôle majeur dans la douceur de notre climat.',
         map: {
             type: 'mapbox',
             sources: ['video_temp']
@@ -260,43 +278,67 @@ var story = [
               '2015', '2016'
             ]
         }
-
     },
     {
         category: 'Les températures',
         slug: 'temperatures',
-        text: '##Température\n\nLe Gulf Stream a une influence considérable sur le climat de régions situées à des milliers de kilomètres des Grands Bancs de Terre Neuve.\n\nIl emporte avec lui des eaux tropicales chaudes.\n\nSes extensions qui se dirigent vers le nord emportent ces eaux vers des latitudes beaucoup plus hautes. Par exemple, la glace qui n’arrive pas à se former au nord de la Norvège bénéficie directement d’eaux chaudes apportées par la dérive Nord Atlantique, extension du Gulf Stream.\n\nMais l’Europe, n’est pas l’unique bénéficiaire de cette source de chaleur. C’est tout l’Atlantique Nord qui profite de cet apport.\n\nContrairement à ce qui a été longtemps mis en avant, le Gulf Stream n’est pas la chaudière centrale de l’Europe. Il ne peut pas expliquer la différence moyenne de 15°C qu’il y a entre Montréal et Bordeaux qui sont sur la même latitude.',
-        map: {
-            type: 'mapbox',
-            sources: ['video_temp']
-        },
-        legend: '#temperature-legend'
-    },
-    {
-        category: 'Les températures',
-        slug: 'temperatures',
-        text: '##Température\n\nContrairement à l’atmosphère qui utilise très rapidement l’énergie qu’on lui met à disposition, l’océan a une grande mémoire. L’été, le rayonnement solaire intense échauffe les couches de surface. Il y a création d’un thermocline qui stratifie les eaux océaniques. L’océan stocke alors l’énergie thermique issue du rayonnement solaire d’été dans ses couches profondes.\n\nSur le graphique ci_dessous vous pouvez observer la thermocline saisonnière. Il s’agit de la zone de chute de température entre les couches de surface et les couches profondes. Si cette thermocline est importante, c’est à dire comprend une grande gamme de températures, les eaux de surface et les eaux profondes sont bien stratifiées et ne se mélangent pas.',
+        text: '##Température\n\nContrairement à l’atmosphère qui utilise très rapidement l’énergie qu’on lui met à disposition, l’océan a une grande mémoire. L’été, le rayonnement solaire intense échauffe les couches de surface. Il y a création d’un thermocline qui stratifie les eaux océaniques. L’océan stocke alors l’énergie thermique issue du rayonnement solaire d’été dans ses couches profondes.\n\nSur le graphique ci-dessous vous pouvez observer la thermocline saisonnière. Il s’agit de la zone de chute de température entre les couches de surface et les couches profondes. Si cette thermocline est importante, c’est à dire comprend une grande gamme de températures, les eaux de surface et les eaux profondes sont bien stratifiées et ne se mélangent pas.',
         map: {
             type: 'mapbox',
             sources: ['video_temp']
         },
         displayThermocline: true,
-        legend: '#temperature-legend'
+        legend: '#temperature-legend',
+        timeline: {
+            values: [
+              'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
+            ],
+            context: [
+              '2015', '2016'
+            ]
+        }
     },
     {
         category: 'Les températures',
         slug: 'temperatures',
-        text: '##Température\n\nEn hivers le rayonnement solaire est beaucoup plus faible et les vents d’ouest se renforcent. Il y a rupture du thermocline qui remet à disposition des couches de surface le stock d’été. L’océan transmet cette énergie à l’atmosphère. Les vents d’ouest la récupèrent et l’emportent en direction de l’Europe. L’ouest de ce continent sera le seul bénéficiaire de la mémoire calorifique estivale de l’océan Atlantique.\n\nCe phénomène semble aujourd’hui expliquer en grande partie la différence de climat entre les côtes est et ouest de l’Atlantique. Sur l’année on note une différence moyenne de 15°C. C’est ce qui explique un climat maritime (tempéré) en Europe de l’ouest et aux mêmes latitudes sur le sol américain un climat continental (froid).',
+        text: '##Température\n\nObservez sur le graphique l’évolution du thermocline en fonction des mois. En partant d’août 2015 vous remarquerez qu’au fil des mois, la thermocline est de plus en plus petite jusqu’à sa rupture au mois de mars 2016.\n\nEn hivers le rayonnement solaire est beaucoup plus faible et les vents d’ouest se renforcent. Il y a rupture du thermocline qui remet à disposition des couches de surface le stock d’été. L’océan transmet cette énergie à l’atmosphère. Les vents d’ouest la récupèrent et l’emportent en direction de l’Europe. L’ouest de ce continent sera le seul bénéficiaire de la mémoire calorifique estivale de l’océan Atlantique.',
         map: {
             type: 'mapbox',
             sources: ['video_temp']
         },
-        legend: '#temperature-legend'
+        displayThermocline: true,
+        legend: '#temperature-legend',
+        timeline: {
+            values: [
+              'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
+            ],
+            context: [
+              '2015', '2016'
+            ]
+        }
+    },
+    {
+        category: 'Les températures',
+        slug: 'temperatures',
+        text: '##Température\n\nCe phénomène semble aujourd’hui expliquer en grande partie la différence de climat entre les côtes est et ouest de l’Atlantique. Sur l’année, on note une différence moyenne de 15°C entre ces deux côtes. C’est ce qui explique un climat maritime (tempéré) en Europe de l’ouest et aux mêmes latitudes sur le sol américain un climat continental (froid).\n\nLe Gulf Stream a tout de même un impact sur le notre climat. Les scientifiques estiment aujourd’hui que sans lui, l’Europe de l’Ouest se rafraîchirait de 4 ou 5°C.',
+        map: {
+            type: 'mapbox',
+            sources: ['video_temp']
+        },
+        legend: '#temperature-legend',
+        timeline: {
+            values: [
+              'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
+            ],
+            context: [
+              '2015', '2016'
+            ]
+        }
     },
     {
         category: 'Les vents',
         slug: 'vents',
-        text: '##L’influence du vent\n\nUn principe simple de thermodynamique nous enseigne qu’entre deux corps en contact, c’est le corps chaud qui cède son énergie au corps froid jusqu’à l’équilibre. Le couple océan/atmosphère transporte et distribue l’énergie du soleil de la source chaude à la source froide. Par évaporation, les zones océaniques équatoriales (source chaude) alimentent l’atmosphère en chaleur, créant des vents qui se dirigent vers les régions polaires (source froide).',
+        text: '##L’influence du vent\n\nUn principe simple de thermodynamique nous enseigne qu’entre deux corps en contact, c’est le corps chaud qui cède son énergie au corps froid jusqu’à l’équilibre.\n\nLe couple océan/atmosphère transporte et distribue l’énergie du soleil de la source chaude à la source froide. Par évaporation, les zones océaniques équatoriales (source chaude) alimentent l’atmosphère en chaleur, créant des vents qui se dirigent vers les régions polaires (source froide).\n\nDifférents phénomènes naturels, dont la rotation de la Terre, empêchent ce transfert de se faire en ligne droite. Les vents et les courants suivent la direction de l’anticyclone des Açores (sens des aiguilles d’une montre) au sud du Gulf Stream. Au nord de ce courants, ils sont emportés par la dépression d’Islande (sens inverse des aiguilles d’une montre). L’influence de cette dernière est clairement visible sur cette carte.',
         map: {
             type: 'mapbox',
             sources: ['video_wind']
@@ -306,16 +348,27 @@ var story = [
     {
         category: 'Les vents',
         slug: 'vents',
-        text: '##Les vents\n\nL’équateur est la ligne imaginaire qui représente le plus grand diamètre de la Terre. L’air qui en provient et qui se dirige vers les pôles, se retrouve sur des diamètres de plus en plus petits.\n\nConséquence, sa vitesse de rotation augmente. Aux alentours des latitudes 30°, sa vitesse est tellement grande qu’au lieu de continuer vers le nord. Il se retrouve entraîné dans un couloir de vent orienté est-ouest : le courant jet.\n\nLes pilotes de ligne le connaissent bien. Ils s’en servent dans le sens New York-Paris et le contournent dans la direction inverse.\n\nCe courant jet emporte l’énergie solaire emmaganisée l’été par le soleil vers l’Europe.',
+        text: '##Les vents\n\nEn observant la direction des vents vous vous rendrez compte de l’existance d’un courant d’air soufflant d’ouest en est. C’est ce couloir qui récupère et dirige l’énergie d’été stockée par l’océan vers l’Europe.\n\nObservez maintenant le vent à la sortie du détroit de Floride. Son comportement suit assez bien la forme du Gulf Stream.',
         map: {
             type: 'mapbox',
             sources: ['video_wind']
-        }
+        },
+        legend: '#wind-legend'
+    },
+    {
+        category: 'Les vents',
+        slug: 'vents',
+        text: '##Les vents\n\nL’équateur est la ligne imaginaire qui représente le plus grand diamètre de la Terre. L’air qui en provient et qui se dirige vers les pôles se retrouve sur des diamètres de plus en plus petits.\n\nConséquence, sa vitesse de rotation augmente. Aux alentours des latitudes 30°, sa vitesse est tellement grande qu’au lieu de continuer vers le nord, il se retrouve entraîné dans un couloir de vent orienté est-ouest.\n\nC’est ce couloir de vents violents que nous observons sur cette carte.',
+        map: {
+            type: 'mapbox',
+            sources: ['video_wind']
+        },
+        legend: '#wind-legend'
     },
     {
         category: 'La salinité',
         slug: 'salinite',
-        text: '##Salinité\n\nComme pour la température de surface, le Gulf Stream représente une frontière entre les eaux fortement salées qu’il emporte et les eaux de la mer du Labrador faiblement salées. Cette différence s’explique assez simplement. Au niveau de l’équateur et des tropiques, l’évaporation est très forte. Cette eau s’échappe dans l’atmosphère, renforçant les vents se dirigeants vers le nord (dans la direction imposée par l’anticyclone des Açores). Le sel, qui ne peux pas s’évaporer s’accumule dans l’océan. C’est pourquoi les eaux tropicales sont très salées.\n\nLe Gulf Stream emporte donc des eaux chaudes et salées en direction des hautes latitudes. Cet apport est particulièrement visible au niveau de la dérive Nord Atlantique qui a une influence jusqu’au nord de la Norvège.',
+        text: '##Salinité\n\nComme pour la température de surface, le Gulf Stream représente une frontière entre les eaux fortement salées qu’il emporte et les eaux de la mer du Labrador faiblement salées.\n\n Cette différence s’explique assez simplement. Au niveau de l’équateur et des tropiques, l’évaporation est très forte. Cette eau s’échappe dans l’atmosphère, renforçant les vents se dirigeants vers le nord (dans la direction imposée par l’anticyclone des Açores). Le sel, qui ne peux pas s’évaporer s’accumule dans l’océan. C’est ce qui explique la forte salinité des eaux tropicales.\n\nLe Gulf Stream emporte donc des eaux chaudes et salées en direction des hautes latitudes. Cet apport est particulièrement visible au niveau de la dérive Nord Atlantique qui a une influence jusqu’au nord de la Norvège.',
         map: {
             type: 'mapbox',
             sources: ['video_salinity']
@@ -325,11 +378,12 @@ var story = [
     {
         category: 'La salinité',
         slug: 'salinite',
-        text: '##Salinité\n\nEn arrivant aux hautes latitudes, la température chute. Les eaux emportées par les extensions du Gulf Stream deviennent froides et salées.\n\n Plus une eau est froide, plus elle est dense. Plus elle est salée, plus elle est dense. Les eaux issues du Gulf Stream sont plus salées que les eaux qui les entourent. Ce taux de sel est renforcé l’hiver par la création de glace. En se refroidissant durant leur voyage vers les hautes latitudes, elles finissent par devenir trop denses pour se maintenir à la surface et plongent jusqu’à des profondeurs supérieures au kilomètre. Elles s’écoulent lentement dans un courant de fond en direction de l’équateur. Le courant de retour que nous avions observé à 1684m peut être affilié à cette circulation. Au niveau des Tropiques, le courant se réchauffe et remonte à la surface jusqu’à leur prochain refroidissement.',
+        text: '##Salinité\n\nEn arrivant aux hautes latitudes, la température chute. Les eaux emportées par les extensions du Gulf Stream deviennent froides et salées.\n\n Plus une eau est froide, plus elle est dense. Plus elle est salée, plus elle est dense. Les eaux issues du Gulf Stream sont plus salées que les eaux qu’il rencontre. Ce taux de sel est renforcé l’hiver par la création de glace.\n\n En se refroidissant durant leur voyage vers les hautes latitudes, elles finissent par devenir trop denses pour se maintenir à la surface et plongent jusqu’à des profondeurs supérieures au kilomètre. Elles s’écoulent lentement dans un courant de fond en direction de l’équateur.\n\nLe courant de retour que nous avions observé à 1684m peut être affilié à cette circulation. Il finira par se réchauffer pour refaire surface, permettant un échange entre les eaux de surface et les eaux profondes.',
         map: {
             type: 'mapbox',
             sources: ['video_salinity']
-        }
+        },
+        legend: '#salinity-legend'
     },
     {
         category: 'La salinité',
@@ -337,7 +391,7 @@ var story = [
         text: '##La circulation thermohaline\n\nSur cette carte vous pouvez suivre cette circulation à l’échelle planétaire. Elle est communément appelée le « tapis roulant ».\n\n On estime qu’il faudrait entre 1000 et 2000 ans pour qu’une goutte fasse un tour de ce circuit. Ce phénomène de plongée est particulièrement remarquable au large de la Norvège et au Nord Est des Grands Bancs de Terre Neuve.\n\n Le Gulf Stream, à travers les eaux salées qu’il dirige vers les hautes latitudes est un moteur essentiel de ce tapis roulant. Cette circulation planétaire serait bien différent sans lui.',
         map: {
             type: 'leaflet',
-            center: [0, 30],
+            center: [10, 30],
             zoom: 2,
             layers: [
                 neTiles,
@@ -349,13 +403,13 @@ var story = [
     {
         category: 'Conclusion',
         slug: 'conclusion',
-        text: '##Conclusion\n\nMême si le Gulf Stream n’est plus considéré comme la chaudière de l’Europe. Même si les voiliers ne l’empruntent plus pour envoyer le courrier du nouveau monde vers le vieux continent. Même si nous ne devons pas craindre son arrêt brutal et le refroidissement drastique de l’Europe, il n’en reste pas moins un courant remarquable.\n\nLes scientifiques estiment aujourd’hui que sans lui, l’Europe de l’Ouest se rafraîchirait de 4 ou 5°C. Il est un des moteurs de la plupart des grands courants d’Atlantique Nord. Il a une influence en surface mais aussi en profondeur en jouant un rôle déterminant sur la circulation thermohaline. Sa vitesse et son débit en font le fleuve océanique le plus puissant au monde. La climatologie étant un domaine extrêmement complexe, les scientifiques ne sont pas prêt de percer tout ses mystères. En conclusion, ce courant majestueux n’a pas fini de faire parler de lui.\n\n',
+        text: '##Conclusion\n\nMême si le Gulf Stream n’est plus considéré comme la chaudière de l’Europe. Même si les voiliers ne l’empruntent plus pour envoyer le courrier du nouveau monde vers le vieux continent. Même si nous ne devons pas craindre son arrêt brutal et le refroidissement drastique de l’Europe, il n’en reste pas moins un courant remarquable.\n\nLes scientifiques estiment aujourd’hui que sans lui, l’Europe de l’Ouest se rafraîchirait de 4 ou 5°C. Il est un des moteurs de la plupart des grands courants d’Atlantique Nord. Il a une influence en surface mais aussi en profondeur en jouant un rôle déterminant sur la circulation thermohaline. Sa vitesse et son débit en font le fleuve océanique le plus puissant au monde. La climatologie étant un domaine extrêmement complexe, les scientifiques ne sont pas prêt de percer tout ses mystères.\n\nEn conclusion, ce courant majestueux n’a pas fini de faire parler de lui.',
         map: {
             type: 'leaflet',
-            center: [-65, 25],
+            center: [30, 60],
             zoom: 3,
-            maxBounds: [[-100, -180],[73, 180]],
-            layers: [BFranklin]
+            layers: [Summer_Squall],
+            maxBounds: [[-100, -180],[70, 180]] 
         }
     }
 ];

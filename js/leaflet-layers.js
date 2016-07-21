@@ -19,6 +19,13 @@ var BFranklin = L.tileLayer('data/tiles/BFranklin/{z}/{x}/{y}.png', {
     minZoom: 3
 });
 
+var Summer_Squall = L.tileLayer('data/tiles/wh_summer_squall/{z}/{x}/{y}.png', {
+    tms: true,
+    attribution: '<a target="_blank" href="https://commons.wikimedia.org/wiki/File:Winslow_Homer_Summer_Squall.jpg">Wikimedia</a>',
+    maxZoom: 5,
+    minZoom: 3
+});
+
 var point_interet = L.icon({
     iconUrl: 'data/images/compass.svg',
     iconSize: [40,40],
