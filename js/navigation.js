@@ -314,7 +314,8 @@ var story = [
         text: '##Température\n\nContrairement à l’atmosphère qui utilise très rapidement l’énergie qu’on lui met à disposition, l’océan a une grande mémoire. L’été, le rayonnement solaire intense échauffe les couches de surface. Il y a création d’un thermocline qui stratifie les eaux océaniques. L’océan stocke alors l’énergie thermique issue du rayonnement solaire d’été dans ses couches profondes.\n\nSur le graphique ci-dessous vous pouvez observer la thermocline saisonnière. Il s’agit de la zone de chute de température entre les couches de surface et les couches profondes. Si cette thermocline est importante, c’est à dire comprend une grande gamme de températures, les eaux de surface et les eaux profondes sont bien stratifiées et ne se mélangent pas.',
         map: {
             type: 'mapbox',
-            sources: ['video_temp']
+            sources: ['video_temp'],
+            setCenter: [-10, 40]
         },
         displayThermocline: true,
         legend: '#temperature-legend',
@@ -334,7 +335,8 @@ var story = [
         text: '##Température\n\nObservez sur le graphique l’évolution du thermocline en fonction des mois. En partant d’août 2015 vous remarquerez qu’au fil des mois, la thermocline est de plus en plus petite jusqu’à sa rupture au mois de mars 2016.\n\nEn hivers le rayonnement solaire est beaucoup plus faible et les vents d’ouest se renforcent. Il y a rupture du thermocline qui remet à disposition des couches de surface le stock d’été. L’océan transmet cette énergie à l’atmosphère. Les vents d’ouest la récupèrent et l’emportent en direction de l’Europe. L’ouest de ce continent sera le seul bénéficiaire de la mémoire calorifique estivale de l’océan Atlantique.',
         map: {
             type: 'mapbox',
-            sources: ['video_temp']
+            sources: ['video_temp'],
+            setCenter: [-20, 40]
         },
         displayThermocline: true,
         legend: '#temperature-legend',
@@ -837,12 +839,18 @@ function changeContent(i) {
         $('.right-panel').removeClass('col-md-3');
         $('.right-panel').addClass('col-md-6');
         createGraphThermocline();
+        if (Mbmap) {
+            Mbmap.resize();
+        }
     } else {
         $('.left-panel').removeClass('col-md-6');
         $('.left-panel').addClass('col-md-9');
         $('.right-panel').removeClass('col-md-6');
         $('.right-panel').addClass('col-md-3');
         removeGraphThermocline();
+        if (Mbmap) {
+            Mbmap.resize();
+        }
     }
     if (state.legend) {
         $('.legend').css('display', 'none');
