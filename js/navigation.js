@@ -255,10 +255,10 @@ var story = [
         timeline: {
             source: 'video_temp',
             values: [
-              'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
+                'jan', 'fév', 'mar', 'avr', 'mai', 'jun'
             ],
             context: [
-              '2015', '2016'
+                '2016'
             ]
         }
     },
@@ -274,10 +274,10 @@ var story = [
         timeline: {
             source: 'video_temp',
             values: [
-              'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
+                'jan', 'fév', 'mar', 'avr', 'mai', 'jun'
             ],
             context: [
-              '2015', '2016'
+                '2016'
             ]
         }
     },
@@ -294,10 +294,10 @@ var story = [
         timeline: {
             source: 'video_temp',
             values: [
-              'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
+                'jan', 'fév', 'mar', 'avr', 'mai', 'jun'
             ],
             context: [
-              '2015', '2016'
+                '2016'
             ]
         }
     },
@@ -314,10 +314,10 @@ var story = [
         timeline: {
             source: 'video_temp',
             values: [
-              'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
+                'jan', 'fév', 'mar', 'avr', 'mai', 'jun'
             ],
             context: [
-              '2015', '2016'
+                '2016'
             ]
         }
     },
@@ -333,10 +333,10 @@ var story = [
         timeline: {
             source: 'video_temp',
             values: [
-              'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
+                'jan', 'fév', 'mar', 'avr', 'mai', 'jun'
             ],
             context: [
-              '2015', '2016'
+                '2016'
             ]
         }
     },
@@ -348,7 +348,16 @@ var story = [
             type: 'mapbox',
             sources: ['video_wind']
         },
-        legend: '#wind-legend'
+        legend: '#wind-legend',
+        timeline: {
+            source: 'video_wind',
+            values: [
+                'mar', 'avr', 'mai', 'jun'
+            ],
+            context: [
+                '2016'
+            ]
+        }
     },
     {
         category: 'Les vents',
@@ -358,7 +367,16 @@ var story = [
             type: 'mapbox',
             sources: ['video_wind']
         },
-        legend: '#wind-legend'
+        legend: '#wind-legend',
+        timeline: {
+            source: 'video_wind',
+            values: [
+                'mar', 'avr', 'mai', 'jun'
+            ],
+            context: [
+                '2016'
+            ]
+        }
     },
     {
         category: 'Les vents',
@@ -368,7 +386,16 @@ var story = [
             type: 'mapbox',
             sources: ['video_wind']
         },
-        legend: '#wind-legend'
+        legend: '#wind-legend',
+        timeline: {
+            source: 'video_wind',
+            values: [
+                'mar', 'avr', 'mai', 'jun'
+            ],
+            context: [
+                '2016'
+            ]
+        }
     },
     {
         category: 'La salinité',
@@ -379,6 +406,16 @@ var story = [
             sources: ['video_salinity']
         },
         legend: '#salinity-legend',
+        timeline: {
+            source: 'video_salinity',
+            values: [
+                'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
+            ],
+            context: [
+                '2015',
+                '2016'
+            ]
+        }
     },
     {
         category: 'La salinité',
@@ -388,7 +425,17 @@ var story = [
             type: 'mapbox',
             sources: ['video_salinity']
         },
-        legend: '#salinity-legend'
+        legend: '#salinity-legend',
+        timeline: {
+            source: 'video_salinity',
+            values: [
+                'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
+            ],
+            context: [
+                '2015',
+                '2016'
+            ]
+        }
     },
     {
         category: 'La salinité',
@@ -414,7 +461,7 @@ var story = [
             center: [30, 60],
             zoom: 3,
             layers: [Summer_Squall],
-            maxBounds: [[-100, -180],[70, 180]] 
+            maxBounds: [[-100, -180],[70, 180]]
         }
     },
     {
@@ -426,7 +473,7 @@ var story = [
             center: [30, 60],
             zoom: 3,
             layers: [Summer_Squall],
-            maxBounds: [[-100, -180],[70, 180]] 
+            maxBounds: [[-100, -180],[70, 180]]
         }
     }
 ];
