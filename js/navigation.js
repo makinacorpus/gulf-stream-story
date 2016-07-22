@@ -196,7 +196,16 @@ var story = [
             type: 'mapbox',
             sources: ['video_current']
         },
-        legend: '#current-legend'
+        legend: '#current-legend',
+        timeline: {
+            source: 'video_current',
+            values: [
+                'jan', 'fév', 'mar', 'avr', 'mai', 'jun'
+            ],
+            context: [
+                '2016'
+            ]
+        }
     },
     {
         category: 'Les courants',
@@ -206,7 +215,16 @@ var story = [
             type:'mapbox',
             sources: ['video_current']
         },
-        legend: '#current-legend'
+        legend: '#current-legend',
+        timeline: {
+            source: 'video_current',
+            values: [
+                'jan', 'fév', 'mar', 'avr', 'mai', 'jun'
+            ],
+            context: [
+                '2016'
+            ]
+        }
     },
     {
         category: 'Les courants',
@@ -229,7 +247,16 @@ var story = [
             type: 'mapbox',
             sources: ['video_current']
         },
-        legend: '#current-legend'
+        legend: '#current-legend',
+        timeline: {
+            source: 'video_current',
+            values: [
+                'jan', 'fév', 'mar', 'avr', 'mai', 'jun'
+            ],
+            context: [
+                '2016'
+            ]
+        }
     },
     {
         category: 'Les courants',
@@ -256,10 +283,10 @@ var story = [
         timeline: {
             source: 'video_temp',
             values: [
-                'jan', 'fév', 'mar', 'avr', 'mai', 'jun'
+              'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
             ],
             context: [
-                '2016'
+              '2015', '2016'
             ]
         }
     },
@@ -275,10 +302,10 @@ var story = [
         timeline: {
             source: 'video_temp',
             values: [
-                'jan', 'fév', 'mar', 'avr', 'mai', 'jun'
+              'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
             ],
             context: [
-                '2016'
+              '2015', '2016'
             ]
         }
     },
@@ -295,10 +322,10 @@ var story = [
         timeline: {
             source: 'video_temp',
             values: [
-                'jan', 'fév', 'mar', 'avr', 'mai', 'jun'
+              'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
             ],
             context: [
-                '2016'
+              '2015', '2016'
             ]
         }
     },
@@ -315,10 +342,10 @@ var story = [
         timeline: {
             source: 'video_temp',
             values: [
-                'jan', 'fév', 'mar', 'avr', 'mai', 'jun'
+              'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
             ],
             context: [
-                '2016'
+              '2015', '2016'
             ]
         }
     },
@@ -334,10 +361,10 @@ var story = [
         timeline: {
             source: 'video_temp',
             values: [
-                'jan', 'fév', 'mar', 'avr', 'mai', 'jun'
+              'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
             ],
             context: [
-                '2016'
+              '2015', '2016'
             ]
         }
     },
