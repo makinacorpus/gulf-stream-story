@@ -1,7 +1,7 @@
 var index = 0;
-var currentSource = null;
+var currentSource = {};
 var chartThermocline;
-var currentMap = null;
+var currentMap = {};
 var currentMarkers = {};
 var story = [
     {
@@ -589,6 +589,10 @@ function sameArrays(a1, a2) {
 
 function init() {
     var lastCategory = null;
+    var initialCategory = 0;
+    var urlParser = document.createElement('a');
+    urlParser.href = window.location.href ;
+    var urlHash = urlParser.hash;
 
     // Init nav
     console.log('init nav');
@@ -608,12 +612,16 @@ function init() {
     $('.circle-cat').on('click', goToState);
 
     // Load first content
-    changeContent(0);
+    if (urlHash) {
+        initialCategory = urlHash.substring(1);
+        index = parseInt(initialCategory);
+    }
+    changeContent(initialCategory);
 }
 
 function goToNextState() {
   if (index < story.length - 1) {
-      index = index + 1;
+      index = 1 + index;
       changeContent(index);
   }
 }
@@ -631,10 +639,22 @@ function updateLeafletMap(newMap) {
         Mbmap = null;
         currentMap = {};
     }
-    var newZoom = newMap.zoom || currentMap.zoom || 3;
-    var newCenter = newMap.center || currentMap.center || [-60, 0];
-    var newBounds = newMap.maxBounds || currentMap.maxBounds || null;
+    var newZoom = newMap.zoom;
+    var newCenter = newMap.center;
+    var newBounds = newMap.maxBounds;
     var newLayers = newMap.layers;
+
+    if (!newZoom) {
+        newZoom = currentMap ? currentMap.zoom : 3;
+    }
+
+    if (!newCenter) {
+        newCenter = currentMap ? currentMap.center : [-60, 0];
+    }
+
+    if (!newBounds) {
+        newBounds = currentMap ? currentMap.maxBounds : null;
+    }
 
     if (!Lmap) {
         var options = newMap.options || {
@@ -827,7 +847,7 @@ function triggerTimelineAnimation(timeSource) {
 }
 
 function resetTimeline() {
-    if (currentSource) {
+    if (currentSource.id) {
         var currentVideo = currentSource.getVideo();
         currentVideo.removeEventListener('timeupdate', animateTimeline);
         $(currentVideo).remove();
@@ -847,7 +867,7 @@ function hideTimeline() {
 
 function changeContent(i) {
 
-    var state = story[i];
+    var state = story[i] ? story[i] : story[0];
 
     $('.progress .circle').removeClass('active');
     $('.progress .circle').removeClass('passed');
