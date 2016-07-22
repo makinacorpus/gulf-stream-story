@@ -312,6 +312,11 @@ path.leaflet-clickable {
     right: 35px;
 }
 
+.legend-arrow {
+    margin-right: 0.8rem;
+    display: inline-block;
+}
+
 .choropleth-legend div span {
     border-radius: 50%;
     border: 1px solid black;
@@ -343,6 +348,10 @@ path.leaflet-clickable {
 
 #arrow-legend {
     display: none;
+}
+
+#arrow-legend span {
+    vertical-align: middle;
 }
 
 .timeline {
