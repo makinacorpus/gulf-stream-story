@@ -46,6 +46,10 @@ h2 {
     margin: 2rem;
 }
 
+#art {
+    margin-top: 5rem;
+}
+
 #depthSlider {
     display: none;
     position: absolute;

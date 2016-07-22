@@ -6,8 +6,8 @@ var story = [
     {
         category: 'Introduction',
         slug: 'introduction',
-        text: '#**Le Gulf Stream**\n\nDepuis sa découverte, durant le deuxième voyage de Christophe Colomb en 1493, le Gulf Stream a de nombreuses fois fait parler de lui. Benjamin Franklin l’a transformé en voie rapide pour le retour en Europe. Une légende l’a longtemps elevé au statut de chaudière de l’Europe, miraculeux responsable de la différence entre le climat océanique tempéré d’Europe de l’Ouest et le climat continental glacial de la côte est américaine. Récemment, devenu star hollywoodienne, il a fait son apparition dans plusieurs films catastrophe. Porté par cette vague alarmiste, la presse a maladroitement prévu son arrêt et le refroidissement drastique de l’Europe.\n\nMais qu’en est-il réellement? À travers un ensemble de cartes intéractives, nous vous proposons de partir à la découverte de ce véritable fleuve océanique.\n\nThe Gulf Stream - Winslow Homer, 1899, peinture à l’huile',
-
+        text: '#**Le Gulf Stream**\n\nDepuis sa découverte, durant le deuxième voyage de Christophe Colomb en 1493, le Gulf Stream a de nombreuses fois fait parler de lui. Benjamin Franklin l’a transformé en voie rapide pour le retour en Europe. Une légende l’a longtemps elevé au statut de chaudière de l’Europe, miraculeux responsable de la différence entre le climat océanique tempéré d’Europe de l’Ouest et le climat continental glacial de la côte est américaine. Récemment, devenu star hollywoodienne, il a fait son apparition dans plusieurs films catastrophe. Porté par cette vague alarmiste, la presse a maladroitement prévu son arrêt et le refroidissement drastique de l’Europe.\n\nMais qu’en est-il réellement? À travers un ensemble de cartes intéractives, nous vous proposons de partir à la découverte de ce véritable fleuve océanique.',
+        art: 'The Gulf Stream - Winslow Homer, 1899, peinture à l’huile',
         map: {
             type: 'leaflet',
             center: [-60, 0],
@@ -483,7 +483,8 @@ var story = [
     {
         category: 'Conclusion',
         slug: 'conclusion',
-        text: '##Conclusion\n\nMême si le Gulf Stream n’est plus considéré comme la chaudière de l’Europe. Même si les voiliers ne l’empruntent plus pour envoyer le courrier du nouveau monde vers le vieux continent. Même si nous ne devons pas craindre son arrêt brutal et le refroidissement drastique de l’Europe, il n’en reste pas moins un courant remarquable.\n\nLes scientifiques estiment aujourd’hui que sans lui, l’Europe de l’Ouest se rafraîchirait de 4 ou 5°C. Il est un des moteurs de la plupart des grands courants d’Atlantique Nord. Il a une influence en surface mais aussi en profondeur en jouant un rôle déterminant sur la circulation thermohaline. Sa vitesse et son débit en font le fleuve océanique le plus puissant au monde. La climatologie étant un domaine extrêmement complexe, les scientifiques ne sont pas prêt de percer tout ses mystères.\n\nEn conclusion, ce courant majestueux n’a pas fini de faire parler de lui.\n\nSummer Squall - Winslow Homer, 1904, peinture à l’huile',
+        text: '##Conclusion\n\nMême si le Gulf Stream n’est plus considéré comme la chaudière de l’Europe. Même si les voiliers ne l’empruntent plus pour envoyer le courrier du nouveau monde vers le vieux continent. Même si nous ne devons pas craindre son arrêt brutal et le refroidissement drastique de l’Europe, il n’en reste pas moins un courant remarquable.\n\nLes scientifiques estiment aujourd’hui que sans lui, l’Europe de l’Ouest se rafraîchirait de 4 ou 5°C. Il est un des moteurs de la plupart des grands courants d’Atlantique Nord. Il a une influence en surface mais aussi en profondeur en jouant un rôle déterminant sur la circulation thermohaline. Sa vitesse et son débit en font le fleuve océanique le plus puissant au monde. La climatologie étant un domaine extrêmement complexe, les scientifiques ne sont pas prêt de percer tout ses mystères.\n\nEn conclusion, ce courant majestueux n’a pas fini de faire parler de lui.',
+        art: 'Summer Squall - Winslow Homer, 1904, peinture à l’huile',
         map: {
             type: 'leaflet',
             center: [30, 60],
@@ -813,6 +814,11 @@ function changeContent(i) {
     }
     if (state.text) {
         $('#text').html(markdown.toHTML(state.text));
+    }
+    if (state.art) {
+        $('#art').html(markdown.toHTML(state.art));
+    } else {
+        $('#art').html('');
     }
     if (state.displayDepthSlider) {
         $('#depthSlider').css('display', 'block');
