@@ -108,7 +108,6 @@ var story = [
               courant_guyane,
               courant_floride,
               gulfstream,
-              courant_nord_atlantique,
               courant_acores
           ]
         }
