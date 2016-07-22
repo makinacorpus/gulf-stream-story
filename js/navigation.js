@@ -2,6 +2,7 @@ var index = 0;
 var currentSource = null;
 var chartThermocline;
 var currentMap = null;
+var currentMarkers = {};
 var story = [
     {
         category: 'Introduction',
@@ -315,6 +316,7 @@ var story = [
         map: {
             type: 'mapbox',
             sources: ['video_temp'],
+            markers: ['temperature_sampling'],
             setCenter: [-10, 40]
         },
         displayThermocline: true,
@@ -336,6 +338,7 @@ var story = [
         map: {
             type: 'mapbox',
             sources: ['video_temp'],
+            markers: ['temperature_sampling'],
             setCenter: [-20, 40]
         },
         displayThermocline: true,
@@ -675,6 +678,7 @@ function updateLeafletMap(newMap) {
 
 function updateMapboxMap(newMap) {
     var newSources = newMap.sources;
+    var newMarkers = newMap.markers;
 
     if (currentMap && currentMap.type === 'leaflet' && Lmap) {
         if (currentMap.layers) {
@@ -708,6 +712,54 @@ function updateMapboxMap(newMap) {
             Mbmap.setStyle(newStyle);
         }
 
+    }
+
+    if (newMarkers) {
+        var markersToRemove = [];
+        var markersToAdd = [];
+        var oldMarkers = currentMap ? currentMap.markers : null;
+
+        if (oldMarkers && oldMarkers.length > 0) {
+            markersToAdd = newMarkers.filter(function(add) {
+                return oldMarkers.indexOf(add) < 0;
+            });
+            markersToRemove = oldMarkers.filter(function(rem) {
+                return newMarkers.indexOf(rem) < 0;
+            });
+        } else {
+            markersToAdd = newMarkers;
+        }
+
+        for (var j = 0; j < markersToRemove.length; j++) {
+            currentMarkers[markersToRemove[j]].remove();
+            delete currentMarkers[markersToRemove[i]];
+        }
+
+        for (var i = 0; i < markersToAdd.length; i++) {
+            var newImg = document.createElement('img');
+            newImg.src = 'data/images/compass.svg';
+            var label = document.createElement('div');
+            label.className = 'mapbox-label map-label';
+            label.innerHTML = mapboxMarkers[markersToAdd[i]].label;
+            var marker = document.createElement('div');
+            marker.className = 'mapbox-icon-marker';
+            marker.appendChild(label);
+            marker.appendChild(newImg);
+
+            currentMarkers[markersToAdd[i]] = new mapboxgl.Marker(marker)
+                .setLngLat(mapboxMarkers[markersToAdd[i]].coordinates)
+                .addTo(Mbmap);
+        }
+
+    } else {
+        var markersToRemove = currentMap ? currentMap.markers : null;
+        if (markersToRemove && markersToRemove.length > 0) {
+            for (var j = 0; j < markersToRemove.length; j++) {
+                console.log(currentMarkers[markersToRemove[j]]);
+                currentMarkers[markersToRemove[j]].remove();
+                delete currentMarkers[markersToRemove[i]];
+            }
+        }
     }
 
     for (var method in newMap) {
