@@ -24,7 +24,7 @@ var story = [
           type: 'leaflet',
           center: [24, -80.72],
           maxBounds: [[0, -100],[85, 20]],
-          zoom: 4,
+          zoom: 3,
           layers: [neTiles, golfe_mexique]
         }
     },
