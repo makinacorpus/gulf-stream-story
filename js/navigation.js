@@ -1,4 +1,5 @@
 var index = 0;
+var currentSource = null;
 var chartThermocline;
 var currentMap = null;
 var story = [
@@ -721,18 +722,49 @@ function updateTimeline(timeline, map) {
 
     if (timeline && map.sources.indexOf(timeline.source) > -1) {
         var timeSource = timeline.source;
-        Mbmap.once('load', function (ev) {
-            var video = Mbmap.getSource(timeSource).getVideo();
-            var timeline = document.querySelector('.timeline');
-
-            video.addEventListener('timeupdate', animateTimeline);
-        });
+        if (Mbmap._loaded) {
+            Mbmap.on('render', function () {
+                triggerTimelineAnimation(timeSource);
+            });
+        } else {
+            Mbmap.once('load', function (ev) {
+                triggerTimelineAnimation(timeSource);
+            });
+        }
     }
+}
+
+function triggerTimelineAnimation(timeSource) {
+    var newSource = Mbmap.getSource(timeSource);
+    var newVideo = newSource ? newSource.getVideo(): null;
+    var timeline = document.querySelector('.timeline');
+    if (newSource && newVideo && (!currentSource || currentSource.id !== timeSource)) {
+        resetTimeline();
+        currentSource = newSource;
+        Mbmap.off('render', function () {
+            triggerTimelineAnimation(timeSource);
+        });
+        newVideo.addEventListener('timeupdate', animateTimeline);
+    }
+}
+
+function resetTimeline() {
+    if (currentSource) {
+        var currentVideo = currentSource.getVideo();
+        currentVideo.removeEventListener('timeupdate', animateTimeline);
+        $(currentVideo).remove();
+        currentSource = null;
+    }
+
+    $('.timeline-progress').css({
+        'width': '0'
+    });
 }
 
 function hideTimeline() {
     document.querySelector('.timeline').dataset.active = false;
     document.querySelector('.timeline').classList.add('hidden');
+    resetTimeline();
 }
 
 function changeContent(i) {
