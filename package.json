@@ -18,8 +18,7 @@
     "leaflet": "^0.7.7",
     "leaflet-textpath": "git://github.com/makinacorpus/Leaflet.TextPath.git#gh-pages",
     "leaflet.label": "^0.2.4",
-    "mapbox-gl": "0.20.1",
-    "mapbox-gl-leaflet": "https://github.com/mapbox/mapbox-gl-leaflet.git",
+    "mapbox-gl": "0.21.0",
     "markdown": "^0.5.0"
   },
   "devDependencies": {
