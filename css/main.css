@@ -40,8 +40,10 @@ h2 {
     overflow-y: auto;
 }
 
-#text > p > img {
-    width: 100%;
+#text img {
+    display: inline-block;
+    max-width: 150px;
+    margin: 2rem;
 }
 
 #depthSlider {
