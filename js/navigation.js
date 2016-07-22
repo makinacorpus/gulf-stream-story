@@ -7,7 +7,7 @@ var story = [
         category: 'Introduction',
         slug: 'introduction',
         text: '#**Le Gulf Stream**\n\nDepuis sa découverte, durant le deuxième voyage de Christophe Colomb en 1493, le Gulf Stream a de nombreuses fois fait parler de lui.\n\nBenjamin Franklin l’a transformé en voie rapide pour le retour en Europe. Une légende l’a longtemps elevé au statut de chaudière de l’Europe, miraculeux responsable de la différence entre le climat océanique tempéré d’Europe de l’Ouest et le climat continental glacial de la côte est américaine. Récemment, devenu star hollywoodienne, il a fait son apparition dans plusieurs films catastrophe. Porté par cette vague alarmiste, la presse a maladroitement prévu son arrêt et le refroidissement drastique de l’Europe.\n\nMais qu’en est-il réellement? À travers un ensemble de cartes intéractives, nous vous proposons de partir à la découverte de ce véritable fleuve océanique.',
-          art: 'The Gulf Stream - Winslow Homer, 1899, peinture à l’huile',
+        art: 'The Gulf Stream - Winslow Homer, 1899, peinture à l’huile',
         map: {
             type: 'leaflet',
             center: [-60, 0],
@@ -177,7 +177,7 @@ var story = [
     {
         category: 'Les courants',
         slug: 'courants',
-        text: '##Gulf Stream et courants Nord Atlantiques\nLe système climatique est une machine à convertir et à distribuer l’énergie que la Terre reçoit du soleil. L’énergie solaire est transportée par deux fluides : l’atmosphère et l’océan. Ces deux entités sont en contact permanent et ne cessent d’échanger de l’énergie. C’est le couple qu’ils forment qui gère le climat de notre planète.\n\nSuite à la conquète de l’Amérique, le Gulf Stream a été un courant d’intérêt pour les navigateurs. Sa puissance a significativement accéléré le retour des voiliers en Europe. Cette première carte du Gulf Stream datant de 1769 est une commande de Benjamin Franklin. Responsable de l’administration des postes, il souhaitait accélérer le retour du courrier en Grande-Bretagne.',
+        text: '##Gulf Stream et courants Nord Atlantiques\nLe système climatique est une machine à convertir et à distribuer l’énergie que la Terre reçoit du soleil. L’énergie solaire est transportée par deux fluides : l’atmosphère et l’océan. Ces deux entités sont en contact permanent et ne cessent d’échanger de l’énergie. C’est le couple qu’ils forment qui gère le climat de notre planète.\n\nSuite à la conquète de l’Amérique, le Gulf Stream a été un courant d’intérêt pour les navigateurs. Sa puissance a significativement accéléré le retour des voiliers en Europe. Cette première carte du Gulf Stream datant de 1769 a été réalisée suite à une commande de Benjamin Franklin. Responsable de l’administration des postes, il souhaitait accélérer le retour du courrier en Grande-Bretagne.',
         map: {
           type:'leaflet',
           maxBounds: [[-100, -180],[73, 180]],
@@ -210,7 +210,7 @@ var story = [
     {
         category: 'Les courants',
         slug: 'courants',
-        text: '##Gulf Stream et courants Nord Atlantiques\n\nLe Gulf Stream se démarque clairement des courants Nord Atlantique. Sa vitesse et son débit restent inégalés. Jusqu’au Cap Hatteras, canalisé par la pente continentale, il est très linéaire et se comporte comme un jet puissant.\n\n Lorsqu’il prend le large, se créent des méandres de plus en plus sinueux. De grands tourbillons se détachent de part et d’autre du fleuve.\n\n Après les Grands Bancs de Terre Neuve, le Gulf Stream perd ses caractéristiques et prend de nombreuses directions. Ses extensions sont visuellement plus difficiles à suivre car sa puissance a été répartie dans de nombreux courants.',
+        text: '##Gulf Stream et courants Nord Atlantiques\n\nLe Gulf Stream se démarque clairement des courants Nord Atlantique. Sa vitesse et son débit restent inégalés. Jusqu’au Cap Hatteras, canalisé par la pente continentale, il est très linéaire et se comporte comme un jet puissant.\n\n Lorsqu’il prend le large, se créent des méandres de plus en plus sinueux. Observez les grands tourbillons qui se détachent de part et d’autre du fleuve.\n\n Après les Grands Bancs de Terre Neuve, le Gulf Stream perd ses caractéristiques et prend de nombreuses directions. Ses extensions sont visuellement plus difficiles à suivre car sa puissance a été répartie dans de nombreux courants.',
         map: {
             type:'mapbox',
             sources: ['video_current']
@@ -261,7 +261,7 @@ var story = [
     {
         category: 'Les courants',
         slug: 'courants',
-        text: '##Gulf Stream et niveau de l’Océan\n\nL’apport en eau est tellement conséquent dans le Gulf Stream que le niveau de la mer se situe près de 50 cm au-dessus du niveau 0.',
+        text: '##Gulf Stream et niveau de l’Océan\n\nL’apport en eau est tellement conséquent dans le Gulf Stream que le niveau de la mer est près de 50 cm au-dessus du niveau 0.',
         map: {
             type: 'leaflet',
             center: [40, -40],
@@ -352,7 +352,7 @@ var story = [
     {
         category: 'Les températures',
         slug: 'temperatures',
-        text: '##Température\n\nCe phénomène semble aujourd’hui expliquer en grande partie la différence de climat entre les côtes est et ouest de l’Atlantique. Sur l’année, on note une différence moyenne de 15°C entre ces deux côtes. C’est ce qui explique un climat maritime (tempéré) en Europe de l’ouest et aux mêmes latitudes sur le sol américain un climat continental (froid).\n\nLe Gulf Stream a tout de même un impact sur le notre climat. Les scientifiques estiment aujourd’hui que sans lui, l’Europe de l’Ouest se rafraîchirait de 4 ou 5°C.',
+        text: '##Température\n\nCe phénomène semble aujourd’hui expliquer en grande partie la différence de climat entre les côtes est et ouest de l’Atlantique. Sur l’année, on note une différence moyenne de 15°C entre ces deux côtes. C’est ce qui explique un climat maritime (tempéré) en Europe de l’ouest et aux mêmes latitudes sur le sol américain un climat continental (froid).\n\nLe Gulf Stream a tout de même un impact sur notre climat. Les scientifiques estiment aujourd’hui que sans lui, l’Europe de l’Ouest se rafraîchirait de 4 ou 5°C.',
         map: {
             type: 'mapbox',
             sources: ['video_temp']
