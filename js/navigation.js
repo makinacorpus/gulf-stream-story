@@ -705,9 +705,6 @@ function updateMapboxMap(newMap) {
                     "type": 'raster',
                     "source": newSources[i]
                 });
-                // Mbmap.once('style.load', function () {
-                //     Mbmap.style.sources[newSources[i]].attribution = 'Source';
-                // });
             }
             Mbmap.setStyle(newStyle);
         }
