@@ -316,7 +316,7 @@ var story = [
         map: {
             type: 'mapbox',
             sources: ['video_temp'],
-            markers: ['temperature_sampling'],
+            // markers: ['temperature_sampling'],
             setCenter: [-10, 40]
         },
         displayThermocline: true,
@@ -338,7 +338,7 @@ var story = [
         map: {
             type: 'mapbox',
             sources: ['video_temp'],
-            markers: ['temperature_sampling'],
+            // markers: ['temperature_sampling'],
             setCenter: [-20, 40]
         },
         displayThermocline: true,

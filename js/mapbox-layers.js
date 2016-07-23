@@ -49,9 +49,9 @@ var mapboxLayers = {
     }
 };
 
-var mapboxMarkers = {
-    temperature_sampling: {
-        coordinates: [-20, 40],
-        label: 'Point de mesure de la température'
-    }
-}
+// var mapboxMarkers = {
+//     temperature_sampling: {
+//         coordinates: [-20, 40],
+//         label: 'Point de mesure de la température'
+//     }
+// }
