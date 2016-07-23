@@ -1,7 +1,8 @@
 var index = 0;
-var currentSource = null;
+var currentSource = {};
 var chartThermocline;
-var currentMap = null;
+var currentMap = {};
+var currentMarkers = {};
 var story = [
     {
         category: 'Introduction',
@@ -108,7 +109,6 @@ var story = [
               courant_guyane,
               courant_floride,
               gulfstream,
-              courant_nord_atlantique,
               courant_acores
           ]
         }
@@ -315,7 +315,9 @@ var story = [
         text: '##Température\n\nContrairement à l’atmosphère qui utilise très rapidement l’énergie qu’on lui met à disposition, l’océan a une grande mémoire. L’été, le rayonnement solaire intense échauffe les couches de surface. Il y a création d’un thermocline qui stratifie les eaux océaniques. L’océan stocke alors l’énergie thermique issue du rayonnement solaire d’été dans ses couches profondes.\n\nSur le graphique ci-dessous vous pouvez observer la thermocline saisonnière. Il s’agit de la zone de chute de température entre les couches de surface et les couches profondes. Si cette thermocline est importante, c’est à dire comprend une grande gamme de températures, les eaux de surface et les eaux profondes sont bien stratifiées et ne se mélangent pas.',
         map: {
             type: 'mapbox',
-            sources: ['video_temp']
+            sources: ['video_temp'],
+            markers: ['temperature_sampling'],
+            setCenter: [-10, 40]
         },
         displayThermocline: true,
         legend: '#temperature-legend',
@@ -335,7 +337,9 @@ var story = [
         text: '##Température\n\nObservez sur le graphique l’évolution du thermocline en fonction des mois. En partant d’août 2015 vous remarquerez qu’au fil des mois, la thermocline est de plus en plus petite jusqu’à sa rupture au mois de mars 2016.\n\nEn hivers le rayonnement solaire est beaucoup plus faible et les vents d’ouest se renforcent. Il y a rupture du thermocline qui remet à disposition des couches de surface le stock d’été. L’océan transmet cette énergie à l’atmosphère. Les vents d’ouest la récupèrent et l’emportent en direction de l’Europe. L’ouest de ce continent sera le seul bénéficiaire de la mémoire calorifique estivale de l’océan Atlantique.',
         map: {
             type: 'mapbox',
-            sources: ['video_temp']
+            sources: ['video_temp'],
+            markers: ['temperature_sampling'],
+            setCenter: [-20, 40]
         },
         displayThermocline: true,
         legend: '#temperature-legend',
@@ -585,6 +589,10 @@ function sameArrays(a1, a2) {
 
 function init() {
     var lastCategory = null;
+    var initialCategory = 0;
+    var urlParser = document.createElement('a');
+    urlParser.href = window.location.href ;
+    var urlHash = urlParser.hash;
 
     // Init nav
     console.log('init nav');
@@ -604,12 +612,16 @@ function init() {
     $('.circle-cat').on('click', goToState);
 
     // Load first content
-    changeContent(0);
+    if (urlHash) {
+        initialCategory = urlHash.substring(1);
+        index = parseInt(initialCategory);
+    }
+    changeContent(initialCategory);
 }
 
 function goToNextState() {
   if (index < story.length - 1) {
-      index = index + 1;
+      index = 1 + index;
       changeContent(index);
   }
 }
@@ -627,10 +639,22 @@ function updateLeafletMap(newMap) {
         Mbmap = null;
         currentMap = {};
     }
-    var newZoom = newMap.zoom || currentMap.zoom || 3;
-    var newCenter = newMap.center || currentMap.center || [-60, 0];
-    var newBounds = newMap.maxBounds || currentMap.maxBounds || null;
+    var newZoom = newMap.zoom;
+    var newCenter = newMap.center;
+    var newBounds = newMap.maxBounds;
     var newLayers = newMap.layers;
+
+    if (!newZoom) {
+        newZoom = currentMap ? currentMap.zoom : 3;
+    }
+
+    if (!newCenter) {
+        newCenter = currentMap ? currentMap.center : [-60, 0];
+    }
+
+    if (!newBounds) {
+        newBounds = currentMap ? currentMap.maxBounds : null;
+    }
 
     if (!Lmap) {
         var options = newMap.options || {
@@ -674,6 +698,7 @@ function updateLeafletMap(newMap) {
 
 function updateMapboxMap(newMap) {
     var newSources = newMap.sources;
+    var newMarkers = newMap.markers;
 
     if (currentMap && currentMap.type === 'leaflet' && Lmap) {
         if (currentMap.layers) {
@@ -700,13 +725,58 @@ function updateMapboxMap(newMap) {
                     "type": 'raster',
                     "source": newSources[i]
                 });
-                // Mbmap.once('style.load', function () {
-                //     Mbmap.style.sources[newSources[i]].attribution = 'Source';
-                // });
             }
             Mbmap.setStyle(newStyle);
         }
 
+    }
+
+    if (newMarkers) {
+        var markersToRemove = [];
+        var markersToAdd = [];
+        var oldMarkers = currentMap ? currentMap.markers : null;
+
+        if (oldMarkers && oldMarkers.length > 0) {
+            markersToAdd = newMarkers.filter(function(add) {
+                return oldMarkers.indexOf(add) < 0;
+            });
+            markersToRemove = oldMarkers.filter(function(rem) {
+                return newMarkers.indexOf(rem) < 0;
+            });
+        } else {
+            markersToAdd = newMarkers;
+        }
+
+        for (var j = 0; j < markersToRemove.length; j++) {
+            currentMarkers[markersToRemove[j]].remove();
+            delete currentMarkers[markersToRemove[i]];
+        }
+
+        for (var i = 0; i < markersToAdd.length; i++) {
+            var newImg = document.createElement('img');
+            newImg.src = 'data/images/compass.svg';
+            var label = document.createElement('div');
+            label.className = 'mapbox-label map-label';
+            label.innerHTML = mapboxMarkers[markersToAdd[i]].label;
+            var marker = document.createElement('div');
+            marker.className = 'mapbox-icon-marker';
+            marker.appendChild(label);
+            marker.appendChild(newImg);
+
+            currentMarkers[markersToAdd[i]] = new mapboxgl.Marker(marker)
+                .setLngLat(mapboxMarkers[markersToAdd[i]].coordinates)
+                .addTo(Mbmap);
+        }
+
+    } else {
+        var markersToRemove = currentMap ? currentMap.markers : null;
+        if (markersToRemove && markersToRemove.length > 0) {
+            for (var j = 0; j < markersToRemove.length; j++) {
+                console.log(currentMarkers[markersToRemove[j]]);
+                currentMarkers[markersToRemove[j]].remove();
+                delete currentMarkers[markersToRemove[i]];
+            }
+        }
     }
 
     for (var method in newMap) {
@@ -777,7 +847,7 @@ function triggerTimelineAnimation(timeSource) {
 }
 
 function resetTimeline() {
-    if (currentSource) {
+    if (currentSource.id) {
         var currentVideo = currentSource.getVideo();
         currentVideo.removeEventListener('timeupdate', animateTimeline);
         $(currentVideo).remove();
@@ -797,7 +867,7 @@ function hideTimeline() {
 
 function changeContent(i) {
 
-    var state = story[i];
+    var state = story[i] ? story[i] : story[0];
 
     $('.progress .circle').removeClass('active');
     $('.progress .circle').removeClass('passed');
@@ -838,12 +908,18 @@ function changeContent(i) {
         $('.right-panel').removeClass('col-md-3');
         $('.right-panel').addClass('col-md-6');
         createGraphThermocline();
+        if (Mbmap) {
+            Mbmap.resize();
+        }
     } else {
         $('.left-panel').removeClass('col-md-6');
         $('.left-panel').addClass('col-md-9');
         $('.right-panel').removeClass('col-md-6');
         $('.right-panel').addClass('col-md-3');
         removeGraphThermocline();
+        if (Mbmap) {
+            Mbmap.resize();
+        }
     }
     if (state.legend) {
         $('.legend').css('display', 'none');

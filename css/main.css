@@ -188,6 +188,8 @@ path.leaflet-clickable {
   left: 50%;
   content: '';
   background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: center center;
   display: block;
   width: 26px;
   height: 26px;
@@ -208,7 +210,7 @@ path.leaflet-clickable {
 }
 
 .circle-cat.vents::after {
-  background-image: url('../images/vents-active.svg');
+  background-image: url('../images/wind-active.svg');
 }
 
 .circle-cat.active.courants::after,
@@ -228,7 +230,7 @@ path.leaflet-clickable {
 
 .circle-cat.active.vents::after,
 .circle-cat.passed.vents::after {
-  background-image: url('../images/vents.svg');
+  background-image: url('../images/wind.svg');
 }
 
 .circle-cat.introduction::after {
@@ -250,12 +252,12 @@ path.leaflet-clickable {
 }
 
 .circle-cat.credits::after {
-  background-image: url('../images/credits-active.svg');
+  background-image: url('../images/document-active.svg');
 }
 
 .circle-cat.active.credits::after,
 .circle-cat.passed.credits::after {
-  background-image: url('../images/credits.svg');
+  background-image: url('../images/document.svg');
 }
 
 .next-button {
@@ -305,11 +307,54 @@ path.leaflet-clickable {
     margin: 0 0 10px;
 }
 
+.mapbox-icon-marker:hover .mapbox-label, .mapbox-icon-marker:focus .mapbox-label {
+    display: block;
+}
+
+.mapbox-icon-marker {
+    margin-left: -20px;
+    margin-top: -40px;
+    width: 40px;
+    height: 40px;
+}
+
+.mapbox-icon-marker img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.mapbox-label {
+    position: absolute;
+    bottom: 0;
+    left: calc(100% - -10px);
+    display: none;
+    min-width: 150px;
+    padding: 15px;
+    border-radius: 3px;
+}
+
+.mapbox-label::before {
+    content: "";
+    position: absolute;
+    top: 24px;
+    left: -10px;
+    width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-right: 10px solid #2D728F;
+	border-bottom: 10px solid transparent;
+}
+
 .legend {
     bottom: 30px;
     padding: 15px;
     position: absolute;
     right: 35px;
+}
+
+.legend-arrow {
+    margin-right: 0.8rem;
+    display: inline-block;
 }
 
 .choropleth-legend div span {
@@ -343,6 +388,10 @@ path.leaflet-clickable {
 
 #arrow-legend {
     display: none;
+}
+
+#arrow-legend span {
+    vertical-align: middle;
 }
 
 .timeline {

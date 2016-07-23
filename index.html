@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="node_modules/mapbox-gl/dist/mapbox-gl.css" />
     <link rel="stylesheet" href="node_modules/bootstrap-slider/dist/css/bootstrap-slider.min.css" />
-    <link rel="stylesheet" href="node_modules/c3/c3.min.css" />
     <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
@@ -78,12 +77,12 @@
                 </div>
                 <div id='arrow-legend' class='legend map-widgets'>
                     <h4>Vitesse des courants</h4>
-                    <div><span style='color: #7f0000; font-size: 51px'>➡</span>2 m/s</div>
-                    <div><span style='color: #7f0000; font-size: 31px'>➡</span>1 m/s</div>
-                    <div><span style='color: #7f0000; font-size: 17px'>➡</span>0.3 m/s</div>
-                    <div><span style='color: #e7533a; font-size: 15px'>➡</span>0.2 m/s</div>
-                    <div><span style='color: #fdc38d; font-size: 13px'>➡</span>0.1 m/s</div>
-                    <div><span style='color: #fff7ec; font-size: 11px'>➡</span>0 m/s</div>
+                    <div><span class="legend-arrow" style='color: #7f0000; font-size: 51px'>➡</span><span>2 m/s</span></div>
+                    <div><span class="legend-arrow" style='color: #7f0000; font-size: 31px'>➡</span><span>1 m/s</span></div>
+                    <div><span class="legend-arrow" style='color: #7f0000; font-size: 17px'>➡</span><span>0.3 m/s</span></div>
+                    <div><span class="legend-arrow" style='color: #e7533a; font-size: 15px'>➡</span><span>0.2 m/s</span></div>
+                    <div><span class="legend-arrow" style='color: #fdc38d; font-size: 13px'>➡</span><span>0.1 m/s</span></div>
+                    <div><span class="legend-arrow" style='color: #fff7ec; font-size: 11px'>➡</span><span>0 m/s</span></div>
                 </div>
 
                 <div class="map-widgets timeline hidden" data-active="false">
@@ -105,15 +104,12 @@
 
     <script src="node_modules/leaflet/dist/leaflet.js"></script>
     <script src="node_modules/mapbox-gl/dist/mapbox-gl.js"></script>
-    <script src="node_modules/mapbox-gl-leaflet/leaflet-mapbox-gl.js"></script>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="node_modules/leaflet-textpath/leaflet.textpath.js"></script>
     <script src="node_modules/markdown/lib/markdown.js"></script>
     <script src="node_modules/chroma-js/chroma.min.js"></script>
     <script src="node_modules/bootstrap-slider/dist/bootstrap-slider.min.js"></script>
-    <script src="node_modules/c3/c3.min.js"></script>
-    <script src="node_modules/d3/d3.min.js"></script>
     <script src="node_modules/leaflet.label/dist/leaflet.label.js"></script>
     <script src="node_modules/highcharts/highcharts.js"></script>
     <script src="js/mapbox-layers.js"></script>

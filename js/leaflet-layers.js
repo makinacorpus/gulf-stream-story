@@ -54,18 +54,18 @@ $.getJSON("data/geojson/isthme_panama.geojson", function (data) {
 
 var courant_guyane = L.geoJson(null, {
     style: {
-        weight: 15,
+        weight: 8,
         opacity: 1,
-        color: '#006FFF'
+        color: '#337ab7'
     },
     onEachFeature: function (feature, layer) {
         layer.setText(' \u263d ', {
             repeat: true,
-            offset: 7,
+            offset: 4,
             attributes: {
                 'fill': '#BDDAFF',
                 'font-weight': 'bold',
-                'font-size': '19'
+                'font-size': '12'
             }
         });
     }
@@ -79,9 +79,9 @@ $.getJSON("data/geojson/courant_de_guyane.geojson", function (data) {
 
 var thermohaline_cold = L.geoJson(null, {
     style: {
-        weight: 15,
+        weight: 8,
         opacity: 1,
-        color: '#006FFF'
+        color: '#337ab7'
     },
     onEachFeature: function (feature, layer) {
         layer.setText('   \u25b6   ', {
@@ -105,7 +105,7 @@ $.getJSON("data/geojson/thermohaline_cold.geojson", function (data) {
 
 var thermohaline_hot = L.geoJson(null, {
     style: {
-        weight: 15,
+        weight: 8,
         opacity: 1,
         color: '#FF0000'
     },
@@ -143,20 +143,20 @@ $.getJSON("data/geojson/pente_continentale.geojson", function (data) {
 
 var courant_floride = L.geoJson(null, {
     style: {
-        weight: 15,
+        weight: 8,
         opacity: 1,
-        color: '#0000D5'
+        color: '#0b4c5f'
     },
 //\u2652 \u263e \u2312 \u2322 \u23d6 \u25dc \u25dd
     onEachFeature: function (feature, layer) {
         layer.setText(' \u263d ', {
             repeat: true,
-            offset: 7,
+            offset: 4,
             attributes: {
                 //"style": "writing-mode: tb-rl; glyph-orientation-vertical: 180;",
                 'fill': '#C8CFEB',
                 'font-weight': 'bold',
-                'font-size': '19'
+                'font-size': '12'
             }
         });
     }
@@ -174,18 +174,18 @@ var cap_hatteras = L.marker([35,-75.33], {icon: point_interet}).bindLabel("<img 
 
  var gulfstream = L.geoJson(null, {
     style: {
-        weight: 15,
+        weight: 8,
         opacity: 1,
-        color: '#0000D5'
+        color: '#0b4c5f'
     },
     onEachFeature: function (feature, layer) {
         layer.setText(' \u263d ', {
             repeat: true,
-            offset: 7,
+            offset: 4,
             attributes: {
                 'fill': '#C8CFEB',
                 'font-weight': 'bold',
-                'font-size': '19'
+                'font-size': '12'
             }
         });
     }
@@ -203,18 +203,18 @@ var grands_bancs_de_terre_neuve = L.marker([43.19,-50.29], {icon: point_interet}
 
 var courant_nord_atlantique = L.geoJson(null, {
     style: {
-        weight: 15,
+        weight: 8,
         opacity: 1,
-        color: '#006FFF'
+        color: '#337ab7'
     },
     onEachFeature: function (feature, layer) {
         layer.setText(' \u263d ', {
             repeat: true,
-            offset: 7,
+            offset: 4,
             attributes: {
                 'fill': '#BDDAFF',
                 'font-weight': 'bold',
-                'font-size': '19'
+                'font-size': '12'
             }
         });
     }
@@ -228,18 +228,18 @@ $.getJSON("data/geojson/courant_nord_atlantique.geojson", function (data) {
 
 var courant_acores = L.geoJson(null, {
     style: {
-        weight: 15,
+        weight: 8,
         opacity: 1,
-        color: '#006FFF'
+        color: '#337ab7'
     },
     onEachFeature: function (feature, layer) {
         layer.setText(' \u263d ', {
             repeat: true,
-            offset: 7,
+            offset: 4,
             attributes: {
                 'fill': '#BDDAFF',
                 'font-weight': 'bold',
-                'font-size': '19'
+                'font-size': '12'
             }
         });
     }
@@ -253,18 +253,18 @@ $.getJSON("data/geojson/courant_des_acores.geojson", function (data) {
 
 var courant_canaries = L.geoJson(null, {
     style: {
-        weight: 15,
+        weight: 8,
         opacity: 1,
-        color: '#006FFF'
+        color: '#337ab7'
     },
     onEachFeature: function (feature, layer) {
         layer.setText(' \u263d ', {
             repeat: true,
-            offset: 7,
+            offset: 4,
             attributes: {
                 'fill': '#BDDAFF',
                 'font-weight': 'bold',
-                'font-size': '19'
+                'font-size': '12'
             }
         });
     }
@@ -280,18 +280,18 @@ $.getJSON("data/geojson/courant_des_canaries.geojson", function (data) {
 
 var groenland = L.geoJson(null, {
     style: {
-        weight: 15,
+        weight: 8,
         opacity: 1,
-        color: '#006FFF'
+        color: '#337ab7'
     },
     onEachFeature: function (feature, layer) {
         layer.setText(' \u263d ', {
             repeat: true,
-            offset: 7,
+            offset: 4,
             attributes: {
                 'fill': '#BDDAFF',
                 'font-weight': 'bold',
-                'font-size': '19'
+                'font-size': '12'
             }
         });
     }
@@ -305,18 +305,18 @@ $.getJSON("data/geojson/groenland.geojson", function (data) {
 
 var derive_nord_atlantique_1 = L.geoJson(null, {
     style: {
-        weight: 15,
+        weight: 8,
         opacity: 1,
-        color: '#006FFF'
+        color: '#337ab7'
     },
     onEachFeature: function (feature, layer) {
         layer.setText(' \u263d ', {
             repeat: true,
-            offset: 7,
+            offset: 4,
             attributes: {
                 'fill': '#BDDAFF',
                 'font-weight': 'bold',
-                'font-size': '19'
+                'font-size': '12'
             }
         });
     }
@@ -332,18 +332,18 @@ $.getJSON("data/geojson/derive_nord_atlantique_1.geojson", function(data) {
 
 var derive_nord_atlantique_2 = L.geoJson(null, {
     style: {
-        weight: 15,
+        weight: 8,
         opacity: 1,
-        color: '#006FFF'
+        color: '#337ab7'
     },
     onEachFeature: function(feature, layer) {
         layer.setText(' \u263d ', {
             repeat: true,
-            offset: 7,
+            offset: 4,
             attributes: {
                 'fill': '#BDDAFF',
                 'font-weight': 'bold',
-                'font-size': '19'
+                'font-size': '12'
             }
         });
     }
