@@ -82,7 +82,7 @@ var story = [
     {
         category: 'Introduction',
         slug: 'introduction',
-        text: '##Les Grands Bancs de Terre Neuve\nEn arrivant aux Grands Bancs de Terre Neuve, notre goutte d’eau observe la mort du Gulf Stream. C’est le chaos du large qui en a finalement eu raison. Le fleuve océanique a perdu ses caractéristiques qui le rendait si particulier. Scientifiquement parlant, sa course s’achève vers 40°N 50°W, mais le mouvent des masses d’eau ne s’arrête pas pour autant.\n\nPlus libre, notre goutte d’eau va rapidement se retrouver confrontée à des chemins multiples.',
+        text: '##Les Grands Bancs de Terre-Neuve\nEn arrivant aux Grands Bancs de Terre-Neuve, notre goutte d’eau observe la mort du Gulf Stream. C’est le chaos du large qui en a finalement eu raison. Le fleuve océanique a perdu les caractéristiques qui le rendait si particulier. Scientifiquement parlant, sa course s’achève vers 40°N 50°W, mais le mouvement des masses d’eau ne s’arrête pas pour autant.\n\nPlus libre, notre goutte d’eau va rapidement se retrouver confrontée à des chemins multiples.',
         map: {
           type:'leaflet',
           center: [43.19, -50.3],
