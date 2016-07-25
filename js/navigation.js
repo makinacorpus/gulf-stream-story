@@ -116,7 +116,7 @@ var story = [
     {
         category: 'Introduction',
         slug: 'introduction',
-        text: '##Le courant des Canaries\nAutre possibilité, notre goutte d’eau peut être entraînée par le courant des Canaries. L’anticyclone des Açores est encore une fois le moteur du courant des Canaries. La première extension du courant des Canaries finit sa course dans le courant de Guyane. C’est donc un autre retour à la case départ. \n\nLe courant de Guinée, seconde extension du courant des Canaries, sort de l’influence de l’anticyclone des Açores et emporte notre goutte d’eau le long des côtes Africaines vers l’équateur.',
+        text: '##Le courant des Canaries\nAutre possibilité, notre goutte d’eau peut être entraînée par le courant des Canaries. L’anticyclone des Açores est encore une fois le moteur du courant des Canaries. La première extension du courant des Canaries finit sa course dans le courant de Guyane. C’est donc un autre retour à la case départ. \n\nLe courant de Guinée, seconde extension du courant des Canaries, sort de l’influence de l’anticyclone des Açores et emporte notre goutte d’eau le long des côtes africaines vers l’Équateur.',
         map: {
           type:'leaflet',
           center: [29.53, -45],
