@@ -82,7 +82,7 @@ var story = [
     {
         category: 'Introduction',
         slug: 'introduction',
-        text: '##Les Grands Bancs de Terre Neuve\nEn arrivant aux Grands Bancs de Terre Neuve, notre goutte d’eau observe la mort du Gulf Stream. C’est le chaos du large qui en a finalement eu raison. Le fleuve océanique a perdu ses caractéristiques qui le rendait si particulier. Scientifiquement parlant, sa course s’achève vers 40°N 50°W, mais le mouvent des masses d’eau ne s’arrête pas pour autant.\n\nPlus libre, notre goutte d’eau va rapidement se retrouver confrontée à des chemins multiples.',
+        text: '##Les Grands Bancs de Terre-Neuve\nEn arrivant aux Grands Bancs de Terre-Neuve, notre goutte d’eau observe la mort du Gulf Stream. C’est le chaos du large qui en a finalement eu raison. Le fleuve océanique a perdu les caractéristiques qui le rendait si particulier. Scientifiquement parlant, sa course s’achève vers 40°N 50°W, mais le mouvement des masses d’eau ne s’arrête pas pour autant.\n\nPlus libre, notre goutte d’eau va rapidement se retrouver confrontée à des chemins multiples.',
         map: {
           type:'leaflet',
           center: [43.19, -50.3],
@@ -116,7 +116,7 @@ var story = [
     {
         category: 'Introduction',
         slug: 'introduction',
-        text: '##Le courant des Canaries\nAutre possibilité, notre goutte d’eau peut être entraînée par le courant des Canaries. L’anticyclone des Açores est encore une fois le moteur du courant des Canaries. La première extension du courant des Canaries finit sa course dans le courant de Guyane. C’est donc un autre retour à la case départ. \n\nLe courant de Guinée, seconde extension du courant des Canaries, sort de l’influence de l’anticyclone des Açores et emporte notre goutte d’eau le long des côtes Africaines vers l’équateur.',
+        text: '##Le courant des Canaries\nAutre possibilité, notre goutte d’eau peut être entraînée par le courant des Canaries. L’anticyclone des Açores est encore une fois le moteur du courant des Canaries. La première extension du courant des Canaries finit sa course dans le courant de Guyane. C’est donc un autre retour à la case départ. \n\nLe courant de Guinée, seconde extension du courant des Canaries, sort de l’influence de l’anticyclone des Açores et emporte notre goutte d’eau le long des côtes africaines vers l’Équateur.',
         map: {
           type:'leaflet',
           center: [29.53, -45],
@@ -135,7 +135,7 @@ var story = [
     {
         category: 'Introduction',
         slug: 'introduction',
-        text: '##Cap sur le Groenland\nNotre goutte d’eau ne tombe pas fatalement sous l’emprise de l’anticyclone des Açores. Elle peut aussi être attirée par sa sœur nordique, la dépression d’Islande, qui tourne dans le sens inverse des aiguilles d’une montre. Encore une fois, de nombreux choix s’offrent à elle. Elle peut mettre le cap vers l’Islande et le Groenland. En suivant ce chemin et en passant par la mer du Labrador, elle pourrait de nouveau être confronté au Gulf Stream.',
+        text: '##Cap sur le Groenland\nNotre goutte d’eau ne tombe pas fatalement sous l’emprise de l’anticyclone des Açores. Elle peut aussi être attirée par sa sœur nordique, la dépression d’Islande, qui tourne dans le sens inverse des aiguilles d’une montre. Encore une fois, de nombreux choix s’offrent à elle. Elle peut mettre le cap vers l’Islande et le Groenland. En suivant ce chemin et en passant par la mer du Labrador, elle pourrait de nouveau être confrontée au Gulf Stream.',
         map: {
           type:'leaflet',
           center: [56, -34.91],
@@ -155,7 +155,7 @@ var story = [
     {
         category: 'Introduction',
         slug: 'introduction',
-        text: '##La dérive Nord Atlantique\nAu delà de l’influence du vent qui créé les courants de surface, un nouveau mécanisme, la pompe thermohaline, attire notre goutte d’eau vers le Nord de l’Europe. Il essaye petit à petit de l’entraîner vers les abysses. Nous étudierons ce phénomène un peu plus tard. En suivant cette voie, notre goutte d’eau a de fortes chances de voguer vers la mer Baltique, ou de longer les côtes Norvégiennes pour continuer sa course dans l’océan Arctique.',
+        text: '##La dérive Nord Atlantique\nAu delà de l’influence du vent qui créé les courants de surface, un nouveau mécanisme, la pompe thermohaline, attire notre goutte d’eau vers le nord de l’Europe. Elle essaye petit à petit de l’entraîner vers les abysses. Nous étudierons ce phénomène un peu plus tard. En suivant cette voie, notre goutte d’eau a de fortes chances de voguer vers la mer Baltique, ou de longer les côtes norvégiennes pour continuer sa course dans l’océan Arctique.',
         map: {
           type:'leaflet',
           center: [57, -12],
