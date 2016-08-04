@@ -2,6 +2,7 @@
   var $ = window.$;
   var mapboxgl = window.mapboxgl;
   var markdown = window.markdown;
+  var gulfStream;
 
   var sameArrays = window.sameArrays = function sameArrays(a1, a2) {
     return (a1.length === a2.length) && a1.every(function (element, index) {
@@ -297,8 +298,8 @@
           marker.appendChild(newImg);
 
           app.currentMarkers[markersToAdd[i]] = new mapboxgl.Marker(marker)
-                    .setLngLat(app.mapboxLayers.mapboxMarkers[markersToAdd[i]].coordinates)
-                    .addTo(app.mapService.Mbmap);
+            .setLngLat(app.mapboxLayers.mapboxMarkers[markersToAdd[i]].coordinates)
+            .addTo(app.mapService.Mbmap);
         }
       } else {
         var markersToRemove = app.currentMap ? app.currentMap.markers : null;
@@ -331,17 +332,22 @@
     app.updateTimeline = function updateTimeline(timeline, map) {
       var valuesLength = timeline.values.length;
       var contextLength = timeline.context.length;
+      var valueElement = null;
+      var contextElement = null;
+      var timeSource = null;
+      var i = 0;
+      var j = 0;
 
       document.querySelector('.timeline-values').innerHTML = '';
-      for (var i = 0; i < valuesLength; i++) {
-        var valueElement = document.createElement('li');
+      for (i = 0; i < valuesLength; i++) {
+        valueElement = document.createElement('li');
         valueElement.innerHTML = timeline.values[i];
         document.querySelector('.timeline-values').appendChild(valueElement);
       }
 
       document.querySelector('.timeline-context').innerHTML = '';
-      for (var j = 0; j < contextLength; j++) {
-        var contextElement = document.createElement('li');
+      for (j = 0; j < contextLength; j++) {
+        contextElement = document.createElement('li');
         contextElement.innerHTML = timeline.context[j];
         document.querySelector('.timeline-context').appendChild(contextElement);
       }
@@ -350,7 +356,7 @@
       document.querySelector('.timeline').classList.remove('hidden');
 
       if (timeline && map.sources.indexOf(timeline.source) > -1) {
-        var timeSource = timeline.source;
+        timeSource = timeline.source;
         if (app.mapService.Mbmap._loaded) {
           app.mapService.Mbmap.on('render', function () {
             app.triggerTimelineAnimation(timeSource);
@@ -366,7 +372,6 @@
     app.triggerTimelineAnimation = function triggerTimelineAnimation(timeSource) {
       var newSource = app.mapService.Mbmap.getSource(timeSource);
       var newVideo = newSource ? newSource.getVideo() : null;
-      var timeline = document.querySelector('.timeline');
       if (newSource && newVideo && (!app.currentSource || app.currentSource.id !== timeSource)) {
         app.resetTimeline();
         app.currentSource = newSource;
@@ -378,6 +383,7 @@
     };
 
     app.resetTimeline = function resetTimeline() {
+      var currentVideo = null;
       if (app.currentSource.id) {
         var currentVideo = app.currentSource.getVideo();
         currentVideo.removeEventListener('timeupdate', app.animateTimeline);
@@ -398,12 +404,13 @@
 
     app.changeContent = function changeContent(i) {
       var state = app.stories[i] ? app.stories[i] : app.stories[0];
+      var j = 0;
 
       $('.progress .circle').removeClass('active');
       $('.progress .circle').removeClass('passed');
       $('.progress .circle#progress-item-' + i).addClass('active');
 
-      for (var j = 0; j < i; j++) {
+      for (j = 0; j < i; j++) {
         $('.progress .circle#progress-item-' + j).addClass('passed');
       }
 
@@ -422,7 +429,7 @@
       }
       if (state.displayDepthSlider) {
         $('#depthSlider').css('display', 'block');
-        var slider = $('#depthSliderInput').slider({
+        $('#depthSliderInput').slider({
           value: 0,
           ticks: [0, 1, 2, 3, 4, 5, 6],
           tooltip: 'hide',
@@ -524,13 +531,17 @@
                 mouseOver: function (e) {
                   var name = e.target.series.name;
                   var type = e.target.series.options.type;
-                  if (type === 'line') {
-                    var chart = $('#container').highcharts();
-                    var seriesLength = chart.series.length;
-                    var plotBandsValues = app.plotBandsMonths[name];
+                  var chart;
+                  var plotBandsValues;
+                  var plotBand;
+                  var band;
 
-                    for (var band in app.plotBands) {
-                      var plotBand = app.plotBands[band];
+                  if (type === 'line') {
+                    chart = $('#container').highcharts();
+                    plotBandsValues = app.plotBandsMonths[name];
+
+                    for (band in app.plotBands) {
+                      plotBand = app.plotBands[band];
                       plotBand.from = plotBandsValues[band + '_from'];
                       plotBand.to = plotBandsValues[band + '_to'];
                       chart.xAxis[0].addPlotBand(plotBand);
@@ -538,12 +549,12 @@
                   }
                 },
                 mouseOut: function (e) {
-                  var name = e.target.series.name;
                   var type = e.target.series.options.type;
+                  var chart;
+                  var band;
                   if (type === 'line') {
-                    var chart = $('#container').highcharts();
-                    var seriesLength = chart.series.length;
-                    for (var band in app.plotBands) {
+                    chart = $('#container').highcharts();
+                    for (band in app.plotBands) {
                       chart.xAxis[0].removePlotBand('plot-band-' + band);
                     }
                   }
@@ -655,7 +666,7 @@
       }
     };
   };
-}(window));
 
-var app = new window.App();
-app.init();
+  gulfStream = new window.App();
+  gulfStream.init();
+}(window));
