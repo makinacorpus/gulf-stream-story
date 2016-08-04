@@ -378,15 +378,15 @@
         app.mapService.Mbmap.off('render', function () {
           triggerTimelineAnimation(timeSource);
         });
-        newVideo.addEventListener('timeupdate', app.animateTimeline);
+        newVideo.addEventListener('timeupdate', app.mapService.animateTimeline);
       }
     };
 
     app.resetTimeline = function resetTimeline() {
       var currentVideo = null;
       if (app.currentSource.id) {
-        var currentVideo = app.currentSource.getVideo();
-        currentVideo.removeEventListener('timeupdate', app.animateTimeline);
+        currentVideo = app.currentSource.getVideo();
+        currentVideo.removeEventListener('timeupdate', app.mapService.animateTimeline);
         $(currentVideo).remove();
         app.currentSource = null;
       }
