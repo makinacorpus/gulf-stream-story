@@ -193,15 +193,15 @@
         sources: ['video_current']
       },
       legend: '#current-legend',
-      timeline: {
-        source: 'video_current',
-        values: [
-          'jan', 'fév', 'mar', 'avr', 'mai', 'jun'
-        ],
-        context: [
-          '2016'
-        ]
-      }
+      // timeline: {
+      //   source: 'video_current',
+      //   values: [
+      //     'jan', 'fév', 'mar', 'avr', 'mai', 'jun'
+      //   ],
+      //   context: [
+      //     '2016'
+      //   ]
+      // }
     },
     {
       category: 'Les courants',
@@ -212,15 +212,15 @@
         sources: ['video_current']
       },
       legend: '#current-legend',
-      timeline: {
-        source: 'video_current',
-        values: [
-          'jan', 'fév', 'mar', 'avr', 'mai', 'jun'
-        ],
-        context: [
-          '2016'
-        ]
-      }
+      // timeline: {
+      //   source: 'video_current',
+      //   values: [
+      //     'jan', 'fév', 'mar', 'avr', 'mai', 'jun'
+      //   ],
+      //   context: [
+      //     '2016'
+      //   ]
+      // }
     },
     {
       category: 'Les courants',
@@ -244,15 +244,15 @@
         sources: ['video_current']
       },
       legend: '#current-legend',
-      timeline: {
-        source: 'video_current',
-        values: [
-          'jan', 'fév', 'mar', 'avr', 'mai', 'jun'
-        ],
-        context: [
-          '2016'
-        ]
-      }
+      // timeline: {
+      //   source: 'video_current',
+      //   values: [
+      //     'jan', 'fév', 'mar', 'avr', 'mai', 'jun'
+      //   ],
+      //   context: [
+      //     '2016'
+      //   ]
+      // }
     },
     {
       category: 'Les courants',
@@ -276,15 +276,15 @@
         sources: ['video_temp']
       },
       legend: '#temperature-legend',
-      timeline: {
-        source: 'video_temp',
-        values: [
-          'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
-        ],
-        context: [
-          '2015', '2016'
-        ]
-      }
+      // timeline: {
+      //   source: 'video_temp',
+      //   values: [
+      //     'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
+      //   ],
+      //   context: [
+      //     '2015', '2016'
+      //   ]
+      // }
     },
     {
       category: 'Les températures',
@@ -295,15 +295,15 @@
         sources: ['video_temp']
       },
       legend: '#temperature-legend',
-      timeline: {
-        source: 'video_temp',
-        values: [
-          'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
-        ],
-        context: [
-          '2015', '2016'
-        ]
-      }
+      // timeline: {
+      //   source: 'video_temp',
+      //   values: [
+      //     'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
+      //   ],
+      //   context: [
+      //     '2015', '2016'
+      //   ]
+      // }
     },
     {
       category: 'Les températures',
@@ -317,15 +317,15 @@
       },
       displayThermocline: true,
       legend: '#temperature-legend',
-      timeline: {
-        source: 'video_temp',
-        values: [
-          'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
-        ],
-        context: [
-          '2015', '2016'
-        ]
-      }
+      // timeline: {
+      //   source: 'video_temp',
+      //   values: [
+      //     'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
+      //   ],
+      //   context: [
+      //     '2015', '2016'
+      //   ]
+      // }
     },
     {
       category: 'Les températures',
@@ -339,15 +339,15 @@
       },
       displayThermocline: true,
       legend: '#temperature-legend',
-      timeline: {
-        source: 'video_temp',
-        values: [
-          'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
-        ],
-        context: [
-          '2015', '2016'
-        ]
-      }
+      // timeline: {
+      //   source: 'video_temp',
+      //   values: [
+      //     'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
+      //   ],
+      //   context: [
+      //     '2015', '2016'
+      //   ]
+      // }
     },
     {
       category: 'Les températures',
@@ -358,15 +358,15 @@
         sources: ['video_temp']
       },
       legend: '#temperature-legend',
-      timeline: {
-        source: 'video_temp',
-        values: [
-          'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
-        ],
-        context: [
-          '2015', '2016'
-        ]
-      }
+      // timeline: {
+      //   source: 'video_temp',
+      //   values: [
+      //     'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
+      //   ],
+      //   context: [
+      //     '2015', '2016'
+      //   ]
+      // }
     },
     {
       category: 'Les vents',
@@ -377,15 +377,15 @@
         sources: ['video_wind']
       },
       legend: '#wind-legend',
-      timeline: {
-        source: 'video_wind',
-        values: [
-          'mar', 'avr', 'mai', 'jun'
-        ],
-        context: [
-          '2016'
-        ]
-      }
+      // timeline: {
+      //   source: 'video_wind',
+      //   values: [
+      //     'mar', 'avr', 'mai', 'jun'
+      //   ],
+      //   context: [
+      //     '2016'
+      //   ]
+      // }
     },
     {
       category: 'Les vents',
@@ -396,15 +396,15 @@
         sources: ['video_wind']
       },
       legend: '#wind-legend',
-      timeline: {
-        source: 'video_wind',
-        values: [
-          'mar', 'avr', 'mai', 'jun'
-        ],
-        context: [
-          '2016'
-        ]
-      }
+      // timeline: {
+      //   source: 'video_wind',
+      //   values: [
+      //     'mar', 'avr', 'mai', 'jun'
+      //   ],
+      //   context: [
+      //     '2016'
+      //   ]
+      // }
     },
     {
       category: 'Les vents',
@@ -415,15 +415,15 @@
         sources: ['video_wind']
       },
       legend: '#wind-legend',
-      timeline: {
-        source: 'video_wind',
-        values: [
-          'mar', 'avr', 'mai', 'jun'
-        ],
-        context: [
-          '2016'
-        ]
-      }
+      // timeline: {
+      //   source: 'video_wind',
+      //   values: [
+      //     'mar', 'avr', 'mai', 'jun'
+      //   ],
+      //   context: [
+      //     '2016'
+      //   ]
+      // }
     },
     {
       category: 'La salinité',
@@ -434,16 +434,16 @@
         sources: ['video_salinity']
       },
       legend: '#salinity-legend',
-      timeline: {
-        source: 'video_salinity',
-        values: [
-          'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
-        ],
-        context: [
-          '2015',
-          '2016'
-        ]
-      }
+      // timeline: {
+      //   source: 'video_salinity',
+      //   values: [
+      //     'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
+      //   ],
+      //   context: [
+      //     '2015',
+      //     '2016'
+      //   ]
+      // }
     },
     {
       category: 'La salinité',
@@ -454,16 +454,16 @@
         sources: ['video_salinity']
       },
       legend: '#salinity-legend',
-      timeline: {
-        source: 'video_salinity',
-        values: [
-          'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
-        ],
-        context: [
-          '2015',
-          '2016'
-        ]
-      }
+      // timeline: {
+      //   source: 'video_salinity',
+      //   values: [
+      //     'jun', 'jul', 'aoû', 'sep', 'oct', 'nov', 'déc', 'jan', 'fév', 'mar', 'avr', 'mai'
+      //   ],
+      //   context: [
+      //     '2015',
+      //     '2016'
+      //   ]
+      // }
     },
     {
       category: 'La salinité',
