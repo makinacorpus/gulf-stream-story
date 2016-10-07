@@ -493,7 +493,7 @@
           },
           labels: {
             formatter: function () {
-              return app.value + 'm';
+              return this.value + 'm';
             }
           },
           maxPadding: 0.05,
@@ -507,7 +507,7 @@
           },
           labels: {
             formatter: function () {
-              return app.value + '°C';
+              return this.value + '°C';
             }
           },
           lineWidth: 2
